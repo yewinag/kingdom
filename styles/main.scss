@@ -29,11 +29,10 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 13px;
   color: #636363;
-  background: #1e222b;
+  background: #e9eaed;
   .header {
     width: 100%;
     margin: 0 auto;
-    float: left;
     background: #262b36;
     .header-layout {
       display: flex;
@@ -42,6 +41,7 @@ body {
       .header-menu {
         ul {
           margin: 0;
+          padding: 0;
           li {
             display: inline-flex;
             padding: 0 1rem;
@@ -53,6 +53,10 @@ body {
               text-decoration: none;
               font-size: 12px;
               font-weight: 600;
+              font-family: Helvetica, Arial, sans-serif;
+              &:hover {
+                color: #8bbce0;
+              }
             }
           }
         }
@@ -66,53 +70,75 @@ body {
           height: 48px;
           background: transparent;
           color: #fff;
-          border: 1px solid #fff;
+          border: 1px solid #ddd;
           line-height: 22px;
           padding: 0 20px;
           border-radius: 4px;
+        }
+        button {
+          height: 57px;
+          border: 0;
+          background: #8bbce0;
+          color: #fff;
+          cursor: pointer;
         }
       }
     }
   }
   .main-content {
-    background: #262b36;
     box-shadow: 0 1px 10px rgb(51 92 115 / 10%), 0 0 5px rgb(0 0 0 / 5%);
+    height: auto;
+    .random-layout {
+      min-height: 220px;
+      padding: 10px;
+      margin-bottom: 20px;
+      background: #fff;
+      h4 {
+        font-size: 18px;
+        font-weight: 300;
+        margin-top: 0;
+        color: #a2a8b8;
+      }
+    }
     .main-header {
       width: 96%;
       padding: 0 2%;
       margin-bottom: 0;
       height: 50px;
-      float: left;
-      border-bottom: 1px solid #000;
+      // float: left;
+      border-bottom: 1px solid #ddd;
     }
     .content-list {
-      float: left;
-      width: 980px;
-      margin: 0 10px 10px;
+      // float: left;
+      // width: 980px;
+      // padding: 10px;
+      background-color: #fff;
       .content-title {
         font-size: 23px;
-        font-weight: 300;
-        float: left;
+        font-weight: bold;
         margin-top: 0;
         color: #7a8293;
         padding-bottom: 15px;
-        margin-bottom: 20px;
-        width: 100%;
-        border-bottom: solid 1px #000;
+        border-bottom: solid 1px #ddd;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .listing-layout {
+        display: flex;
+        justify-content: space-evenly;
       }
       .content-body {
-        width: 770px;
-        float: left;
-        padding: 15px 0;
-        border-right: solid 1px #000;
-        margin-right: 9px;
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 14px;
+        width: 740px;
+        padding: 20px;
+        border-right: solid 1px #ddd;
+        display: flex;
+        flex-flow: wrap;
+        column-gap: 10px;
+        row-gap: 10px;
       }
       .sidebar {
         width: 200px;
-        float: left;
         padding: 15px 0;
       }
     }
@@ -123,6 +149,16 @@ body {
 }
 
 .item-card {
+  max-width: 138px;
+  max-height: 230px;
+  .image {
+    height: 194px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   .image:hover {
     .player {
       display: block;
@@ -137,8 +173,8 @@ body {
   }
   .info {
     p {
-      font-size: 15px;
-      font-weight: 300;
+      // font-size: 15px;
+      // font-weight: 300;
       width: 100%;
       height: 17px;
       overflow: hidden;

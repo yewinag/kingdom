@@ -13,7 +13,7 @@ const Home: NextPage = () => {
             <div className="header-menu flex-layout">
               <div className="logo-layout">
                 <Link href={'/'}>
-                  <Image src={'/logo.jpeg'} width={220} height={32} />
+                  <Image src={'/logo.png'} width={220} height={32} />
                 </Link>
               </div>
               <ul>
@@ -32,140 +32,142 @@ const Home: NextPage = () => {
               </ul>
             </div>
             <article className="header-search">
-              <input />
+              <button>Search</button>
             </article>
           </header>
         </div>
       </header>
       <section className="main-content container">
-        <div className="main-header">
-          <h4 className="content-title">Content Recently Added</h4>
-        </div>
+        <section className="random-layout">
+          <h4>Random Content</h4>
+        </section>
         <section className="content-list">
           <h4 className="content-title">Content Recently Added</h4>
-          <section className="content-body">
-            <article className="item-card">
-              <Link href="/">
-                <div className="image">
-                  <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
-                  <span className="player"></span>
-                  <span className="rating">7.8</span>
+          <section className="listing-layout">
+            <section className="content-body">
+              <article className="item-card">
+                <Link href="/">
+                  <div className="image">
+                    <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
+                    <span className="player"></span>
+                    {/* <span className="rating">7.8</span> */}
+                  </div>
+                </Link>
+                <div className="info">
+                  <p>2 Good 2 Be True(2022)</p>
+                  <span>2022</span>
                 </div>
-              </Link>
-              <div className="info">
-                <p>2 Good 2 Be True(2022)</p>
-                <span>2022</span>
-              </div>
-            </article>
-            <article className="item-card">
-              <Link href="/">
-                <div className="image">
-                  <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
-                  <span className="player"></span>
-                  <span className="rating">7.8</span>
+              </article>
+              <article className="item-card">
+                <Link href="/">
+                  <div className="image">
+                    <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
+                    <span className="player"></span>
+                    {/* <span className="rating">7.8</span> */}
+                  </div>
+                </Link>
+                <div className="info">
+                  <p>2 Good 2 Be True(2022)</p>
+                  <span>2022</span>
                 </div>
-              </Link>
-              <div className="info">
-                <p>2 Good 2 Be True(2022)</p>
-                <span>2022</span>
-              </div>
-            </article>
-            <article className="item-card">
-              <Link href="/">
-                <div className="image">
-                  <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
-                  <span className="player"></span>
-                  <span className="rating">7.8</span>
+              </article>
+              <article className="item-card">
+                <Link href="/">
+                  <div className="image">
+                    <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
+                    <span className="player"></span>
+                    {/* <span className="rating">7.8</span> */}
+                  </div>
+                </Link>
+                <div className="info">
+                  <p>2 Good 2 Be True(2022)</p>
+                  <span>2022</span>
                 </div>
-              </Link>
-              <div className="info">
-                <p>2 Good 2 Be True(2022)</p>
-                <span>2022</span>
-              </div>
-            </article>
-            <article className="item-card">
-              <Link href="/">
-                <div className="image">
-                  <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
-                  <span className="player"></span>
-                  <span className="rating">7.8</span>
+              </article>
+              <article className="item-card">
+                <Link href="/">
+                  <div className="image">
+                    <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
+                    <span className="player"></span>
+                    {/* <span className="rating">7.8</span> */}
+                  </div>
+                </Link>
+                <div className="info">
+                  <p>2 Good 2 Be True(2022)</p>
+                  <span>2022</span>
                 </div>
-              </Link>
-              <div className="info">
-                <p>2 Good 2 Be True(2022)</p>
-                <span>2022</span>
-              </div>
-            </article>
-            <article className="item-card">
-              <Link href="/">
-                <div className="image">
-                  <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
-                  <span className="player"></span>
-                  <span className="rating">7.8</span>
+              </article>
+              <article className="item-card">
+                <Link href="/">
+                  <div className="image">
+                    <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
+                    <span className="player"></span>
+                    {/* <span className="rating">7.8</span> */}
+                  </div>
+                </Link>
+                <div className="info">
+                  <p>2 Good 2 Be True(2022)</p>
+                  <span>2022</span>
                 </div>
-              </Link>
-              <div className="info">
-                <p>2 Good 2 Be True(2022)</p>
-                <span>2022</span>
-              </div>
-            </article>
-            <article className="item-card">
-              <Link href="/">
-                <div className="image">
-                  <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
-                  <span className="player"></span>
-                  <span className="rating">7.8</span>
+              </article>
+              <article className="item-card">
+                <Link href="/">
+                  <div className="image">
+                    <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
+                    <span className="player"></span>
+                    {/* <span className="rating">7.8</span> */}
+                  </div>
+                </Link>
+                <div className="info">
+                  <p>2 Good 2 Be True(2022)</p>
+                  <span>2022</span>
                 </div>
-              </Link>
-              <div className="info">
-                <p>2 Good 2 Be True(2022)</p>
-                <span>2022</span>
-              </div>
-            </article>
-            <article className="item-card">
-              <Link href="/">
-                <div className="image">
-                  <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
-                  <span className="player"></span>
-                  <span className="rating">7.8</span>
+              </article>
+              <article className="item-card">
+                <Link href="/">
+                  <div className="image">
+                    <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
+                    <span className="player"></span>
+                    {/* <span className="rating">7.8</span> */}
+                  </div>
+                </Link>
+                <div className="info">
+                  <p>2 Good 2 Be True(2022)</p>
+                  <span>2022</span>
                 </div>
-              </Link>
-              <div className="info">
-                <p>2 Good 2 Be True(2022)</p>
-                <span>2022</span>
-              </div>
-            </article>
-            <article className="item-card">
-              <Link href="/">
-                <div className="image">
-                  <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
-                  <span className="player"></span>
-                  <span className="rating">7.8</span>
+              </article>
+              <article className="item-card">
+                <Link href="/">
+                  <div className="image">
+                    <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
+                    <span className="player"></span>
+                    {/* <span className="rating">7.8</span> */}
+                  </div>
+                </Link>
+                <div className="info">
+                  <p>2 Good 2 Be True(2022)</p>
+                  <span>2022</span>
                 </div>
-              </Link>
-              <div className="info">
-                <p>2 Good 2 Be True(2022)</p>
-                <span>2022</span>
-              </div>
-            </article>
-            <article className="item-card">
-              <Link href="/">
-                <div className="image">
-                  <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
-                  <span className="player"></span>
-                  <span className="rating">7.8</span>
+              </article>
+              <article className="item-card">
+                <Link href="/">
+                  <div className="image">
+                    <img src="https://channelmyanmar.org/wp-content/uploads/2022/06/djX35_4f-153x200.jpg" />
+                    <span className="player"></span>
+                    {/* <span className="rating">7.8</span> */}
+                  </div>
+                </Link>
+                <div className="info">
+                  <p>2 Good 2 Be True(2022)</p>
+                  <span>2022</span>
                 </div>
-              </Link>
-              <div className="info">
-                <p>2 Good 2 Be True(2022)</p>
-                <span>2022</span>
-              </div>
-            </article>
+              </article>
+            </section>
+            <aside className="sidebar">
+              <h3>Spronsor</h3>
+              <img src="https://channelmyanmar.org/wp-content/uploads/2020/07/mmbus_ads_4.png" />
+            </aside>
           </section>
-          <aside className="sidebar">
-            <h3>Spronsor</h3>
-            <img src="https://channelmyanmar.org/wp-content/uploads/2020/07/mmbus_ads_4.png" />
-          </aside>
         </section>
         <article className="content-pagination">pagination</article>
       </section>
