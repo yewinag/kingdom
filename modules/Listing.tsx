@@ -33,7 +33,7 @@ function Listing() {
               <>
                 {data.map((item) => (
                   <article className="item-card">
-                    <Link href={item.slug}>
+                    <Link href={`movie/${item.slug}`}>
                       <div className="image">
                         <img src={item.thumb} />
                         <span className="player"></span>
