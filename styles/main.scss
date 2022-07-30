@@ -62,10 +62,10 @@ body {
         }
         .logo-layout {
           margin-right: 20px;
-          padding: 11px 0;
+          padding: 10px 0;
         }
       }
-      .header-search {
+      .search {
         input {
           height: 48px;
           background: transparent;
@@ -86,8 +86,9 @@ body {
     }
   }
   .main-content {
-    box-shadow: 0 1px 10px rgb(51 92 115 / 10%), 0 0 5px rgb(0 0 0 / 5%);
+    // box-shadow: 0 1px 10px rgb(51 92 115 / 10%), 0 0 5px rgb(0 0 0 / 5%);
     height: auto;
+    min-height: 85vh;
     .random-layout {
       min-height: 220px;
       padding: 10px;
@@ -188,4 +189,7 @@ body {
       margin-top: 3px;
     }
   }
+}
+.alice-carousel__stage-item {
+  margin: 0 5px;
 }

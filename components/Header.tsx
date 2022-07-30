@@ -8,9 +8,11 @@ export const Header = () => {
         <header className="header-layout">
           <div className="header-menu flex-layout">
             <div className="logo-layout">
-              <Link href={'/'}>
+              {/* <Link href="/"> */}
+              <a href="/">
                 <Image src={'/logo.png'} width={220} height={32} />
-              </Link>
+              </a>
+              {/* </Link> */}
             </div>
             <ul>
               <li>
@@ -27,7 +29,7 @@ export const Header = () => {
               </li>
             </ul>
           </div>
-          <article className="header-search">
+          <article className="search">
             <button>Search</button>
           </article>
         </header>

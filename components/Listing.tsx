@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { IMovies } from '../interface';
 import { Sidebar } from './Sidebar';
 import useSWR from 'swr';
+import { ComponentCard } from './common';
 
 function Listing() {
   const [data, setData] = useState<IMovies[]>([]);
@@ -28,20 +29,8 @@ function Listing() {
             <div>loading...</div>
           ) : (
             <>
-              {data.map(item => (
-                <article className="item-card">
-                  <Link href={`movie/${item.slug}`}>
-                    <div className="image">
-                      <img src={item.thumb} />
-                      <span className="player"></span>
-                      {/* <span className="rating">7.8</span> */}
-                    </div>
-                  </Link>
-                  <div className="info">
-                    <p>{item.title}</p>
-                    <span>{item.year}</span>
-                  </div>
-                </article>
+              {data.map((item, index) => (
+                <ComponentCard item={item} key={index} />
               ))}
             </>
           )}

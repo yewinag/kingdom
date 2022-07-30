@@ -11,7 +11,7 @@ const AppLayout = (props: Iprops) => {
   return (
     <div>
       <Header />
-      <div>{props.children}</div>
+      <section className="main-content container">{props.children}</section>
       <Footer />
     </div>
   );
