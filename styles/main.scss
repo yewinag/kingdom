@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
-// @import 'reset'; // reset css
-// @import 'base'; // configuration
-// @import 'layouts'; // layouts
-// @import 'components'; // components
+@import 'reset'; // reset css
+@import 'base'; // configuration
+@import 'layouts'; // layouts
+@import 'components'; // components
 
 .container {
   width: 1000px;
@@ -62,10 +62,10 @@ body {
         }
         .logo-layout {
           margin-right: 20px;
-          padding: 11px 0;
+          padding: 10px 0;
         }
       }
-      .header-search {
+      .search {
         input {
           height: 48px;
           background: transparent;
@@ -86,8 +86,8 @@ body {
     }
   }
   .main-content {
-    box-shadow: 0 1px 10px rgb(51 92 115 / 10%), 0 0 5px rgb(0 0 0 / 5%);
     height: auto;
+    min-height: 85vh;
     .random-layout {
       min-height: 220px;
       padding: 10px;
@@ -105,13 +105,9 @@ body {
       padding: 0 2%;
       margin-bottom: 0;
       height: 50px;
-      // float: left;
       border-bottom: 1px solid #ddd;
     }
     .content-list {
-      // float: left;
-      // width: 980px;
-      // padding: 10px;
       background-color: #fff;
       .content-title {
         font-size: 23px;
@@ -127,19 +123,15 @@ body {
       .listing-layout {
         display: flex;
         justify-content: space-evenly;
+        align-items: flex-start;
       }
       .content-body {
         width: 740px;
         padding: 20px;
         border-right: solid 1px #ddd;
-        display: flex;
-        flex-flow: wrap;
-        column-gap: 10px;
-        row-gap: 10px;
-      }
-      .sidebar {
-        width: 200px;
-        padding: 15px 0;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        gap: 12px;
       }
     }
   }
@@ -188,4 +180,7 @@ body {
       margin-top: 3px;
     }
   }
+}
+.alice-carousel__stage-item {
+  margin: 0 5px;
 }
