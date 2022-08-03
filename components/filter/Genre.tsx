@@ -6,9 +6,9 @@ export const Genre = () => {
     <CardLayout>
       <>
         <h4>Genres</h4>
-        <div className="genre-list">
-          {categories.map(item => (
-            <div className="genre-item">
+        <div className="genre-list scroll-bar">
+          {categories.map((item, index) => (
+            <div className="genre-item" key={index}>
               <p>{item.title}</p>
               <p>{item.count}</p>
             </div>

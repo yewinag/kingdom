@@ -6,7 +6,7 @@ export const YearFilter = () => {
     <CardLayout>
       <>
         <h4>Release year</h4>
-        <div className="year-list">
+        <div className="year-list scroll-bar">
           {years.map(item => (
             <button>{item}</button>
           ))}

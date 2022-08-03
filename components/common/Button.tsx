@@ -1,11 +1,12 @@
 interface Iprops {
   title: string;
   icon?: JSX.Element;
+  className?: string;
 }
 export const Button = (props: Iprops) => {
-  const { title, icon } = props;
+  const { title, icon, className } = props;
   return (
-    <button>
+    <button className={className}>
       {icon || null}
       {title}
     </button>

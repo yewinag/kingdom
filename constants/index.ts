@@ -110,6 +110,54 @@ export const data = [
     desc: "Prince Amleth is on the verge of becoming a man when his father is brutally murdered by his uncle, who kidnaps the boy's mother. Two decades later, Amleth is now a Viking who's on a mission to save his mother,kill his uncle and avenge his father.",
     rating: 10,
     year: 2022
+  },
+  {
+    thumb: 'https://image.tmdb.org/t/p/w185/odVv1sqVs0KxBXiA8bhIBlPgalx.jpg',
+    title: 'Moonfall',
+    slug: 'moonfall',
+    desc: "Prince Amleth is on the verge of becoming a man when his father is brutally murdered by his uncle, who kidnaps the boy's mother. Two decades later, Amleth is now a Viking who's on a mission to save his mother,kill his uncle and avenge his father.",
+    rating: 10,
+    year: 2022
+  },
+  {
+    thumb: 'https://image.tmdb.org/t/p/w185/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg',
+    title: 'Spider-Man: No Way Home',
+    slug: 'spider-man-no-way-home',
+    desc: "Prince Amleth is on the verge of becoming a man when his father is brutally murdered by his uncle, who kidnaps the boy's mother. Two decades later, Amleth is now a Viking who's on a mission to save his mother,kill his uncle and avenge his father.",
+    rating: 10,
+    year: 2022
+  },
+  {
+    thumb: 'https://image.tmdb.org/t/p/w185/nj5HmHRZsrYQEYYXyAusFv35erP.jpg',
+    title: 'The King &#8217;s Man',
+    slug: 'the-kings-man',
+    desc: "Prince Amleth is on the verge of becoming a man when his father is brutally murdered by his uncle, who kidnaps the boy's mother. Two decades later, Amleth is now a Viking who's on a mission to save his mother,kill his uncle and avenge his father.",
+    rating: 10,
+    year: 2022
+  },
+  {
+    thumb: 'https://image.tmdb.org/t/p/w185/bcCBq9N1EMo3daNIjWJ8kYvrQm6.jpg',
+    title: 'Eternals',
+    slug: 'eternals',
+    desc: 'The Eternals are a team of ancient aliens who have been living on Earth in secret for thousands of years.',
+    rating: 10,
+    year: 2022
+  },
+  {
+    thumb: 'https://image.tmdb.org/t/p/w185/7uRbWOXxpWDMtnsd2PF3clu65jc.jpg',
+    title: 'Resident Evil: Welcome to Raccoon City',
+    slug: 'resident-evil-welcome-raccoon-city',
+    desc: 'Once the booming home of pharmaceutical giant Umbrella',
+    rating: 10,
+    year: 2022
+  },
+  {
+    thumb: 'https://image.tmdb.org/t/p/w185/zjrJE0fpzPvX8saJXj8VNfcjBoU.jpg',
+    title: 'The Last Duel',
+    slug: 'the-last-duel',
+    desc: "Prince Amleth is on the verge of becoming a man when his father is brutally murdered by his uncle, who kidnaps the boy's mother. Two decades later, Amleth is now a Viking who's on a mission to save his mother,kill his uncle and avenge his father.",
+    rating: 10,
+    year: 2022
   }
 ];
 export const categories = [
@@ -186,4 +234,21 @@ export const categories = [
     count: 1014
   }
 ];
-export const years = ['2022', '2021', '2000', '1999'];
+export const years = [
+  '2022',
+  '2021',
+  '2000',
+  '1999',
+  '2022',
+  '2021',
+  '2000',
+  '1999',
+  '2022',
+  '2021',
+  '2000',
+  '1999',
+  '2022',
+  '2021',
+  '2000',
+  '1999'
+];

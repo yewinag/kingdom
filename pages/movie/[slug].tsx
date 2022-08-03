@@ -8,36 +8,26 @@ import { Genre } from '../../components/filter';
 import { YearFilter } from '../../components/filter/Year';
 import { Social } from '../../components/Social';
 import { IMovies } from '../../interface';
-
+import useSWR from 'swr';
+import { fetcher } from 'utils';
 const Home: NextPage = () => {
   const router = useRouter();
   const { slug } = router.query;
-  const [detail, setDetail] = useState<IMovies>();
-  useEffect(() => {
-    console.log(slug);
-    if (slug) {
-      fetch(`/api/movie/${slug}`)
-        .then(res => res.json())
-        .then(json => {
-          setTimeout(() => {
-            setDetail(json);
-          }, 1000);
-        });
-    }
-  }, [slug]);
-  if (!detail) return <div>ခဏစောင့်အံုး အဲ့ဇတ်ကားကိုသွားရှာနေပီ</div>;
+  const { data, error } = useSWR<IMovies>([`/api/movie/${slug}`], fetcher);
+  if (error) return <p>server မှာကွိုင်တက်နေပီ ဟကောင်ရေ</p>;
+  if (!data) return <div>ခဏစောင့်အံုး အဲ့ဇတ်ကားကိုသွားရှာနေပီ</div>;
   return (
     <div className="detail">
       <div>
         <CardLayout>
           <>
             <div className="profile">
-              <img src={detail.thumb} alt={detail.thumb} />
+              <img src={data.thumb} alt={data.thumb} />
             </div>
             <div className="info">
-              <h4>{detail.title}</h4>
+              <h4>{data.title}</h4>
               <p>
-                <span>{detail.year}</span> <span>{detail.rating}</span>
+                <span>{data.year}</span> <span>{data.rating}</span>
               </p>
             </div>
           </>
