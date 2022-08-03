@@ -1,0 +1,77 @@
+// html {
+//   box-sizing: border-box;
+//   font-family: $font-family;
+//   font-size: $regular;
+//   font-weight: $font-weight-normal;
+//   background-color: $bg-color-primary-dark;
+//   color: $color-primary-light;
+// }
+
+// html.light {
+//   background-color: $bg-color-primary-light;
+//   color: $color-primary-dark;
+// }
+
+// %app-container {
+//   padding: 0 0.938em;
+//   margin-right: auto;
+//   margin-left: auto;
+//   max-width: $web-screen;
+// }
+
+%flux-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%layout-break {
+  margin-bottom: $layout-break;
+}
+
+// /* header */
+// .header {
+//   background-color: inherit;
+//   background-color: $color-primary-dark;
+//   @extend %layout-break;
+
+//   .nav {
+//     padding-top: 1rem;
+//     padding-bottom: 1rem;
+//     @extend %app-container;
+//     @extend %flux-layout;
+//   }
+// }
+
+// /* search header */
+// .header-search {
+//   @extend %app-container;
+//   @extend %flux-layout;
+//   @extend %layout-break;
+// }
+
+// /* list item section */
+// .listing {
+//   @extend %app-container;
+
+//   .listing-layout {
+//     display: grid;
+//     grid-template-columns: auto auto auto auto;
+//     grid-gap: $grid-gap-value;
+//   }
+// }
+
+// /* footer section */
+
+// .footer {
+//   text-align: center;
+//   @extend %app-container;
+// }
+
+.card-layout {
+  width: 100%;
+}
+
+.footer {
+  @extend %flux-layout;
+}
