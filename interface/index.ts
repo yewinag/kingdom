@@ -6,3 +6,8 @@ export interface IMovies {
   rating: number;
   year: number;
 }
+export interface IListingMovies {
+  status: string;
+  result: IMovies[];
+  total: number;
+}

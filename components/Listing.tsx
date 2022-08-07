@@ -1,26 +1,36 @@
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { IMovies } from '../interface';
 import { Sidebar } from './Sidebar';
-import useSWR from 'swr';
 import { ComponentCard } from './common';
-import { fetcher } from 'utils';
+import { usePagination } from 'hooks';
+import { ComponentPagination } from './paginations';
 
 export default function Listing() {
-  const { data, error } = useSWR<IMovies[]>([`/api/movies`], fetcher);
-  if (error) return <p>server မှာကွိုင်တက်နေပီ ဟကောင်ရေ</p>;
-  if (!data) return <p>loading....</p>;
+  const { paginatedData, size, setSize, error } = usePagination('/api/movies');
+
+  let result: IMovies[] = [];
+  let total: number = 0;
+  if (paginatedData && paginatedData.length > 0) {
+    //@ts-ignore
+    result = paginatedData[0]?.result;
+    //@ts-ignore
+    total = paginatedData[0]?.total;
+  }
+
+  if (error === 0) return <p>server မှာကွိုင်တက်နေပီ ဟကောင်ရေ</p>;
   return (
     <section className="content-list">
       <h4 className="content-title">Content Recently Added</h4>
       <section className="listing-layout">
         <section className="content-body">
-          {data &&
-            data.map((item, index) => (
+          {result &&
+            result.map((item, index) => (
               <ComponentCard item={item} key={index} />
             ))}
         </section>
         <Sidebar />
+      </section>
+      <section>
+        <ComponentPagination total={total} setSize={setSize} size={size} />
       </section>
     </section>
   );
