@@ -3,3 +3,4 @@ export * from './Listing';
 export * from './Sidebar';
 export * from './Random';
 export * from './common';
+export * from './Search';

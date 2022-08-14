@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { useState } from 'react';
+import { ComponentSearch } from './Search';
 export const Header = () => {
+  const [toggle, setToggle] = useState<boolean>(false);
   return (
     <header className="header">
       <div className="container">
@@ -30,9 +32,10 @@ export const Header = () => {
             </ul>
           </div>
           <article className="search">
-            <button>Search</button>
+            <button onClick={() => setToggle(!toggle)}>Search</button>
           </article>
         </header>
+        {toggle && <ComponentSearch />}
       </div>
     </header>
   );

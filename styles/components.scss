@@ -124,3 +124,16 @@ button {
     margin: 0 4px;
   }
 }
+//--------
+// search layout
+.search-layout {
+  width: 77%;
+
+  z-index: 10;
+  position: absolute;
+  input {
+    height: 48px;
+    padding: 0 20px;
+    width: 100%;
+  }
+}
