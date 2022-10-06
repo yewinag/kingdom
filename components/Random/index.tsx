@@ -25,7 +25,7 @@ export const ComponentRandom = (props: IProps) => {
 
   const responsive = {
     0: { items: 2 },
-    568: { items: 4 },
+    568: { items: 2 },
     1024: { items: 8 }
   };
 

@@ -62,7 +62,7 @@ body {
         }
         .logo-layout {
           margin-right: 20px;
-          padding: 10px 0;
+          padding: 6px 0;
         }
       }
       .search {
@@ -90,14 +90,23 @@ body {
     min-height: 85vh;
     .random-layout {
       min-height: 220px;
-      padding: 10px;
+      // padding: 10px;
       margin-bottom: 20px;
       background: #fff;
       h4 {
-        font-size: 18px;
-        font-weight: 300;
+        font-size: 23px;
+        font-weight: bold;
         margin-top: 0;
-        color: #a2a8b8;
+        color: #7a8293;
+        padding-bottom: 15px;
+        border-bottom: solid 1px #ddd;
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+      }
+      .alice-carousel__dots {
+        display: none;
       }
     }
     .main-header {

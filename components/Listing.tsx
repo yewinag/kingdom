@@ -24,7 +24,7 @@ export default function Listing(props: IProps) {
         <section className="content-body">
           <section>
             <div className="section-header">
-              <h5>Latest </h5>
+              <h4>Latest </h4>
               <Link href={'/'}>{`see more >>`}</Link>
             </div>
             <article className="section">
@@ -36,7 +36,7 @@ export default function Listing(props: IProps) {
           </section>
           <section>
             <div className="section-header">
-              <h5>Animes </h5>
+              <h4>Animes </h4>
               <Link href={'/'}>{`see more >>`}</Link>
             </div>
             <article className="section">
@@ -48,7 +48,7 @@ export default function Listing(props: IProps) {
           </section>
           <section>
             <div className="section-header">
-              <h5>TV Shows </h5>
+              <h4>TV Shows </h4>
               <Link href={'/'}>{`see more >>`}</Link>
             </div>
             <article className="section">
@@ -60,7 +60,7 @@ export default function Listing(props: IProps) {
           </section>
           <section>
             <div className="section-header">
-              <h5>Movies </h5>
+              <h4>Movies </h4>
               <Link href={'/'}>{`see more >>`}</Link>
             </div>
             <article className="section">

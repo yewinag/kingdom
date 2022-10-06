@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { IconSearch } from './icons';
 
 export const Header = () => {
   return (
@@ -10,7 +11,7 @@ export const Header = () => {
             <div className="logo-layout">
               {/* <Link href="/"> */}
               <a href="/">
-                <Image src={'/logo.png'} width={220} height={32} />
+                <Image src={'/soulkingdom.png'} width={75} height={40} />
               </a>
               {/* </Link> */}
             </div>
@@ -30,7 +31,9 @@ export const Header = () => {
             </ul>
           </div>
           <article className="search">
-            <button>Search</button>
+            <button>
+              <IconSearch />
+            </button>
           </article>
         </header>
       </div>
