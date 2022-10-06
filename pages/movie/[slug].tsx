@@ -13,36 +13,36 @@ import { fetcher } from 'utils';
 const Home: NextPage = () => {
   const router = useRouter();
   const { slug } = router.query;
-  const { data, error } = useSWR<IMovies>([`/api/movie/${slug}`], fetcher);
-  if (error) return <p>server မှာကွိုင်တက်နေပီ ဟကောင်ရေ</p>;
-  if (!data) return <div>ခဏစောင့်အံုး အဲ့ဇတ်ကားကိုသွားရှာနေပီ</div>;
-  return (
-    <div className="detail">
-      <div>
-        <CardLayout>
-          <>
-            <div className="profile">
-              <img src={data.thumb} alt={data.thumb} />
-            </div>
-            <div className="info">
-              <h4>{data.title}</h4>
-              <p>
-                <span>{data.year}</span> <span>{data.rating}</span>
-              </p>
-            </div>
-          </>
-        </CardLayout>
-        <CardLayout>
-          <ComponentInfo />
-        </CardLayout>
-      </div>
-      <div>
-        <Social />
-        <Genre />
-        <YearFilter />
-      </div>
-    </div>
-  );
+  // const { data, error } = useSWR<IMovies>([`/api/movie/${slug}`], fetcher);
+  return <p>ခဏစောင့်ကြပါအုံး</p>;
+  // if (!data) return <div>ခဏစောင့်အံုး အဲ့ဇတ်ကားကိုသွားရှာနေပီ</div>;
+  // return (
+  //   <div className="detail">
+  //     <div>
+  //       <CardLayout>
+  //         <>
+  //           <div className="profile">
+  //             <img src={data.thumb} alt={data.thumb} />
+  //           </div>
+  //           <div className="info">
+  //             <h4>{data.title}</h4>
+  //             <p>
+  //               <span>{data.year}</span> <span>{data.rating}</span>
+  //             </p>
+  //           </div>
+  //         </>
+  //       </CardLayout>
+  //       <CardLayout>
+  //         <ComponentInfo />
+  //       </CardLayout>
+  //     </div>
+  //     <div>
+  //       <Social />
+  //       <Genre />
+  //       <YearFilter />
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default Home;
