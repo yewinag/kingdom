@@ -129,9 +129,24 @@ body {
         width: 740px;
         padding: 20px;
         border-right: solid 1px #ddd;
-        display: grid;
-        grid-template-columns: auto auto auto auto auto;
-        gap: 12px;
+        // display: grid;
+        // grid-template-columns: auto auto auto auto auto;
+        // gap: 12px;
+        .section {
+          display: flex;
+          flex-wrap: wrap;
+          column-gap: 16px;
+          row-gap: 16px;
+          max-height: 243px;
+          overflow: hidden;
+        }
+        .section-header {
+          display: flex;
+          justify-content: space-between;
+          padding: 16px 0;
+          margin: 16px 0;
+          box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+        }
       }
     }
   }
@@ -141,8 +156,11 @@ body {
 }
 
 .item-card {
-  max-width: 138px;
+  width: 126px;
   max-height: 230px;
+  // display: inline-block;
+  // margin: 0 0 19px 10px;
+
   .image {
     height: 194px;
     img {

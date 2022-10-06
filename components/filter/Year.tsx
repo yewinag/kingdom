@@ -7,8 +7,8 @@ export const YearFilter = () => {
       <>
         <h4>Release year</h4>
         <div className="year-list scroll-bar">
-          {years.map(item => (
-            <button>{item}</button>
+          {years.map((item, index) => (
+            <button key={index}>{item}</button>
           ))}
         </div>
       </>
