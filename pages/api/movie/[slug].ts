@@ -1,12 +1,21 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { data } from '../../../constants';
-import { IMovies } from '../../../interface';
+import { IMovie } from '../../../interface';
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<IMovies>
+  res: NextApiResponse<IMovie>
 ) {
   const { slug } = req.query;
-  const result = data.filter(item => item.slug === slug);
-  res.status(200).json(result[0]);
+  res.status(200).json({
+    id: 0,
+    cover_path: '',
+    backdrop_path: '',
+    show_type: '',
+    name: '',
+    mm_name: '',
+    last_season: 0,
+    last_episode: 0,
+    created_at: ''
+  });
 }
