@@ -14,7 +14,7 @@ const Home: NextPage = () => {
   const router = useRouter();
   const { slug } = router.query;
   // const { data, error } = useSWR<IMovies>([`/api/movie/${slug}`], fetcher);
-  return <p>ခဏစောင့်ကြပါအုံး</p>;
+  return <p>COMMING SOON</p>;
   // if (!data) return <div>ခဏစောင့်အံုး အဲ့ဇတ်ကားကိုသွားရှာနေပီ</div>;
   // return (
   //   <div className="detail">
