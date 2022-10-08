@@ -1,12 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { data } from '../../../constants';
+
 import { IMovie } from '../../../interface';
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<IMovie>
 ) {
-  const { slug } = req.query;
+  // const { slug } = req.query;
   res.status(200).json({
     id: 0,
     cover_path: '',

@@ -1,15 +1,14 @@
 import type { NextPage } from 'next';
-import useSWR from 'swr';
+import { ThemeProvider } from 'next-themes';
+import { API_URL } from 'utils';
+
 import { ComponentRandom } from '../components';
 import Listing from '../components/Listing';
-import { API_URL, fetcher } from 'utils';
-import { IMovie, IMovies } from '../interface';
-import { ThemeProvider } from 'next-themes';
+import { IMovies } from '../interface';
 interface IProps {
   data: IMovies;
 }
 const Home: NextPage<IProps> = props => {
-  // const { data, error } = useSWR<IMovies>([`/home`], fetcher);
   const { data } = props;
   return (
     <ThemeProvider>

@@ -1,4 +1,5 @@
 import { ISvg } from 'interface';
+
 export const IconSearch = (props: ISvg) => (
   <svg
     width="24"
