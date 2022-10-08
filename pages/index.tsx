@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
+import { ThemeProvider } from 'next-themes';
+import { API_URL } from 'utils';
+
 import { ComponentRandom } from '../components';
 import Listing from '../components/Listing';
-import { API_URL } from 'utils';
 import { IMovies } from '../interface';
-import { ThemeProvider } from 'next-themes';
 interface IProps {
   data: IMovies;
 }

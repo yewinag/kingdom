@@ -20,6 +20,7 @@
   },
   "extends": [
     "eslint:recommended",
+    "next",
     "plugin:jsx-a11y/recommended",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
@@ -34,7 +35,7 @@
     "no-console": "error",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
-    "simple-import-sort/imports": "error",
+    "simple-import-sort/imports": "warn",
     "simple-import-sort/exports": "error",
     "unicorn/filename-case": "off",
     "jsx-a11y/anchor-is-valid": [
@@ -47,11 +48,19 @@
     ],
     "testing-library/await-async-query": "error",
     "testing-library/no-await-sync-query": "error",
-    "testing-library/no-debug": "warn",
+    "testing-library/no-debugging-utils": "warn",
     "testing-library/no-dom-import": "off",
     "jest-dom/prefer-checked": "error",
     "jest-dom/prefer-enabled-disabled": "error",
     "jest-dom/prefer-required": "error",
     "jest-dom/prefer-to-have-attribute": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
 }

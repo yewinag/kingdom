@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import AliceCarousel from 'react-alice-carousel';
+
 import { IMovie } from '../../interface';
 import { ComponentCard } from '../common';
 
@@ -9,7 +10,7 @@ interface IProps {
 
 export const ComponentRandom = (props: IProps) => {
   const { carousels } = props;
-  const handleDragStart = (e: any) => e.preventDefault();
+  // const handleDragStart = (e: any) => e.preventDefault();
   const [mounted, setMounted] = useState(false);
   const [items, setItems] = useState<JSX.Element[]>([]);
   useEffect(() => {

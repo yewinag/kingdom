@@ -1,8 +1,9 @@
-import { useTheme } from 'next-themes';
+import { enumTheme } from 'interface';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useTheme } from 'next-themes';
+
 import { IconSearch, IconTheme } from './icons';
-import { enumTheme } from 'interface';
 export const Header = () => {
   const { theme, setTheme } = useTheme();
   const changeTheme = () => {
@@ -19,9 +20,14 @@ export const Header = () => {
           <div className="header-menu flex-layout">
             <div className="logo-layout">
               {/* <Link href="/"> */}
-              <a href="/">
-                <Image src={'/soulkingdom.png'} width={75} height={40} />
-              </a>
+              <Link href="/">
+                <Image
+                  src={'/soulkingdom.png'}
+                  width={75}
+                  height={40}
+                  alt={'soulkingdom logo'}
+                />
+              </Link>
               {/* </Link> */}
             </div>
             <ul>

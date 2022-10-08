@@ -1,3 +1,3 @@
-export * from './movies';
-export * from './icon';
 export * from './enum';
+export * from './icon';
+export * from './movies';

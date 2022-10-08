@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { IMovie, IMovies } from '../interface';
-import { Sidebar } from './Sidebar';
-import useSWR from 'swr';
+
+import { IMovie } from '../interface';
+// import useSWR from 'swr';
 import { ComponentCard } from './common';
-import { fetcher } from 'utils';
-import Image from 'next/image';
+import { Sidebar } from './Sidebar';
+// import { fetcher } from 'utils';
+// import Image from 'next/image';
 
 interface IProps {
   animes: IMovie[] | undefined;
