@@ -1,8 +1,17 @@
+import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import Link from 'next/link';
-import { IconSearch } from './icons';
-
+import { IconSearch, IconTheme } from './icons';
+import { enumTheme } from 'interface';
 export const Header = () => {
+  const { theme, setTheme } = useTheme();
+  const changeTheme = () => {
+    if (theme === enumTheme.LIGHT) {
+      setTheme(enumTheme.DARK);
+    } else {
+      setTheme(enumTheme.LIGHT);
+    }
+  };
   return (
     <header className="header">
       <div className="container">
@@ -31,8 +40,13 @@ export const Header = () => {
             </ul>
           </div>
           <article className="search">
-            <button>
-              <IconSearch />
+            <button className="theme-btn" onClick={changeTheme}>
+              <IconTheme
+                color={theme === enumTheme.LIGHT ? 'black' : 'white'}
+              />
+            </button>
+            <button className="search-btn">
+              <IconSearch color="white" />
             </button>
           </article>
         </header>
