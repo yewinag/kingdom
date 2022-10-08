@@ -9,5 +9,8 @@ module.exports = withPWA({
   reactStrictMode: true,
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')]
+  },
+  images: {
+    domains: ['stg-images.soulkingdom.net']
   }
 });

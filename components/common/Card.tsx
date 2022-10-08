@@ -11,14 +11,21 @@ export const ComponentCard = (props: Iprops) => {
     <article className="item-card">
       <Link href={`movie/${item.name}`}>
         <div className="image">
-          <Image src={item.cover_path} alt={item.name} />
+          <Image
+            blurDataURL="/poster.png"
+            src={item.cover_path || '/poster.png'}
+            alt={item.name}
+            layout="intrinsic"
+            width={126}
+            height={194}
+          />
           <span className="player"></span>
           {/* <span className="rating">7.8</span> */}
         </div>
       </Link>
       <div className="info">
-        <p>{item.name}</p>
-        <span>{item.mm_name}</span>
+        <p className="title">{item.name}</p>
+        <p className="desc">{item.mm_name}</p>
       </div>
     </article>
   );

@@ -13,6 +13,7 @@ export const Header = () => {
       setTheme(enumTheme.LIGHT);
     }
   };
+
   return (
     <header className="header">
       <div className="container">
@@ -47,9 +48,7 @@ export const Header = () => {
           </div>
           <article className="search">
             <button className="theme-btn" onClick={changeTheme}>
-              <IconTheme
-                color={theme === enumTheme.LIGHT ? 'black' : 'white'}
-              />
+              <IconTheme color={theme === enumTheme.DARK ? 'white' : 'black'} />
             </button>
             <button className="search-btn">
               <IconSearch color="white" />

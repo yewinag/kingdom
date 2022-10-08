@@ -11,10 +11,11 @@ export const Sidebar = () => {
       <YearFilter />
       <>
         <h3>Spronsor</h3>
-        <Image
+        {/* <Image
           src="https://channelmyanmar.org/wp-content/uploads/2020/07/mmbus_ads_4.png"
           alt="spronsor"
-        />
+          layout="fill"
+        /> */}
       </>
     </aside>
   );
