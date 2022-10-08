@@ -29,11 +29,11 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 13px;
   color: #636363;
-  background: #e9eaed;
+  // background: #e9eaed;
   .header {
     width: 100%;
     margin: 0 auto;
-    background: #262b36;
+    // background: #262b36;
     .header-layout {
       display: flex;
       justify-content: space-between;
@@ -75,12 +75,18 @@ body {
           padding: 0 20px;
           border-radius: 4px;
         }
-        button {
+        .search-btn {
           height: 57px;
           border: 0;
           background: #8bbce0;
           color: #fff;
           cursor: pointer;
+        }
+        .theme-btn {
+          height: 57px;
+          margin-right: 10px;
+          background: transparent;
+          border: 0;
         }
       }
     }
@@ -92,7 +98,7 @@ body {
       min-height: 220px;
       // padding: 10px;
       margin-bottom: 20px;
-      background: #fff;
+      // background: #fff;
       h4 {
         font-size: 23px;
         font-weight: bold;
@@ -117,7 +123,7 @@ body {
       border-bottom: 1px solid #ddd;
     }
     .content-list {
-      background-color: #fff;
+      // background-color: #fff;
       .content-title {
         font-size: 23px;
         font-weight: bold;
