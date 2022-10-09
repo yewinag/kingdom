@@ -1,22 +1,16 @@
 import Link from 'next/link';
 
 import { IMovie } from '../interface';
-// import useSWR from 'swr';
 import { ComponentCard } from './common';
 import { Sidebar } from './Sidebar';
-// import { fetcher } from 'utils';
-// import Image from 'next/image';
-
 interface IProps {
   animes: IMovie[] | undefined;
   latest: IMovie[] | undefined;
   tv_shows: IMovie[] | undefined;
   movies: IMovie[] | undefined;
 }
-export default function Listing(props: IProps) {
+export function Listing(props: IProps) {
   const { animes, latest, tv_shows, movies } = props;
-  // if (error) return <p>server မှာကွိုင်တက်နေပီ ဟကောင်ရေ</p>;
-  // if (!data) return <p>loading....</p>;
   return (
     <section className="content-list">
       <h4 className="content-title">Content Recently Added</h4>

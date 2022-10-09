@@ -1,5 +1,5 @@
-import { years } from '../../constants';
-import { CardLayout } from '../common/CardLayout';
+import { CardLayout } from '@components';
+import { years } from '@constants';
 
 export const YearFilter = () => {
   return (

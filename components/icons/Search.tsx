@@ -1,4 +1,4 @@
-import { ISvg } from 'interface';
+import { ISvg } from '@interface';
 
 export const IconSearch = (props: ISvg) => (
   <svg
