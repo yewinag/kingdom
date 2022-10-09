@@ -10,7 +10,6 @@ interface IProps {
 
 export const ComponentRandom = (props: IProps) => {
   const { carousels } = props;
-  // const handleDragStart = (e: any) => e.preventDefault();
   const [mounted, setMounted] = useState(false);
   const [items, setItems] = useState<JSX.Element[]>([]);
   useEffect(() => {

@@ -1,4 +1,4 @@
-import { ISvg } from 'interface';
+import { ISvg } from '@interface';
 export const IconTheme = (props: ISvg) => {
   return (
     <svg

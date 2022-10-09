@@ -1,9 +1,8 @@
-import { enumTheme } from 'interface';
+import { IconSearch, IconTheme } from '@components';
+import { enumTheme } from '@interface';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-
-import { IconSearch, IconTheme } from './icons';
 export const Header = () => {
   const { theme, setTheme } = useTheme();
   const changeTheme = () => {
