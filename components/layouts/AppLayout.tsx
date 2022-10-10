@@ -3,7 +3,7 @@ import { Header } from '../Header';
 interface Iprops {
   children: any;
 }
-const AppLayout = (props: Iprops) => {
+export const AppLayout = (props: Iprops) => {
   return (
     <div>
       <Header />
@@ -12,5 +12,3 @@ const AppLayout = (props: Iprops) => {
     </div>
   );
 };
-
-export default AppLayout;

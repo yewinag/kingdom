@@ -5,8 +5,7 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router } from 'next/router';
 import { ThemeProvider } from 'next-themes';
-
-import AppLayout from '../components/layouts/AppLayout';
+import { AppLayout } from '@components';
 const progress = new ProgressBar({
   size: 2,
   color: '#F44336',

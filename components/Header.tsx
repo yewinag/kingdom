@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useTheme } from 'next-themes';
 export const Header = () => {
   const { theme, setTheme } = useTheme();
+  console.log('thme' + theme);
   const changeTheme = () => {
     if (theme === enumTheme.LIGHT) {
       setTheme(enumTheme.DARK);
