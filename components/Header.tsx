@@ -1,16 +1,16 @@
 import { IconSearch, IconTheme } from '@components';
-import { enumTheme } from '@interface';
+import { dark, light } from '@constants';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 export const Header = () => {
   const { theme, setTheme } = useTheme();
-  console.log('thme' + theme);
+
   const changeTheme = () => {
-    if (theme === enumTheme.LIGHT) {
-      setTheme(enumTheme.DARK);
+    if (theme === light) {
+      setTheme(dark);
     } else {
-      setTheme(enumTheme.LIGHT);
+      setTheme(light);
     }
   };
 
@@ -48,7 +48,7 @@ export const Header = () => {
           </div>
           <article className="search">
             <button className="theme-btn" onClick={changeTheme}>
-              <IconTheme color={theme === enumTheme.DARK ? 'white' : 'black'} />
+              <IconTheme color={theme === dark ? 'white' : 'black'} />
             </button>
             <button className="search-btn">
               <IconSearch color="white" />

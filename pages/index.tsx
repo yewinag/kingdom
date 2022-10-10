@@ -2,7 +2,6 @@ import { ComponentRandom, Listing } from '@components';
 import { IMovies } from '@interface';
 import { API_URL } from '@utils';
 import type { NextPage } from 'next';
-import { ThemeProvider } from 'next-themes';
 interface IProps {
   data: IMovies;
 }

@@ -1,11 +1,11 @@
 import '../styles/main.scss';
 
 import ProgressBar from '@badrap/bar-of-progress';
+import { AppLayout } from '@components';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router } from 'next/router';
 import { ThemeProvider } from 'next-themes';
-import { AppLayout } from '@components';
 const progress = new ProgressBar({
   size: 2,
   color: '#F44336',
