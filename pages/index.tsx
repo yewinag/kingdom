@@ -9,7 +9,7 @@ interface IProps {
 const Home: NextPage<IProps> = props => {
   const { data } = props;
   return (
-    <ThemeProvider>
+    <>
       <ComponentRandom carousels={data?.carousels} />
       <Listing
         animes={data?.animes}
@@ -17,7 +17,7 @@ const Home: NextPage<IProps> = props => {
         tv_shows={data?.tv_shows}
         movies={data?.movies}
       />
-    </ThemeProvider>
+    </>
   );
 };
 
