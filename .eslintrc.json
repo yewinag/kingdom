@@ -29,8 +29,10 @@
     "plugin:react-hooks/recommended",
     "plugin:jest/recommended",
     "plugin:jest/style",
-    "plugin:json/recommended"
+    "plugin:json/recommended",
+    "plugin:typescript-enum/recommended"
   ],
+  "ignorePatterns": ["/public/*"],
   "rules": {
     "no-console": "error",
     "react/react-in-jsx-scope": "off",
