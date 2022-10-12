@@ -2,11 +2,14 @@ import { ComponentRandom, Listing } from '@components';
 import { IMovies } from '@interface';
 import { API_URL } from '@utils';
 import type { NextPage } from 'next';
+import { useRouter } from 'next/router';
+
 interface IProps {
   data: IMovies;
 }
 const Home: NextPage<IProps> = props => {
   const { data } = props;
+
   return (
     <>
       <ComponentRandom carousels={data?.carousels} />

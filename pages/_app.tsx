@@ -1,7 +1,7 @@
 import '../styles/main.scss';
 
 import ProgressBar from '@badrap/bar-of-progress';
-import { AppLayout } from '@components';
+import { AppLayout, StyledThemeProvider } from '@components';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router } from 'next/router';
@@ -50,9 +50,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#317EFB" />
       </Head>
       <ThemeProvider>
-        <AppLayout>
-          <Component {...pageProps} />
-        </AppLayout>
+        <StyledThemeProvider>
+          <AppLayout>
+            <Component {...pageProps} />
+          </AppLayout>
+        </StyledThemeProvider>
       </ThemeProvider>
     </>
   );
