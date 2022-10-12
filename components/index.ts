@@ -6,3 +6,4 @@ export * from './Listing';
 export * from './Listing';
 export * from './Random';
 export * from './Sidebar';
+export * from './Theme';

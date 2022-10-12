@@ -12,5 +12,5 @@ export const Footer = () => {
 };
 
 const StyledLayout = styled.div`
-  background: #fad;
+  background: ${p => p.theme.primary_500};
 `;

@@ -16,6 +16,9 @@ export const base = {
   }
 };
 export const light = {
+  background: '#ffffff',
+  nav: '#f8f8f8',
+  border: '#ddd',
   primary_100: '#FEE6D6',
   primary_200: '#FDC7AE',
   primary_300: '#FBA186',
@@ -25,9 +28,7 @@ export const light = {
   primary_700: '#AF1B29',
   primary_800: '#8D1127',
   primary_900: '#750A26',
-  background: '#ffffff',
-  nav: '#f8f8f8',
-  border: '#ddd',
+
   text_100: '#F1F4F9',
   text_200: '#E3EAF4',
   text_300: '#C7D0DE',
@@ -39,6 +40,9 @@ export const light = {
   text_900: '#172046'
 };
 export const dark = {
+  background: '#000',
+  nav: '#262b36',
+  border: '#ddd',
   primary_100: '#FEE6D6',
   primary_200: '#FDC7AE',
   primary_300: '#FBA186',
@@ -48,9 +52,7 @@ export const dark = {
   primary_700: '#AF1B29',
   primary_800: '#8D1127',
   primary_900: '#750A26',
-  background: '#000',
-  nav: '#262b36',
-  border: '#ddd',
+
   text_100: '#F1F4F9',
   text_200: '#E3EAF4',
   text_300: '#C7D0DE',
