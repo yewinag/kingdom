@@ -1,10 +1,13 @@
 import { Button } from '@components';
+import { StyledSocial } from '@styles';
 
 export const Social = () => {
   return (
-    <div className="social-share">
-      <Button title="Share" className="facebook" />
-      <Button title="Tweet" className="twitter" />
-    </div>
+    <StyledSocial>
+      <div className="social-share">
+        <Button title="Share" className="facebook" />
+        <Button title="Tweet" className="twitter" />
+      </div>
+    </StyledSocial>
   );
 };

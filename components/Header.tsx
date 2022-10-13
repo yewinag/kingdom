@@ -3,6 +3,7 @@ import { dark, light } from '@constants';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
+import { HeaderLayout } from '@styles';
 export const Header = () => {
   const { theme, setTheme } = useTheme();
 
@@ -15,12 +16,11 @@ export const Header = () => {
   };
 
   return (
-    <header className="header">
+    <HeaderLayout>
       <div className="container">
         <header className="header-layout">
           <div className="header-menu flex-layout">
             <div className="logo-layout">
-              {/* <Link href="/"> */}
               <Link href="/">
                 <Image
                   src={'/soulkingdom.png'}
@@ -29,20 +29,19 @@ export const Header = () => {
                   alt={'soulkingdom logo'}
                 />
               </Link>
-              {/* </Link> */}
             </div>
             <ul>
               <li>
-                <a>Home</a>
+                <Link href={'/'}>Home</Link>
               </li>
               <li>
-                <a>Series</a>
+                <Link href={'/'}>Series</Link>
               </li>
               <li>
-                <a>VIP</a>
+                <Link href={'/'}>VIP</Link>
               </li>
               <li>
-                <a>How to download</a>
+                <Link href={'/'}>How to download</Link>
               </li>
             </ul>
           </div>
@@ -56,6 +55,6 @@ export const Header = () => {
           </article>
         </header>
       </div>
-    </header>
+    </HeaderLayout>
   );
 };

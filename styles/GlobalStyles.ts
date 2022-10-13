@@ -1,15 +1,42 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-@import 'react-alice-carousel/lib/scss/alice-carousel.scss';
+/* @import 'react-alice-carousel/lib/scss/alice-carousel.scss'; */
+@import url('react-alice-carousel/lib/scss/alice-carousel.scss');
 *:not(.fa) {
     font-family: 'Poppins', sans-serif;
   /* font-weight: 300; */
 }
 .container {
   width: 1000px;
-  height: 57px;
+  min-height: 57px;
   margin: 0 auto;
+}
+.scroll-bar {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #262b36;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #262b36;
+  }
+}
+button {
+  &:focus-visible {
+    outline: 0;
+  }
+}
+.flex-layout{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 *,
 *::before,

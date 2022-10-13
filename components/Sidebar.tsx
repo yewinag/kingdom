@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { Genre } from './filter';
 import { YearFilter } from './filter/Year';
 import { Social } from './Social';
-
+import { StyledSidebar } from '@styles';
 export const Sidebar = () => {
   return (
-    <aside className="sidebar">
+    <StyledSidebar>
       <Social />
       <Genre />
       <YearFilter />
@@ -20,6 +20,6 @@ export const Sidebar = () => {
           height={500}
         />
       </>
-    </aside>
+    </StyledSidebar>
   );
 };

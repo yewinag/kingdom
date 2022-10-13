@@ -1,5 +1,3 @@
-import '../styles/main.scss';
-
 import ProgressBar from '@badrap/bar-of-progress';
 import { AppLayout, StyledThemeProvider } from '@components';
 import type { AppProps } from 'next/app';

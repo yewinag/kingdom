@@ -4,7 +4,6 @@ import AliceCarousel from 'react-alice-carousel';
 import { StyledCarousel } from '@styles';
 import { IMovie } from '../../interface';
 import { ComponentCard } from '../common';
-
 interface IProps {
   carousels: Array<IMovie> | undefined;
 }

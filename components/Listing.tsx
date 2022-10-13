@@ -3,7 +3,8 @@ import {
   StyledHeading,
   SectionLayout,
   ArticleRow,
-  SeactionHeading
+  SeactionHeading,
+  ContentLayout
 } from '@styles';
 import Link from 'next/link';
 
@@ -19,7 +20,7 @@ interface IProps {
 export function Listing(props: IProps) {
   const { animes, latest, tv_shows, movies } = props;
   return (
-    <section className="content-list">
+    <ContentLayout>
       <StyledHeading>Content Recently Added</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">
@@ -74,6 +75,6 @@ export function Listing(props: IProps) {
         </section>
         <Sidebar />
       </section>
-    </section>
+    </ContentLayout>
   );
 }

@@ -2,7 +2,6 @@ import { ComponentRandom, Listing } from '@components';
 import { IMovies } from '@interface';
 import { API_URL } from '@utils';
 import type { NextPage } from 'next';
-import { useRouter } from 'next/router';
 
 interface IProps {
   data: IMovies;
@@ -24,7 +23,12 @@ const Home: NextPage<IProps> = props => {
 };
 
 export async function getServerSideProps() {
-  const res = await fetch(`${API_URL}/home`);
+  const res = await fetch(`${API_URL}/home`, {
+    headers: {
+      Accept: 'application/json, text/plain, */*',
+      'User-Agent': '*'
+    }
+  });
   const data = await res.json();
   return { props: { data } };
 }

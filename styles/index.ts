@@ -4,3 +4,6 @@ export * from './Card';
 export * from './Sidebar';
 export * from './Heading';
 export * from './Carousel';
+export * from './Year';
+export * from './Genres';
+export * from './Social';
