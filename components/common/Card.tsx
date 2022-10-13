@@ -10,7 +10,7 @@ export const ComponentCard = (props: Iprops) => {
   const { item } = props;
   return (
     <StyledCard>
-      <Link href={`movie/${item.name}`}>
+      <Link href={`movie/${item.id}`}>
         <div className="image">
           <Image
             blurDataURL="/poster.png"
