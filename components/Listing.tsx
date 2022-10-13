@@ -8,7 +8,7 @@ import {
 } from '@styles';
 import Link from 'next/link';
 
-import { IMovie } from '../interface';
+import { IMovie, IMovies } from '../interface';
 import { ComponentCard } from './common';
 import { Sidebar } from './Sidebar';
 interface IProps {
@@ -16,9 +16,10 @@ interface IProps {
   latest: IMovie[] | undefined;
   tv_shows: IMovie[] | undefined;
   movies: IMovie[] | undefined;
+  data: IMovies;
 }
 export function Listing(props: IProps) {
-  const { animes, latest, tv_shows, movies } = props;
+  const { animes, latest, tv_shows, movies, data } = props;
   return (
     <ContentLayout>
       <StyledHeading>Content Recently Added</StyledHeading>
@@ -73,7 +74,7 @@ export function Listing(props: IProps) {
             </ArticleRow>
           </SectionLayout>
         </section>
-        <Sidebar />
+        <Sidebar data={data} />
       </section>
     </ContentLayout>
   );

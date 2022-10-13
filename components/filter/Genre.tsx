@@ -1,16 +1,17 @@
+import { IMovies } from '@interface';
 import { StyledGenres } from '@styles';
-
-import { categories } from '../../constants';
-
-export const Genre = () => {
+interface IProps {
+  genres: IMovies;
+}
+export const Genre = ({ genres }: IProps) => {
   return (
     <StyledGenres>
       <h4>Genres</h4>
       <div className="genre-list scroll-bar">
-        {categories.map((item, index) => (
+        {Object.entries(genres).map((item, index) => (
           <div className="genre-item" key={index}>
-            <p>{item.title}</p>
-            <p>{item.count}</p>
+            <p>{item[0]}</p>
+            <p>{item[1].length}</p>
           </div>
         ))}
       </div>

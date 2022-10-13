@@ -1,5 +1,5 @@
 import { IconSearch, IconTheme } from '@components';
-import { dark, light } from '@constants';
+import { DARK, LIGHT } from '@constants';
 import { HeaderLayout } from '@styles';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -8,10 +8,10 @@ export const Header = () => {
   const { theme, setTheme } = useTheme();
 
   const changeTheme = () => {
-    if (theme === light) {
-      setTheme(dark);
+    if (theme === LIGHT) {
+      setTheme(DARK);
     } else {
-      setTheme(light);
+      setTheme(LIGHT);
     }
   };
 
@@ -22,12 +22,14 @@ export const Header = () => {
           <div className="header-menu flex-layout">
             <div className="logo-layout">
               <Link href="/">
-                <Image
-                  src={'/soulkingdom.png'}
-                  width={75}
-                  height={40}
-                  alt={'soulkingdom logo'}
-                />
+                <a>
+                  <Image
+                    src={'/soulkingdom.png'}
+                    width={75}
+                    height={40}
+                    alt={'soulkingdom logo'}
+                  />
+                </a>
               </Link>
             </div>
             <ul>
@@ -47,7 +49,12 @@ export const Header = () => {
           </div>
           <article className="search">
             <button className="theme-btn" onClick={changeTheme}>
-              <IconTheme color={theme === dark ? 'white' : 'black'} />
+              {theme === LIGHT ? (
+                <IconTheme color={'#000'} />
+              ) : (
+                <IconTheme color={'#fff'} />
+              )}
+              {/* <IconTheme color={theme === DARK ? '#fff' : '#000'} /> */}
             </button>
             <button className="search-btn">
               <IconSearch color="white" />

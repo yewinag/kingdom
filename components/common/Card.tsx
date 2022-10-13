@@ -11,18 +11,20 @@ export const ComponentCard = (props: Iprops) => {
   return (
     <StyledCard>
       <Link href={`movie/${item.id}`}>
-        <div className="image">
-          <Image
-            blurDataURL="/poster.png"
-            src={item.cover_path || '/poster.png'}
-            alt={item.name}
-            layout="intrinsic"
-            width={126}
-            height={194}
-          />
-          <span className="player"></span>
-          {/* <span className="rating">7.8</span> */}
-        </div>
+        <a>
+          <div className="image">
+            <Image
+              blurDataURL="/poster.png"
+              src={item.cover_path || '/poster.png'}
+              alt={item.name}
+              layout="intrinsic"
+              width={126}
+              height={194}
+            />
+            <span className="player"></span>
+            {/* <span className="rating">7.8</span> */}
+          </div>
+        </a>
       </Link>
       <div className="info">
         <p className="title">{item.name}</p>
