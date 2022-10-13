@@ -21,7 +21,6 @@ const Home: NextPage<IProps> = props => {
     </>
   );
 };
-
 export async function getServerSideProps() {
   const res = await fetch(`${API_URL}/home`, {
     headers: {

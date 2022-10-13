@@ -4,9 +4,6 @@ export const StyledCarousel = styled.section`
   .alice-carousel__dots {
     display: none;
   }
-  .alice-carousel {
-    margin-top: ${p => p.theme.space['16']};
-  }
   .alice-carousel__stage-item {
     margin: 0 5px;
   }
@@ -265,5 +262,8 @@ export const StyledCarousel = styled.section`
 
       line-height: 0;
     }
+  }
+  .alice-carousel {
+    margin-top: ${p => p.theme.space['16']};
   }
 `;

@@ -1,11 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-/* @import 'react-alice-carousel/lib/scss/alice-carousel.scss'; */
-@import url('react-alice-carousel/lib/scss/alice-carousel.scss');
-*:not(.fa) {
-    font-family: 'Poppins', sans-serif;
-  /* font-weight: 300; */
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;  
 }
 .container {
   width: 1000px;

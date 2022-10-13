@@ -70,14 +70,14 @@ export const HeaderLayout = styled.header`
           cursor: pointer;
           a {
             float: left;
-            color: #7a889d;
+            color: ${p => p.theme.text_500};
             text-decoration: none;
-            font-size: 12px;
-            font-weight: 600;
-            font-family: Helvetica, Arial, sans-serif;
+            font-size: ${p => p.theme.fontSizes.normal};
+            font-weight: ${p => p.theme.fontWeights.bold};
+            /* font-family: Helvetica, Arial, sans-serif; */
             cursor: pointer;
             &:hover {
-              color: #8bbce0;
+              color: ${p => p.theme.text_600};
             }
           }
         }
