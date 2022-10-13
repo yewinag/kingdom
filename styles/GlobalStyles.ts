@@ -7,7 +7,7 @@ body {
 }
 .container {
   width: 1000px;
-  min-height: 57px;
+  /* min-height: 57px; */
   margin: 0 auto;
 }
 .scroll-bar {

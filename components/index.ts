@@ -8,3 +8,4 @@ export * from './NotFound';
 export * from './Random';
 export * from './Sidebar';
 export * from './Theme';
+export * from './Input';
