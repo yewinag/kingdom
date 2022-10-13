@@ -1,10 +1,10 @@
 import { ComponentSearch, IconSearch, IconTheme } from '@components';
 import { DARK, LIGHT } from '@constants';
+import { useToggle } from '@hooks';
 import { HeaderLayout } from '@styles';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-import { useToggle } from '@hooks';
 
 export const Header = () => {
   const { theme, setTheme } = useTheme();
