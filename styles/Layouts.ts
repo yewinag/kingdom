@@ -52,7 +52,6 @@ export const MainContent = styled.section`
 export const HeaderLayout = styled.header`
   width: 100%;
   margin: 0 auto;
-  // background: #262b36;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
   .header-layout {
     display: flex;

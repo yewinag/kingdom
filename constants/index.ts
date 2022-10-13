@@ -1,5 +1,5 @@
-export const dark = 'dark';
-export const light = 'light';
+export const DARK = 'dark';
+export const LIGHT = 'light';
 export const categories = [
   {
     title: 'Genres',

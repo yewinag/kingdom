@@ -17,6 +17,7 @@ const Home: NextPage<IProps> = props => {
         latest={data?.latest}
         tv_shows={data?.tv_shows}
         movies={data?.movies}
+        data={data}
       />
     </>
   );

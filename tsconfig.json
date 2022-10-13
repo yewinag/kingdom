@@ -23,7 +23,8 @@
       "@interface": ["./interface"],
       "@configs": ["./configs"],
       "@public": ["./public"],
-      "@utils": ["./utils"]
+      "@utils": ["./utils"],
+      "@hooks": ["./hooks"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
