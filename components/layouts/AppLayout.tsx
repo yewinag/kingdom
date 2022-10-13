@@ -1,3 +1,5 @@
+import { MainContent } from '@styles';
+
 import { Footer } from '../Footer';
 import { Header } from '../Header';
 interface Iprops {
@@ -7,7 +9,7 @@ export const AppLayout = (props: Iprops) => {
   return (
     <div>
       <Header />
-      <section className="main-content container">{props.children}</section>
+      <MainContent className="container">{props.children}</MainContent>
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
+import { base, dark, light } from '@utils';
 import { useTheme } from 'next-themes';
-import { ThemeProvider } from 'styled-components';
-import { base, light, dark } from '@utils';
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 
 interface IProps {
   children: JSX.Element | React.ReactNode;

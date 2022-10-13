@@ -1,3 +1,11 @@
+import {
+  ArticleRow,
+  ContentLayout,
+  SeactionHeading,
+  SectionLayout,
+  SectionTitle,
+  StyledHeading
+} from '@styles';
 import Link from 'next/link';
 
 import { IMovie } from '../interface';
@@ -12,61 +20,61 @@ interface IProps {
 export function Listing(props: IProps) {
   const { animes, latest, tv_shows, movies } = props;
   return (
-    <section className="content-list">
-      <h4 className="content-title">Content Recently Added</h4>
+    <ContentLayout>
+      <StyledHeading>Content Recently Added</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">
-          <section>
-            <div className="section-header">
-              <h4>Latest </h4>
+          <SectionLayout>
+            <SectionTitle>
+              <SeactionHeading>Latest</SeactionHeading>
               <Link href={'/'}>{`see more >>`}</Link>
-            </div>
-            <article className="section">
+            </SectionTitle>
+            <ArticleRow>
               {latest &&
                 latest.map((item, index) => (
                   <ComponentCard item={item} key={index} />
                 ))}
-            </article>
-          </section>
-          <section>
-            <div className="section-header">
-              <h4>Animes </h4>
+            </ArticleRow>
+          </SectionLayout>
+          <SectionLayout>
+            <SectionTitle>
+              <SeactionHeading>Animes </SeactionHeading>
               <Link href={'/'}>{`see more >>`}</Link>
-            </div>
-            <article className="section">
+            </SectionTitle>
+            <ArticleRow>
               {animes &&
                 animes.map((item, index) => (
                   <ComponentCard item={item} key={index} />
                 ))}
-            </article>
-          </section>
-          <section>
-            <div className="section-header">
-              <h4>TV Shows </h4>
+            </ArticleRow>
+          </SectionLayout>
+          <SectionLayout>
+            <SectionTitle>
+              <SeactionHeading>TV Shows </SeactionHeading>
               <Link href={'/'}>{`see more >>`}</Link>
-            </div>
-            <article className="section">
+            </SectionTitle>
+            <ArticleRow>
               {tv_shows &&
                 tv_shows.map((item, index) => (
                   <ComponentCard item={item} key={index} />
                 ))}
-            </article>
-          </section>
-          <section>
-            <div className="section-header">
-              <h4>Movies </h4>
+            </ArticleRow>
+          </SectionLayout>
+          <SectionLayout>
+            <SectionTitle>
+              <SeactionHeading>Movies</SeactionHeading>
               <Link href={'/'}>{`see more >>`}</Link>
-            </div>
-            <article className="section">
+            </SectionTitle>
+            <ArticleRow>
               {movies &&
                 movies.map((item, index) => (
                   <ComponentCard item={item} key={index} />
                 ))}
-            </article>
-          </section>
+            </ArticleRow>
+          </SectionLayout>
         </section>
         <Sidebar />
       </section>
-    </section>
+    </ContentLayout>
   );
 }
