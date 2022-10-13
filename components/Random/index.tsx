@@ -1,6 +1,7 @@
+import { StyledHeading } from '@styles';
 import { useEffect, useState } from 'react';
 import AliceCarousel from 'react-alice-carousel';
-
+import { StyledCarousel } from '@styles';
 import { IMovie } from '../../interface';
 import { ComponentCard } from '../common';
 
@@ -30,8 +31,9 @@ export const ComponentRandom = (props: IProps) => {
   };
 
   return (
-    <section className="random-layout">
-      <h4>Random Content</h4>
+    // <section className="random-layout">
+    <StyledCarousel>
+      <StyledHeading>Random Content</StyledHeading>
       {mounted && (
         <AliceCarousel
           responsive={responsive}
@@ -41,6 +43,7 @@ export const ComponentRandom = (props: IProps) => {
           items={items}
         />
       )}
-    </section>
+    </StyledCarousel>
+    // </section>
   );
 };

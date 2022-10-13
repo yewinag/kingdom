@@ -1,9 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+@import 'react-alice-carousel/lib/scss/alice-carousel.scss';
 *:not(.fa) {
-    font-family: Arial, Helvetica, sans-serif;  
-  font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+  /* font-weight: 300; */
+}
+.container {
+  width: 1000px;
+  height: 57px;
+  margin: 0 auto;
 }
 *,
 *::before,

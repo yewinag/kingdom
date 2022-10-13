@@ -1,14 +1,39 @@
 export const base = {
   breakpoints: ['375px', '768px'],
-  space: ['0px', '2px', '4px', '8px', '16px', '32px', '64px'],
-  fonts: {
-    heading: 'Poppins, Roboto, sans-serif',
-    body: 'Poppins, Roboto, sans-serif'
+  space: {
+    '0': '0px',
+    '2': '2px',
+    '4': '4px',
+    '8': '8px',
+    '10': '10px',
+    '16': '16px',
+    '20': '20px',
+    '32': '32px',
+    '64': '64px'
   },
-  fontSizes: ['12px', '14px', '16px', '20px', '24px'],
+  fonts: {
+    heading: 'Poppins, sans-serif',
+    body: 'Poppins, sans-serif'
+  },
+  fontSizes: {
+    small: '12px',
+    normal: '14px',
+    title: '16px',
+    large: '18px',
+    xlarge: '20px',
+    xxlarge: '24px'
+  },
+  fontWeights: {
+    normal: 300,
+    semiBold: 400,
+    bold: 700
+  },
   heights: {
     input: '48px',
-    button: '48px'
+    button: '48px',
+    row: '257px',
+    card: '230px',
+    img: '194px'
   },
   borderRadius: {
     base: '4px',
@@ -28,7 +53,6 @@ export const light = {
   primary_700: '#AF1B29',
   primary_800: '#8D1127',
   primary_900: '#750A26',
-
   text_100: '#F1F4F9',
   text_200: '#E3EAF4',
   text_300: '#C7D0DE',
@@ -37,7 +61,8 @@ export const light = {
   text_600: '#59637E',
   text_700: '#3D4869',
   text_800: '#263155',
-  text_900: '#172046'
+  text_900: '#172046',
+  shadow: 'rgb(0 0 0 / 4%) 0px 3px 5px'
 };
 export const dark = {
   background: '#000',
@@ -52,7 +77,6 @@ export const dark = {
   primary_700: '#AF1B29',
   primary_800: '#8D1127',
   primary_900: '#750A26',
-
   text_100: '#F1F4F9',
   text_200: '#E3EAF4',
   text_300: '#C7D0DE',
@@ -61,5 +85,6 @@ export const dark = {
   text_600: '#59637E',
   text_700: '#3D4869',
   text_800: '#263155',
-  text_900: '#172046'
+  text_900: '#172046',
+  shadow: 'rgb(0 0 0 / 4%) 0px 3px 5px'
 };

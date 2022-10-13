@@ -1,3 +1,4 @@
+import { StyledCard } from '@styles';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -8,7 +9,7 @@ interface Iprops {
 export const ComponentCard = (props: Iprops) => {
   const { item } = props;
   return (
-    <article className="item-card">
+    <StyledCard>
       <Link href={`movie/${item.name}`}>
         <div className="image">
           <Image
@@ -27,6 +28,6 @@ export const ComponentCard = (props: Iprops) => {
         <p className="title">{item.name}</p>
         <p className="desc">{item.mm_name}</p>
       </div>
-    </article>
+    </StyledCard>
   );
 };
