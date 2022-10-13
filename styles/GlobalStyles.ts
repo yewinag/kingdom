@@ -36,6 +36,13 @@ button {
   justify-content: space-between;
   align-items: center;
 }
+.flex-center{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 *,
 *::before,
 *::after {
