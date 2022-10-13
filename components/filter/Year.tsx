@@ -1,4 +1,3 @@
-import { CardLayout } from '@components';
 import { years } from '@constants';
 import { StyledYear } from '@styles';
 

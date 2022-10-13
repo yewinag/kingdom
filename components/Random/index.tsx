@@ -1,7 +1,8 @@
 import { StyledHeading } from '@styles';
+import { StyledCarousel } from '@styles';
 import { useEffect, useState } from 'react';
 import AliceCarousel from 'react-alice-carousel';
-import { StyledCarousel } from '@styles';
+
 import { IMovie } from '../../interface';
 import { ComponentCard } from '../common';
 interface IProps {

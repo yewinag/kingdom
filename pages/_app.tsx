@@ -1,10 +1,10 @@
 import ProgressBar from '@badrap/bar-of-progress';
 import { AppLayout, StyledThemeProvider } from '@components';
+import { GlobalStyles } from '@styles';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router } from 'next/router';
 import { ThemeProvider } from 'next-themes';
-import { GlobalStyles } from '@styles';
 const progress = new ProgressBar({
   size: 2,
   color: '#F44336',

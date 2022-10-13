@@ -1,9 +1,9 @@
 import { IconSearch, IconTheme } from '@components';
 import { dark, light } from '@constants';
+import { HeaderLayout } from '@styles';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-import { HeaderLayout } from '@styles';
 export const Header = () => {
   const { theme, setTheme } = useTheme();
 

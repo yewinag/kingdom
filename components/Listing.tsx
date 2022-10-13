@@ -1,10 +1,10 @@
 import {
-  SectionTitle,
-  StyledHeading,
-  SectionLayout,
   ArticleRow,
+  ContentLayout,
   SeactionHeading,
-  ContentLayout
+  SectionLayout,
+  SectionTitle,
+  StyledHeading
 } from '@styles';
 import Link from 'next/link';
 

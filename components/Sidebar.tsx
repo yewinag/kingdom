@@ -1,9 +1,9 @@
+import { StyledSidebar } from '@styles';
 import Image from 'next/image';
 
 import { Genre } from './filter';
 import { YearFilter } from './filter/Year';
 import { Social } from './Social';
-import { StyledSidebar } from '@styles';
 export const Sidebar = () => {
   return (
     <StyledSidebar>

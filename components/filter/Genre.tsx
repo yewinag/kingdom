@@ -1,4 +1,5 @@
 import { StyledGenres } from '@styles';
+
 import { categories } from '../../constants';
 
 export const Genre = () => {

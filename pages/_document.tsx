@@ -1,7 +1,7 @@
 import Document from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
-export default class MyDocument extends Document {
+export default class AppDocument extends Document {
   //@ts-ignore
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
