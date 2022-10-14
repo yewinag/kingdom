@@ -1,15 +1,15 @@
 import { ComponentCard, ComponentNotFound, Sidebar } from '@components';
 import { IMovie } from '@interface';
-import { fetcher } from '@utils';
-import { useRouter } from 'next/router';
-import useSWR from 'swr';
-import BeatLoader from 'react-spinners/BeatLoader';
 import {
   ContentLayout,
   SearchListing,
   SectionLayout,
   StyledHeading
 } from '@styles';
+import { fetcher } from '@utils';
+import { useRouter } from 'next/router';
+import BeatLoader from 'react-spinners/BeatLoader';
+import useSWR from 'swr';
 
 interface IResMovie {
   data: IMovie[];
