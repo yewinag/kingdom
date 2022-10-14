@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { Genre } from './filter';
 import { Social } from './Social';
 interface IProps {
-  data: IMovies;
+  data?: IMovies;
 }
 export const Sidebar = ({ data }: IProps) => {
   return (

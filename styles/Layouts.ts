@@ -25,6 +25,12 @@ export const FooterLayout = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 54px;
+  margin-top: ${p => p.theme.space['20']};
+  p {
+    color: ${p => p.theme.text_500};
+    font-size: ${p => p.theme.fontSizes.small};
+  }
 `;
 export const SidebarLayout = styled.aside`
   display: flex;
@@ -33,6 +39,12 @@ export const SidebarLayout = styled.aside`
   row-gap: 20px;
   padding: 20px;
   width: 260px;
+`;
+export const SearchListing = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: ${p => p.theme.space['16']};
+  row-gap: ${p => p.theme.space['30']};
 `;
 export const ContentLayout = styled.section`
   .listing-layout {
