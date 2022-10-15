@@ -13,6 +13,10 @@ const settings = {
   },
   images: {
     domains: ['stg-images.soulkingdom.net']
+  },
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en'
   }
 };
 module.exports =

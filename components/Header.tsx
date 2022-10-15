@@ -51,15 +51,22 @@ export const Header = () => {
               </ul>
             </div>
             <article className="search">
-              <button className="theme-btn" onClick={changeTheme}>
+              <button
+                className="theme-btn"
+                onClick={changeTheme}
+                aria-label={'search button'}
+              >
                 {theme === LIGHT ? (
                   <IconTheme color={'#000'} />
                 ) : (
                   <IconTheme color={'#fff'} />
                 )}
-                {/* <IconTheme color={theme === DARK ? '#fff' : '#000'} /> */}
               </button>
-              <button className="search-btn" onClick={setShow}>
+              <button
+                className="search-btn"
+                onClick={setShow}
+                aria-label={'search button'}
+              >
                 <IconSearch color="white" />
               </button>
             </article>

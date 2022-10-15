@@ -6,7 +6,7 @@ interface Iprops {
 export const Button = (props: Iprops) => {
   const { title, icon, className } = props;
   return (
-    <button className={className}>
+    <button className={className} aria-label={title}>
       {icon || null}
       {title}
     </button>
