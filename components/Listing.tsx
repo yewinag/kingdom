@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { IMovie, IMovies } from '../interface';
 import { ComponentCard } from './common';
 import { Sidebar } from './Sidebar';
+import { ComponentPlaceholder } from './Skeleton';
 interface IProps {
   animes: IMovie[] | undefined;
   latest: IMovie[] | undefined;
@@ -34,10 +35,13 @@ export function Listing(props: IProps) {
               >{`see more >>`}</Link>
             </SectionTitle>
             <ArticleRow>
-              {latest &&
+              {latest ? (
                 latest.map((item, index) => (
                   <ComponentCard item={item} key={index} />
-                ))}
+                ))
+              ) : (
+                <ComponentPlaceholder />
+              )}
             </ArticleRow>
           </SectionLayout>
           <SectionLayout>
@@ -48,10 +52,13 @@ export function Listing(props: IProps) {
               >{`see more >>`}</Link>
             </SectionTitle>
             <ArticleRow>
-              {animes &&
+              {animes ? (
                 animes.map((item, index) => (
                   <ComponentCard item={item} key={index} />
-                ))}
+                ))
+              ) : (
+                <ComponentPlaceholder />
+              )}
             </ArticleRow>
           </SectionLayout>
           <SectionLayout>
@@ -62,10 +69,13 @@ export function Listing(props: IProps) {
               >{`see more >>`}</Link>
             </SectionTitle>
             <ArticleRow>
-              {tv_shows &&
+              {tv_shows ? (
                 tv_shows.map((item, index) => (
                   <ComponentCard item={item} key={index} />
-                ))}
+                ))
+              ) : (
+                <ComponentPlaceholder />
+              )}
             </ArticleRow>
           </SectionLayout>
           <SectionLayout>
@@ -76,10 +86,13 @@ export function Listing(props: IProps) {
               >{`see more >>`}</Link>
             </SectionTitle>
             <ArticleRow>
-              {movies &&
+              {movies ? (
                 movies.map((item, index) => (
                   <ComponentCard item={item} key={index} />
-                ))}
+                ))
+              ) : (
+                <ComponentPlaceholder />
+              )}
             </ArticleRow>
           </SectionLayout>
         </section>
