@@ -1,20 +1,22 @@
-import { IMovies } from '@interface';
+import { genres, PATH_GENRES } from '@constants';
 import { StyledGenres } from '@styles';
-interface IProps {
-  genres?: IMovies;
-}
-export const Genre = ({ genres }: IProps) => {
+import Link from 'next/link';
+
+export const Genre = () => {
   return (
     <StyledGenres>
       <h4>Genres</h4>
       <div className="genre-list scroll-bar">
-        {genres &&
-          Object.entries(genres).map((item, index) => (
-            <div className="genre-item" key={index}>
-              <p>{item[0]}</p>
-              <p>{item[1].length}</p>
-            </div>
-          ))}
+        {genres.map((item, index) => (
+          <Link href={`${PATH_GENRES}${item.title}`} key={index}>
+            <a>
+              <div className="genre-item">
+                <p>{item.title}</p>
+                <p>{0}</p>
+              </div>
+            </a>
+          </Link>
+        ))}
       </div>
     </StyledGenres>
   );

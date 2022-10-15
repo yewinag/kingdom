@@ -1,10 +1,15 @@
 export const DARK = 'dark';
 export const LIGHT = 'light';
-export const categories = [
-  {
-    title: 'Genres',
-    count: 1014
-  },
+export const keywords = {
+  LATEST: 'latest',
+  POPULAR: 'popular',
+  MOVIES: 'movies',
+  TV_SHOWS: 'tv_shows',
+  ANIMES: 'animes'
+};
+export const PATH_SEARCH = '/search/';
+export const PATH_GENRES = '/genres/';
+export const genres = [
   {
     title: 'Action',
     count: 1014
@@ -35,10 +40,6 @@ export const categories = [
   },
   {
     title: 'Family',
-    count: 1014
-  },
-  {
-    title: 'Genres',
     count: 1014
   },
   {

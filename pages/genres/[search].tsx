@@ -16,10 +16,11 @@ interface IResMovie {
 
 function Search() {
   const {
-    query: { keyword }
+    query: { search }
   } = useRouter();
+
   const { data, error } = useSWR<IResMovie, Error>(
-    `/search?search=${keyword}`,
+    `/search?filter=${search}`,
     fetcher
   );
   if (error) {

@@ -1,17 +1,14 @@
-import { IMovies } from '@interface';
 import { StyledSidebar } from '@styles';
 import Image from 'next/image';
 
 import { Genre } from './filter';
 import { Social } from './Social';
-interface IProps {
-  data?: IMovies;
-}
-export const Sidebar = ({ data }: IProps) => {
+
+export const Sidebar = () => {
   return (
     <StyledSidebar>
       <Social />
-      <Genre genres={data} />
+      <Genre />
       {/* <YearFilter /> */}
       <>
         <h3>Spronsor</h3>

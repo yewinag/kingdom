@@ -1,3 +1,4 @@
+import { keywords, PATH_GENRES } from '@constants';
 import {
   ArticleRow,
   ContentLayout,
@@ -19,7 +20,7 @@ interface IProps {
   data: IMovies;
 }
 export function Listing(props: IProps) {
-  const { animes, latest, tv_shows, movies, data } = props;
+  const { animes, latest, tv_shows, movies } = props;
   return (
     <ContentLayout>
       <StyledHeading>Content Recently Added</StyledHeading>
@@ -28,7 +29,9 @@ export function Listing(props: IProps) {
           <SectionLayout>
             <SectionTitle>
               <SeactionHeading>Latest</SeactionHeading>
-              <Link href={'/'}>{`see more >>`}</Link>
+              <Link
+                href={`${PATH_GENRES}${keywords.LATEST}`}
+              >{`see more >>`}</Link>
             </SectionTitle>
             <ArticleRow>
               {latest &&
@@ -40,7 +43,9 @@ export function Listing(props: IProps) {
           <SectionLayout>
             <SectionTitle>
               <SeactionHeading>Animes </SeactionHeading>
-              <Link href={'/'}>{`see more >>`}</Link>
+              <Link
+                href={`${PATH_GENRES}${keywords.ANIMES}`}
+              >{`see more >>`}</Link>
             </SectionTitle>
             <ArticleRow>
               {animes &&
@@ -52,7 +57,9 @@ export function Listing(props: IProps) {
           <SectionLayout>
             <SectionTitle>
               <SeactionHeading>TV Shows </SeactionHeading>
-              <Link href={'/'}>{`see more >>`}</Link>
+              <Link
+                href={`${PATH_GENRES}${keywords.TV_SHOWS}`}
+              >{`see more >>`}</Link>
             </SectionTitle>
             <ArticleRow>
               {tv_shows &&
@@ -64,7 +71,9 @@ export function Listing(props: IProps) {
           <SectionLayout>
             <SectionTitle>
               <SeactionHeading>Movies</SeactionHeading>
-              <Link href={'/'}>{`see more >>`}</Link>
+              <Link
+                href={`${PATH_GENRES}${keywords.MOVIES}`}
+              >{`see more >>`}</Link>
             </SectionTitle>
             <ArticleRow>
               {movies &&
@@ -74,7 +83,7 @@ export function Listing(props: IProps) {
             </ArticleRow>
           </SectionLayout>
         </section>
-        <Sidebar data={data} />
+        <Sidebar />
       </section>
     </ContentLayout>
   );

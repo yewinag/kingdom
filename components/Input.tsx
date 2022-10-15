@@ -1,8 +1,9 @@
+import { PATH_SEARCH } from '@constants';
 import { useRouter } from 'next/router';
 import React, { KeyboardEvent, useState } from 'react';
 import styled from 'styled-components';
 
-export const ComponentSearch = () => {
+export const ComponentSearchInput = () => {
   const [value, setValue] = useState('');
   const router = useRouter();
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -10,7 +11,7 @@ export const ComponentSearch = () => {
   };
   const pressKey = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
-      router.push(`/search/${value}`);
+      router.push(`${PATH_SEARCH}?keyword=${value}`);
     }
   };
   return (
