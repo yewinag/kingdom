@@ -4,9 +4,7 @@ export const StyledCarousel = styled.section`
   .alice-carousel__dots {
     display: none;
   }
-  .alice-carousel__stage-item {
-    margin: 0 5px;
-  }
+
   .alice-carousel .animated {
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
@@ -265,5 +263,8 @@ export const StyledCarousel = styled.section`
   }
   .alice-carousel {
     margin-top: ${p => p.theme.space['16']};
+  }
+  .alice-carousel__stage-item {
+    padding: 0 5px;
   }
 `;
