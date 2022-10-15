@@ -14,6 +14,9 @@ export const StyledCard = styled.article`
     }
     .player {
     }
+    &.small {
+      height: 180px;
+    }
   }
   .image:hover {
     img {

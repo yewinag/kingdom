@@ -11,7 +11,7 @@ export const ComponentSearchInput = () => {
   };
   const pressKey = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
-      router.push(`${PATH_SEARCH}?keyword=${value}`);
+      router.push(`${PATH_SEARCH}${value}`);
     }
   };
   return (

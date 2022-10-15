@@ -17,7 +17,7 @@ export const ComponentRandom = (props: IProps) => {
     const update: JSX.Element[] = [];
     if (carousels) {
       carousels.map((item, index) => {
-        update.push(<ComponentCard item={item} key={index} />);
+        update.push(<ComponentCard item={item} key={index} small={true} />);
       });
       setItems(update);
       setMounted(true);
@@ -37,7 +37,8 @@ export const ComponentRandom = (props: IProps) => {
       {mounted && (
         <AliceCarousel
           responsive={responsive}
-          autoPlay={false}
+          autoPlay={true}
+          animationDuration={1000}
           mouseTracking
           infinite
           items={items}

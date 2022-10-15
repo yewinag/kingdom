@@ -5,14 +5,15 @@ import Link from 'next/link';
 import { IMovie } from '../../interface';
 interface Iprops {
   item: IMovie;
+  small?: boolean;
 }
 export const ComponentCard = (props: Iprops) => {
-  const { item } = props;
+  const { item, small } = props;
   return (
     <StyledCard>
       <Link href={`movie/${item.id}`}>
         <a>
-          <div className="image">
+          <div className={small ? 'image small' : 'image'}>
             <Image
               blurDataURL="/poster.png"
               src={item.cover_path || '/poster.png'}
