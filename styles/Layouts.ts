@@ -81,11 +81,10 @@ export const HeaderLayout = styled.header`
           cursor: pointer;
           a {
             float: left;
-            color: ${p => p.theme.text_500};
+            color: ${p => p.theme.text_400};
             text-decoration: none;
             font-size: ${p => p.theme.fontSizes.normal};
             font-weight: ${p => p.theme.fontWeights.bold};
-            /* font-family: Helvetica, Arial, sans-serif; */
             cursor: pointer;
             &:hover {
               color: ${p => p.theme.text_600};

@@ -1,5 +1,4 @@
 import { StyledSidebar } from '@styles';
-import Image from 'next/image';
 
 import { Genre } from './filter';
 import { Social } from './Social';
@@ -12,13 +11,13 @@ export const Sidebar = () => {
       {/* <YearFilter /> */}
       <>
         <h3>Spronsor</h3>
-        <Image
+        {/* <Image
           src="/poster.png"
           alt="spronsor"
           layout="intrinsic"
           width={200}
           height={500}
-        />
+        /> */}
       </>
     </StyledSidebar>
   );

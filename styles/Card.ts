@@ -30,7 +30,7 @@ export const StyledCard = styled.article`
       height: 17px;
       overflow: hidden;
       margin-top: 7px;
-      color: #7a8293;
+      color: ${p => p.theme.text_500};
       width: 126px;
       white-space: nowrap;
       text-overflow: ellipsis;

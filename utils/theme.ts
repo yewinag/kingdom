@@ -63,9 +63,7 @@ export const light = {
   text_700: '#3D4869',
   text_800: '#263155',
   text_900: '#172046',
-  shadow: 'rgb(0 0 0 / 4%) 0px 3px 5px',
-  placeholder: '#ddd',
-  placeShadow: '#eee'
+  shadow: 'rgb(0 0 0 / 4%) 0px 3px 5px'
 };
 export const dark = {
   background: '#000',
@@ -84,13 +82,11 @@ export const dark = {
   text_200: '#E3EAF4',
   text_300: '#C7D0DE',
   text_400: '#A5AEBE',
-  text_500: '#7a8293',
+  text_500: '#A5AEBE',
   text_600: '#59637E',
   text_700: '#3D4869',
   text_800: '#263155',
   text_900: '#172046',
   shadow: 'rgb(0 0 0 / 4%) 0px 3px 5px',
-  shadowBox: 'rgba(17, 17, 26, 0.1) 0px 1px 0px',
-  placeholder: '#7a8293',
-  placeShadow: '#59637E'
+  shadowBox: 'rgba(17, 17, 26, 0.1) 0px 1px 0px'
 };
