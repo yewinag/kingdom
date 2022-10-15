@@ -1,4 +1,4 @@
-import { ComponentSearch, IconSearch, IconTheme } from '@components';
+import { ComponentSearchInput, IconSearch, IconTheme } from '@components';
 import { DARK, LIGHT } from '@constants';
 import { useToggle } from '@hooks';
 import { HeaderLayout } from '@styles';
@@ -66,7 +66,7 @@ export const Header = () => {
           </header>
         </div>
       </HeaderLayout>
-      <div className="container">{show && <ComponentSearch />}</div>
+      <div className="container">{show && <ComponentSearchInput />}</div>
     </>
   );
 };
