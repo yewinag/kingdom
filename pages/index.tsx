@@ -5,10 +5,13 @@ import type { NextPage } from 'next';
 
 interface IProps {
   data: IMovies;
+  error?: string;
 }
 const Home: NextPage<IProps> = props => {
-  const { data } = props;
-
+  const { data, error } = props;
+  if (error) {
+    return <p>{error}</p>;
+  }
   return (
     <>
       <ComponentRandom carousels={data?.carousels} />
@@ -23,13 +26,20 @@ const Home: NextPage<IProps> = props => {
   );
 };
 export async function getServerSideProps() {
-  const res = await fetch(`${API_URL}/home`, {
-    headers: {
-      Accept: 'application/json, text/plain, */*',
-      'User-Agent': '*'
-    }
-  });
-  const data = await res.json();
-  return { props: { data } };
+  let error = '';
+  let data = [];
+  try {
+    const res = await fetch(`${API_URL}/home`, {
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'User-Agent': '*'
+      }
+    });
+    data = await res.json();
+  } catch (e: any) {
+    error = e.toString();
+  }
+
+  return { props: { data, error } };
 }
 export default Home;
