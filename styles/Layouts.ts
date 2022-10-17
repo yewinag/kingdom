@@ -56,6 +56,10 @@ export const ContentLayout = styled.section`
     padding: 0 20px;
     border-right: solid 1px #ddd;
   }
+  @media (max-width: ${p => p.theme.breakPoints.mobile}) {
+    width: 100%;
+    border: 0;
+  }
 `;
 export const MainContent = styled.section`
   height: auto;

@@ -14,11 +14,12 @@ export const StyledGenres = styled.div`
     justify-content: space-between;
     align-items: center;
     color: ${p => p.theme.text_500};
+    padding: 4px 10px;
     cursor: pointer;
     &:hover {
-      height: 26px;
+      /* height: 26px; */
       background: ${p => p.theme.nav};
-      padding: 4px;
+      color: ${p => p.theme.text_300};
     }
   }
 `;

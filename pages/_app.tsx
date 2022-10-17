@@ -2,7 +2,7 @@ import '../styles/global.css';
 
 import ProgressBar from '@badrap/bar-of-progress';
 import { AppLayout, StyledThemeProvider } from '@components';
-import { GlobalStyles } from '@styles';
+import { GlobalStyles, Responsive } from '@styles';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router } from 'next/router';
@@ -53,9 +53,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ThemeProvider defaultTheme="system">
         <StyledThemeProvider>
           <GlobalStyles />
-          <AppLayout>
-            <Component {...pageProps} />
-          </AppLayout>
+          <Responsive>
+            <AppLayout>
+              <Component {...pageProps} />
+            </AppLayout>
+          </Responsive>
         </StyledThemeProvider>
       </ThemeProvider>
     </>

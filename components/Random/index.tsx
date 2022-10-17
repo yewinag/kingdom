@@ -25,13 +25,13 @@ export const ComponentRandom = (props: IProps) => {
   }, [carousels]);
 
   const responsive = {
-    0: { items: 2 },
-    568: { items: 2 },
+    0: { items: 4 },
+    425: { items: 6 },
+    768: { items: 6 },
     1024: { items: 8 }
   };
 
   return (
-    // <section className="random-layout">
     <StyledCarousel>
       <StyledHeading>Random Content</StyledHeading>
       {mounted && (
@@ -45,6 +45,5 @@ export const ComponentRandom = (props: IProps) => {
         />
       )}
     </StyledCarousel>
-    // </section>
   );
 };
