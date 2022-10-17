@@ -1,5 +1,8 @@
 export const base = {
-  breakpoints: ['375px', '768px'],
+  breakPoints: {
+    mobile: '375px',
+    tablet: '768px'
+  },
   space: {
     '0': '0px',
     '2': '2px',

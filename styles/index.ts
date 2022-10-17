@@ -7,3 +7,4 @@ export * from './Layouts';
 export * from './Sidebar';
 export * from './Social';
 export * from './Year';
+export * from './Responsive';

@@ -5,11 +5,7 @@ body {
     font-family: Roboto, sans-serif;
     font-size: 14px;  
 }
-.container {
-  width: 1000px;
-  /* min-height: 57px; */
-  margin: 0 auto;
-}
+
 .scroll-bar {
   &::-webkit-scrollbar {
     width: 4px;
@@ -42,7 +38,9 @@ button {
     align-items: center;
     justify-content: center;
 }
-
+a {
+      text-decoration: none;
+    }
 *,
 *::before,
 *::after {

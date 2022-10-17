@@ -10,4 +10,8 @@ export const StyledSidebar = styled.article`
   h3 {
     color: ${p => p.theme.text_500};
   }
+  // responsive
+  @media (max-width: ${p => p.theme.breakPoints.tablet}) {
+    display: none;
+  }
 `;
