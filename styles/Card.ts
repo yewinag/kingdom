@@ -18,6 +18,7 @@ export const StyledCard = styled.article`
       height: 180px;
     }
   }
+
   .image:hover {
     img {
       filter: blur(0);
@@ -43,6 +44,27 @@ export const StyledCard = styled.article`
       width: 120px;
       white-space: nowrap;
       text-overflow: ellipsis;
+    }
+  }
+  @media (max-width: ${p => p.theme.breakPoints.mobile_520}) {
+    .image {
+      &.small {
+        height: 142px;
+      }
+    }
+  }
+  @media (max-width: ${p => p.theme.breakPoints.lg_mobile}) {
+    .image {
+      &.small {
+        height: 140px;
+      }
+    }
+  }
+  @media (max-width: ${p => p.theme.breakPoints.mobile}) {
+    .image {
+      &.small {
+        height: 120px;
+      }
     }
   }
 `;
