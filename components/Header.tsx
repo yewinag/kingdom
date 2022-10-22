@@ -1,4 +1,10 @@
-import { ComponentSearchInput, IconSearch, IconTheme } from '@components';
+import {
+  ComponentSearchInput,
+  IconClose,
+  IconMenu,
+  IconSearch,
+  IconTheme
+} from '@components';
 import { DARK, LIGHT } from '@constants';
 import { useToggle } from '@hooks';
 import { HeaderLayout } from '@styles';
@@ -9,6 +15,7 @@ import { useTheme } from 'next-themes';
 export const Header = () => {
   const { theme, setTheme } = useTheme();
   const [show, setShow] = useToggle(false);
+  const [showMenu, setShowMenu] = useToggle(false);
   const changeTheme = () => {
     if (theme === LIGHT) {
       setTheme(DARK);
@@ -22,6 +29,29 @@ export const Header = () => {
       <HeaderLayout>
         <div className="container">
           <header className="header-layout">
+            <div className="mobile-menu vs-ms">
+              <div onClick={setShowMenu}>
+                {showMenu ? (
+                  <IconClose color={theme === LIGHT ? '#000' : '#fff'} />
+                ) : (
+                  <IconMenu color={theme === LIGHT ? '#000' : '#fff'} />
+                )}
+              </div>
+              <ul className={showMenu ? 'vs-ms show' : 'vs-ms'}>
+                <li>
+                  <Link href={'/'}>Home</Link>
+                </li>
+                <li>
+                  <Link href={'/'}>Series</Link>
+                </li>
+                <li>
+                  <Link href={'/'}>VIP</Link>
+                </li>
+                <li>
+                  <Link href={'/'}>How to download</Link>
+                </li>
+              </ul>
+            </div>
             <div className="header-menu flex-layout">
               <div className="logo-layout">
                 <Link href="/">
@@ -35,7 +65,7 @@ export const Header = () => {
                   </a>
                 </Link>
               </div>
-              <ul>
+              <ul className="vs-md">
                 <li>
                   <Link href={'/'}>Home</Link>
                 </li>

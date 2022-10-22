@@ -28,6 +28,7 @@ export const ComponentSearchInput = () => {
 const StyledSearchInput = styled.div`
   margin-top: ${p => p.theme.space['10']};
   height: ${p => p.theme.heights.input};
+  padding: 0 ${p => p.theme.space['20']};
   input {
     width: 100%;
     padding: ${p => p.theme.space['10']};

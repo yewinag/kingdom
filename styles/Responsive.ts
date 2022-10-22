@@ -5,14 +5,21 @@ export const Responsive = styled.main`
     width: 1000px;
     margin: 0 auto;
   }
+  .vs-md {
+    display: block;
+  }
+  .vs-ms {
+    display: none;
+  }
   @media (max-width: ${p => p.theme.breakPoints.tablet}) {
     .container {
       width: 100%;
     }
-  }
-  @media (max-width: ${p => p.theme.breakPoints.mobile}) {
-    .container {
-      width: 100%;
+    .vs-md {
+      display: none;
+    }
+    .vs-ms {
+      display: block;
     }
   }
 `;
