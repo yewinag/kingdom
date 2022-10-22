@@ -135,6 +135,11 @@ export const HeaderLayout = styled.header`
     .header-layout {
       padding: 0 ${p => p.theme.space['20']};
       .mobile-menu {
+        .mobile-menu-icon {
+          display: flex;
+          justify-content: center;
+          border: 0;
+        }
         ul {
           position: absolute;
           z-index: 1;

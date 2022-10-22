@@ -30,13 +30,13 @@ export const Header = () => {
         <div className="container">
           <header className="header-layout">
             <div className="mobile-menu vs-ms">
-              <div onClick={setShowMenu}>
+              <button className="mobile-menu-icon" onClick={setShowMenu}>
                 {showMenu ? (
                   <IconClose color={theme === LIGHT ? '#000' : '#fff'} />
                 ) : (
                   <IconMenu color={theme === LIGHT ? '#000' : '#fff'} />
                 )}
-              </div>
+              </button>
               <ul className={showMenu ? 'vs-ms show' : 'vs-ms'}>
                 <li>
                   <Link href={'/'}>Home</Link>
