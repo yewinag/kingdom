@@ -5,7 +5,7 @@ import {
   IconSearch,
   IconTheme
 } from '@components';
-import { DARK, LIGHT } from '@constants';
+import { DARK, LIGHT, PATH_GENRES, keywords } from '@constants';
 import { useToggle } from '@hooks';
 import { HeaderLayout } from '@styles';
 import Image from 'next/image';
@@ -42,13 +42,18 @@ export const Header = () => {
                   <Link href={'/'}>Home</Link>
                 </li>
                 <li>
-                  <Link href={'/'}>Series</Link>
+                  <Link href={`${PATH_GENRES}${keywords.TV_SHOWS}`}>
+                    TV Shows
+                  </Link>
                 </li>
                 <li>
-                  <Link href={'/'}>VIP</Link>
+                  <Link href={'/vip'}>VIP</Link>
                 </li>
                 <li>
-                  <Link href={'/'}>How to download</Link>
+                  <Link href={'/how_to_download'}>How to download</Link>
+                </li>
+                <li>
+                  <Link href={'/dmca_policy'}>DMCA</Link>
                 </li>
               </ul>
             </div>
@@ -70,13 +75,18 @@ export const Header = () => {
                   <Link href={'/'}>Home</Link>
                 </li>
                 <li>
-                  <Link href={'/'}>Series</Link>
+                  <Link href={`${PATH_GENRES}${keywords.TV_SHOWS}`}>
+                    TV Shows
+                  </Link>
                 </li>
                 <li>
-                  <Link href={'/'}>VIP</Link>
+                  <Link href={'/vip'}>VIP</Link>
                 </li>
                 <li>
-                  <Link href={'/'}>How to download</Link>
+                  <Link href={'/how_to_download'}>How to download</Link>
+                </li>
+                <li>
+                  <Link href={'/dmca_policy'}>DMCA</Link>
                 </li>
               </ul>
             </div>
