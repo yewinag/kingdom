@@ -41,11 +41,10 @@ export const StyledCarousel = styled.section`
 
   .alice-carousel {
     position: relative;
-
     width: 100%;
     margin: auto;
-
     direction: ltr;
+    padding: 0 ${p => p.theme.space['20']};
   }
 
   .alice-carousel__wrapper {

@@ -1,11 +1,17 @@
-import { ComponentNotFound, ComponentSearch, Sidebar } from '@components';
+import {
+  ComponentNotFound,
+  ComponentPagination,
+  ComponentSearch,
+  Sidebar
+} from '@components';
+import { initPage } from '@constants';
 import { IMovie } from '@interface';
 import { ContentLayout, SectionLayout, StyledHeading } from '@styles';
 import { fetcher } from '@utils';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import BeatLoader from 'react-spinners/BeatLoader';
 import useSWR from 'swr';
-
 interface IResMovie {
   data: IMovie[];
   limit: number;
@@ -18,8 +24,10 @@ function Search() {
   const {
     query: { keyword }
   } = useRouter();
+
+  const [page, setPage] = useState<number>(initPage);
   const { data, error } = useSWR<IResMovie, Error>(
-    `/search?search=${keyword}`,
+    `/search?search=${keyword}&page=${page}`,
     fetcher
   );
   if (error) {
@@ -35,6 +43,10 @@ function Search() {
         <section className="content-body">
           <SectionLayout>
             <ComponentSearch data={data.data} />
+            <ComponentPagination
+              totalPage={data.total_page}
+              changePage={page => setPage(page)}
+            />
           </SectionLayout>
         </section>
         <Sidebar />

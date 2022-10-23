@@ -23,14 +23,16 @@
     "next",
     "plugin:jsx-a11y/recommended",
     "plugin:react/recommended",
-    "plugin:prettier/recommended",
     "plugin:sonarjs/recommended",
     "plugin:security/recommended",
     "plugin:react-hooks/recommended",
     "plugin:jest/recommended",
     "plugin:jest/style",
     "plugin:json/recommended",
-    "plugin:typescript-enum/recommended"
+    "plugin:typescript-enum/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
   ],
   "ignorePatterns": ["/public/*"],
   "rules": {
@@ -55,7 +57,9 @@
     "jest-dom/prefer-checked": "error",
     "jest-dom/prefer-enabled-disabled": "error",
     "jest-dom/prefer-required": "error",
-    "jest-dom/prefer-to-have-attribute": "error"
+    "jest-dom/prefer-to-have-attribute": "error",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-var-requires": "off"
   },
   "overrides": [
     {
