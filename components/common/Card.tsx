@@ -9,6 +9,7 @@ interface Iprops {
 }
 export const ComponentCard = (props: Iprops) => {
   const { item, small } = props;
+
   return (
     <StyledCard>
       <Link href={`movie/${item.id}`}>
@@ -28,8 +29,8 @@ export const ComponentCard = (props: Iprops) => {
         </a>
       </Link>
       <div className="info">
-        <p className="title">{item.name}</p>
-        <p className="desc">{item.mm_name}</p>
+        <p className="title">{item.mm_name}</p>
+        <p className="desc">{`2022`}</p>
       </div>
     </StyledCard>
   );

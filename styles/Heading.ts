@@ -14,7 +14,7 @@ export const SectionTitle = styled.section`
   box-shadow: ${p => p.theme.shadow};
   padding-bottom: ${p => p.theme.space['10']};
   a {
-    color: ${p => p.theme.text_500};
+    color: ${p => p.theme.primary_500};
     text-decoration: none;
     cursor: pointer;
   }

@@ -13,6 +13,7 @@ export const ArticleRow = styled.section`
   row-gap: ${p => p.theme.space['32']};
   max-height: ${p => p.theme.heights.row};
   overflow: hidden;
+  padding: 10px 0;
 `;
 
 export const Flex = styled.div`
