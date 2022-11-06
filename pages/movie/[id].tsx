@@ -86,7 +86,7 @@ const DetailStyles = styled.div`
   .content-body {
     width: 740px;
     padding: 0 20px;
-    border-right: solid 1px #ddd;
+    border-right: solid 1px ${p => p.theme.border};
   }
   .content-body {
     display: flex;

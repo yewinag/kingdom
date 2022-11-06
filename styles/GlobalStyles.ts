@@ -1,11 +1,10 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, ThemeConsumer } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
 body {
     font-family: Roboto, sans-serif;
     font-size: 14px;  
 }
-
 .scroll-bar {
   &::-webkit-scrollbar {
     width: 4px;
