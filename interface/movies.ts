@@ -18,3 +18,37 @@ export interface IMovie {
   last_episode: number;
   created_at: string;
 }
+
+export interface ICasts {
+  id: number;
+  name: string;
+}
+export interface IGenres {
+  id: number;
+  name: string;
+}
+export interface INetwork {
+  id: number;
+  name: string;
+}
+export interface IMovieDetail {
+  backdrop_path: string;
+  casts: ICasts[] | [];
+  cover_path: string;
+  genres: IGenres[] | [];
+  id: number;
+  mm_name: string;
+  name: string;
+  network: INetwork;
+  overview: string;
+  published: boolean;
+  rating: number;
+  released_date: string;
+  slug: string;
+  streaming_id: string;
+  trailer_link: string;
+}
+export interface IDownloadLink {
+  download: string;
+  streaming: string;
+}

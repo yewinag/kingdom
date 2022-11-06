@@ -5,7 +5,7 @@ import {
   IconSearch,
   IconTheme
 } from '@components';
-import { DARK, LIGHT, PATH_GENRES, keywords } from '@constants';
+import { DARK, keywords, LIGHT, PATH_GENRES } from '@constants';
 import { useToggle } from '@hooks';
 import { HeaderLayout } from '@styles';
 import Image from 'next/image';

@@ -11,4 +11,5 @@ export const ComponentNotFound = () => {
 
 const StyledLayout = styled.div`
   min-height: 400px;
+  background: ${p => p.theme.secondary_500};
 `;
