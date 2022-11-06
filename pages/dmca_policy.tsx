@@ -1,5 +1,5 @@
 import { Sidebar } from '@components';
-import { ContentLayout, StyledHeading, SectionLayout } from '@styles';
+import { ContentLayout, SectionLayout, StyledHeading } from '@styles';
 
 function PageDMCA() {
   return (

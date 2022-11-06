@@ -6,7 +6,12 @@ import {
 } from '@components';
 import { initPage } from '@constants';
 import { IMovie } from '@interface';
-import { ContentLayout, SectionLayout, StyledHeading } from '@styles';
+import {
+  ContentLayout,
+  FlexCenter,
+  SectionLayout,
+  StyledHeading
+} from '@styles';
 import { fetcher } from '@utils';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -34,7 +39,11 @@ function Search() {
     return <ComponentNotFound />;
   }
   if (!data) {
-    return <BeatLoader color={'#D12729'} />;
+    return (
+      <FlexCenter>
+        <BeatLoader color={'#D12729'} />;
+      </FlexCenter>
+    );
   }
   return (
     <ContentLayout>
@@ -43,10 +52,12 @@ function Search() {
         <section className="content-body">
           <SectionLayout>
             <ComponentSearch data={data.data} />
-            <ComponentPagination
-              totalPage={data.total_page}
-              changePage={page => setPage(page)}
-            />
+            {data?.total_page > 1 && (
+              <ComponentPagination
+                totalPage={data.total_page}
+                changePage={page => setPage(page)}
+              />
+            )}
           </SectionLayout>
         </section>
         <Sidebar />

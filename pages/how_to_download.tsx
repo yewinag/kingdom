@@ -1,9 +1,9 @@
 import { Sidebar } from '@components';
 import {
   ContentLayout,
-  StyledHeading,
+  SeactionHeading,
   SectionLayout,
-  SeactionHeading
+  StyledHeading
 } from '@styles';
 function PageHowToDownload() {
   return (
