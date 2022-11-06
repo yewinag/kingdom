@@ -37,7 +37,7 @@ export const base = {
   heights: {
     input: '48px',
     button: '48px',
-    row: '512px',
+    row: '517px',
     card: '240px',
     img: '194px'
   },
@@ -74,7 +74,7 @@ export const light = {
 export const dark = {
   background: '#000',
   nav: '#262b36',
-  border: '#ddd',
+  border: '#59637E',
   primary_100: '#FEE6D6',
   primary_200: '#FDC7AE',
   primary_300: '#FBA186',

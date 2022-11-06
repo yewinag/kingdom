@@ -46,9 +46,9 @@ export const Header = () => {
                     TV Shows
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href={'/vip'}>VIP</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href={'/how_to_download'}>How to download</Link>
                 </li>
@@ -79,9 +79,9 @@ export const Header = () => {
                     TV Shows
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href={'/vip'}>VIP</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href={'/how_to_download'}>How to download</Link>
                 </li>

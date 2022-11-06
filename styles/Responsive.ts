@@ -11,6 +11,9 @@ export const Responsive = styled.main`
   .vs-ms {
     display: none;
   }
+  p {
+    color: ${p => p.theme.text_400};
+  }
   @media (max-width: ${p => p.theme.breakPoints.tablet}) {
     .container {
       width: 100%;

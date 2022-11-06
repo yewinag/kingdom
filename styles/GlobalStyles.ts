@@ -5,7 +5,6 @@ body {
     font-family: Roboto, sans-serif;
     font-size: 14px;  
 }
-
 .scroll-bar {
   &::-webkit-scrollbar {
     width: 4px;

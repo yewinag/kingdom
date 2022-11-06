@@ -13,6 +13,7 @@ export const ArticleRow = styled.section`
   row-gap: ${p => p.theme.space['32']};
   max-height: ${p => p.theme.heights.row};
   overflow: hidden;
+  padding: 10px 0;
 `;
 
 export const Flex = styled.div`
@@ -21,6 +22,12 @@ export const Flex = styled.div`
   align-items: center;
 `;
 
+export const FlexCenter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: ${p => p.theme.heights.row};
+`;
 export const FooterLayout = styled.footer`
   display: flex;
   justify-content: space-between;
@@ -55,7 +62,8 @@ export const ContentLayout = styled.section`
   .content-body {
     width: 740px;
     padding: 0 20px;
-    border-right: solid 1px #ddd;
+    border-right: solid 1px ${p => p.theme.border};
+    min-height: 82vh;
   }
   @media (max-width: ${p => p.theme.breakPoints.tablet}) {
     width: 100%;

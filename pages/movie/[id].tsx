@@ -2,6 +2,7 @@ import { ComponentNotFound, Sidebar } from '@components';
 import { IMovieDetail } from '@interface';
 import { MainContent, SeactionHeading } from '@styles';
 import { fetcher } from '@utils';
+import { Social } from 'components/Social';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -67,6 +68,9 @@ const Detail: NextPage = () => {
                   </Link>
                 </article>
               </div>
+              <div className="share">
+                <Social />
+              </div>
             </section>
             <Sidebar />
           </section>
@@ -86,7 +90,8 @@ const DetailStyles = styled.div`
   .content-body {
     width: 740px;
     padding: 0 20px;
-    border-right: solid 1px #ddd;
+    border-right: solid 1px ${p => p.theme.border};
+    min-height: 82vh;
   }
   .content-body {
     display: flex;

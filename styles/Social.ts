@@ -8,16 +8,16 @@ export const StyledSocial = styled.div`
     align-items: center;
     column-gap: 10px;
     width: 100%;
-    button {
+    .react-share__ShareButton {
       flex: 1;
       border: 0;
-      padding: 10px 0;
-      border-radius: 0;
+      padding: 10px 0 !important;
+      border-radius: 0 !important;
       &.facebook {
-        background: #687ec3;
+        background-color: #687ec3 !important;
       }
       &.twitter {
-        background: #5bc2f7;
+        background-color: #5bc2f7 !important;
       }
     }
   }
