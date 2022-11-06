@@ -63,7 +63,7 @@ export const Header = () => {
                   <a>
                     <Image
                       src={'/soulkingdom.png'}
-                      width={75}
+                      width={164}
                       height={40}
                       alt={'soulkingdom logo'}
                     />

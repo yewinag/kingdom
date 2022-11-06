@@ -52,3 +52,9 @@ export interface IDownloadLink {
   download: string;
   streaming: string;
 }
+export interface IDownloadLinks {
+  '360p': string;
+  '480p': string;
+  '720p': string;
+  '1080p': string;
+}

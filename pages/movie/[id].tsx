@@ -1,5 +1,6 @@
 import { ComponentNotFound, Sidebar } from '@components';
-import { IMovieDetail } from '@interface';
+import { TOKEN } from '@constants';
+import { IDownloadLinks, IMovieDetail } from '@interface';
 import { MainContent, SeactionHeading } from '@styles';
 import { fetcher } from '@utils';
 import { Social } from 'components/Social';
@@ -9,12 +10,19 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import useSWR from 'swr';
-
+interface IResLinks {
+  download_links: IDownloadLinks;
+}
 const Detail: NextPage = () => {
   const {
     query: { id }
   } = useRouter();
   const { data } = useSWR<IMovieDetail, Error>(`/movies/${id}`, fetcher);
+  const { data: res } = useSWR<IResLinks | undefined, Error>(
+    [`/shows/${id}/download-links`, { headers: { Authorization: TOKEN } }],
+    fetcher
+  );
+
   return (
     <MainContent>
       {data === undefined ? (
@@ -56,14 +64,54 @@ const Detail: NextPage = () => {
                 />
               </div>
               <div className="download">
-                <SeactionHeading>Download Links</SeactionHeading>
+                {/* <SeactionHeading>Download Links</SeactionHeading> */}
+                <header>
+                  <h4>Download Links</h4>
+                  <h4>Quality</h4>
+                </header>
                 <article>
-                  <Link href={'/download'}>
+                  <Link
+                    href={res?.download_links['360p'] || ''}
+                    target="_blank"
+                  >
                     <a>
-                      <span>Option 1</span>
-                      <span>---</span>
-                      <span>---</span>
-                      <span>---</span>
+                      <div className="link-title">
+                        <p>Option 1</p>
+                        <p>360p</p>
+                      </div>
+                    </a>
+                  </Link>
+                  <Link
+                    href={res?.download_links['480p'] || ''}
+                    target="_blank"
+                  >
+                    <a>
+                      <div className="link-title">
+                        <p>Option 2</p>
+                        <p>480p</p>
+                      </div>
+                    </a>
+                  </Link>
+                  <Link
+                    href={res?.download_links['720p'] || ''}
+                    target="_blank"
+                  >
+                    <a>
+                      <div className="link-title">
+                        <p>Option 3</p>
+                        <p>720p</p>
+                      </div>
+                    </a>
+                  </Link>
+                  <Link
+                    href={res?.download_links['1080p'] || ''}
+                    target="_blank"
+                  >
+                    <a>
+                      <div className="link-title">
+                        <p>Option 4</p>
+                        <p>1080p</p>
+                      </div>
                     </a>
                   </Link>
                 </article>
@@ -137,10 +185,25 @@ const DetailStyles = styled.div`
       display: flex;
       flex-direction: column;
       row-gap: ${p => p.theme.space['20']};
-      align-items: baseline;
+      /* align-items: baseline; */
       background: ${p => p.theme.secondary_500};
       padding: ${p => p.theme.space['16']};
       border-radius: ${p => p.theme.space['4']};
+      header {
+        display: flex;
+        h4 {
+          flex: 1;
+          color: ${p => p.theme.text_500};
+        }
+      }
+      .link-title {
+        display: flex;
+        padding: 10px 0;
+        border-bottom: 1px solid ${p => p.theme.border};
+        p {
+          flex: 1;
+        }
+      }
     }
   }
 `;
