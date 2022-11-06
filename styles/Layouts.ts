@@ -68,12 +68,14 @@ export const ContentLayout = styled.section`
 `;
 export const MainContent = styled.section`
   height: auto;
-  min-height: 85vh;
+  min-height: 88vh;
 `;
 export const HeaderLayout = styled.header`
   width: 100%;
   margin: 0 auto;
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  background: ${p => p.theme.nav};
+  margin-bottom: ${p => p.theme.space['16']};
   .header-layout {
     display: flex;
     justify-content: space-between;

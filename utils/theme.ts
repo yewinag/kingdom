@@ -37,8 +37,8 @@ export const base = {
   heights: {
     input: '48px',
     button: '48px',
-    row: '257px',
-    card: '230px',
+    row: '512px',
+    card: '240px',
     img: '194px'
   },
   borderRadius: {
@@ -59,6 +59,7 @@ export const light = {
   primary_700: '#AF1B29',
   primary_800: '#8D1127',
   primary_900: '#750A26',
+  secondary_500: '#f8f8f8',
   text_100: '#F1F4F9',
   text_200: '#E3EAF4',
   text_300: '#C7D0DE',
@@ -83,6 +84,7 @@ export const dark = {
   primary_700: '#AF1B29',
   primary_800: '#8D1127',
   primary_900: '#750A26',
+  secondary_500: '#262B36',
   text_100: '#F1F4F9',
   text_200: '#E3EAF4',
   text_300: '#C7D0DE',

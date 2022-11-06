@@ -10,6 +10,8 @@ export const keywords = {
 };
 export const PATH_SEARCH = '/search/';
 export const PATH_GENRES = '/genres/';
+export const TOKEN =
+  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ';
 export const genres = [
   {
     title: 'Action',
