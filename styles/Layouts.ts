@@ -14,8 +14,13 @@ export const ArticleRow = styled.section`
   max-height: ${p => p.theme.heights.row};
   overflow: hidden;
   padding: 10px 0;
+  @media (max-width: ${p => p.theme.breakPoints.lg_mobile}) {
+    max-height: ${p => p.theme.heights.sm_row};
+    column-gap: ${p => p.theme.space['16']};
+  }
   @media (max-width: ${p => p.theme.breakPoints.mobile}) {
-    max-height: ${p => p.theme.heights.m_row};
+    max-height: ${p => p.theme.heights.xs_row};
+    column-gap: ${p => p.theme.space['10']};
   }
 `;
 

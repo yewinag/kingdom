@@ -40,7 +40,21 @@ export const base = {
     row: '517px',
     card: '240px',
     img: '194px',
-    m_row: '480px'
+    sm_img: '170px',
+    m_img: '157px',
+    xs_img: '142px',
+    // mobile content height
+    ml_row: '480px',
+    m_row: '480px',
+    sm_row: '470px',
+    xs_row: '462px'
+  },
+  widths: {
+    img: '126px',
+    ml_img: '480px',
+    m_img: '104px',
+    sm_img: '117px',
+    xs_img: '100px'
   },
   borderRadius: {
     base: '4px',

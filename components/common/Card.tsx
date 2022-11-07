@@ -19,9 +19,10 @@ export const ComponentCard = (props: Iprops) => {
               blurDataURL="/poster.png"
               src={item.cover_path || '/poster.png'}
               alt={item.name}
-              layout="intrinsic"
-              width={126}
-              height={194}
+              layout="fill"
+              // layout="intrinsic"
+              // width={126}
+              // height={194}
             />
             <span className="player"></span>
             {/* <span className="rating">7.8</span> */}
