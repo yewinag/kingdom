@@ -10,6 +10,7 @@ interface IProps {
 const Home: NextPage<IProps> = props => {
   const { data, error } = props;
   if (error) {
+    window.location.reload();
     return <p>{error}</p>;
   }
   return (

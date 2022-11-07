@@ -70,44 +70,32 @@ const Detail: NextPage = () => {
                   <h4>Quality</h4>
                 </header>
                 <article>
-                  <Link
-                    href={res?.download_links['360p'] || ''}
-                    target="_blank"
-                  >
-                    <a>
+                  <Link href={res?.download_links['360p'] || '/'}>
+                    <a target="_blank">
                       <div className="link-title">
                         <p>Option 1</p>
                         <p>360p</p>
                       </div>
                     </a>
                   </Link>
-                  <Link
-                    href={res?.download_links['480p'] || ''}
-                    target="_blank"
-                  >
-                    <a>
+                  <Link href={res?.download_links['480p'] || ''}>
+                    <a target="_blank">
                       <div className="link-title">
                         <p>Option 2</p>
                         <p>480p</p>
                       </div>
                     </a>
                   </Link>
-                  <Link
-                    href={res?.download_links['720p'] || ''}
-                    target="_blank"
-                  >
-                    <a>
+                  <Link href={res?.download_links['720p'] || ''}>
+                    <a target="_blank">
                       <div className="link-title">
                         <p>Option 3</p>
                         <p>720p</p>
                       </div>
                     </a>
                   </Link>
-                  <Link
-                    href={res?.download_links['1080p'] || ''}
-                    target="_blank"
-                  >
-                    <a>
+                  <Link href={res?.download_links['1080p'] || ''}>
+                    <a target="_blank">
                       <div className="link-title">
                         <p>Option 4</p>
                         <p>1080p</p>
@@ -155,6 +143,7 @@ const DetailStyles = styled.div`
         display: flex;
         flex-direction: column;
         row-gap: 10px;
+
         .small {
           font-style: italic;
           font-size: ${p => p.theme.fontSizes.small};
@@ -162,6 +151,8 @@ const DetailStyles = styled.div`
         .type {
           display: flex;
           column-gap: 4px;
+          row-gap: 5px;
+          flex-wrap: wrap;
           span {
             font-size: ${p => p.theme.fontSizes.small};
             padding: 4px 6px;
@@ -204,6 +195,12 @@ const DetailStyles = styled.div`
           flex: 1;
         }
       }
+    }
+  }
+  @media (max-width: ${p => p.theme.breakPoints.tablet}) {
+    .content-body {
+      width: 100%;
+      border-right: 0;
     }
   }
 `;

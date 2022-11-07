@@ -39,7 +39,8 @@ export const base = {
     button: '48px',
     row: '517px',
     card: '240px',
-    img: '194px'
+    img: '194px',
+    m_row: '480px'
   },
   borderRadius: {
     base: '4px',

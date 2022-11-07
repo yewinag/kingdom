@@ -7,7 +7,7 @@ import {
 } from '@components';
 import { DARK, keywords, LIGHT, PATH_GENRES } from '@constants';
 import { useToggle } from '@hooks';
-import { HeaderLayout } from '@styles';
+import { HeaderLayout, SearchInputLayout } from '@styles';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
@@ -113,7 +113,9 @@ export const Header = () => {
           </header>
         </div>
       </HeaderLayout>
-      <div className="container">{show && <ComponentSearchInput />}</div>
+      <SearchInputLayout className="container">
+        {show && <ComponentSearchInput />}
+      </SearchInputLayout>
     </>
   );
 };

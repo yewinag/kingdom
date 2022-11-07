@@ -6,6 +6,9 @@ export const StyledHeading = styled.h3`
   color: ${p => p.theme.text_500};
   border-bottom: solid 1px ${p => p.theme.border};
   padding: ${p => p.theme.space['16']};
+  @media (max-width: ${p => p.theme.breakPoints.tablet}) {
+    font-size: ${p => p.theme.fontSizes.title};
+  }
 `;
 
 export const SectionTitle = styled.section`
