@@ -14,6 +14,9 @@ export const ArticleRow = styled.section`
   max-height: ${p => p.theme.heights.row};
   overflow: hidden;
   padding: 10px 0;
+  @media (max-width: ${p => p.theme.breakPoints.mobile}) {
+    max-height: ${p => p.theme.heights.m_row};
+  }
 `;
 
 export const Flex = styled.div`
@@ -54,6 +57,9 @@ export const SearchListing = styled.section`
   column-gap: ${p => p.theme.space['16']};
   row-gap: ${p => p.theme.space['30']};
 `;
+export const SearchInputLayout = styled.div`
+  padding-top: 60px;
+`;
 export const ContentLayout = styled.section`
   .listing-layout {
     display: flex;
@@ -84,6 +90,8 @@ export const HeaderLayout = styled.header`
   box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
   background: ${p => p.theme.nav};
   margin-bottom: ${p => p.theme.space['16']};
+  position: fixed;
+  z-index: 999;
   .header-layout {
     display: flex;
     justify-content: space-between;

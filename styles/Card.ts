@@ -6,6 +6,7 @@ export const StyledCard = styled.article`
   .image {
     height: ${p => p.theme.heights.img};
     position: relative;
+    /* background-color: #fad; */
     img {
       width: 100%;
       height: 100%;
@@ -59,11 +60,28 @@ export const StyledCard = styled.article`
         height: 140px;
       }
     }
+    .info {
+      .title {
+        width: 117px;
+      }
+      .desc {
+        width: 117px;
+      }
+    }
   }
   @media (max-width: ${p => p.theme.breakPoints.mobile}) {
     .image {
+      /* height: 164px; */
       &.small {
         height: 120px;
+      }
+    }
+    .info {
+      .title {
+        width: 100px;
+      }
+      .desc {
+        width: 100px;
       }
     }
   }
