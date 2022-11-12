@@ -12,3 +12,4 @@ export * from './Search';
 export * from './Sidebar';
 export * from './Skeleton';
 export * from './Theme';
+export * from './MetaTags';

@@ -1,13 +1,20 @@
 import { Sidebar } from '@components';
+import { ISeoInfo } from '@interface';
 import {
   ContentLayout,
   SeactionHeading,
   SectionLayout,
   StyledHeading
 } from '@styles';
+import MetaTags from 'components/MetaTags';
 function PageHowToDownload() {
+  const metaData: ISeoInfo = {
+    title: `ဆိုးကင်ဒန်းမှ ဒေါင်းလုဒ်လုပ်ခြင်း ရှင်းပြချက်`,
+    description: `ဆိုးကင်ဒန်းမှ ရှပ်ရှင်များ ဒေါင်းလုဒ်လုပ်ခြင်း အထက်ပါအကြောင်းအရာကို သေးစိတ်ရှင်းလင်းထားပါသည်`
+  };
   return (
     <ContentLayout>
+      <MetaTags metaData={metaData} />
       <StyledHeading>{`HOW TO DOWNLOAD`}</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">

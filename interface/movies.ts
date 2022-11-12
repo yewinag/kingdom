@@ -58,3 +58,7 @@ export interface IDownloadLinks {
   '720p': string;
   '1080p': string;
 }
+export interface ISeoInfo {
+  title: string;
+  description: string;
+}
