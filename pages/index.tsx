@@ -17,7 +17,7 @@ const Home: NextPage<IProps> = props => {
     <>
       <ComponentRandom carousels={data?.carousels} />
       <Listing
-        animes={data?.animes}
+        animes={data?.anime}
         latest={data?.latest}
         tv_shows={data?.tv_shows}
         movies={data?.movies}

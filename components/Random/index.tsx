@@ -25,7 +25,7 @@ export const ComponentRandom = (props: IProps) => {
   }, [carousels]);
 
   const responsive = {
-    0: { items: 3 },
+    0: { items: 4 },
     425: { items: 4 },
     600: { items: 6 },
     660: { items: 6 },

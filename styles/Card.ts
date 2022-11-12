@@ -20,12 +20,46 @@ export const StyledCard = styled.article`
       height: ${p => p.theme.heights.sm_img};
       width: ${p => p.theme.widths.sm_img};
     }
+
+    .rating {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      background: ${p => p.theme.nav};
+      display: flex;
+      align-items: center;
+      column-gap: 2px;
+      padding: 4px 6px;
+      border-radius: 2px;
+      color: ${p => p.theme.primary_500};
+      span {
+        font-size: 11px;
+      }
+    }
+    .player {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      svg {
+        visibility: hidden;
+      }
+    }
   }
 
   .image:hover {
     img {
       filter: blur(0);
       transform: scale(1);
+    }
+    .player {
+      /* background: #000; */
+      svg {
+        visibility: visible;
+      }
     }
   }
   .info {
