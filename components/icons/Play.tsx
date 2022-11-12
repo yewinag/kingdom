@@ -10,8 +10,8 @@ export const IconPlay = () => (
       d="M15 24V11.8756L25.5 17.9378L36 24L25.5 30.0622L15 36.1244V24Z"
       fill="white"
       stroke="white"
-      stroke-width="4"
-      stroke-linejoin="round"
+      strokeWidth="4"
+      strokeLinejoin="round"
     />
   </svg>
 );
