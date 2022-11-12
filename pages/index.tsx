@@ -15,9 +15,10 @@ const Home: NextPage<IProps> = props => {
     return <p>{error}</p>;
   }
   const metaData: ISeoInfo = {
-    title: `ငါတို့သည် ငါတို့သာဖစ်ကြသည်`,
-    description: `ငါတို့သည် ငါတို့သာဖစ်ကြသည်`
+    title: `ငါတို့သည် ဆိုးကင်းဒန်း ဖစ်ကြသည်`,
+    description: `ငါတို့သည် ဆိုးကင်းဒန်း ငါတို့သာဖစ်ကြသည်`
   };
+
   return (
     <>
       <MetaTags metaData={metaData} />

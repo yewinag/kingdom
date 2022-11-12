@@ -7,7 +7,6 @@ export const StyledCard = styled.article`
     height: ${p => p.theme.heights.img};
     position: relative;
     width: ${p => p.theme.widths.img};
-    /* background-color: #fad; */
     img {
       width: 100%;
       height: 100%;
@@ -17,8 +16,8 @@ export const StyledCard = styled.article`
     .player {
     }
     &.small {
-      height: ${p => p.theme.heights.sm_img};
-      width: ${p => p.theme.widths.sm_img};
+      height: ${p => p.theme.heights.w_sm_img};
+      width: ${p => p.theme.widths.w_sm_img};
     }
 
     .rating {
@@ -87,7 +86,7 @@ export const StyledCard = styled.article`
     .image {
       &.small {
         height: ${p => p.theme.heights.sm_img};
-        width: ${p => p.theme.widths.sm_img};
+        width: ${p => p.theme.widths.m_520};
       }
     }
   }
@@ -96,8 +95,8 @@ export const StyledCard = styled.article`
       height: ${p => p.theme.heights.m_img};
       width: ${p => p.theme.widths.sm_img};
       &.small {
-        height: ${p => p.theme.heights.sm_img};
-        width: ${p => p.theme.widths.m_img};
+        height: ${p => p.theme.heights.ml_img};
+        width: ${p => p.theme.widths.ml_img};
       }
     }
     .info {

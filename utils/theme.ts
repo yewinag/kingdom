@@ -40,21 +40,25 @@ export const base = {
     row: '517px',
     card: '240px',
     img: '194px',
+    w_sm_img: '164px',
     sm_img: '170px',
     m_img: '157px',
-    xs_img: '142px',
+    xs_img: '122px',
     // mobile content height
     ml_row: '480px',
     m_row: '480px',
     sm_row: '470px',
-    xs_row: '462px'
+    xs_row: '462px',
+    ml_img: '136px'
   },
   widths: {
     img: '126px',
-    ml_img: '480px',
+    ml_img: '90px',
     m_img: '104px',
     sm_img: '117px',
-    xs_img: '100px'
+    xs_img: '77px',
+    w_sm_img: '110px',
+    m_520: '104px'
   },
   borderRadius: {
     base: '4px',
