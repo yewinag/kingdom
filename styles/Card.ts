@@ -6,6 +6,7 @@ export const StyledCard = styled.article`
   .image {
     height: ${p => p.theme.heights.img};
     position: relative;
+    width: ${p => p.theme.widths.img};
     /* background-color: #fad; */
     img {
       width: 100%;
@@ -16,7 +17,36 @@ export const StyledCard = styled.article`
     .player {
     }
     &.small {
-      height: 180px;
+      height: ${p => p.theme.heights.sm_img};
+      width: ${p => p.theme.widths.sm_img};
+    }
+
+    .rating {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      background: ${p => p.theme.nav};
+      display: flex;
+      align-items: center;
+      column-gap: 2px;
+      padding: 4px 6px;
+      border-radius: 2px;
+      color: ${p => p.theme.primary_500};
+      span {
+        font-size: 11px;
+      }
+    }
+    .player {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      svg {
+        visibility: hidden;
+      }
     }
   }
 
@@ -24,6 +54,12 @@ export const StyledCard = styled.article`
     img {
       filter: blur(0);
       transform: scale(1);
+    }
+    .player {
+      /* background: #000; */
+      svg {
+        visibility: visible;
+      }
     }
   }
   .info {
@@ -50,14 +86,18 @@ export const StyledCard = styled.article`
   @media (max-width: ${p => p.theme.breakPoints.mobile_520}) {
     .image {
       &.small {
-        height: 142px;
+        height: ${p => p.theme.heights.sm_img};
+        width: ${p => p.theme.widths.sm_img};
       }
     }
   }
   @media (max-width: ${p => p.theme.breakPoints.lg_mobile}) {
     .image {
+      height: ${p => p.theme.heights.m_img};
+      width: ${p => p.theme.widths.sm_img};
       &.small {
-        height: 140px;
+        height: ${p => p.theme.heights.sm_img};
+        width: ${p => p.theme.widths.m_img};
       }
     }
     .info {
@@ -71,9 +111,11 @@ export const StyledCard = styled.article`
   }
   @media (max-width: ${p => p.theme.breakPoints.mobile}) {
     .image {
-      /* height: 164px; */
+      height: ${p => p.theme.heights.m_img};
+      width: ${p => p.theme.widths.m_img};
       &.small {
-        height: 120px;
+        height: ${p => p.theme.heights.xs_img};
+        width: ${p => p.theme.widths.xs_img};
       }
     }
     .info {

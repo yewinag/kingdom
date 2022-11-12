@@ -1,4 +1,5 @@
 import { StyledCard } from '@styles';
+import { IconPlay, IconStart } from 'components/icons';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -19,12 +20,17 @@ export const ComponentCard = (props: Iprops) => {
               blurDataURL="/poster.png"
               src={item.cover_path || '/poster.png'}
               alt={item.name}
-              layout="intrinsic"
-              width={126}
-              height={194}
+              layout="fill"
+              // layout="intrinsic"
+              // width={126}
+              // height={194}
             />
-            <span className="player"></span>
-            {/* <span className="rating">7.8</span> */}
+            <span className="player">
+              <IconPlay />
+            </span>
+            <span className="rating">
+              <IconStart /> <span> 7.8</span>
+            </span>
           </div>
         </a>
       </Link>

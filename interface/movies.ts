@@ -1,5 +1,5 @@
 export interface IMovies {
-  animes: Array<IMovie>;
+  anime: Array<IMovie>;
   latest: Array<IMovie>;
   tv_shows: Array<IMovie>;
   movies: Array<IMovie>;
