@@ -1,9 +1,16 @@
 import { Sidebar } from '@components';
+import { ISeoInfo } from '@interface';
 import { ContentLayout, SectionLayout, StyledHeading } from '@styles';
+import MetaTags from 'components/MetaTags';
 
 function PageDMCA() {
+  const metaData: ISeoInfo = {
+    title: `ဒေတာ ပေါ်လစီ ကြေညာခြင်း`,
+    description: `လက်ရှိ ရှပ်ရှင် ဇတ်ကားများသည် အင်တာနက်ပေါ်တွင် အလကားရရှိသော ရှပ်ရှင်ဇတ်ကားများကိုသာ ပြန်လည်မျှ၀ေပေးခြင်းဖစ်ပါကြောင်း အသိပေးအပ်ပါသည်`
+  };
   return (
     <ContentLayout>
+      <MetaTags metaData={metaData} />
       <StyledHeading>{`DMCA Policy`}</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">

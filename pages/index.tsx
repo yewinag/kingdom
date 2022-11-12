@@ -1,6 +1,7 @@
 import { ComponentRandom, Listing } from '@components';
-import { IMovies } from '@interface';
+import { IMovies, ISeoInfo } from '@interface';
 import { API_URL } from '@utils';
+import MetaTags from 'components/MetaTags';
 import type { NextPage } from 'next';
 
 interface IProps {
@@ -13,8 +14,13 @@ const Home: NextPage<IProps> = props => {
     window.location.reload();
     return <p>{error}</p>;
   }
+  const metaData: ISeoInfo = {
+    title: `ငါတို့သည် ငါတို့သာဖစ်ကြသည်`,
+    description: `ငါတို့သည် ငါတို့သာဖစ်ကြသည်`
+  };
   return (
     <>
+      <MetaTags metaData={metaData} />
       <ComponentRandom carousels={data?.carousels} />
       <Listing
         animes={data?.anime}

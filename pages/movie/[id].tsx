@@ -1,8 +1,9 @@
 import { ComponentNotFound, Sidebar } from '@components';
 import { TOKEN } from '@constants';
-import { IDownloadLinks, IMovieDetail } from '@interface';
+import { IDownloadLinks, IMovieDetail, ISeoInfo } from '@interface';
 import { MainContent, SeactionHeading } from '@styles';
 import { fetcher } from '@utils';
+import MetaTags from 'components/MetaTags';
 import { Social } from 'components/Social';
 import type { NextPage } from 'next';
 import Image from 'next/image';
@@ -22,13 +23,17 @@ const Detail: NextPage = () => {
     [`/shows/${id}/download-links`, { headers: { Authorization: TOKEN } }],
     fetcher
   );
-
+  const metaData: ISeoInfo = {
+    title: `အသေစိပ်ကြည့်ရှု့မှု ဇတ်ကားဧ် နာမည် ${data?.name}`,
+    description: `ရှာဖွေမှု ရလဒ်ဧ် အသေးစိတ်အချက်အလက်များဖော်ပြချက် အချင်းခြုံ ${data?.overview}`
+  };
   return (
     <MainContent>
       {data === undefined ? (
         <ComponentNotFound />
       ) : (
         <DetailStyles>
+          <MetaTags metaData={metaData} />
           <section className="listing-layout">
             <section className="content-body">
               <div className="detail">

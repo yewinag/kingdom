@@ -5,6 +5,7 @@ export * from './Input';
 export * from './layouts';
 export * from './Listing';
 export * from './Listing';
+export * from './MetaTags';
 export * from './NotFound';
 export * from './paginations';
 export * from './Random';

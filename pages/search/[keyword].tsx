@@ -5,7 +5,7 @@ import {
   Sidebar
 } from '@components';
 import { initPage } from '@constants';
-import { IMovie } from '@interface';
+import { IMovie, ISeoInfo } from '@interface';
 import {
   ContentLayout,
   FlexCenter,
@@ -13,6 +13,7 @@ import {
   StyledHeading
 } from '@styles';
 import { fetcher } from '@utils';
+import MetaTags from 'components/MetaTags';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import BeatLoader from 'react-spinners/BeatLoader';
@@ -45,8 +46,13 @@ function Search() {
       </FlexCenter>
     );
   }
+  const metaData: ISeoInfo = {
+    title: `ငါတို့သည် ${keyword} ခေါင်းစဥ်ဖြင့် ရှာထားသော အကောင်များသာ ဖစ်သည်`,
+    description: `ငါတို့သည် ${keyword} ဖြင့်ရှာခြင်းမှ ရလာသော ရှာဖွေခြင်းများဖစ်သည်, တွေ့ရှိမှု့ရလဒ် ${data.total} အရေအတွက်ရှိသည်`
+  };
   return (
     <ContentLayout>
+      <MetaTags metaData={metaData} />
       <StyledHeading>{`Results : ${data.total} Movies`}</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">
