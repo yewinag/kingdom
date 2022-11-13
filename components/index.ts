@@ -1,5 +1,6 @@
 export * from './common';
 export * from './Footer';
+export * from './GoogleAds';
 export * from './icons';
 export * from './Input';
 export * from './layouts';
