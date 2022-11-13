@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/icons/apple-icon.png"></link>
         <meta name="theme-color" content="#317EFB" />
       </Head>
-      <ThemeProvider defaultTheme="system">
+      <ThemeProvider defaultTheme="dark">
         <StyledThemeProvider>
           <GlobalStyles />
           <Responsive>

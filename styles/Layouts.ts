@@ -140,14 +140,14 @@ export const HeaderLayout = styled.header`
         border-radius: 4px;
       }
       .search-btn {
-        height: 57px;
+        height: 58px;
         border: 0;
         background: ${p => p.theme.primary_500};
         color: #fff;
         cursor: pointer;
       }
       .theme-btn {
-        height: 57px;
+        height: 58px;
         margin-right: 10px;
         background: transparent;
         border: 0;
