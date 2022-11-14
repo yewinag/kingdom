@@ -13,8 +13,8 @@ export const Sidebar = () => {
       <>
         {/* <h3>Spronsor</h3> */}
         {/* google ads */}
-        <ComponentGoogleAds client="" slot="" />
-        <ComponentGoogleAds client="" slot="" />
+        <ComponentGoogleAds />
+        <ComponentGoogleAds />
       </>
     </StyledSidebar>
   );

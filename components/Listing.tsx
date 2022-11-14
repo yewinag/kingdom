@@ -47,7 +47,7 @@ export function Listing(props: IProps) {
             </ArticleRow>
           </SectionLayout>
           {/* google ads */}
-          <ComponentGoogleAds client="" slot="" />
+          <ComponentGoogleAds />
           <SectionLayout>
             <SectionTitle>
               <SeactionHeading>Animes </SeactionHeading>
@@ -66,7 +66,7 @@ export function Listing(props: IProps) {
             </ArticleRow>
           </SectionLayout>
           {/* google ads */}
-          <ComponentGoogleAds client="" slot="" />
+          <ComponentGoogleAds />
           <SectionLayout>
             <SectionTitle>
               <SeactionHeading>TV Shows </SeactionHeading>
@@ -85,7 +85,7 @@ export function Listing(props: IProps) {
             </ArticleRow>
           </SectionLayout>
           {/* google ads */}
-          <ComponentGoogleAds client="" slot="" />
+          <ComponentGoogleAds />
           <SectionLayout>
             <SectionTitle>
               <SeactionHeading>Movies</SeactionHeading>

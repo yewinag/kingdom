@@ -21,7 +21,7 @@ const Home: NextPage<IProps> = props => {
   return (
     <>
       <MetaTags metaData={metaData} />
-      <ComponentGoogleAds client={''} slot={''} />
+      <ComponentGoogleAds />
       <ComponentRandom carousels={data?.carousels} />
       <Listing
         animes={data?.anime}
