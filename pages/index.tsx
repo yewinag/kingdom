@@ -3,7 +3,6 @@ import { IMovies, ISeoInfo } from '@interface';
 import { API_URL } from '@utils';
 import MetaTags from 'components/MetaTags';
 import type { NextPage } from 'next';
-
 interface IProps {
   data: IMovies;
   error?: string;

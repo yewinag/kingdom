@@ -37,7 +37,7 @@ export const base = {
   heights: {
     input: '48px',
     button: '48px',
-    row: '517px',
+    row: '530px',
     card: '240px',
     img: '194px',
     w_sm_img: '164px',

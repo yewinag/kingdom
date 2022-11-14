@@ -64,7 +64,7 @@ export const StyledCard = styled.article`
   .info {
     .title {
       width: 100%;
-      height: 17px;
+      line-height: 22px;
       overflow: hidden;
       margin-top: 7px;
       color: ${p => p.theme.text_500};

@@ -83,7 +83,7 @@ const Detail: NextPage = () => {
                       </div>
                     </a>
                   </Link>
-                  <Link href={res?.download_links['480p'] || ''}>
+                  <Link href={res?.download_links['480p'] || '/'}>
                     <a target="_blank">
                       <div className="link-title">
                         <p>Option 2</p>
@@ -91,7 +91,7 @@ const Detail: NextPage = () => {
                       </div>
                     </a>
                   </Link>
-                  <Link href={res?.download_links['720p'] || ''}>
+                  <Link href={res?.download_links['720p'] || '/'}>
                     <a target="_blank">
                       <div className="link-title">
                         <p>Option 3</p>
@@ -99,7 +99,7 @@ const Detail: NextPage = () => {
                       </div>
                     </a>
                   </Link>
-                  <Link href={res?.download_links['1080p'] || ''}>
+                  <Link href={res?.download_links['1080p'] || '/'}>
                     <a target="_blank">
                       <div className="link-title">
                         <p>Option 4</p>
