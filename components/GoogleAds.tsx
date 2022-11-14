@@ -1,9 +1,11 @@
 import Script from 'next/script';
 import { useEffect } from 'react';
 import styled from 'styled-components';
-const client = 'ca-app-pub-3334163759744736';
-const slot = '1188312524';
-export const ComponentGoogleAds = () => {
+interface IProps {
+  client: string;
+  slot: string;
+}
+export const ComponentGoogleAds = ({ client, slot }: IProps) => {
   useEffect(() => {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }, []);
@@ -29,10 +31,12 @@ export const ComponentGoogleAds = () => {
 
 const StyledAds = styled.div`
   width: 100%;
-  height: 120px;
-  margin: auto;
+  min-height: 120px;
+
   .ads-layout {
-    width: 750px;
-    height: 100px;
+    margin: auto;
+    /* width: 750px; */
+    min-height: 100px;
+    background: #ddd;
   }
 `;

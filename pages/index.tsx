@@ -3,7 +3,6 @@ import { IMovies, ISeoInfo } from '@interface';
 import { API_URL } from '@utils';
 import MetaTags from 'components/MetaTags';
 import type { NextPage } from 'next';
-
 interface IProps {
   data: IMovies;
   error?: string;
@@ -22,7 +21,7 @@ const Home: NextPage<IProps> = props => {
   return (
     <>
       <MetaTags metaData={metaData} />
-      <ComponentGoogleAds />
+      <ComponentGoogleAds client={''} slot={''} />
       <ComponentRandom carousels={data?.carousels} />
       <Listing
         animes={data?.anime}

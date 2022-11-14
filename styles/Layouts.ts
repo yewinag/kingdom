@@ -4,6 +4,7 @@ export const StyledLayouts = styled.section``;
 
 export const SectionLayout = styled.section`
   margin-top: ${p => p.theme.space['16']};
+  margin-bottom: ${p => p.theme.space['16']};
 `;
 
 export const ArticleRow = styled.section`
