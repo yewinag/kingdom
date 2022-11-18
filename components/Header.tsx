@@ -11,11 +11,26 @@ import { HeaderLayout, SearchInputLayout } from '@styles';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
+import { useEffect, useRef } from 'react';
 
 export const Header = () => {
   const { theme, setTheme } = useTheme();
   const [show, setShow] = useToggle(false);
   const [showMenu, setShowMenu] = useToggle(false);
+  const ref = useRef<HTMLUListElement>(null);
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClick);
+    return () => {
+      document.removeEventListener('mousedown', handleClick);
+    };
+  });
+
+  const handleClick = (e: MouseEvent) => {
+    if (ref.current && !ref.current.contains(e.target as Node)) {
+      setShowMenu();
+    }
+  };
   const changeTheme = () => {
     if (theme === LIGHT) {
       setTheme(DARK);
@@ -37,7 +52,7 @@ export const Header = () => {
                   <IconMenu color={theme === LIGHT ? '#000' : '#fff'} />
                 )}
               </button>
-              <ul className={showMenu ? 'vs-ms show' : 'vs-ms'}>
+              <ul className={showMenu ? 'vs-ms show' : 'vs-ms'} ref={ref}>
                 <li>
                   <Link href={'/'}>Home</Link>
                 </li>
@@ -79,9 +94,6 @@ export const Header = () => {
                     TV Shows
                   </Link>
                 </li>
-                {/* <li>
-                  <Link href={'/vip'}>VIP</Link>
-                </li> */}
                 <li>
                   <Link href={'/how_to_download'}>How to download</Link>
                 </li>

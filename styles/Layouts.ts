@@ -195,6 +195,11 @@ export const HeaderLayout = styled.header`
           margin: 0;
         }
       }
+      .search {
+        .theme-btn {
+          margin-right: 0;
+        }
+      }
     }
   }
 `;
