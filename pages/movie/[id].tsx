@@ -19,6 +19,7 @@ const Detail: NextPage = () => {
   const {
     query: { id }
   } = useRouter();
+  const url = window.location.href;
   const { data, error } = useSWR<IMovieDetail, Error>(`/movies/${id}`, fetcher);
   const { data: res } = useSWR<IResLinks | undefined, Error>(
     [`/shows/${id}/download-links`, { headers: { Authorization: TOKEN } }],
@@ -116,7 +117,7 @@ const Detail: NextPage = () => {
                 </article>
               </div>
               <div className="share">
-                <Social />
+                <Social fbLink={url || '/'} twLink={url || '/'} />
               </div>
             </section>
             <Sidebar />

@@ -4,10 +4,11 @@ import { Genre } from './filter';
 import { ComponentGoogleAds } from './GoogleAds';
 import { Social } from './Social';
 
+const url = window.location.href;
 export const Sidebar = () => {
   return (
     <StyledSidebar>
-      <Social />
+      <Social fbLink={url || '/'} twLink={url || '/'} />
       <Genre />
       {/* <YearFilter /> */}
       <>
