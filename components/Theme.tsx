@@ -8,7 +8,7 @@ interface IProps {
 }
 export const StyledThemeProvider = ({ children }: IProps) => {
   const { theme } = useTheme();
-  const selected = theme === 'dark' ? dark : light;
+  const selected = theme === 'light' ? light : dark;
   return (
     <ThemeProvider theme={{ ...base, ...selected }}>{children}</ThemeProvider>
   );

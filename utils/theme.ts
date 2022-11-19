@@ -80,7 +80,7 @@ export const light = {
   primary_900: '#750A26',
   secondary_500: '#f8f8f8',
   text_100: '#F1F4F9',
-  text_200: '#E3EAF4',
+  text_200: '#7a8293',
   text_300: '#C7D0DE',
   text_400: '#A5AEBE',
   text_500: '#7a8293',

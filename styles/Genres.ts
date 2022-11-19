@@ -18,7 +18,7 @@ export const StyledGenres = styled.div`
     cursor: pointer;
     &:hover {
       /* height: 26px; */
-      background: ${p => p.theme.nav};
+      /* background: ${p => p.theme.nav}; */
       color: ${p => p.theme.text_300};
     }
   }

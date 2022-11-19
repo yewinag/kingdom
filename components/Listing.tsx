@@ -11,7 +11,7 @@ import Link from 'next/link';
 
 import { IMovie, IMovies } from '../interface';
 import { ComponentCard } from './common';
-import { ComponentGoogleAds } from './GoogleAds';
+// import { ComponentGoogleAds } from './GoogleAds';
 import { Sidebar } from './Sidebar';
 import { ComponentPlaceholder } from './Skeleton';
 interface IProps {
@@ -47,7 +47,7 @@ export function Listing(props: IProps) {
             </ArticleRow>
           </SectionLayout>
           {/* google ads */}
-          <ComponentGoogleAds />
+          {/* <ComponentGoogleAds /> */}
           <SectionLayout>
             <SectionTitle>
               <SeactionHeading>Animes </SeactionHeading>
@@ -66,7 +66,7 @@ export function Listing(props: IProps) {
             </ArticleRow>
           </SectionLayout>
           {/* google ads */}
-          <ComponentGoogleAds />
+          {/* <ComponentGoogleAds /> */}
           <SectionLayout>
             <SectionTitle>
               <SeactionHeading>TV Shows </SeactionHeading>
@@ -85,7 +85,7 @@ export function Listing(props: IProps) {
             </ArticleRow>
           </SectionLayout>
           {/* google ads */}
-          <ComponentGoogleAds />
+          {/* <ComponentGoogleAds /> */}
           <SectionLayout>
             <SectionTitle>
               <SeactionHeading>Movies</SeactionHeading>
