@@ -1,14 +1,14 @@
 import { StyledSidebar } from '@styles';
+import { HOST_PATH } from '@utils';
 
 import { Genre } from './filter';
 import { ComponentGoogleAds } from './GoogleAds';
 import { Social } from './Social';
 
-const url = window.location.href;
 export const Sidebar = () => {
   return (
     <StyledSidebar>
-      <Social fbLink={url || '/'} twLink={url || '/'} />
+      <Social fbLink={HOST_PATH || '/'} twLink={HOST_PATH || '/'} />
       <Genre />
       {/* <YearFilter /> */}
       <>
