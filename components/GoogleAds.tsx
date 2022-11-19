@@ -1,30 +1,30 @@
 import Script from 'next/script';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 import styled from 'styled-components';
 // interface IProps {
 //   client: string;
 //   slot: string;
 // }
 export const ComponentGoogleAds = () => {
-  // useEffect(() => {
-  //   (window.adsbygoogle = window.adsbygoogle || []).push({});
-  // }, []);
+  useEffect(() => {
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
+  }, []);
   return (
     <StyledAds>
       <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
       />
-      {/* <div className="ads-layout">
+      <div className="ads-layout">
         <ins
           className="adsbygoogle"
           style={{ display: 'block' }}
-          data-ad-client={client}
-          data-ad-slot={slot}
+          data-ad-client={'ca-app-pub-3940256099942544'}
+          data-ad-slot={'3419835294'}
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
-      </div> */}
+      </div>
     </StyledAds>
   );
 };

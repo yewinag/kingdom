@@ -2,7 +2,7 @@ import { StyledSidebar } from '@styles';
 import { HOST_PATH } from '@utils';
 
 import { Genre } from './filter';
-import { ComponentGoogleAds } from './GoogleAds';
+// import { ComponentGoogleAds } from './GoogleAds';
 import { Social } from './Social';
 
 export const Sidebar = () => {
@@ -14,8 +14,8 @@ export const Sidebar = () => {
       <>
         {/* <h3>Spronsor</h3> */}
         {/* google ads */}
-        <ComponentGoogleAds />
-        <ComponentGoogleAds />
+        {/* <ComponentGoogleAds /> */}
+        {/* <ComponentGoogleAds /> */}
       </>
     </StyledSidebar>
   );
