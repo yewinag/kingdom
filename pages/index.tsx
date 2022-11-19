@@ -1,4 +1,8 @@
-import { ComponentGoogleAds, ComponentRandom, Listing } from '@components';
+import {
+  // ComponentGoogleAds,
+  ComponentRandom,
+  Listing
+} from '@components';
 import { IMovies, ISeoInfo } from '@interface';
 import { API_URL } from '@utils';
 import MetaTags from 'components/MetaTags';
@@ -21,7 +25,7 @@ const Home: NextPage<IProps> = props => {
   return (
     <>
       <MetaTags metaData={metaData} />
-      <ComponentGoogleAds />
+      {/* <ComponentGoogleAds /> */}
       <ComponentRandom carousels={data?.carousels} />
       <Listing
         animes={data?.anime}
