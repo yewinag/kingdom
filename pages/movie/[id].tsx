@@ -2,7 +2,7 @@ import { ComponentNotFound, Sidebar } from '@components';
 import { TOKEN } from '@constants';
 import { IDownloadLinks, IMovieDetail, ISeoInfo } from '@interface';
 import { FlexCenter, MainContent, SeactionHeading } from '@styles';
-import { fetcher, light } from '@utils';
+import { fetcher, HOST_PATH, light } from '@utils';
 import MetaTags from 'components/MetaTags';
 import { Social } from 'components/Social';
 import type { NextPage } from 'next';
@@ -19,7 +19,6 @@ const Detail: NextPage = () => {
   const {
     query: { id }
   } = useRouter();
-  const url = window.location.href;
   const { data, error } = useSWR<IMovieDetail, Error>(`/movies/${id}`, fetcher);
   const { data: res } = useSWR<IResLinks | undefined, Error>(
     [`/shows/${id}/download-links`, { headers: { Authorization: TOKEN } }],
@@ -117,7 +116,10 @@ const Detail: NextPage = () => {
                 </article>
               </div>
               <div className="share">
-                <Social fbLink={url || '/'} twLink={url || '/'} />
+                <Social
+                  fbLink={`${HOST_PATH}/movie/${id}` || '/'}
+                  twLink={`${HOST_PATH}/movie/${id}` || '/'}
+                />
               </div>
             </section>
             <Sidebar />
