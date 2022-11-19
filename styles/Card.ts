@@ -25,6 +25,7 @@ export const StyledCard = styled.article`
       bottom: 4px;
       right: 4px;
       background: ${p => p.theme.nav};
+
       display: flex;
       align-items: center;
       column-gap: 2px;
@@ -67,14 +68,14 @@ export const StyledCard = styled.article`
       line-height: 22px;
       overflow: hidden;
       margin-top: 7px;
-      color: ${p => p.theme.text_500};
+      color: ${p => p.theme.text_200};
       width: 126px;
       white-space: nowrap;
       text-overflow: ellipsis;
     }
     .desc {
       font-size: ${p => p.theme.fontSizes.small};
-      color: ${p => p.theme.text_500};
+      color: ${p => p.theme.text_200};
       text-decoration: none;
       margin-top: 3px;
       width: 120px;

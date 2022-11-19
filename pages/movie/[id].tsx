@@ -1,14 +1,15 @@
 import { ComponentNotFound, Sidebar } from '@components';
 import { TOKEN } from '@constants';
 import { IDownloadLinks, IMovieDetail, ISeoInfo } from '@interface';
-import { MainContent, SeactionHeading } from '@styles';
-import { fetcher } from '@utils';
+import { FlexCenter, MainContent, SeactionHeading } from '@styles';
+import { fetcher, light } from '@utils';
 import MetaTags from 'components/MetaTags';
 import { Social } from 'components/Social';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { BeatLoader } from 'react-spinners';
 import styled from 'styled-components';
 import useSWR from 'swr';
 interface IResLinks {
@@ -18,7 +19,7 @@ const Detail: NextPage = () => {
   const {
     query: { id }
   } = useRouter();
-  const { data } = useSWR<IMovieDetail, Error>(`/movies/${id}`, fetcher);
+  const { data, error } = useSWR<IMovieDetail, Error>(`/movies/${id}`, fetcher);
   const { data: res } = useSWR<IResLinks | undefined, Error>(
     [`/shows/${id}/download-links`, { headers: { Authorization: TOKEN } }],
     fetcher
@@ -27,10 +28,15 @@ const Detail: NextPage = () => {
     title: `အသေစိပ်ကြည့်ရှု့မှု ဇတ်ကားဧ် နာမည် ${data?.name}`,
     description: `ရှာဖွေမှု ရလဒ်ဧ် အသေးစိတ်အချက်အလက်များဖော်ပြချက် အချင်းခြုံ ${data?.overview}`
   };
+  if (error) {
+    return <ComponentNotFound />;
+  }
   return (
     <MainContent>
       {data === undefined ? (
-        <ComponentNotFound />
+        <FlexCenter>
+          <BeatLoader color={light.primary_500} />
+        </FlexCenter>
       ) : (
         <DetailStyles>
           <MetaTags metaData={metaData} />
