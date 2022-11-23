@@ -34,6 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="keywords" content="Keywords" />
         <title>SoulKingdom</title>
 
+        <link rel="canonical" href="https://soulkingdom.net" />
         <link rel="manifest" href="/manifest.json" />
         <link
           href="/icons/favicon-16x16.png"
