@@ -6,7 +6,8 @@ import { GlobalStyles, Responsive } from '@styles';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router } from 'next/router';
-import { ThemeProvider } from 'next-themes';
+import { ThemeProvider, useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 const progress = new ProgressBar({
   size: 2,
   color: '#F44336',
@@ -19,6 +20,16 @@ Router.events.on('routeChangeComplete', progress.finish);
 Router.events.on('routeChangeError', progress.finish);
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <div style={{ background: '#fad' }}>I'm running</div>;
+  }
   return (
     <>
       <Head>
@@ -34,6 +45,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="keywords" content="Keywords" />
         <title>SoulKingdom</title>
 
+        <link rel="canonical" href="https://soulkingdom.net" />
         <link rel="manifest" href="/manifest.json" />
         <link
           href="/icons/favicon-16x16.png"
@@ -50,7 +62,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/icons/apple-icon.png"></link>
         <meta name="theme-color" content="#317EFB" />
       </Head>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider defaultTheme={theme || 'dark'}>
         <StyledThemeProvider>
           <GlobalStyles />
           <Responsive>
