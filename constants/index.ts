@@ -6,14 +6,17 @@ export const keywords = {
   POPULAR: 'popular',
   MOVIES: 'movies',
   TV_SHOWS: 'tv_shows',
-  ANIMES: 'animes'
+  ANIME: 'anime'
 };
 export const PATH_SEARCH = '/search/';
 export const PATH_GENRES = '/genres/';
+export const PATH_MOVIE = '/movie/';
+export const PATH_TVSHOWS = '/tv_shows/';
 export const TOKEN =
   'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ';
 export const adsClientId = 'ca-app-pub-3334163759744736';
 export const adsSlot = '1188312524';
+export const defaultImage = '/poster.png';
 export const genres = [
   {
     title: 'Action',

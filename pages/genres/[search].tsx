@@ -50,6 +50,7 @@ function Search() {
     title: `ငါတို့သည် ${search} အမျိုးအစားခေါင်းစဥ်ဖြင့် ရှာထားသော အကောင်များသာ ဖစ်သည်`,
     description: `ငါတို့သည် ${search} အမျိုးအစားခေါင်းစဥ်ဖြင့် ရလာသော ရှာဖွေခြင်းများဖစ်သည်, တွေ့ရှိမှု့ရလဒ် ${data.total} အရေအတွက်ရှိသည်`
   };
+
   return (
     <ContentLayout>
       <MetaTags metaData={metaData} />
@@ -57,7 +58,7 @@ function Search() {
       <section className="listing-layout">
         <section className="content-body">
           <SectionLayout>
-            <ComponentSearch data={data.data} />
+            <ComponentSearch data={data.data} genre={`${search}`} />
             {data?.total_page > 1 && (
               <ComponentPagination
                 totalPage={data.total_page}
