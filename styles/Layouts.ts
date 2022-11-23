@@ -24,7 +24,14 @@ export const ArticleRow = styled.section`
     column-gap: ${p => p.theme.space['10']};
   }
 `;
-
+export const PageLoading = styled.div`
+  min-height: 100vh;
+  background: #000; // inital dark
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 export const Flex = styled.div`
   display: flex;
   justify-content: space-between;
@@ -66,6 +73,7 @@ export const SearchListing = styled.section`
 export const SearchInputLayout = styled.div`
   padding-top: 60px;
 `;
+
 export const ContentLayout = styled.section`
   .listing-layout {
     display: flex;

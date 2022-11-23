@@ -1,3 +1,4 @@
+import { defaultImage, keywords, PATH_MOVIE, PATH_TVSHOWS } from '@constants';
 import { StyledCard } from '@styles';
 import { IconPlay, IconStart } from 'components/icons';
 import Image from 'next/image';
@@ -7,18 +8,19 @@ import { IMovie } from '../../interface';
 interface Iprops {
   item: IMovie;
   small?: boolean;
+  genre?: string;
 }
 export const ComponentCard = (props: Iprops) => {
-  const { item, small } = props;
-
+  const { item, small, genre } = props;
+  const pathName = genre === keywords.TV_SHOWS ? PATH_TVSHOWS : PATH_MOVIE;
   return (
     <StyledCard>
-      <Link href={`movie/${item.id}`}>
+      <Link href={`${pathName}${item.id}`}>
         <a>
           <div className={small ? 'image small' : 'image'}>
             <Image
               blurDataURL="/poster.png"
-              src={item.cover_path || '/poster.png'}
+              src={item.cover_path || defaultImage}
               alt={item.name}
               layout="fill"
               // layout="intrinsic"

@@ -52,7 +52,7 @@ export function Listing(props: IProps) {
             <SectionTitle>
               <SeactionHeading>Animes </SeactionHeading>
               <Link
-                href={`${PATH_GENRES}${keywords.ANIMES}`}
+                href={`${PATH_GENRES}${keywords.ANIME}`}
               >{`see more >>`}</Link>
             </SectionTitle>
             <ArticleRow>
