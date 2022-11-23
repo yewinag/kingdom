@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
 body {
     font-family: Roboto, sans-serif;
     font-size: 14px;  
+    margin: 0;
 }
 .scroll-bar {
   &::-webkit-scrollbar {

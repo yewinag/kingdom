@@ -2,12 +2,13 @@ import '../styles/global.css';
 
 import ProgressBar from '@badrap/bar-of-progress';
 import { AppLayout, StyledThemeProvider } from '@components';
-import { GlobalStyles, Responsive } from '@styles';
+import { GlobalStyles, PageLoading, Responsive } from '@styles';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router } from 'next/router';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
+import { BeatLoader } from 'react-spinners';
 const progress = new ProgressBar({
   size: 2,
   color: '#F44336',
@@ -28,7 +29,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   if (!mounted) {
-    return <div style={{ background: '#fad' }}>I am running</div>;
+    return (
+      <PageLoading>
+        <BeatLoader color="#D12729" />
+      </PageLoading>
+    );
   }
   return (
     <>
