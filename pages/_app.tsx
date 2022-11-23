@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   if (!mounted) {
-    return <div style={{ background: '#fad' }}>I'm running</div>;
+    return <div style={{ background: '#fad' }}>I am running</div>;
   }
   return (
     <>
