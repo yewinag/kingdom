@@ -16,6 +16,7 @@ export default function handler(
     mm_name: '',
     last_season: 0,
     last_episode: 0,
-    created_at: ''
+    created_at: '',
+    rating: 0
   });
 }
