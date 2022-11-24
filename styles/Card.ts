@@ -13,8 +13,6 @@ export const StyledCard = styled.article`
       transition: transform 0.5s, filter 1s ease-in-out;
       transform: scale(1.2);
     }
-    .player {
-    }
     &.small {
       height: ${p => p.theme.heights.w_sm_img};
       width: ${p => p.theme.widths.w_sm_img};
@@ -25,7 +23,6 @@ export const StyledCard = styled.article`
       bottom: 4px;
       right: 4px;
       background: ${p => p.theme.nav};
-
       display: flex;
       align-items: center;
       column-gap: 2px;
@@ -34,6 +31,7 @@ export const StyledCard = styled.article`
       color: ${p => p.theme.primary_500};
       span {
         font-size: 11px;
+        padding-left: 2px;
       }
     }
     .player {

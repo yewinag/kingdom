@@ -31,7 +31,7 @@ export const ComponentCard = (props: Iprops) => {
               <IconPlay />
             </span>
             <span className="rating">
-              <IconStart /> <span> 7.8</span>
+              <IconStart /> <span> {`${item.rating}`}</span>
             </span>
           </div>
         </a>
