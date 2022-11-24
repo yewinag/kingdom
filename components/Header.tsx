@@ -45,7 +45,11 @@ export const Header = () => {
         <div className="container">
           <header className="header-layout">
             <div className="mobile-menu vs-ms">
-              <button className="mobile-menu-icon" onClick={setShowMenu}>
+              <button
+                className="mobile-menu-icon"
+                role={'button'}
+                onClick={setShowMenu}
+              >
                 {showMenu ? (
                   <IconClose color={theme === LIGHT ? '#000' : '#fff'} />
                 ) : (
