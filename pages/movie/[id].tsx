@@ -1,5 +1,6 @@
 import { ComponentNotFound, Sidebar } from '@components';
-import { defaultImage, defaultImageCast, TOKEN } from '@constants';
+import { TOKEN } from '@configs';
+import { defaultImage, defaultImageCast } from '@constants';
 import { IDownloadLinks, IMovieDetail, ISeoInfo } from '@interface';
 import { FlexCenter, MainContent, SeactionHeading } from '@styles';
 import { fetcher, HOST_PATH, light } from '@utils';

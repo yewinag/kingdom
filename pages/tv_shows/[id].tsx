@@ -1,5 +1,6 @@
 import { ComponentNotFound, Sidebar } from '@components';
-import { defaultImage, TOKEN } from '@constants';
+import { TOKEN } from '@configs';
+import { defaultImage } from '@constants';
 import { IDownloadLinks, IMovieDetail, ISeoInfo } from '@interface';
 import { FlexCenter, MainContent, SeactionHeading } from '@styles';
 import { fetcher, HOST_PATH, light } from '@utils';
@@ -15,6 +16,7 @@ import useSWR from 'swr';
 interface IResLinks {
   download_links: IDownloadLinks;
 }
+
 const TVShowDetail: NextPage = () => {
   const {
     query: { id }
