@@ -16,7 +16,9 @@ export const TOKEN =
   'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ';
 export const adsClientId = 'ca-app-pub-3334163759744736';
 export const adsSlot = '1188312524';
-export const defaultImage = '/poster.png';
+export const defaultImage = '/soul-kingdom-placeholder-1.png';
+export const defaultImageSmall = '/soul-kingdom-placeholder-2.png';
+export const defaultImageCast = '/soul-kingdom-placeholder-cast.png';
 export const genres = [
   {
     title: 'Action',

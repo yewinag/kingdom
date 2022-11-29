@@ -1,5 +1,5 @@
 import { ComponentNotFound, Sidebar } from '@components';
-import { TOKEN } from '@constants';
+import { defaultImage, defaultImageCast, TOKEN } from '@constants';
 import { IDownloadLinks, IMovieDetail, ISeoInfo } from '@interface';
 import { FlexCenter, MainContent, SeactionHeading } from '@styles';
 import { fetcher, HOST_PATH, light } from '@utils';
@@ -31,6 +31,7 @@ const Detail: NextPage = () => {
   if (error) {
     return <ComponentNotFound />;
   }
+
   return (
     <MainContent>
       {data === undefined ? (
@@ -45,7 +46,7 @@ const Detail: NextPage = () => {
               <div className="detail">
                 <div className="image">
                   <Image
-                    src={data?.cover_path}
+                    src={data?.cover_path || defaultImage}
                     alt={data?.name}
                     width={160}
                     height={237}
@@ -67,7 +68,7 @@ const Detail: NextPage = () => {
                 <SeactionHeading>Complete Cast</SeactionHeading>
                 <p>{data?.overview}</p>
                 <Image
-                  src={data?.backdrop_path}
+                  src={data?.backdrop_path || defaultImageCast}
                   alt={data?.name}
                   width={257}
                   height={170}

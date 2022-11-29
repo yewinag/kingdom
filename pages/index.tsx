@@ -21,7 +21,7 @@ const Home: NextPage<IProps> = props => {
     title: `ငါတို့သည် ဆိုးကင်းဒန်း ဖစ်ကြသည်`,
     description: `ငါတို့သည် ဆိုးကင်းဒန်း ငါတို့သာဖစ်ကြသည်`
   };
-
+  console.log(data);
   return (
     <>
       <MetaTags metaData={metaData} />
