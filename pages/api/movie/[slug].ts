@@ -17,6 +17,7 @@ export default function handler(
     last_season: 0,
     last_episode: 0,
     created_at: '',
-    rating: 0
+    rating: 0,
+    released_date: ''
   });
 }
