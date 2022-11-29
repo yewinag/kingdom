@@ -1,5 +1,6 @@
 export * from './Card';
 export * from './Carousel';
+export * from './Detail';
 export * from './Genres';
 export * from './GlobalStyles';
 export * from './Heading';

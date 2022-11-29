@@ -13,6 +13,7 @@ interface Iprops {
 export const ComponentCard = (props: Iprops) => {
   const { item, small, genre } = props;
   const pathName = genre === keywords.TV_SHOWS ? PATH_TVSHOWS : PATH_MOVIE;
+  const year = item.released_date ? item.released_date.split('-')[0] : '----';
   return (
     <StyledCard>
       <Link href={`${pathName}${item.id}`}>
@@ -38,7 +39,7 @@ export const ComponentCard = (props: Iprops) => {
       </Link>
       <div className="info">
         <p className="title">{item.mm_name}</p>
-        <p className="desc">{`2022`}</p>
+        <p className="desc">{year}</p>
       </div>
     </StyledCard>
   );

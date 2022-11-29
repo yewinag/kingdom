@@ -18,6 +18,7 @@ export interface IMovie {
   last_episode: number;
   created_at: string;
   rating: number;
+  released_date: string;
 }
 
 export interface ICasts {

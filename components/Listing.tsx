@@ -77,7 +77,11 @@ export function Listing(props: IProps) {
             <ArticleRow>
               {tv_shows ? (
                 tv_shows.map((item, index) => (
-                  <ComponentCard item={item} key={index} />
+                  <ComponentCard
+                    item={item}
+                    key={index}
+                    genre={keywords.TV_SHOWS}
+                  />
                 ))
               ) : (
                 <ComponentPlaceholder />
