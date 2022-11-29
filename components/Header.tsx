@@ -10,14 +10,16 @@ import { useToggle } from '@hooks';
 import { HeaderLayout, SearchInputLayout } from '@styles';
 import Image from 'next/image';
 import Link from 'next/link';
+import Router from 'next/router';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 
 export const Header = () => {
   const { theme, setTheme } = useTheme();
-  const [show, setShow] = useToggle(false);
-  const [showMenu, setShowMenu] = useToggle(false);
-  const ref = useRef<HTMLUListElement>(null);
+  const [show, setShow] = useToggle();
+  const [menu, toggle] = useToggle();
+
+  const refUL = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClick);
@@ -27,10 +29,12 @@ export const Header = () => {
   });
 
   const handleClick = (e: MouseEvent) => {
-    if (ref.current && !ref.current.contains(e.target as Node)) {
-      setShowMenu();
+    if (refUL.current && !refUL.current.contains(e.target as Node)) {
+      toggle.setToggle(false);
     }
   };
+
+  Router.events.on('routeChangeComplete', () => toggle.setToggle(false));
   const changeTheme = () => {
     if (theme === LIGHT) {
       setTheme(DARK);
@@ -45,14 +49,14 @@ export const Header = () => {
         <div className="container">
           <header className="header-layout">
             <div className="mobile-menu vs-ms">
-              <button className="mobile-menu-icon" onClick={setShowMenu}>
-                {showMenu ? (
+              <button className="mobile-menu-icon" onClick={toggle.toggle}>
+                {menu ? (
                   <IconClose color={theme === LIGHT ? '#000' : '#fff'} />
                 ) : (
                   <IconMenu color={theme === LIGHT ? '#000' : '#fff'} />
                 )}
               </button>
-              <ul className={showMenu ? 'vs-ms show' : 'vs-ms'} ref={ref}>
+              <ul className={menu ? 'vs-ms show' : 'vs-ms'} ref={refUL}>
                 <li>
                   <Link href={'/'}>Home</Link>
                 </li>
@@ -116,7 +120,7 @@ export const Header = () => {
               </button>
               <button
                 className="search-btn"
-                onClick={setShow}
+                onClick={setShow.toggle}
                 aria-label={'search button'}
               >
                 <IconSearch color="white" />
