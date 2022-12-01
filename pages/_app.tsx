@@ -9,6 +9,7 @@ import { Router } from 'next/router';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { BeatLoader } from 'react-spinners';
+
 const progress = new ProgressBar({
   size: 2,
   color: '#F44336',
