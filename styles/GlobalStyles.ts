@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
 body {
     font-family: Roboto, sans-serif;
-    font-size: 14px;  
+    font-size: 0.875rem;  
     margin: 0;
 }
 .scroll-bar {
