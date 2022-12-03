@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+html{
+  scroll-behavior: smooth;
+}
 body {
     font-family: Roboto, sans-serif;
     font-size: 0.875rem;  

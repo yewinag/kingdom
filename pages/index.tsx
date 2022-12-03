@@ -11,8 +11,8 @@ interface IProps {
   data: IMovies;
   error?: string;
 }
-const Home: NextPage<IProps> = props => {
-  const { data, error } = props;
+const Home: NextPage<IProps> = ({ data, error }) => {
+  // const { data, error } = props;
   if (error) {
     window && window.location.reload();
     return <p>{error}</p>;
