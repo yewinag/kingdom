@@ -30,8 +30,8 @@ const Detail: NextPage = () => {
     fetcher
   );
   const metaData: ISeoInfo = {
-    title: `အသေစိပ်ကြည့်ရှု့မှု ဇတ်ကားဧ် နာမည် ${data?.name}`,
-    description: `ရှာဖွေမှု ရလဒ်ဧ် အသေးစိတ်အချက်အလက်များဖော်ပြချက် အချင်းခြုံ ${data?.overview}`
+    title: `Soulkingdom - watching film ${data?.name} description details`,
+    description: `Soulkingdom - watching overview ${data?.overview} of film ${data?.name}`
   };
   if (error) {
     return <ComponentNotFound />;

@@ -24,8 +24,8 @@ const Home: NextPage<IProps> = props => {
     );
   }
   const metaData: ISeoInfo = {
-    title: `ငါတို့သည် ဆိုးကင်းဒန်း ဖစ်ကြသည်`,
-    description: `ငါတို့သည် ဆိုးကင်းဒန်း ငါတို့သာဖစ်ကြသည်`
+    title: `Soulkingdom - watch films online`,
+    description: `Soulkingdom - watch films online`
   };
 
   return (

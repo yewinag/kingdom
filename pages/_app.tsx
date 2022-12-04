@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
-        <title>SoulKingdom</title>
+        <title>SoulKingdom - watching films online</title>
 
         <link rel="canonical" href="https://soulkingdom.net" />
         <link rel="manifest" href="/manifest.json" />

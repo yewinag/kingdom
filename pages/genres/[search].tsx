@@ -47,8 +47,8 @@ function Search() {
     );
   }
   const metaData: ISeoInfo = {
-    title: `ငါတို့သည် ${search} အမျိုးအစားခေါင်းစဥ်ဖြင့် ရှာထားသော အကောင်များသာ ဖစ်သည်`,
-    description: `ငါတို့သည် ${search} အမျိုးအစားခေါင်းစဥ်ဖြင့် ရလာသော ရှာဖွေခြင်းများဖစ်သည်, တွေ့ရှိမှု့ရလဒ် ${data.total} အရေအတွက်ရှိသည်`
+    title: `Soulkingdom - search films by the type of ${search} Genres`,
+    description: `Soulkingdom - search results films by the type of ${search}, there are total search results ${data.total}`
   };
 
   return (

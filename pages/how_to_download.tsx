@@ -9,8 +9,8 @@ import {
 import MetaTags from 'components/MetaTags';
 function PageHowToDownload() {
   const metaData: ISeoInfo = {
-    title: `ဆိုးကင်ဒန်းမှ ဒေါင်းလုဒ်လုပ်ခြင်း ရှင်းပြချက်`,
-    description: `ဆိုးကင်ဒန်းမှ ရှပ်ရှင်များ ဒေါင်းလုဒ်လုပ်ခြင်း အထက်ပါအကြောင်းအရာကို သေးစိတ်ရှင်းလင်းထားပါသည်`
+    title: `Soulkingdom - explanation how to download the films from soulkingdom`,
+    description: `soulkingdom - download the films from soulkingdom websites explanation`
   };
   return (
     <ContentLayout>
