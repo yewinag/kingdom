@@ -42,7 +42,7 @@ function Search() {
   if (!data) {
     return (
       <FlexCenter>
-        <BeatLoader color={'#D12729'} />;
+        <BeatLoader color={'#D12729'} />
       </FlexCenter>
     );
   }

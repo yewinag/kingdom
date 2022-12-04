@@ -16,17 +16,17 @@ function PageDMCA() {
         <section className="content-body">
           <SectionLayout>
             <p>
-              ChannelMyanmar in compliance with 17 U.S.C. § 512 and the Digital
+              Soulkingdom in compliance with 17 U.S.C. § 512 and the Digital
               Millennium Copyright Act (“DMCA”). It is our policy to respond to
               any infringement notices and take appropriate actions under the
               Digital Millennium Copyright Act (“DMCA”) and other applicable
               intellectual property laws.
             </p>
             <p>
-              If your copyrighted material has been posted on ChannelMyanmar or
-              if links to your copyrighted material are returned through our
-              search engine and you want this material removed, you must provide
-              a written communication that details the information listed in the
+              If your copyrighted material has been posted on Soulkingdom or if
+              links to your copyrighted material are returned through our search
+              engine and you want this material removed, you must provide a
+              written communication that details the information listed in the
               following section. Please be aware that you will be liable for
               damages (including costs and attorneys’ fees) if you misrepresent
               information listed on our site that is infringing on your

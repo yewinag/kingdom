@@ -4,9 +4,11 @@ import {
   Listing
 } from '@components';
 import { IMovies, ISeoInfo } from '@interface';
+import { FlexCenter } from '@styles';
 import { API_URL } from '@utils';
 import MetaTags from 'components/MetaTags';
 import type { NextPage } from 'next';
+import { BeatLoader } from 'react-spinners';
 interface IProps {
   data: IMovies;
   error?: string;
@@ -15,7 +17,11 @@ const Home: NextPage<IProps> = props => {
   const { data, error } = props;
   if (error) {
     window && window.location.reload();
-    return <p>{error}</p>;
+    return (
+      <FlexCenter>
+        <BeatLoader color={'#D12729'} />
+      </FlexCenter>
+    );
   }
   const metaData: ISeoInfo = {
     title: `ငါတို့သည် ဆိုးကင်းဒန်း ဖစ်ကြသည်`,

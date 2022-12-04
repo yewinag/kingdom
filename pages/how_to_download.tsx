@@ -20,12 +20,11 @@ function PageHowToDownload() {
         <section className="content-body">
           <SectionLayout>
             <SeactionHeading>
-              Channel Myanmar မှ Video Download နည်းများ (နမူနာဒေါင်းပြထားတဲ့
-              Video တွေကိုအောက်ဆုံးမှာသွားကြည့်လို့ပါတယ်။)
-              ==========================
+              Soulkingdom မှ Video Download နည်းများ (နမူနာဒေါင်းပြထားတဲ့ Video
+              တွေကိုအောက်ဆုံးမှာသွားကြည့်လို့ပါတယ်။) ==========================
             </SeactionHeading>
             <p>
-              www.channelmyanmar.org
+              www.soulkingdom.net
               ကိုသွားပါ။ကိုယ်ဒေါင်းချင်တဲ့ဇာတ်ကားကိုရွေးပါ။(ဒီမှာတစ်ခုသတိပေးချင်တာက
               ဖုန်းတို့ဘာတို့ဆို Ads Block ခံထားရင် Download
               လို့မရပါဘူး…ဒါကြောင့် မိမိဖုန်း Browser ရဲ့ setting ထဲဝင်ပြီး Ads
