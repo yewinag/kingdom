@@ -1,33 +1,33 @@
 export const base = {
   breakPoints: {
-    mobile: '375px',
-    lg_mobile: '425px',
-    mobile_520: '520px',
-    tablet: '768px'
+    mobile: '23.438rem', //375px
+    lg_mobile: '26.563rem', //425px
+    mobile_520: '32.5rem', //520px
+    tablet: '48.063rem' //769px
   },
   space: {
     '0': '0px',
-    '2': '2px',
-    '4': '4px',
-    '8': '8px',
-    '10': '10px',
-    '16': '16px',
-    '20': '20px',
-    '30': '30px',
-    '32': '32px',
-    '64': '64px'
+    '2': '0.125rem', //2px
+    '4': '0.25rem', //4px
+    '8': '0.5rem', //8px
+    '10': '0.625rem', //10px
+    '16': '1rem', //16px
+    '20': '1.25rem', //20px
+    '30': '1.875rem', //30px
+    '32': '2rem', //32px
+    '64': '4rem' //64px
   },
   fonts: {
     heading: 'Poppins, sans-serif',
     body: 'Poppins, sans-serif'
   },
   fontSizes: {
-    small: '12px',
-    normal: '14px',
-    title: '16px',
-    large: '18px',
-    xlarge: '20px',
-    xxlarge: '24px'
+    small: '0.75rem', //12px
+    normal: '0.875rem', //14px
+    title: '1rem', //16px
+    large: '1.125rem', //18px
+    xlarge: '1.25rem', //20px
+    xxlarge: '1.5rem' //24px
   },
   fontWeights: {
     normal: 300,

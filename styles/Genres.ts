@@ -17,6 +17,7 @@ export const StyledGenres = styled.div`
     cursor: pointer;
     p {
       color: ${p => p.theme.text_200};
+      text-transform: capitalize;
     }
     &.active,
     :hover {
