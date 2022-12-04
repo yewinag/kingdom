@@ -47,9 +47,15 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2"
         />
-        <meta name="description" content="Description" />
-        <meta name="keywords" content="Keywords" />
         <title>SoulKingdom - watching films online</title>
+        <meta
+          name="description"
+          content="SoulKingdom.com is the best Korea Drama website that provides you with complete movies, Kdrama Episodes, and Kdrama OSTs in HD quality through the Internet."
+        />
+        <meta
+          name="keywords"
+          content="soulkingdom korea drama series, complete movies, full HD quality movies"
+        />
 
         <link rel="canonical" href="https://soulkingdom.net" />
         <link rel="manifest" href="/manifest.json" />
