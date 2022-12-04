@@ -1,6 +1,6 @@
 export const DARK = 'dark';
 export const LIGHT = 'light';
-export const initPage = 1;
+export const initPage = 0;
 export const keywords = {
   LATEST: 'latest',
   POPULAR: 'popular',

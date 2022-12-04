@@ -33,7 +33,7 @@ function Search() {
   } = useRouter();
   const [page, setPage] = useState(initPage);
   const { data, error } = useSWR<IResMovie, Error>(
-    `/search?filter=${search}&page=${page}`,
+    `/search?filter=${search}&current=${page + 1}`,
     fetcher
   );
   if (error) {
@@ -63,6 +63,7 @@ function Search() {
               <ComponentPagination
                 totalPage={data.total_page}
                 changePage={page => setPage(page)}
+                current={page}
               />
             )}
           </SectionLayout>

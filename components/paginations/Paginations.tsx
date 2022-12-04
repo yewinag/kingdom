@@ -6,15 +6,20 @@ import ReactPaginate from 'react-paginate';
 
 interface IProps {
   totalPage: number;
+  current: number;
   changePage: (page: number) => void;
 }
 interface ISelected {
   selected: number;
 }
-export const ComponentPagination = ({ totalPage, changePage }: IProps) => {
+export const ComponentPagination = ({
+  totalPage,
+  current,
+  changePage
+}: IProps) => {
   const { theme } = useTheme();
   const handlePageClick = (event: ISelected) => {
-    changePage(event.selected + 1);
+    changePage(event.selected);
   };
 
   return (
@@ -28,6 +33,7 @@ export const ComponentPagination = ({ totalPage, changePage }: IProps) => {
         previousLabel={<IconRight color={theme === LIGHT ? '#000' : '#fff'} />}
         className={'paginate-layout'}
         activeClassName={'active'}
+        forcePage={current}
       />
     </StyledPaginate>
   );
