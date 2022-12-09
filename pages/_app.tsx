@@ -9,6 +9,7 @@ import { Router } from 'next/router';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { BeatLoader } from 'react-spinners';
+import Script from 'next/script';
 
 const progress = new ProgressBar({
   size: 2,
@@ -38,6 +39,21 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
   return (
     <>
+      <Script
+        strategy="lazyOnload"
+        src={`https://www.googletagmanager.com/gtag/js?id=G-27VRMK3PV7`}
+      />
+
+      <Script strategy="lazyOnload">
+        {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-27VRMK3PV7', {
+                    page_path: window.location.pathname,
+                    });
+                `}
+      </Script>
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
