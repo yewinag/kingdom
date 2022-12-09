@@ -6,10 +6,10 @@ import { GlobalStyles, PageLoading, Responsive } from '@styles';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router } from 'next/router';
+import Script from 'next/script';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { BeatLoader } from 'react-spinners';
-import Script from 'next/script';
 
 const progress = new ProgressBar({
   size: 2,
@@ -40,19 +40,20 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Script
+        id="soulkingdom-id"
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=G-27VRMK3PV7`}
       />
 
-      <Script strategy="lazyOnload">
+      <Script strategy="lazyOnload" id="soulkingdom-id">
         {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', 'G-27VRMK3PV7', {
-                    page_path: window.location.pathname,
-                    });
-                `}
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-27VRMK3PV7', {
+          page_path: window.location.pathname,
+          });
+        `}
       </Script>
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
