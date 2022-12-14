@@ -34,7 +34,7 @@ export const Header = () => {
     }
   };
 
-  Router.events.on('hashChangeStart', () => toggle.setToggle(false));
+  Router.events.on('routeChangeStart', () => toggle.setToggle(false));
 
   const changeTheme = () => {
     if (theme === LIGHT) {
