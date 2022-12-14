@@ -30,10 +30,9 @@ export const ComponentRandom = (props: IProps) => {
     374: { items: 4 },
     425: { items: 4 },
     480: { items: 6 },
-    // 520: { items: 6 },
-    // 600: { items: 6 },
     660: { items: 6 },
-    1024: { items: 8 }
+    769: { items: 8 },
+    1020: { items: 8 }
   };
 
   return (
@@ -42,7 +41,7 @@ export const ComponentRandom = (props: IProps) => {
       {mounted && (
         <AliceCarousel
           responsive={responsive}
-          autoPlay={false}
+          autoPlay={true}
           animationDuration={1000}
           mouseTracking
           infinite
