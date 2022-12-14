@@ -17,13 +17,25 @@ export const SectionTitle = styled.section`
   box-shadow: ${p => p.theme.shadow};
   padding-bottom: ${p => p.theme.space['10']};
   a {
-    color: ${p => p.theme.text_200};
+    color: ${p => p.theme.primary_500};
     text-decoration: none;
     cursor: pointer;
   }
 `;
 
 export const SeactionHeading = styled.h4`
+  font-size: ${p => p.theme.fontSizes.title};
+  font-weight: ${p => p.theme.fontWeights.bold};
+  color: ${p => p.theme.text_200};
+  border-left: 3px solid ${p => p.theme.primary_500};
+  padding-left: 10px;
+  &:hover {
+    color: ${p => p.theme.primary_500};
+    cursor: pointer;
+  }
+`;
+
+export const PageHeading = styled.h4`
   font-size: ${p => p.theme.fontSizes.title};
   font-weight: ${p => p.theme.fontWeights.bold};
   color: ${p => p.theme.text_200};

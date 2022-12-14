@@ -7,6 +7,9 @@ export const StyledCard = styled.article`
     height: ${p => p.theme.heights.img};
     position: relative;
     width: ${p => p.theme.widths.img};
+    span {
+      border-radius: 4px;
+    }
     img {
       width: 100%;
       height: 100%;

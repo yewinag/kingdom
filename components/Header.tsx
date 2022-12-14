@@ -65,14 +65,14 @@ export const Header = () => {
                     TV Shows
                   </Link>
                 </li>
-                {/* <li>
-                  <Link href={'/vip'}>VIP</Link>
-                </li> */}
                 <li>
                   <Link href={'/how_to_download'}>How to download</Link>
                 </li>
                 <li>
                   <Link href={'/dmca_policy'}>DMCA</Link>
+                </li>
+                <li>
+                  <Link href={'/about'}>About</Link>
                 </li>
               </ul>
             </div>
@@ -103,6 +103,9 @@ export const Header = () => {
                 </li>
                 <li>
                   <Link href={'/dmca_policy'}>DMCA</Link>
+                </li>
+                <li>
+                  <Link href={'/about'}>About</Link>
                 </li>
               </ul>
             </div>

@@ -8,7 +8,8 @@ import {
   StyledHeading
 } from '@styles';
 import MetaTags from 'components/MetaTags';
-function PageHowToDownload() {
+
+function AboutPage() {
   const metaData: ISeoInfo = {
     title: `Soulkingdom - explanation how to download the films from soulkingdom`,
     description: `soulkingdom - download the films from soulkingdom websites explanation`
@@ -16,16 +17,12 @@ function PageHowToDownload() {
   return (
     <ContentLayout>
       <MetaTags metaData={metaData} />
-      <StyledHeading>{`HOW TO DOWNLOAD`}</StyledHeading>
+      <StyledHeading>{`About Us`}</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">
           <SectionLayout>
             <InfoPageStyles>
-              <PageHeading>
-                Soulkingdom မှ Video Download နည်းများ (နမူနာဒေါင်းပြထားတဲ့
-                Video တွေကိုအောက်ဆုံးမှာသွားကြည့်လို့ပါတယ်။)
-                ==========================
-              </PageHeading>
+              <PageHeading>{`ကျုန်ုပ်တို့ အေကြာင်း`}</PageHeading>
               <p>
                 www.soulkingdom.net
                 ကိုသွားပါ။ကိုယ်ဒေါင်းချင်တဲ့ဇာတ်ကားကိုရွေးပါ။(ဒီမှာတစ်ခုသတိပေးချင်တာက
@@ -63,4 +60,4 @@ function PageHowToDownload() {
   );
 }
 
-export default PageHowToDownload;
+export default AboutPage;

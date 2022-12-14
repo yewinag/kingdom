@@ -31,7 +31,9 @@ export function Listing(props: IProps) {
         <section className="content-body">
           <SectionLayout>
             <SectionTitle>
-              <SeactionHeading>Latest</SeactionHeading>
+              <Link href={`${PATH_GENRES}${keywords.LATEST}`}>
+                <SeactionHeading>Latest</SeactionHeading>
+              </Link>
               <Link
                 href={`${PATH_GENRES}${keywords.LATEST}`}
               >{`see more >>`}</Link>
@@ -50,7 +52,9 @@ export function Listing(props: IProps) {
           {/* <ComponentGoogleAds /> */}
           <SectionLayout>
             <SectionTitle>
-              <SeactionHeading>Animes </SeactionHeading>
+              <Link href={`${PATH_GENRES}${keywords.ANIME}`}>
+                <SeactionHeading>Animes </SeactionHeading>
+              </Link>
               <Link
                 href={`${PATH_GENRES}${keywords.ANIME}`}
               >{`see more >>`}</Link>
@@ -69,7 +73,9 @@ export function Listing(props: IProps) {
           {/* <ComponentGoogleAds /> */}
           <SectionLayout>
             <SectionTitle>
-              <SeactionHeading>TV Shows </SeactionHeading>
+              <Link href={`${PATH_GENRES}${keywords.TV_SHOWS}`}>
+                <SeactionHeading>TV Shows </SeactionHeading>
+              </Link>
               <Link
                 href={`${PATH_GENRES}${keywords.TV_SHOWS}`}
               >{`see more >>`}</Link>
@@ -92,7 +98,9 @@ export function Listing(props: IProps) {
           {/* <ComponentGoogleAds /> */}
           <SectionLayout>
             <SectionTitle>
-              <SeactionHeading>Movies</SeactionHeading>
+              <Link href={`${PATH_GENRES}${keywords.MOVIES}`}>
+                <SeactionHeading>Movies</SeactionHeading>
+              </Link>
               <Link
                 href={`${PATH_GENRES}${keywords.MOVIES}`}
               >{`see more >>`}</Link>

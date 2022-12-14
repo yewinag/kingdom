@@ -24,6 +24,7 @@ export const ComponentCard = (props: Iprops) => {
               src={item.cover_path || defaultImage}
               alt={item.name}
               layout="fill"
+              className="next-image"
               // layout="intrinsic"
               // width={126}
               // height={194}

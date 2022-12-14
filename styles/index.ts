@@ -4,6 +4,7 @@ export * from './Detail';
 export * from './Genres';
 export * from './GlobalStyles';
 export * from './Heading';
+export * from './InfoPage';
 export * from './Layouts';
 export * from './Paginate';
 export * from './Responsive';
