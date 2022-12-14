@@ -15,19 +15,16 @@ export const ComponentCard = (props: Iprops) => {
   const pathName = genre === keywords.TV_SHOWS ? PATH_TVSHOWS : PATH_MOVIE;
   const year = item.released_date ? item.released_date.split('-')[0] : '----';
   return (
-    <StyledCard>
+    <StyledCard className={small ? 'small' : ''}>
       <Link href={`${pathName}${item.id}`}>
         <a>
-          <div className={small ? 'image small' : 'image'}>
+          <div className="image">
             <Image
               blurDataURL="/poster.png"
               src={item.cover_path || defaultImage}
               alt={item.name}
               layout="fill"
               className="next-image"
-              // layout="intrinsic"
-              // width={126}
-              // height={194}
             />
             <span className="player">
               <IconPlay />

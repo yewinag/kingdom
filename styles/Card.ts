@@ -1,14 +1,29 @@
 import styled from 'styled-components';
 
 export const StyledCard = styled.article`
-  max-height: ${p => p.theme.heights.card};
   cursor: pointer;
+  width: 18%;
+  margin-left: 1.5%;
+  margin-bottom: 1.5%;
+  &.small {
+    width: 100%;
+  }
+  @media (max-width: ${p => p.theme.breakPoints.s_tablet}) {
+    width: 23%;
+    margin-left: 2%;
+    margin-bottom: 2%;
+  }
+  @media (max-width: ${p => p.theme.breakPoints.mobile_520}) {
+    width: 30%;
+    margin-left: 3%;
+    margin-bottom: 3%;
+  }
   .image {
-    height: ${p => p.theme.heights.img};
     position: relative;
-    width: ${p => p.theme.widths.img};
+    width: 100%;
+    padding-top: 140%;
     span {
-      border-radius: 4px;
+      border-radius: 6px;
     }
     img {
       width: 100%;
@@ -16,11 +31,6 @@ export const StyledCard = styled.article`
       transition: transform 0.5s, filter 1s ease-in-out;
       transform: scale(1.2);
     }
-    &.small {
-      height: ${p => p.theme.heights.w_sm_img};
-      width: ${p => p.theme.widths.w_sm_img};
-    }
-
     .rating {
       position: absolute;
       bottom: 4px;
@@ -45,6 +55,7 @@ export const StyledCard = styled.article`
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      top: 0;
       svg {
         visibility: hidden;
       }
@@ -57,7 +68,6 @@ export const StyledCard = styled.article`
       transform: scale(1);
     }
     .player {
-      /* background: #000; */
       svg {
         visibility: visible;
       }
@@ -70,7 +80,7 @@ export const StyledCard = styled.article`
       overflow: hidden;
       margin-top: 7px;
       color: ${p => p.theme.text_200};
-      width: 126px;
+      /* width: 126px; */
       white-space: nowrap;
       text-overflow: ellipsis;
     }
@@ -82,50 +92,6 @@ export const StyledCard = styled.article`
       width: 120px;
       white-space: nowrap;
       text-overflow: ellipsis;
-    }
-  }
-  @media (max-width: ${p => p.theme.breakPoints.mobile_520}) {
-    .image {
-      &.small {
-        height: ${p => p.theme.heights.sm_img};
-        width: ${p => p.theme.widths.m_520};
-      }
-    }
-  }
-  @media (max-width: ${p => p.theme.breakPoints.lg_mobile}) {
-    .image {
-      height: ${p => p.theme.heights.m_img};
-      width: ${p => p.theme.widths.sm_img};
-      &.small {
-        height: ${p => p.theme.heights.ml_img};
-        width: ${p => p.theme.widths.ml_img};
-      }
-    }
-    .info {
-      .title {
-        width: 117px;
-      }
-      .desc {
-        width: 117px;
-      }
-    }
-  }
-  @media (max-width: ${p => p.theme.breakPoints.mobile}) {
-    .image {
-      height: ${p => p.theme.heights.m_img};
-      width: ${p => p.theme.widths.m_img};
-      &.small {
-        height: ${p => p.theme.heights.xs_img};
-        width: ${p => p.theme.widths.xs_img};
-      }
-    }
-    .info {
-      .title {
-        width: 100px;
-      }
-      .desc {
-        width: 100px;
-      }
     }
   }
 `;

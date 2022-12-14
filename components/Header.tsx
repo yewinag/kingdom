@@ -34,7 +34,8 @@ export const Header = () => {
     }
   };
 
-  Router.events.on('routeChangeComplete', () => toggle.setToggle(false));
+  Router.events.on('hashChangeStart', () => toggle.setToggle(false));
+
   const changeTheme = () => {
     if (theme === LIGHT) {
       setTheme(DARK);
@@ -64,6 +65,15 @@ export const Header = () => {
                   <Link href={`${PATH_GENRES}${keywords.TV_SHOWS}`}>
                     TV Shows
                   </Link>
+                </li>
+                <li>
+                  <Link href={`${PATH_GENRES}${keywords.LATEST}`}>Latest</Link>
+                </li>
+                <li>
+                  <Link href={`${PATH_GENRES}${keywords.ANIME}`}>Animes</Link>
+                </li>
+                <li>
+                  <Link href={`${PATH_GENRES}${keywords.MOVIES}`}>Movies</Link>
                 </li>
                 <li>
                   <Link href={'/how_to_download'}>How to download</Link>

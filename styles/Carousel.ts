@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledCarousel = styled.section`
-  min-height: 300px;
+  /* min-height: 300px; */
   .alice-carousel__dots {
     display: none;
   }

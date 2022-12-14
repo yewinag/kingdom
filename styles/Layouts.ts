@@ -8,19 +8,8 @@ export const SectionLayout = styled.section`
 export const ArticleRow = styled.section`
   display: flex;
   flex-wrap: wrap;
-  column-gap: ${p => p.theme.space['16']};
-  row-gap: ${p => p.theme.space['32']};
-  max-height: ${p => p.theme.heights.row};
   overflow: hidden;
   padding: 10px 0;
-  @media (max-width: ${p => p.theme.breakPoints.lg_mobile}) {
-    max-height: ${p => p.theme.heights.sm_row};
-    column-gap: ${p => p.theme.space['16']};
-  }
-  @media (max-width: ${p => p.theme.breakPoints.mobile}) {
-    max-height: ${p => p.theme.heights.xs_row};
-    column-gap: ${p => p.theme.space['10']};
-  }
 `;
 export const PageLoading = styled.div`
   min-height: 100vh;
@@ -65,8 +54,6 @@ export const SidebarLayout = styled.aside`
 export const SearchListing = styled.section`
   display: flex;
   flex-wrap: wrap;
-  column-gap: ${p => p.theme.space['16']};
-  row-gap: ${p => p.theme.space['30']};
 `;
 export const SearchInputLayout = styled.div`
   padding-top: 60px;

@@ -3,6 +3,7 @@ export const base = {
     mobile: '23.438rem', //375px
     lg_mobile: '26.563rem', //425px
     mobile_520: '32.5rem', //520px
+    s_tablet: '34.375rem', //486px
     tablet: '48.063rem' //769px
   },
   space: {
