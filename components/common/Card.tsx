@@ -1,19 +1,25 @@
-import { defaultImage, keywords, PATH_MOVIE, PATH_TVSHOWS } from '@constants';
+import {
+  defaultImage,
+  enumShowType,
+  PATH_MOVIE,
+  PATH_TVSHOWS
+} from '@constants';
 import { StyledCard } from '@styles';
 import { IconPlay, IconStart } from 'components/icons';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { enumShowType, IMovie } from '../../interface';
+import { IMovie } from '../../interface';
 interface Iprops {
   item: IMovie;
   small?: boolean;
   genre?: string;
 }
+
 export const ComponentCard = (props: Iprops) => {
   const { item, small } = props;
   const pathName =
-    item.show_type === enumShowType.TV_SHOW ? PATH_TVSHOWS : PATH_MOVIE;
+    item.show_type == enumShowType.TV_SHOW ? PATH_TVSHOWS : PATH_MOVIE;
   const year = item.released_date ? item.released_date.split('-')[0] : '----';
   return (
     <StyledCard className={small ? 'small' : ''}>

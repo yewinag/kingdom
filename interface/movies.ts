@@ -11,7 +11,7 @@ export interface IMovie {
   id: number;
   cover_path: string;
   backdrop_path: string;
-  show_type: enumShowType;
+  show_type: string;
   name: string;
   mm_name: string;
   last_season: number;
@@ -63,8 +63,4 @@ export interface IDownloadLinks {
 export interface ISeoInfo {
   title: string;
   description: string;
-}
-export enum enumShowType {
-  TV_SHOW = 'tv_show',
-  MOVIE = 'movie'
 }

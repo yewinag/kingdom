@@ -102,3 +102,8 @@ export const years = [
   '2000',
   '1999'
 ];
+
+export const enumShowType = {
+  TV_SHOW: 'tv_show',
+  MOVIE: 'movie'
+} as const;
