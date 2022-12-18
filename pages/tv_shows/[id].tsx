@@ -15,9 +15,9 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import TagManager from 'react-gtm-module';
 import { BeatLoader } from 'react-spinners';
 import useSWR from 'swr';
-import TagManager from 'react-gtm-module';
 interface IResLinks {
   download_links: IDownloadLinks;
 }

@@ -9,8 +9,8 @@ import { Router } from 'next/router';
 import Script from 'next/script';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { BeatLoader } from 'react-spinners';
 import TagManager from 'react-gtm-module';
+import { BeatLoader } from 'react-spinners';
 
 const progress = new ProgressBar({
   size: 2,
