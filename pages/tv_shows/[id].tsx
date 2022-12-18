@@ -44,6 +44,7 @@ const TVShowDetail: NextPage = () => {
       application: 'Soulkingdom',
       page: `view detail - ${data?.name}`
     },
+    events: 'view_detail',
     dataLayerName: 'PageDataLayer'
   };
 
