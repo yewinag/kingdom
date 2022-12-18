@@ -10,6 +10,7 @@ import Script from 'next/script';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { BeatLoader } from 'react-spinners';
+import TagManager from 'react-gtm-module';
 
 const progress = new ProgressBar({
   size: 2,
@@ -27,6 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const { theme } = useTheme();
 
   useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-NWZDX8N' });
     setMounted(true);
   }, []);
 

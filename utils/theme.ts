@@ -89,7 +89,7 @@ export const light = {
   text_700: '#3D4869',
   text_800: '#263155',
   text_900: '#172046',
-  shadow: 'rgb(0 0 0 / 4%) 0px 3px 5px'
+  shadow: 'rgb(0 0 0 / 2%) 0px 1px 2px'
 };
 export const dark = {
   background: '#000',

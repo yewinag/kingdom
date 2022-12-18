@@ -17,6 +17,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { BeatLoader } from 'react-spinners';
 import useSWR from 'swr';
+import TagManager from 'react-gtm-module';
 interface IResLinks {
   download_links: IDownloadLinks;
 }
@@ -25,6 +26,7 @@ const TVShowDetail: NextPage = () => {
   const {
     query: { id }
   } = useRouter();
+
   const { data, error } = useSWR<IMovieDetail, Error>(
     `/tv-shows/${id}`,
     fetcher
@@ -37,6 +39,15 @@ const TVShowDetail: NextPage = () => {
     title: `အသေစိပ်ကြည့်ရှု့မှု ဇတ်ကားဧ် နာမည် ${data?.name}`,
     description: `ရှာဖွေမှု ရလဒ်ဧ် အသေးစိတ်အချက်အလက်များဖော်ပြချက် အချင်းခြုံ ${data?.overview}`
   };
+  const tagManagerArgs = {
+    dataLayer: {
+      application: 'Soulkingdom',
+      page: `view detail - ${data?.name}`
+    },
+    dataLayerName: 'PageDataLayer'
+  };
+
+  TagManager.dataLayer(tagManagerArgs);
   if (error) {
     return <ComponentNotFound />;
   }
