@@ -30,7 +30,7 @@ const Detail: NextPage = () => {
     fetcher
   );
   const metaData: ISeoInfo = {
-    title: `Soulkingdom - watching film ${data?.name} description details`,
+    title: `${data?.name} - watching ${data?.name} on Soulkingdom`,
     description: `Soulkingdom - watching overview ${data?.overview} of film ${data?.name}`
   };
   if (error) {

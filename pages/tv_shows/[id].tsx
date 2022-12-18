@@ -36,19 +36,9 @@ const TVShowDetail: NextPage = () => {
     fetcher
   );
   const metaData: ISeoInfo = {
-    title: `အသေစိပ်ကြည့်ရှု့မှု ဇတ်ကားဧ် နာမည် ${data?.name}`,
-    description: `ရှာဖွေမှု ရလဒ်ဧ် အသေးစိတ်အချက်အလက်များဖော်ပြချက် အချင်းခြုံ ${data?.overview}`
+    title: `${data?.name} films - watch ${data?.name}  on soulkingdom `,
+    description: `${data?.overview} complete cast of ${data?.name} `
   };
-  <Script strategy="lazyOnload" id="soulkingdom-id">
-    {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-27VRMK3PV7', {
-          page_title: ${data?.name},
-          });
-        `}
-  </Script>;
   if (error) {
     return <ComponentNotFound />;
   }
