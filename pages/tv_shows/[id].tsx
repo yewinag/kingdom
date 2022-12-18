@@ -15,7 +15,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import TagManager from 'react-gtm-module';
+import Script from 'next/script';
 import { BeatLoader } from 'react-spinners';
 import useSWR from 'swr';
 interface IResLinks {
@@ -39,16 +39,16 @@ const TVShowDetail: NextPage = () => {
     title: `အသေစိပ်ကြည့်ရှု့မှု ဇတ်ကားဧ် နာမည် ${data?.name}`,
     description: `ရှာဖွေမှု ရလဒ်ဧ် အသေးစိတ်အချက်အလက်များဖော်ပြချက် အချင်းခြုံ ${data?.overview}`
   };
-  const tagManagerArgs = {
-    dataLayer: {
-      application: 'Soulkingdom',
-      page: `view detail - ${data?.name}`
-    },
-    events: 'view_detail',
-    dataLayerName: 'PageDataLayer'
-  };
-
-  TagManager.dataLayer(tagManagerArgs);
+  <Script strategy="lazyOnload" id="soulkingdom-id">
+    {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-27VRMK3PV7', {
+          page_title: ${data?.name},
+          });
+        `}
+  </Script>;
   if (error) {
     return <ComponentNotFound />;
   }

@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     TagManager.initialize({
-      dataLayerName: 'PageDataLayer',
+      // dataLayerName: 'PageDataLayer',
       gtmId: 'GTM-NWZDX8N'
     });
     setMounted(true);
