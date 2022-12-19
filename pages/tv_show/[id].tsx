@@ -1,7 +1,6 @@
-import { ComponentNotFound, Sidebar } from '@components';
-import { TOKEN } from '@configs';
+import { ComponentNotFound, DownloadBtn, Sidebar } from '@components';
 import { defaultImage } from '@constants';
-import { IDownloadLinks, IMovieDetail, ISeoInfo } from '@interface';
+import { IMovieDetail, ISeoInfo } from '@interface';
 import {
   DetailStyles,
   FlexCenter,
@@ -13,14 +12,9 @@ import MetaTags from 'components/MetaTags';
 import { Social } from 'components/Social';
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Script from 'next/script';
 import { BeatLoader } from 'react-spinners';
 import useSWR from 'swr';
-interface IResLinks {
-  download_links: IDownloadLinks;
-}
 
 const TVShowDetail: NextPage = () => {
   const {
@@ -31,10 +25,6 @@ const TVShowDetail: NextPage = () => {
     `/tv-shows/${id}`,
     fetcher
   );
-  const { data: res } = useSWR<IResLinks | undefined, Error>(
-    [`/shows/${id}/download-links`, { headers: { Authorization: TOKEN } }],
-    fetcher
-  );
   const metaData: ISeoInfo = {
     title: `${data?.name} films - watch ${data?.name}  on soulkingdom `,
     description: `${data?.overview} complete cast of ${data?.name} `
@@ -42,6 +32,7 @@ const TVShowDetail: NextPage = () => {
   if (error) {
     return <ComponentNotFound />;
   }
+
   return (
     <MainContent>
       {data === undefined ? (
@@ -80,56 +71,33 @@ const TVShowDetail: NextPage = () => {
                 <Image
                   src={data?.backdrop_path || defaultImage}
                   alt={data?.name}
-                  width={257}
-                  height={170}
+                  width={384}
+                  height={217}
                   loading={'lazy'}
                 />
               </div>
               <div className="download">
-                {/* <SeactionHeading>Download Links</SeactionHeading> */}
                 <header>
                   <h4>Download Links</h4>
                   <h4>Quality</h4>
                 </header>
                 <article>
-                  <Link href={res?.download_links['360p'] || '/'}>
-                    <a target="_blank">
-                      <div className="link-title">
-                        <p>Option 1</p>
-                        <p>360p</p>
-                      </div>
-                    </a>
-                  </Link>
-                  <Link href={res?.download_links['480p'] || '/'}>
-                    <a target="_blank">
-                      <div className="link-title">
-                        <p>Option 2</p>
-                        <p>480p</p>
-                      </div>
-                    </a>
-                  </Link>
-                  <Link href={res?.download_links['720p'] || '/'}>
-                    <a target="_blank">
-                      <div className="link-title">
-                        <p>Option 3</p>
-                        <p>720p</p>
-                      </div>
-                    </a>
-                  </Link>
-                  <Link href={res?.download_links['1080p'] || '/'}>
-                    <a target="_blank">
-                      <div className="link-title">
-                        <p>Option 4</p>
-                        <p>1080p</p>
-                      </div>
-                    </a>
-                  </Link>
+                  {data?.seasons?.map((episode, index) => (
+                    <DownloadBtn
+                      alt="download button"
+                      id={episode?.id}
+                      episode={index + 1}
+                      key={index}
+                    >
+                      <p>{`Episode ${index + 1}`}</p>
+                    </DownloadBtn>
+                  ))}
                 </article>
               </div>
               <div className="share">
                 <Social
-                  fbLink={`${HOST_PATH}/movie/${id}` || '/'}
-                  twLink={`${HOST_PATH}/movie/${id}` || '/'}
+                  fbLink={`${HOST_PATH}/tv_show/${id}` || '/'}
+                  twLink={`${HOST_PATH}/tv_show/${id}` || '/'}
                 />
               </div>
             </section>

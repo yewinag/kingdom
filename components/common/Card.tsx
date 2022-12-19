@@ -1,9 +1,4 @@
-import {
-  defaultImage,
-  enumShowType,
-  PATH_MOVIE,
-  PATH_TVSHOWS
-} from '@constants';
+import { defaultImage } from '@constants';
 import { StyledCard } from '@styles';
 import { IconPlay, IconStart } from 'components/icons';
 import Image from 'next/image';
@@ -18,12 +13,10 @@ interface Iprops {
 
 export const ComponentCard = (props: Iprops) => {
   const { item, small } = props;
-  const pathName =
-    item.show_type == enumShowType.TV_SHOW ? PATH_TVSHOWS : PATH_MOVIE;
   const year = item.released_date ? item.released_date.split('-')[0] : '----';
   return (
     <StyledCard className={small ? 'small' : ''}>
-      <Link href={`${pathName}${item.id}`}>
+      <Link href={`/${item.show_type}/${item.id}`}>
         <a>
           <div className="image">
             <Image

@@ -49,6 +49,14 @@ export interface IMovieDetail {
   slug: string;
   streaming_id: string;
   trailer_link: string;
+  seasons?: ISeason[];
+  trailer_embedded_url: string;
+}
+export interface ISeason {
+  id: number;
+  in_number: number;
+  total_episodes: number;
+  ost: any[];
 }
 export interface IDownloadLink {
   download: string;
