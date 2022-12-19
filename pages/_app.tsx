@@ -11,6 +11,8 @@ import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import TagManager from 'react-gtm-module';
 import { BeatLoader } from 'react-spinners';
+import { Provider } from 'react-redux';
+import { store } from '@store';
 
 const progress = new ProgressBar({
   size: 2,
@@ -105,16 +107,18 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/icons/apple-icon.png"></link>
         <meta name="theme-color" content="#F44336" />
       </Head>
-      <ThemeProvider defaultTheme={theme || 'dark'}>
-        <StyledThemeProvider>
-          <GlobalStyles />
-          <Responsive>
-            <AppLayout>
-              <Component {...pageProps} />
-            </AppLayout>
-          </Responsive>
-        </StyledThemeProvider>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider defaultTheme={theme || 'dark'}>
+          <StyledThemeProvider>
+            <GlobalStyles />
+            <Responsive>
+              <AppLayout>
+                <Component {...pageProps} />
+              </AppLayout>
+            </Responsive>
+          </StyledThemeProvider>
+        </ThemeProvider>
+      </Provider>
     </>
   );
 }
