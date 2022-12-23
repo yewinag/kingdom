@@ -5,8 +5,6 @@ const NotFoundPage = () => {
     <main>
       <div>
         <ComponentNotFound />
-        {/* <h1>404</h1>
-        <h3>SOMETHING WENT WORNG</h3> */}
       </div>
     </main>
   );

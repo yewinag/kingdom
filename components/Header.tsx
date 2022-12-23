@@ -50,7 +50,11 @@ export const Header = () => {
         <div className="container">
           <header className="header-layout">
             <div className="mobile-menu vs-ms">
-              <button className="mobile-menu-icon" onClick={toggle.toggle}>
+              <button
+                className="mobile-menu-icon"
+                aria-pressed={false}
+                onClick={toggle.toggle}
+              >
                 {menu ? (
                   <IconClose color={theme === LIGHT ? '#000' : '#fff'} />
                 ) : (
@@ -58,30 +62,30 @@ export const Header = () => {
                 )}
               </button>
               <ul className={menu ? 'vs-ms show' : 'vs-ms'} ref={refUL}>
-                <li>
+                <li onClick={toggle.toggle} role={'presentation'}>
                   <Link href={'/'}>Home</Link>
                 </li>
-                <li>
+                <li onClick={toggle.toggle} role={'presentation'}>
                   <Link href={`${PATH_GENRES}${keywords.TV_SHOWS}`}>
                     TV Shows
                   </Link>
                 </li>
-                <li>
+                <li onClick={toggle.toggle} role={'presentation'}>
                   <Link href={`${PATH_GENRES}${keywords.LATEST}`}>Latest</Link>
                 </li>
-                <li>
+                <li onClick={toggle.toggle} role={'presentation'}>
                   <Link href={`${PATH_GENRES}${keywords.ANIME}`}>Animes</Link>
                 </li>
-                <li>
+                <li onClick={toggle.toggle} role={'presentation'}>
                   <Link href={`${PATH_GENRES}${keywords.MOVIES}`}>Movies</Link>
                 </li>
-                <li>
+                <li onClick={toggle.toggle} role={'presentation'}>
                   <Link href={'/how_to_download'}>How to download</Link>
                 </li>
-                <li>
+                <li onClick={toggle.toggle} role={'presentation'}>
                   <Link href={'/dmca_policy'}>DMCA</Link>
                 </li>
-                <li>
+                <li onClick={toggle.toggle} role={'presentation'}>
                   <Link href={'/about'}>About</Link>
                 </li>
               </ul>

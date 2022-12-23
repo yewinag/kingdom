@@ -2,6 +2,7 @@ import '../styles/global.css';
 
 import ProgressBar from '@badrap/bar-of-progress';
 import { AppLayout, StyledThemeProvider } from '@components';
+import { store } from '@store';
 import { GlobalStyles, PageLoading, Responsive } from '@styles';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -10,9 +11,8 @@ import Script from 'next/script';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import TagManager from 'react-gtm-module';
-import { BeatLoader } from 'react-spinners';
 import { Provider } from 'react-redux';
-import { store } from '@store';
+import { BeatLoader } from 'react-spinners';
 
 const progress = new ProgressBar({
   size: 2,

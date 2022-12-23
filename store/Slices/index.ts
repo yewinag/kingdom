@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux';
 import { AnyAction, Reducer } from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
 
 import appReducer from './app';
 export * from './app';

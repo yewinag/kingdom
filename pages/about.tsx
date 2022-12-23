@@ -3,7 +3,6 @@ import { ISeoInfo } from '@interface';
 import {
   ContentLayout,
   InfoPageStyles,
-  PageHeading,
   SectionLayout,
   StyledHeading
 } from '@styles';

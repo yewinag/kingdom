@@ -4,32 +4,16 @@ import { RootState } from '.';
 
 interface IState {
   mobile: boolean;
-  boxed: boolean;
-  darkSidebar: boolean;
-  sidebarPopup: boolean;
-  sidebarIcons: boolean;
-  collapsed: boolean;
-  weakColor: boolean;
-  optionDrawer: boolean;
-  mobileDrawer: boolean;
-  fullscreen: boolean;
+  resize: boolean;
+  genre: any[];
   loading: boolean;
-  spinning: boolean;
 }
 
 const initialState: IState = {
   mobile: false,
-  boxed: false,
-  darkSidebar: false,
-  sidebarPopup: false,
-  sidebarIcons: false,
-  collapsed: false,
-  weakColor: false,
-  optionDrawer: false,
-  mobileDrawer: false,
-  fullscreen: false,
-  loading: true,
-  spinning: false
+  resize: false,
+  genre: [],
+  loading: false
 };
 
 const appSlice = createSlice({
@@ -41,11 +25,17 @@ const appSlice = createSlice({
     },
     setMobile: (state, action: PayloadAction<boolean>) => {
       state.mobile = action.payload;
+    },
+    updateGenre: (state, action: PayloadAction<any[]>) => {
+      state.genre = action.payload;
+    },
+    setLoading: (state, action: PayloadAction<boolean>) => {
+      state.loading = action.payload;
     }
   }
 });
 
-export const { resetApp } = appSlice.actions;
+export const { resetApp, updateGenre, setLoading } = appSlice.actions;
 
 export const selectApp = (state: RootState) => state.app;
 

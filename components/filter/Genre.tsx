@@ -1,23 +1,40 @@
 import { PATH_GENRES } from '@constants';
+import { selectApp, setLoading, updateGenre } from '@store';
 import { FlexCenter, StyledGenres } from '@styles';
 import { fetcher } from '@utils';
-import { ComponentNotFound } from 'components/NotFound';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { BeatLoader } from 'react-spinners';
-import useSWR from 'swr';
 
 export const Genre = () => {
   const {
     query: { search }
   } = useRouter();
+  const { genre, loading } = useSelector(selectApp);
+  const dispatch = useDispatch();
 
-  const { data, error } = useSWR<any, Error>(`/show-total`, fetcher);
+  useEffect(() => {
+    if (genre.length === 0) {
+      fetchGenre();
+    }
+  });
 
-  if (error) {
-    return <ComponentNotFound />;
-  }
-  if (!data) {
+  const fetchGenre = async () => {
+    try {
+      dispatch(setLoading(true));
+      const res = await fetcher(`/show-total`);
+      await dispatch(updateGenre(res));
+      dispatch(setLoading(false));
+    } catch (err) {
+      dispatch(setLoading(false));
+    } finally {
+      dispatch(setLoading(false));
+    }
+  };
+  if (loading) {
     return (
       <FlexCenter>
         <BeatLoader color={'#D12729'} />;
@@ -29,8 +46,8 @@ export const Genre = () => {
     <StyledGenres>
       <h4>Genres</h4>
       <div className="genre-list scroll-bar">
-        {data.length > 0 &&
-          data.map((item: any, index: any) => (
+        {genre.length > 0 &&
+          genre.map((item: any, index: any) => (
             <Link href={`${PATH_GENRES}${Object.keys(item)}`} key={index}>
               <a>
                 <div
