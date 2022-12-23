@@ -6,7 +6,7 @@ export const StyledGenres = styled.div`
     color: ${p => p.theme.text_200};
   }
   .genre-list {
-    max-height: 181px;
+    max-height: 400px;
     overflow-y: scroll;
   }
   .genre-item {

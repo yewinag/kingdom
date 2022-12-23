@@ -30,10 +30,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   const { theme } = useTheme();
 
   useEffect(() => {
-    TagManager.initialize({
-      // dataLayerName: 'PageDataLayer',
-      gtmId: 'GTM-NWZDX8N'
-    });
+    // TagManager.initialize({
+    //   // dataLayerName: 'PageDataLayer',
+    //   gtmId: 'GTM-NWZDX8N'
+    // });
     setMounted(true);
   }, []);
 
