@@ -1,4 +1,3 @@
-import { TOKEN } from '@configs';
 import { API_URL } from '@utils';
 interface Iprops {
   title?: string;
@@ -23,13 +22,17 @@ export const Button = (props: Iprops) => {
 export const DownloadBtn = (props: Iprops) => {
   const { id, episode } = props;
   const url = `${API_URL}/seasons/${id}/episodes/${episode}`;
+
   const handleDownload = () => {
-    // clientFetcher(url).then(res => console.log(res));
     fetch(url, {
-      headers: { Authorization: TOKEN || '' }
+      headers: {
+        Authorization:
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzIwNzAwMjksIm9yaWdfaWF0IjoxNjcyMDY2NDI5LCJ1c2VyX2lkIjo1MiwidmFsaWRfdGlsIjoxNjc5ODQyNDI5fQ.7IQNKCbTi5QIv0cXdkVQvifLjbSyn7zFFtXLOD5-2g8'
+      }
     })
       .then(res => res.json())
-      .then(json => json);
+      /* eslint-disable */
+      .then(json => console.info(json));
   };
   return <Button {...props} onClick={handleDownload} />;
 };

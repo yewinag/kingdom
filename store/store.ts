@@ -9,14 +9,13 @@ import reducer, { RootState } from './Slices';
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: [''],
+  whitelist: ['auth'],
   blackList: ['app']
 };
-
 const persistedReducer = persistReducer(persistConfig, reducer);
-
 const store = configureStore({
   reducer: persistedReducer,
+  preloadedState: {},
   middleware: [thunk]
 });
 

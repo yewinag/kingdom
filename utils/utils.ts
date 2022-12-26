@@ -1,6 +1,4 @@
-import { TOKEN } from '@configs';
-
-import { API_URL } from './config';
+import { API_URL, TOKEN } from './config';
 
 export const clientFetcher = async (path: string) => {
   const res = await fetch(`${API_URL}${path}`, {

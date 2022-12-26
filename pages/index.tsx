@@ -4,17 +4,28 @@ import {
   Listing
 } from '@components';
 import { IMovies, ISeoInfo } from '@interface';
+import { selectApp, selectAuth } from '@store';
 import { FlexCenter } from '@styles';
 import { API_URL } from '@utils';
 import MetaTags from 'components/MetaTags';
 import type { NextPage } from 'next';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { BeatLoader } from 'react-spinners';
 interface IProps {
   data: IMovies;
   error?: string;
 }
 const Home: NextPage<IProps> = ({ data, error }) => {
-  // const { data, error } = props;
+  const { auth } = useSelector(selectAuth);
+
+  useEffect(() => {
+    if (!auth.token) {
+      console.log(window.navigator.userAgent);
+      console.log('dispatch action inorder to get token');
+    }
+  }, [auth]);
+
   if (error) {
     window && window.location.reload();
     return (

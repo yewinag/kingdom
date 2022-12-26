@@ -10,7 +10,6 @@ import { Router } from 'next/router';
 import Script from 'next/script';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import TagManager from 'react-gtm-module';
 import { Provider } from 'react-redux';
 import { BeatLoader } from 'react-spinners';
 

@@ -1,5 +1,6 @@
 import { Sidebar } from '@components';
 import { ISeoInfo } from '@interface';
+
 import {
   ContentLayout,
   InfoPageStyles,
@@ -8,6 +9,7 @@ import {
   StyledHeading
 } from '@styles';
 import MetaTags from 'components/MetaTags';
+
 function PageHowToDownload() {
   const metaData: ISeoInfo = {
     title: `Soulkingdom - explanation how to download the films from soulkingdom`,
