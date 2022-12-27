@@ -1,4 +1,6 @@
-import { API_URL } from '@utils';
+import { authApi } from '@api';
+import { ITvshowDownloadLinks } from '@interface';
+import { useState } from 'react';
 interface Iprops {
   title?: string;
   alt?: string;
@@ -8,11 +10,17 @@ interface Iprops {
   onClick?: () => void;
   id?: number | string;
   episode?: number | string;
+  disable?: boolean;
 }
 export const Button = (props: Iprops) => {
-  const { title, icon, className, alt, children, onClick } = props;
+  const { title, icon, className, alt, children, onClick, disable } = props;
   return (
-    <button className={className} aria-label={alt || ''} onClick={onClick}>
+    <button
+      className={className}
+      aria-label={alt || ''}
+      onClick={onClick}
+      disabled={disable}
+    >
       {icon || null}
       {title || children}
     </button>
@@ -21,18 +29,21 @@ export const Button = (props: Iprops) => {
 
 export const DownloadBtn = (props: Iprops) => {
   const { id, episode } = props;
-  const url = `${API_URL}/seasons/${id}/episodes/${episode}`;
+  const [loading, setLoading] = useState(false);
 
-  const handleDownload = () => {
-    fetch(url, {
-      headers: {
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzIwNzAwMjksIm9yaWdfaWF0IjoxNjcyMDY2NDI5LCJ1c2VyX2lkIjo1MiwidmFsaWRfdGlsIjoxNjc5ODQyNDI5fQ.7IQNKCbTi5QIv0cXdkVQvifLjbSyn7zFFtXLOD5-2g8'
-      }
-    })
-      .then(res => res.json())
-      /* eslint-disable */
-      .then(json => console.info(json));
+  const handleDownload = async () => {
+    try {
+      setLoading(true);
+      const res = await authApi.downloadUrl(id || '', episode || '');
+      const data = res.data as ITvshowDownloadLinks;
+      window.open(data.drive_url, '_blank');
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    } finally {
+      setLoading(false);
+    }
   };
-  return <Button {...props} onClick={handleDownload} />;
+  return <Button {...props} disable={loading} onClick={handleDownload} />;
 };

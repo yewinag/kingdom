@@ -3,13 +3,14 @@ import {
   ComponentRandom,
   Listing
 } from '@components';
-import { IMovies, ISeoInfo } from '@interface';
-import { selectApp, selectAuth } from '@store';
+import { ILogin, IMovies, ISeoInfo } from '@interface';
+import { login, selectAuth } from '@store';
 import { FlexCenter } from '@styles';
 import { API_URL } from '@utils';
 import MetaTags from 'components/MetaTags';
 import type { NextPage } from 'next';
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { BeatLoader } from 'react-spinners';
 interface IProps {
@@ -18,11 +19,15 @@ interface IProps {
 }
 const Home: NextPage<IProps> = ({ data, error }) => {
   const { auth } = useSelector(selectAuth);
-
+  const dispatch = useDispatch();
   useEffect(() => {
     if (!auth.token) {
-      console.log(window.navigator.userAgent);
-      console.log('dispatch action inorder to get token');
+      const payload: ILogin = {
+        name: window.navigator.userAgent,
+        premium_code: 'PKJC9I'
+      };
+      // @ts-ignore
+      dispatch(login(payload));
     }
   }, [auth]);
 

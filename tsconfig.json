@@ -26,7 +26,8 @@
       "@public": ["./public"],
       "@utils": ["./utils"],
       "@hooks": ["./hooks"],
-      "@store": ["./store"]
+      "@store": ["./store"],
+      "@api": ["./API"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

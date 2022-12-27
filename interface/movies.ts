@@ -72,3 +72,9 @@ export interface ISeoInfo {
   title: string;
   description: string;
 }
+export interface ITvshowDownloadLinks {
+  Streaming: string;
+  download: string;
+  drive_url: string;
+  thumbnail_url: string;
+}

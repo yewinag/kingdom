@@ -1,10 +1,12 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { RootState } from '.';
-import { IAuth } from '@interface';
+import { IAuth, ILogin } from '@interface';
+import { authApi } from 'API';
 
 interface IAuthState {
   auth: IAuth;
+  loading: boolean;
 }
 
 const initialState: IAuthState = {
@@ -13,8 +15,21 @@ const initialState: IAuthState = {
     expire: '',
     token: '',
     valid_til: ''
-  }
+  },
+  loading: false
 };
+
+export const login = createAsyncThunk<IAuth, ILogin>(
+  'auth/login',
+  async (values: ILogin, { rejectWithValue }) => {
+    try {
+      const res = await authApi.login(values);
+      return res.data as IAuth;
+    } catch (err: any) {
+      return rejectWithValue(err);
+    }
+  }
+);
 
 const authSlice = createSlice({
   name: 'auth',
@@ -23,6 +38,16 @@ const authSlice = createSlice({
     resetAuth: () => {
       return initialState;
     }
+  },
+  extraReducers: builder => {
+    builder.addCase(login.fulfilled, (state, action: { payload: IAuth }) => {
+      state.auth = action.payload;
+      state.loading = false;
+    });
+
+    builder.addCase(login.pending, state => {
+      state.loading = true;
+    });
   }
 });
 
