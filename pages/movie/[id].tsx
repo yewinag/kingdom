@@ -1,7 +1,7 @@
 import { ComponentNotFound, Sidebar } from '@components';
-import { TOKEN } from '@configs';
 import { defaultImage, defaultImageCast } from '@constants';
 import { IDownloadLinks, IMovieDetail, ISeoInfo } from '@interface';
+import { selectAuth } from '@store';
 import {
   DetailStyles,
   FlexCenter,
@@ -15,6 +15,7 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useSelector } from 'react-redux';
 import { BeatLoader } from 'react-spinners';
 import useSWR from 'swr';
 interface IResLinks {
@@ -24,9 +25,13 @@ const Detail: NextPage = () => {
   const {
     query: { id }
   } = useRouter();
+  const { auth } = useSelector(selectAuth);
   const { data, error } = useSWR<IMovieDetail, Error>(`/movies/${id}`, fetcher);
   const { data: res } = useSWR<IResLinks | undefined, Error>(
-    [`/shows/${id}/download-links`, { headers: { Authorization: TOKEN } }],
+    [
+      `/shows/${id}/download-links`,
+      { headers: { Authorization: auth.token || '' } }
+    ],
     fetcher
   );
   const metaData: ISeoInfo = {

@@ -1,8 +1,8 @@
+import { IAuth, ILogin } from '@interface';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { authApi } from 'API';
 
 import { RootState } from '.';
-import { IAuth, ILogin } from '@interface';
-import { authApi } from 'API';
 
 interface IAuthState {
   auth: IAuth;

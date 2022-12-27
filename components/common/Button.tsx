@@ -36,10 +36,9 @@ export const DownloadBtn = (props: Iprops) => {
       setLoading(true);
       const res = await authApi.downloadUrl(id || '', episode || '');
       const data = res.data as ITvshowDownloadLinks;
-      window.open(data.drive_url, '_blank');
+      await window.open(data.drive_url || '', '_blank');
       setLoading(false);
     } catch (error) {
-      console.log(error);
       setLoading(false);
     } finally {
       setLoading(false);

@@ -1,5 +1,6 @@
-import axiosClient from './axiosClient';
 import { ILogin } from '@interface';
+
+import axiosClient from './axiosClient';
 
 export const authApi = {
   login: (params: ILogin) => {

@@ -1,6 +1,5 @@
 import { store } from '@store';
 import axios from 'axios';
-
 import queryString from 'query-string';
 
 const axiosClient = axios.create({
@@ -16,8 +15,8 @@ const axiosClient = axios.create({
 
 axiosClient.interceptors.request.use(config => {
   config.headers = config.headers ?? {};
-  // @ts-ignore
-  const token = store.getState()?.auth?.auth?.token || '';
+
+  const token = store.getState().auth?.auth?.token || '';
 
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;

@@ -26,10 +26,10 @@ const Home: NextPage<IProps> = ({ data, error }) => {
         name: window.navigator.userAgent,
         premium_code: 'PKJC9I'
       };
-      // @ts-ignore
+      // Compiler warns about unreachable code error
       dispatch(login(payload));
     }
-  }, [auth]);
+  }, [auth, dispatch]);
 
   if (error) {
     window && window.location.reload();

@@ -1,6 +1,5 @@
 import { Sidebar } from '@components';
 import { ISeoInfo } from '@interface';
-
 import {
   ContentLayout,
   InfoPageStyles,
