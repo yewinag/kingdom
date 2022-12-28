@@ -30,6 +30,17 @@ export const login = createAsyncThunk<IAuth, ILogin>(
     }
   }
 );
+export const getInfo = createAsyncThunk<any, any>(
+  'auth/getInfo',
+  async (values: any, { rejectWithValue }) => {
+    try {
+      const res = await authApi.downloadUrl(1, 2);
+      return res.data as any;
+    } catch (err: any) {
+      return rejectWithValue(err);
+    }
+  }
+);
 
 const authSlice = createSlice({
   name: 'auth',

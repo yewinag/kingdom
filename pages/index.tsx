@@ -4,13 +4,12 @@ import {
   Listing
 } from '@components';
 import { ILogin, IMovies, ISeoInfo } from '@interface';
-import { login, selectAuth } from '@store';
+import { login, selectAuth, useAppDispatch } from '@store';
 import { FlexCenter } from '@styles';
 import { API_URL } from '@utils';
 import MetaTags from 'components/MetaTags';
 import type { NextPage } from 'next';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { BeatLoader } from 'react-spinners';
 interface IProps {
@@ -19,14 +18,13 @@ interface IProps {
 }
 const Home: NextPage<IProps> = ({ data, error }) => {
   const { auth } = useSelector(selectAuth);
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   useEffect(() => {
     if (!auth.token) {
       const payload: ILogin = {
         name: window.navigator.userAgent,
         premium_code: 'PKJC9I'
       };
-      // Compiler warns about unreachable code error
       dispatch(login(payload));
     }
   }, [auth, dispatch]);
