@@ -5,12 +5,20 @@ import {
   IconSearch,
   IconTheme
 } from '@components';
-import { DARK, keywords, LIGHT, PATH_GENRES } from '@constants';
+import {
+  ABOUT,
+  DARK,
+  DMCA_POLICY,
+  HOW_TO_DOWNLOAD,
+  keywords,
+  LIGHT,
+  PATH_GENRES
+} from '@constants';
 import { useToggle } from '@hooks';
 import { HeaderLayout, SearchInputLayout } from '@styles';
 import Image from 'next/image';
 import Link from 'next/link';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 
@@ -19,8 +27,8 @@ export const Header = () => {
   const [show, setShow] = useToggle();
   const [menu, toggle] = useToggle();
 
-  const refUL = useRef<HTMLUListElement>(null);
-
+  const refUL = useRef<HTMLDivElement>(null);
+  const router = useRouter();
   useEffect(() => {
     document.addEventListener('mousedown', handleClick);
     return () => {
@@ -30,12 +38,9 @@ export const Header = () => {
 
   const handleClick = (e: MouseEvent) => {
     if (refUL.current && !refUL.current.contains(e.target as Node)) {
-      toggle.setToggle(false);
+      setShow.setToggle(false);
     }
   };
-
-  Router.events.on('routeChangeStart', () => toggle.setToggle(false));
-
   const changeTheme = () => {
     if (theme === LIGHT) {
       setTheme(DARK);
@@ -43,7 +48,10 @@ export const Header = () => {
       setTheme(LIGHT);
     }
   };
-
+  const goToRoute = (url: string) => {
+    router.push(url);
+    toggle.setToggle(false);
+  };
   return (
     <>
       <HeaderLayout>
@@ -54,6 +62,7 @@ export const Header = () => {
                 className="mobile-menu-icon"
                 aria-pressed={false}
                 onClick={toggle.toggle}
+                // ref={refUL}
               >
                 {menu ? (
                   <IconClose color={theme === LIGHT ? '#000' : '#fff'} />
@@ -61,32 +70,70 @@ export const Header = () => {
                   <IconMenu color={theme === LIGHT ? '#000' : '#fff'} />
                 )}
               </button>
-              <ul className={menu ? 'vs-ms show' : 'vs-ms'} ref={refUL}>
-                <li onClick={toggle.toggle} role={'presentation'}>
-                  <Link href={'/'}>Home</Link>
+              <ul role={'menu'} className={menu ? 'vs-ms show' : 'vs-ms'}>
+                <li
+                  onClick={() => goToRoute('/')}
+                  onKeyDown={() => goToRoute('/')}
+                  role={'menuitem'}
+                >
+                  Home
                 </li>
-                <li onClick={toggle.toggle} role={'presentation'}>
-                  <Link href={`${PATH_GENRES}${keywords.TV_SHOWS}`}>
-                    TV Shows
-                  </Link>
+                <li
+                  onClick={() =>
+                    goToRoute(`${PATH_GENRES}${keywords.TV_SHOWS}`)
+                  }
+                  onKeyDown={() =>
+                    goToRoute(`${PATH_GENRES}${keywords.TV_SHOWS}`)
+                  }
+                  role={'menuitem'}
+                >
+                  TV Shows
                 </li>
-                <li onClick={toggle.toggle} role={'presentation'}>
-                  <Link href={`${PATH_GENRES}${keywords.LATEST}`}>Latest</Link>
+                <li
+                  onClick={() => goToRoute(`${PATH_GENRES}${keywords.LATEST}`)}
+                  onKeyDown={() =>
+                    goToRoute(`${PATH_GENRES}${keywords.LATEST}`)
+                  }
+                  role={'menuitem'}
+                >
+                  Latest
                 </li>
-                <li onClick={toggle.toggle} role={'presentation'}>
-                  <Link href={`${PATH_GENRES}${keywords.ANIME}`}>Animes</Link>
+                <li
+                  onClick={() => goToRoute(`${PATH_GENRES}${keywords.ANIME}`)}
+                  onKeyDown={() => goToRoute(`${PATH_GENRES}${keywords.ANIME}`)}
+                  role={'menuitem'}
+                >
+                  Animes
                 </li>
-                <li onClick={toggle.toggle} role={'presentation'}>
-                  <Link href={`${PATH_GENRES}${keywords.MOVIES}`}>Movies</Link>
+                <li
+                  onClick={() => goToRoute(`${PATH_GENRES}${keywords.MOVIES}`)}
+                  onKeyDown={() =>
+                    goToRoute(`${PATH_GENRES}${keywords.MOVIES}`)
+                  }
+                  role={'menuitem'}
+                >
+                  Movies
                 </li>
-                <li onClick={toggle.toggle} role={'presentation'}>
-                  <Link href={'/how_to_download'}>How to download</Link>
+                <li
+                  onClick={() => goToRoute(HOW_TO_DOWNLOAD)}
+                  onKeyDown={() => goToRoute(HOW_TO_DOWNLOAD)}
+                  role={'menuitem'}
+                >
+                  How to download
                 </li>
-                <li onClick={toggle.toggle} role={'presentation'}>
-                  <Link href={'/dmca_policy'}>DMCA</Link>
+                <li
+                  onClick={() => goToRoute(DMCA_POLICY)}
+                  onKeyDown={() => goToRoute(DMCA_POLICY)}
+                  role={'menuitem'}
+                >
+                  DMCA
                 </li>
-                <li onClick={toggle.toggle} role={'presentation'}>
-                  <Link href={'/about'}>About</Link>
+                <li
+                  onClick={() => goToRoute(ABOUT)}
+                  onKeyDown={() => goToRoute(ABOUT)}
+                  role={'menuitem'}
+                >
+                  About
                 </li>
               </ul>
             </div>
@@ -107,11 +154,11 @@ export const Header = () => {
                 <li>
                   <Link href={'/'}>Home</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href={`${PATH_GENRES}${keywords.TV_SHOWS}`}>
                     TV Shows
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href={'/how_to_download'}>How to download</Link>
                 </li>
@@ -147,7 +194,11 @@ export const Header = () => {
         </div>
       </HeaderLayout>
       <SearchInputLayout className="container">
-        {show && <ComponentSearchInput />}
+        {show && (
+          <div ref={refUL}>
+            <ComponentSearchInput />
+          </div>
+        )}
       </SearchInputLayout>
     </>
   );

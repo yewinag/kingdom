@@ -36,7 +36,7 @@ export function Listing(props: IProps) {
               </Link>
               <Link
                 href={`${PATH_GENRES}${keywords.LATEST}`}
-              >{`see more >>`}</Link>
+              >{`See More >>`}</Link>
             </SectionTitle>
             <ArticleRow>
               {latest ? (
@@ -57,7 +57,7 @@ export function Listing(props: IProps) {
               </Link>
               <Link
                 href={`${PATH_GENRES}${keywords.ANIME}`}
-              >{`see more >>`}</Link>
+              >{`See More >>`}</Link>
             </SectionTitle>
             <ArticleRow>
               {animes ? (
@@ -78,7 +78,7 @@ export function Listing(props: IProps) {
               </Link>
               <Link
                 href={`${PATH_GENRES}${keywords.TV_SHOWS}`}
-              >{`see more >>`}</Link>
+              >{`See More >>`}</Link>
             </SectionTitle>
             <ArticleRow>
               {tv_shows ? (
@@ -99,7 +99,7 @@ export function Listing(props: IProps) {
               </Link>
               <Link
                 href={`${PATH_GENRES}${keywords.MOVIES}`}
-              >{`see more >>`}</Link>
+              >{`See More >>`}</Link>
             </SectionTitle>
             <ArticleRow>
               {movies ? (

@@ -20,7 +20,7 @@ const Home: NextPage<IProps> = ({ data, error }) => {
   const { auth } = useSelector(selectAuth);
   const dispatch = useAppDispatch();
   useEffect(() => {
-    if (!auth.token) {
+    if (!auth?.token) {
       const payload: ILogin = {
         name: window.navigator.userAgent,
         premium_code: 'PKJC9I'
