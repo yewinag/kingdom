@@ -1,34 +1,15 @@
-import {
-  // ComponentGoogleAds,
-  ComponentRandom,
-  Listing
-} from '@components';
-import { ILogin, IMovies, ISeoInfo } from '@interface';
-import { login, selectAuth, useAppDispatch } from '@store';
+import { ComponentRandom, Listing } from '@components';
+import { IMovies, ISeoInfo } from '@interface';
 import { FlexCenter } from '@styles';
 import { API_URL } from '@utils';
 import MetaTags from 'components/MetaTags';
 import type { NextPage } from 'next';
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { BeatLoader } from 'react-spinners';
 interface IProps {
   data: IMovies;
   error?: string;
 }
 const Home: NextPage<IProps> = ({ data, error }) => {
-  const { auth } = useSelector(selectAuth);
-  const dispatch = useAppDispatch();
-  useEffect(() => {
-    if (!auth?.token) {
-      const payload: ILogin = {
-        name: window.navigator.userAgent,
-        premium_code: 'PKJC9I'
-      };
-      dispatch(login(payload));
-    }
-  }, [auth, dispatch]);
-
   if (error) {
     window && window.location.reload();
     return (

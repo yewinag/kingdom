@@ -12,7 +12,8 @@ export const StyledSocial = styled.div`
       flex: 1;
       border: 0;
       padding: 10px 0 !important;
-      border-radius: 0 !important;
+      /* border-radius: 0 !important; */
+      border-radius: ${p => p.theme.space['4']};
       &.facebook {
         background-color: #687ec3 !important;
       }

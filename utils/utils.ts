@@ -10,5 +10,14 @@ export const clientFetcher = async (path: string) => {
   return res.json();
 };
 
-export const fetcher = (path: string) =>
-  fetch(`${API_URL}${path}`).then(res => res.json());
+export const fetcher = async (path: string) => {
+  const res = await fetch(`${API_URL}${path}`, {
+    headers: { Authorization: TOKEN || '' }
+  });
+  if (res.status !== 200) {
+    throw new Error(`An error occurred while fetching the data.`);
+  }
+  if (res.status === 200) {
+    return res.json();
+  }
+};

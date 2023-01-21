@@ -1,5 +1,5 @@
 import { ComponentNotFound, DownloadBtn, Sidebar } from '@components';
-import { defaultImage } from '@constants';
+import { defaultImageCast } from '@constants';
 import { IMovieDetail, ISeoInfo } from '@interface';
 import {
   DetailStyles,
@@ -22,16 +22,18 @@ const TVShowDetail: NextPage = () => {
   } = useRouter();
 
   const { data, error } = useSWR<IMovieDetail, Error>(
-    `/tv-shows/${id}`,
+    `/tv-shows/${id || 0}`,
     fetcher
   );
+
+  if (error) {
+    return <ComponentNotFound />;
+  }
+
   const metaData: ISeoInfo = {
     title: `${data?.name} films - watch ${data?.name}  on soulkingdom `,
     description: `${data?.overview} complete cast of ${data?.name} `
   };
-  if (error) {
-    return <ComponentNotFound />;
-  }
 
   return (
     <MainContent>
@@ -69,10 +71,10 @@ const TVShowDetail: NextPage = () => {
                 <SeactionHeading>Complete Cast</SeactionHeading>
                 <p>{data?.overview}</p>
                 <Image
-                  src={data?.backdrop_path || defaultImage}
+                  src={data?.backdrop_path || defaultImageCast}
                   alt={data?.name}
-                  width={384}
-                  height={217}
+                  width={500}
+                  height={288}
                   loading={'lazy'}
                 />
               </div>
@@ -81,7 +83,7 @@ const TVShowDetail: NextPage = () => {
                   <h4>Download Links</h4>
                   <h4>Quality</h4>
                 </header>
-                <article>
+                <article className="download-grid">
                   {data?.seasons?.map((episode, index) => (
                     <DownloadBtn
                       alt="download button"

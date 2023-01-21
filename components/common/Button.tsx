@@ -1,5 +1,5 @@
-import { authApi } from '@api';
-import { ITvshowDownloadLinks } from '@interface';
+import { StyledButtonWrapper } from '@styles';
+import { fetcher } from '@utils';
 import { useState } from 'react';
 interface Iprops {
   title?: string;
@@ -34,9 +34,10 @@ export const DownloadBtn = (props: Iprops) => {
   const handleDownload = async () => {
     try {
       setLoading(true);
-      const res = await authApi.downloadUrl(id || '', episode || '');
-      const data = res.data as ITvshowDownloadLinks;
-      await window.open(data.drive_url || '', '_blank');
+      const { data: res } = await fetcher(
+        `/seasons/${id}/episodes/${episode}/drive-url`
+      );
+      await window.open(res?.drive_url || '', '_blank');
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -44,5 +45,9 @@ export const DownloadBtn = (props: Iprops) => {
       setLoading(false);
     }
   };
-  return <Button {...props} disable={loading} onClick={handleDownload} />;
+  return (
+    <StyledButtonWrapper>
+      <Button {...props} disable={loading} onClick={handleDownload} />
+    </StyledButtonWrapper>
+  );
 };

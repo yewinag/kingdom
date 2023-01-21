@@ -1,4 +1,5 @@
 export * from './Close';
+export * from './Download';
 export * from './Left';
 export * from './Menu';
 export * from './Play';

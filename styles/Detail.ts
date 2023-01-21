@@ -7,20 +7,25 @@ export const DetailStyles = styled.div`
   }
   .content-body {
     width: 740px;
-    padding: 0 20px;
+    padding: 20px;
     border-right: solid 1px ${p => p.theme.border};
     min-height: 82vh;
   }
   .content-body {
     display: flex;
     flex-direction: column;
-    row-gap: ${p => p.theme.space['32']};
+    row-gap: ${p => p.theme.space['16']};
     .detail {
       padding: ${p => p.theme.space['16']};
       background: ${p => p.theme.secondary_500};
       display: flex;
       column-gap: ${p => p.theme.space['20']};
       border-radius: ${p => p.theme.space['4']};
+      .image {
+        span {
+          border-radius: 6px;
+        }
+      }
       .info {
         display: flex;
         flex-direction: column;
@@ -53,6 +58,9 @@ export const DetailStyles = styled.div`
       background: ${p => p.theme.secondary_500};
       padding: ${p => p.theme.space['16']};
       border-radius: ${p => p.theme.space['4']};
+      span {
+        border-radius: 6px;
+      }
     }
     .download {
       display: flex;
@@ -76,6 +84,18 @@ export const DetailStyles = styled.div`
         p {
           flex: 1;
         }
+        .download-icon {
+          display: flex;
+          column-gap: 10px;
+          align-items: center;
+        }
+      }
+      .download-grid {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        flex-wrap: wrap;
+        row-gap: 10px;
       }
     }
   }

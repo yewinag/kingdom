@@ -41,6 +41,7 @@ export const FooterLayout = styled.footer`
   p {
     color: ${p => p.theme.text_500};
     font-size: ${p => p.theme.fontSizes.small};
+    padding: 10px 0;
   }
 `;
 export const SidebarLayout = styled.aside`
@@ -156,6 +157,7 @@ export const HeaderLayout = styled.header`
           display: flex;
           justify-content: center;
           border: 0;
+          padding: 4px;
         }
         ul {
           position: absolute;
@@ -189,7 +191,13 @@ export const HeaderLayout = styled.header`
         }
       }
       .search {
+        display: flex;
+        column-gap: 4px;
+        .search-btn {
+          padding: 0 4px;
+        }
         .theme-btn {
+          padding: 0 4px;
           margin-right: 0;
         }
       }
