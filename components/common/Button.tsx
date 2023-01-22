@@ -34,10 +34,8 @@ export const DownloadBtn = (props: Iprops) => {
   const handleDownload = async () => {
     try {
       setLoading(true);
-      const { data: res } = await fetcher(
-        `/seasons/${id}/episodes/${episode}/drive-url`
-      );
-      await window.open(res?.drive_url || '', '_blank');
+      const res = await fetcher(`/seasons/${id}/episodes/${episode}/drive-url`);
+      await window.open(res?.drive_url, '_blank');
       setLoading(false);
     } catch (error) {
       setLoading(false);
