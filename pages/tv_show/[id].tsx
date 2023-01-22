@@ -29,7 +29,6 @@ const TVShowDetail: NextPage = () => {
 
   useEffect(() => {
     const generateEpisodes = () => {
-      console.log('ok called');
       const formatEpisode: ISeasonEpisode[] = [];
       data?.seasons?.map(async season => {
         const episode = await generateEpisodesByNumber(season?.total_episodes);
