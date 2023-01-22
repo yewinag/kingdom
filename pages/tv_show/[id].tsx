@@ -1,18 +1,19 @@
 import { ComponentNotFound, DownloadBtn, Sidebar } from '@components';
 import { defaultImageCast } from '@constants';
-import { IMovieDetail, ISeoInfo } from '@interface';
+import { IMovieDetail, ISeasonEpisode, ISeoInfo } from '@interface';
 import {
   DetailStyles,
   FlexCenter,
   MainContent,
   SeactionHeading
 } from '@styles';
-import { fetcher, HOST_PATH, light } from '@utils';
+import { fetcher, generateEpisodesByNumber, HOST_PATH, light } from '@utils';
 import MetaTags from 'components/MetaTags';
 import { Social } from 'components/Social';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { BeatLoader } from 'react-spinners';
 import useSWR from 'swr';
 
@@ -20,11 +21,29 @@ const TVShowDetail: NextPage = () => {
   const {
     query: { id }
   } = useRouter();
-
+  const [seasons, setSeasons] = useState<ISeasonEpisode[]>([]);
   const { data, error } = useSWR<IMovieDetail, Error>(
     `/tv-shows/${id || 0}`,
     fetcher
   );
+
+  useEffect(() => {
+    const generateEpisodes = () => {
+      console.log('ok called');
+      const formatEpisode: ISeasonEpisode[] = [];
+      data?.seasons?.map(async season => {
+        const episode = await generateEpisodesByNumber(season?.total_episodes);
+        formatEpisode.push({
+          id: season.id,
+          episodes: episode
+        });
+      });
+      setSeasons(formatEpisode);
+    };
+    if (data) {
+      generateEpisodes();
+    }
+  }, [data]);
 
   if (error) {
     return <ComponentNotFound />;
@@ -44,6 +63,7 @@ const TVShowDetail: NextPage = () => {
       ) : (
         <DetailStyles>
           <MetaTags metaData={metaData} />
+
           <section className="listing-layout">
             <section className="content-body">
               <div className="detail">
@@ -81,20 +101,22 @@ const TVShowDetail: NextPage = () => {
               <div className="download">
                 <header>
                   <h4>Download Links</h4>
-                  <h4>Quality</h4>
                 </header>
-                <article className="download-grid">
-                  {data?.seasons?.map((episode, index) => (
-                    <DownloadBtn
-                      alt="download button"
-                      id={episode?.id}
-                      episode={index + 1}
-                      key={index}
-                    >
-                      <p>{`Episode ${index + 1}`}</p>
-                    </DownloadBtn>
+                {seasons.length > 0 &&
+                  seasons.map((season, index) => (
+                    <article className="download-grid" key={index}>
+                      {season.episodes.map((episode, index) => (
+                        <DownloadBtn
+                          alt="download button"
+                          id={season.id}
+                          episode={episode}
+                          key={index}
+                        >
+                          <p>{`Episode ${episode}`}</p>
+                        </DownloadBtn>
+                      ))}
+                    </article>
                   ))}
-                </article>
               </div>
               <div className="share">
                 <Social

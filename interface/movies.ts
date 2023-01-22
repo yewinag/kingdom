@@ -78,3 +78,8 @@ export interface ITvshowDownloadLinks {
   drive_url: string;
   thumbnail_url: string;
 }
+
+export interface ISeasonEpisode {
+  id: number;
+  episodes: number[];
+}

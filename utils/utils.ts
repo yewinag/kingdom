@@ -21,3 +21,8 @@ export const fetcher = async (path: string) => {
     return res.json();
   }
 };
+
+export const generateEpisodesByNumber = (episode: number) => {
+  const episodes = Array.from(Array(episode), (_, i) => i + 1);
+  return Promise.resolve(episodes);
+};
