@@ -120,7 +120,7 @@ const TVShowDetail: NextPage = () => {
               <div className="share">
                 <Social
                   fbLink={`${HOST_PATH}/tv_show/${id}` || '/'}
-                  twLink={`${HOST_PATH}/tv_show/${id}` || '/'}
+                  telLink={`${HOST_PATH}/tv_show/${id}` || '/'}
                 />
               </div>
             </section>
