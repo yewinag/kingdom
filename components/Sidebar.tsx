@@ -8,7 +8,7 @@ import { Social } from './Social';
 export const Sidebar = () => {
   return (
     <StyledSidebar>
-      <Social fbLink={HOST_PATH || '/'} twLink={HOST_PATH || '/'} />
+      <Social fbLink={HOST_PATH || '/'} telLink={HOST_PATH || '/'} />
       <Genre />
       {/* <YearFilter /> */}
       <>

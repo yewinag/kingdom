@@ -17,8 +17,8 @@ export const StyledSocial = styled.div`
       &.facebook {
         background-color: #687ec3 !important;
       }
-      &.twitter {
-        background-color: #5bc2f7 !important;
+      &.telgram {
+        background-color: #2aabee !important;
       }
     }
   }

@@ -115,7 +115,7 @@ const Detail: NextPage = () => {
               <div className="share">
                 <Social
                   fbLink={`${HOST_PATH}/movie/${id}` || '/'}
-                  twLink={`${HOST_PATH}/movie/${id}` || '/'}
+                  telLink={`${HOST_PATH}/movie/${id}` || '/'}
                 />
               </div>
             </section>

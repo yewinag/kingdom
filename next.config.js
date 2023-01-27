@@ -12,7 +12,7 @@ const settings = {
     includePaths: [path.join(__dirname, 'styles')]
   },
   images: {
-    domains: ['stg-images.soulkingdom.net']
+    domains: [process.env.NEXT_PUBLIC_IMAGES]
   },
   i18n: {
     locales: ['en'],
