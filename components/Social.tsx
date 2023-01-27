@@ -1,9 +1,5 @@
 import { StyledSocial } from '@styles';
-import {
-  FacebookShareButton,
-  TwitterShareButton,
-  TelegramShareButton
-} from 'react-share';
+import { FacebookShareButton, TelegramShareButton } from 'react-share';
 interface IProps {
   fbLink: string;
   telLink: string;
