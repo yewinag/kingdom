@@ -89,7 +89,8 @@ export const light = {
   text_700: '#3D4869',
   text_800: '#263155',
   text_900: '#172046',
-  shadow: 'rgb(0 0 0 / 2%) 0px 1px 2px'
+  shadow: 'rgb(0 0 0 / 2%) 0px 1px 2px',
+  text_gray: '#6b6d72'
 };
 export const dark = {
   background: '#000',
@@ -115,5 +116,5 @@ export const dark = {
   text_800: '#263155',
   text_900: '#172046',
   shadow: 'rgb(0 0 0 / 4%) 0px 3px 5px',
-  shadowBox: 'rgba(17, 17, 26, 0.1) 0px 1px 0px'
+  text_gray: '#6b6d72'
 };

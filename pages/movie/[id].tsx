@@ -7,7 +7,7 @@ import {
   MainContent,
   SeactionHeading
 } from '@styles';
-import { fetcher, HOST_PATH, light } from '@utils';
+import { fetcher, HOST_PATH, light, TELEGRAM_LINK } from '@utils';
 import MetaTags from 'components/MetaTags';
 import { Social } from 'components/Social';
 import type { NextPage } from 'next';
@@ -115,7 +115,7 @@ const Detail: NextPage = () => {
               <div className="share">
                 <Social
                   fbLink={`${HOST_PATH}/movie/${id}` || '/'}
-                  telLink={`${HOST_PATH}/movie/${id}` || '/'}
+                  telLink={TELEGRAM_LINK || '/'}
                 />
               </div>
             </section>
