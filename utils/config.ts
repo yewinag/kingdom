@@ -3,3 +3,4 @@ export const HOST_PATH = process.env.NEXT_PUBLIC_PATH;
 export const ITEM_PER_PAGE = 3;
 export const CARTOONS_PER_PAGE = 12;
 export const TOKEN = process.env.NEXT_PUBLIC_TOKEN;
+export const TELEGRAM_LINK = process.env.NEXT_PUBLIC_TELGRAM;

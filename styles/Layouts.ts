@@ -39,7 +39,7 @@ export const FooterLayout = styled.footer`
   margin-top: ${p => p.theme.space['20']};
   padding: 0 ${p => p.theme.space['20']};
   p {
-    color: ${p => p.theme.text_500};
+    color: ${p => p.theme.text_gray} !important;
     font-size: ${p => p.theme.fontSizes.small};
     padding: 10px 0;
   }

@@ -1,5 +1,5 @@
 import { StyledSidebar } from '@styles';
-import { HOST_PATH } from '@utils';
+import { HOST_PATH, TELEGRAM_LINK } from '@utils';
 
 import { Genre } from './filter';
 // import { ComponentGoogleAds } from './GoogleAds';
@@ -8,7 +8,7 @@ import { Social } from './Social';
 export const Sidebar = () => {
   return (
     <StyledSidebar>
-      <Social fbLink={HOST_PATH || '/'} telLink={HOST_PATH || '/'} />
+      <Social fbLink={HOST_PATH || '/'} telLink={TELEGRAM_LINK || '/'} />
       <Genre />
       {/* <YearFilter /> */}
       <>
