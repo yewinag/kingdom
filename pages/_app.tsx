@@ -70,6 +70,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         })(window,document,'script','dataLayer','GTM-NWZDX8N')
       `}
       </Script>
+      {/* <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1237749281691432"
+      ></script> */}
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />

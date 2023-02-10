@@ -19,8 +19,8 @@ export const ComponentGoogleAds = () => {
         <ins
           className="adsbygoogle"
           style={{ display: 'block' }}
-          data-ad-client={'ca-app-pub-3940256099942544'}
-          data-ad-slot={'3419835294'}
+          data-ad-client={'ca-pub-1237749281691432'}
+          data-ad-slot={'9631928922'}
           data-ad-format="auto"
           data-full-width-responsive="true"
         ></ins>
