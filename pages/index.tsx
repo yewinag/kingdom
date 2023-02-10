@@ -1,4 +1,4 @@
-import { ComponentRandom, Listing } from '@components';
+import { ComponentGoogleAds, ComponentRandom, Listing } from '@components';
 import { IMovies, ISeoInfo } from '@interface';
 import { FlexCenter } from '@styles';
 import { API_URL } from '@utils';
@@ -26,7 +26,8 @@ const Home: NextPage<IProps> = ({ data, error }) => {
   return (
     <>
       <MetaTags metaData={metaData} />
-      {/* <ComponentGoogleAds /> */}
+
+      <ComponentGoogleAds />
       <ComponentRandom carousels={data?.carousels} />
       <Listing
         animes={data?.anime}
