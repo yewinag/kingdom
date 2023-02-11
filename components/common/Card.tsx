@@ -36,7 +36,7 @@ export const ComponentCard = (props: Iprops) => {
         </a>
       </Link>
       <div className="info">
-        <p className="title">{item.mm_name}</p>
+        <p className="title">{item.name}</p>
         <p className="desc">{year}</p>
       </div>
     </StyledCard>
