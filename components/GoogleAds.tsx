@@ -1,28 +1,26 @@
 // import Script from 'next/script';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 interface IProps {
   client: string;
   slot: string;
-  path: string;
+  currentPath: string;
 }
-export const ComponentGoogleAds = ({ client, slot, path }: IProps) => {
+export const ComponentGoogleAds = ({ client, slot, currentPath }: IProps) => {
+  const [mount, setMount] = useState(false);
   useEffect(() => {
-    var ads = document.getElementsByClassName('adsbygoogle').length;
-    for (var i = 0; i < ads; i++) {
-      try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (e: any) {
-        console.log(new Error(e));
-      }
+    setMount(true);
+    if (mount) {
+      window.adsbygoogle = window.adsbygoogle || [];
+      window.adsbygoogle.push({});
     }
-  }, [path]);
+  }, [currentPath]);
   return (
     <StyledAds>
-      <div key={path} className="ads-layout">
+      <div key={currentPath} className="ads-layout">
         <ins
           className="adsbygoogle"
-          style={{ display: 'inline-block', width: '728px', height: '90px' }}
+          style={{ display: 'block' }}
           data-ad-client={client}
           data-ad-slot={slot}
         ></ins>
@@ -34,11 +32,9 @@ export const ComponentGoogleAds = ({ client, slot, path }: IProps) => {
 const StyledAds = styled.div`
   width: 100%;
   min-height: 120px;
-
-  background: #ddd;
+  background: transparent;
   .ads-layout {
     margin: auto;
-    /* width: 750px; */
     min-height: 100px;
   }
 `;
