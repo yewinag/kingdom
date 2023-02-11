@@ -29,10 +29,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const { theme } = useTheme();
 
   useEffect(() => {
-    // TagManager.initialize({
-    //   // dataLayerName: 'PageDataLayer',
-    //   gtmId: 'GTM-NWZDX8N'
-    // });
     setMounted(true);
   }, []);
 
@@ -70,10 +66,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         })(window,document,'script','dataLayer','GTM-NWZDX8N')
       `}
       </Script>
-      {/* <script
+      <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1237749281691432"
-      ></script> */}
+        crossOrigin="anonymous"
+      />
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />

@@ -1,7 +1,7 @@
 import { ComponentGoogleAds, ComponentRandom, Listing } from '@components';
 import { IMovies, ISeoInfo } from '@interface';
 import { FlexCenter } from '@styles';
-import { API_URL } from '@utils';
+import { API_URL, BANNER_SLOT, CLIENT_KEY } from '@utils';
 import MetaTags from 'components/MetaTags';
 import type { NextPage } from 'next';
 import { BeatLoader } from 'react-spinners';
@@ -26,8 +26,7 @@ const Home: NextPage<IProps> = ({ data, error }) => {
   return (
     <>
       <MetaTags metaData={metaData} />
-
-      <ComponentGoogleAds />
+      <ComponentGoogleAds path="home" client={CLIENT_KEY} slot={BANNER_SLOT} />
       <ComponentRandom carousels={data?.carousels} />
       <Listing
         animes={data?.anime}
