@@ -8,12 +8,12 @@ interface IProps {
 }
 export const ComponentGoogleAds = ({ client, slot, path }: IProps) => {
   useEffect(() => {
-    var ads = document.getElementsByClassName('adsbygoogle').length;
-    for (var i = 0; i < ads; i++) {
+    const ads = document.getElementsByClassName('adsbygoogle').length;
+    for (let i = 0; i < ads; i++) {
       try {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
       } catch (e: any) {
-        console.log(new Error(e));
+        throw new Error(e);
       }
     }
   }, [path]);
