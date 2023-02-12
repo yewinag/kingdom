@@ -71,7 +71,9 @@ const Detail: NextPage = () => {
                   />
                 </div>
                 <div className="info">
-                  <SeactionHeading>{data?.mm_name}</SeactionHeading>
+                  <SeactionHeading>
+                    {data?.mm_name || data?.name}
+                  </SeactionHeading>
                   <p className="small">{data?.released_date}</p>
                   <div className="type">
                     {data?.genres.map((item, index) => (
@@ -96,7 +98,7 @@ const Detail: NextPage = () => {
                 {/* <SeactionHeading>Download Links</SeactionHeading> */}
                 <header>
                   <h4>Download Links</h4>
-                  <h4>Quality</h4>
+                  {/* <h4>Quality</h4> */}
                 </header>
                 <article>
                   <Link href={res?.drive_url || '/'}>
@@ -106,7 +108,7 @@ const Detail: NextPage = () => {
                           <DownloadIcon />
                           Option 1
                         </p>
-                        <p>---</p>
+                        {/* <p>---</p> */}
                       </div>
                     </a>
                   </Link>
