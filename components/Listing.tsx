@@ -72,14 +72,16 @@ export function Listing(props: IProps) {
           {/* google ads */}
           {/* <ComponentGoogleAds /> */}
           <SectionLayout>
-            <SectionTitle>
-              <Link href={`${PATH_GENRES}${keywords.TV_SHOWS}`}>
-                <SeactionHeading>TV Shows </SeactionHeading>
-              </Link>
-              <Link
-                href={`${PATH_GENRES}${keywords.TV_SHOWS}`}
-              >{`See More >>`}</Link>
-            </SectionTitle>
+            {tv_shows && tv_shows?.length > 0 && (
+              <SectionTitle>
+                <Link href={`${PATH_GENRES}${keywords.TV_SHOWS}`}>
+                  <SeactionHeading>TV Shows </SeactionHeading>
+                </Link>
+                <Link
+                  href={`${PATH_GENRES}${keywords.TV_SHOWS}`}
+                >{`See More >>`}</Link>
+              </SectionTitle>
+            )}
             <ArticleRow>
               {tv_shows ? (
                 tv_shows.map((item, index) => (
