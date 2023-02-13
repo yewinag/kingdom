@@ -8,9 +8,9 @@ import {
 } from '@utils';
 
 import { Genre } from './filter';
+import { ComponentGoogleAds } from './GoogleAds';
 // import { ComponentGoogleAds } from './GoogleAds';
 import { Social } from './Social';
-import { ComponentGoogleAds } from './GoogleAds';
 
 export const Sidebar = () => {
   return (
