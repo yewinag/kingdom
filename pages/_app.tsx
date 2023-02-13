@@ -41,10 +41,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
   return (
     <>
+      {/*  Google tag (gtag.js) */}
       <Script
         id="soulkingdom-id"
         strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-27VRMK3PV7`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-TV3SXDZ6P3`}
       />
 
       <Script strategy="lazyOnload" id="soulkingdom-id">
@@ -52,12 +53,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-27VRMK3PV7', {
+          gtag('config', 'G-TV3SXDZ6P3', {
           page_path: window.location.pathname,
           });
         `}
       </Script>
-      <Script id="google-tag-manager" strategy="afterInteractive">
+      {/* <Script id="google-tag-manager" strategy="afterInteractive">
         {`
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -65,7 +66,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-NWZDX8N')
       `}
-      </Script>
+      </Script> */}
       {/* <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1237749281691432"
