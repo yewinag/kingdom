@@ -62,6 +62,7 @@ export const Header = () => {
                 className="mobile-menu-icon"
                 aria-pressed={false}
                 onClick={toggle.toggle}
+                title="mobile-menu button"
                 // ref={refUL}
               >
                 {menu ? (

@@ -66,12 +66,18 @@ function MyApp({ Component, pageProps }: AppProps) {
         })(window,document,'script','dataLayer','GTM-NWZDX8N')
       `}
       </Script>
-      <Script
+      {/* <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1237749281691432"
         crossOrigin="anonymous"
-      />
+      /> */}
       <Head>
+        <script
+          async
+          data-ad-client={'ca-pub-1237749281691432'}
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          crossOrigin="anonymous"
+        ></script>
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta charSet="utf-8" />

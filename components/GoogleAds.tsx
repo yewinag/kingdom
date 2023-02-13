@@ -11,15 +11,20 @@ export const ComponentGoogleAds = ({ client, slot, currentPath }: IProps) => {
   useEffect(() => {
     setMount(true);
     if (mount) {
-      window.adsbygoogle = window.adsbygoogle || [];
-      window.adsbygoogle.push({});
+      // window.adsbygoogle = window.adsbygoogle || [];
+      // window.adsbygoogle.push({});
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (err: any) {
+        throw new Error(err);
+      }
     }
-  }, [currentPath]);
+  }, [currentPath, mount]);
   return (
     <StyledAds>
       <div key={currentPath} className="ads-layout">
         <ins
-          className="adsbygoogle"
+          className={`adsbygoogle ${currentPath}`}
           style={{ display: 'block' }}
           data-ad-client={client}
           data-ad-slot={slot}
