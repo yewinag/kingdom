@@ -9,3 +9,6 @@ export const BANNER_SLOT = '2136582284';
 
 export const SMALL_ASID = '1745135393';
 export const BIG_ASID = '1409329133';
+export const gtag = {
+  GA_TRACKING_ID: 'G-TV3SXDZ6P3'
+};

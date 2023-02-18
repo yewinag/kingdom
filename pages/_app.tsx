@@ -7,7 +7,6 @@ import { GlobalStyles, PageLoading, Responsive } from '@styles';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router } from 'next/router';
-import Script from 'next/script';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
@@ -41,45 +40,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
   return (
     <>
-      {/*  Google tag (gtag.js) */}
-      <Script
-        id="soulkingdom-id"
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-TV3SXDZ6P3`}
-      />
-
-      <Script strategy="lazyOnload" id="soulkingdom-id">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-TV3SXDZ6P3', {
-          page_path: window.location.pathname,
-          });
-        `}
-      </Script>
-      {/* <Script id="google-tag-manager" strategy="afterInteractive">
-        {`
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-NWZDX8N')
-      `}
-      </Script> */}
-      {/* <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1237749281691432"
-        crossOrigin="anonymous"
-      /> */}
       <Head>
-        <script
-          async
-          data-ad-client={'ca-pub-1237749281691432'}
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-          crossOrigin="anonymous"
-        ></script>
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+        {/* meta and title will in _app.js by nextjs */}
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -87,7 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2"
         />
-        <title>SoulKingdom - watching films online</title>
+
         <meta
           name="description"
           content="SoulKingdom.com is the best Korea Drama website that provides you with complete movies, Kdrama Episodes, and Kdrama OSTs in HD quality through the Internet."
@@ -96,22 +58,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="keywords"
           content="soulkingdom korea drama series, complete movies, full HD quality movies"
         />
-
-        <link rel="canonical" href="https://soulkingdom.net" />
-        <link rel="manifest" href="/manifest.json" />
-        <link
-          href="/icons/favicon-16x16.png"
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-        />
-        <link
-          href="/icons/favicon-32x32.png"
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-        />
-        <link rel="apple-touch-icon" href="/icons/apple-icon.png"></link>
+        <title>SoulKingdom - watching films online</title>
         <meta name="theme-color" content="#F44336" />
       </Head>
       <Provider store={store}>
