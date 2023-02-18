@@ -32,16 +32,19 @@ export const FlexCenter = styled.div`
   min-height: ${p => p.theme.heights.row};
 `;
 export const FooterLayout = styled.footer`
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
   min-height: 54px;
   margin-top: ${p => p.theme.space['20']};
   padding: 0 ${p => p.theme.space['20']};
+  article {
+    padding: 16px 0;
+  }
   p {
     color: ${p => p.theme.text_gray} !important;
     font-size: ${p => p.theme.fontSizes.small};
-    padding: 10px 0;
+    /* padding: 10px 0; */
   }
 `;
 export const SidebarLayout = styled.aside`

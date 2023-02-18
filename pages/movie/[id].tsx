@@ -72,7 +72,7 @@ const Detail: NextPage = () => {
                 </div>
                 <div className="info">
                   <SeactionHeading>
-                    {data?.mm_name || data?.name}
+                    {`${data?.name} ( ${data?.mm_name} )`}
                   </SeactionHeading>
                   <p className="small">{data?.released_date}</p>
                   <div className="type">
