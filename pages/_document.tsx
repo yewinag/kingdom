@@ -1,4 +1,4 @@
-import { CLIENT_KEY, gtag } from '@utils';
+import { gtag } from '@utils';
 import Document, {
   DocumentContext,
   Head,
@@ -65,15 +65,14 @@ export default class AppDocument extends Document {
             }}
           />
           <Script
-            strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
           />
-          <Script
+          {/* <Script
             async
             data-ad-client={CLIENT_KEY}
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
             crossOrigin="anonymous"
-          />
+          /> */}
         </Head>
         <body>
           <Main />

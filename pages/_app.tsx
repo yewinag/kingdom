@@ -4,10 +4,12 @@ import ProgressBar from '@badrap/bar-of-progress';
 import { AppLayout, StyledThemeProvider } from '@components';
 import { store } from '@store';
 import { GlobalStyles, PageLoading, Responsive } from '@styles';
+import { CLIENT_KEY } from '@utils';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router } from 'next/router';
 import { ThemeProvider, useTheme } from 'next-themes';
+import { GoogleAdSense } from 'nextjs-google-adsense';
 import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
 import { BeatLoader } from 'react-spinners';
@@ -60,6 +62,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <title>SoulKingdom - watching films online</title>
         <meta name="theme-color" content="#F44336" />
+        <GoogleAdSense publisherId={CLIENT_KEY} />
       </Head>
       <Provider store={store}>
         <ThemeProvider defaultTheme={theme || 'dark'}>

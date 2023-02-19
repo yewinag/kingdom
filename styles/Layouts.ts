@@ -32,9 +32,6 @@ export const FlexCenter = styled.div`
   min-height: ${p => p.theme.heights.row};
 `;
 export const FooterLayout = styled.footer`
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
   min-height: 54px;
   margin-top: ${p => p.theme.space['20']};
   padding: 0 ${p => p.theme.space['20']};
@@ -83,7 +80,7 @@ export const ContentLayout = styled.section`
     }
   }
 `;
-export const MainContent = styled.section`
+export const MainContent = styled.main`
   height: auto;
   min-height: 88vh;
 `;

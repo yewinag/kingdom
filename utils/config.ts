@@ -4,11 +4,12 @@ export const ITEM_PER_PAGE = 3;
 export const CARTOONS_PER_PAGE = 12;
 export const TOKEN = process.env.NEXT_PUBLIC_TOKEN;
 export const TELEGRAM_LINK = process.env.NEXT_PUBLIC_TELGRAM;
-export const CLIENT_KEY = 'ca-pub-1237749281691432';
-export const BANNER_SLOT = '2136582284';
-
-export const SMALL_ASID = '1745135393';
-export const BIG_ASID = '1409329133';
+// ads key
+export const CLIENT_KEY = process.env.NEXT_PUBLIC_AD_CLIENT as string;
+export const BANNER_SLOT = process.env.NEXT_PUBLIC_BANNER as string;
+export const SMALL_ASID = process.env.NEXT_PUBLIC_ASIDE_SAMLL as string;
+export const BIG_ASID = process.env.NEXT_PUBLIC_ASIDE_BIG as string;
+// ads key
 export const gtag = {
   GA_TRACKING_ID: 'G-TV3SXDZ6P3'
 };
