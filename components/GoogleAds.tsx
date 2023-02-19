@@ -1,5 +1,4 @@
-// import Script from 'next/script';
-import { useEffect, useState } from 'react';
+import { ResponsiveAdUnit } from 'nextjs-google-adsense';
 import styled from 'styled-components';
 interface IProps {
   client: string;
@@ -7,28 +6,14 @@ interface IProps {
   currentPath: string;
 }
 export const ComponentGoogleAds = ({ client, slot, currentPath }: IProps) => {
-  const [mount, setMount] = useState(false);
-  useEffect(() => {
-    setMount(true);
-    if (mount) {
-      // window.adsbygoogle = window.adsbygoogle || [];
-      // window.adsbygoogle.push({});
-      try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (err: any) {
-        throw new Error(err);
-      }
-    }
-  }, [currentPath, mount]);
   return (
     <StyledAds>
       <div key={currentPath} className="ads-layout">
-        <ins
-          className={`adsbygoogle ${currentPath}`}
-          style={{ display: 'block' }}
-          data-ad-client={client}
-          data-ad-slot={slot}
-        ></ins>
+        <ResponsiveAdUnit
+          publisherId={client}
+          slotId={slot}
+          type={currentPath}
+        />
       </div>
     </StyledAds>
   );
@@ -41,5 +26,7 @@ const StyledAds = styled.div`
   .ads-layout {
     margin: auto;
     min-height: 100px;
+    overflow: hidden;
+    text-align: left;
   }
 `;

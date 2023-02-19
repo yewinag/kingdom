@@ -7,10 +7,10 @@ interface Iprops {
 }
 export const AppLayout = (props: Iprops) => {
   return (
-    <div>
+    <>
       <Header />
       <MainContent className="container">{props.children}</MainContent>
       <Footer />
-    </div>
+    </>
   );
 };
