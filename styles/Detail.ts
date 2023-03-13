@@ -90,6 +90,11 @@ export const DetailStyles = styled.div`
           align-items: center;
         }
       }
+      .wrap-season {
+        h4 {
+          margin-bottom: 10px;
+        }
+      }
       .download-grid {
         display: flex;
         align-items: center;
