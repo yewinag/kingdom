@@ -90,7 +90,8 @@ export const light = {
   text_800: '#263155',
   text_900: '#172046',
   shadow: 'rgb(0 0 0 / 2%) 0px 1px 2px',
-  text_gray: '#6b6d72'
+  text_gray: '#6b6d72',
+  btn_color: '#F44336'
 };
 export const dark = {
   background: '#000',
@@ -116,5 +117,6 @@ export const dark = {
   text_800: '#263155',
   text_900: '#172046',
   shadow: 'rgb(0 0 0 / 4%) 0px 3px 5px',
-  text_gray: '#6b6d72'
+  text_gray: '#6b6d72',
+  btn_color: '#59637E'
 };

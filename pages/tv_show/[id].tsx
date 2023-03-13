@@ -68,7 +68,6 @@ const TVShowDetail: NextPage = () => {
       ) : (
         <DetailStyles>
           <MetaTags metaData={metaData} />
-
           <section className="listing-layout">
             <section className="content-body">
               <div className="detail">
@@ -109,18 +108,21 @@ const TVShowDetail: NextPage = () => {
                 </header>
                 {seasons.length > 0 &&
                   seasons.map((season, index) => (
-                    <article className="download-grid" key={index}>
-                      {season.episodes.map((episode, index) => (
-                        <DownloadBtn
-                          alt="download button"
-                          id={season.id}
-                          episode={episode}
-                          key={index}
-                        >
-                          <p>{`Episode ${episode}`}</p>
-                        </DownloadBtn>
-                      ))}
-                    </article>
+                    <section className="wrap-season" key={index}>
+                      <h4>{`Season - ${index + 1}`}</h4>
+                      <article className="download-grid">
+                        {season.episodes.map((episode, index) => (
+                          <DownloadBtn
+                            alt="download button"
+                            id={season.id}
+                            episode={episode}
+                            key={index}
+                          >
+                            <p>{`Episode ${episode}`}</p>
+                          </DownloadBtn>
+                        ))}
+                      </article>
+                    </section>
                   ))}
               </div>
               <div className="share">
