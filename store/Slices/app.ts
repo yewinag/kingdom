@@ -1,7 +1,7 @@
+import { genreTypes } from '@interface';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { RootState } from '.';
-import { genreTypes } from '@interface';
 interface IState {
   mobile: boolean;
   resize: boolean;

@@ -46,7 +46,6 @@ export async function getStaticProps() {
   let data = {};
   try {
     const res = await fetcher('/home');
-    console.log(res);
     data = res;
   } catch (e: any) {
     error = e.toString();
