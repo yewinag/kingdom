@@ -62,12 +62,6 @@ export interface IDownloadLink {
   download: string;
   streaming: string;
 }
-export interface IDownloadLinks {
-  '360p': string;
-  '480p': string;
-  '720p': string;
-  '1080p': string;
-}
 export interface ISeoInfo {
   title: string;
   description: string;
@@ -83,3 +77,31 @@ export interface ISeasonEpisode {
   id: number;
   episodes: number[];
 }
+// genre types of movies
+export type genreTypes =
+  | 'action'
+  | 'adventure'
+  | 'anime'
+  | 'biography'
+  | 'comedy'
+  | 'crime'
+  | 'documentary'
+  | 'drama'
+  | 'family'
+  | 'fantasy'
+  | 'film-noir'
+  | 'game-show'
+  | 'history'
+  | 'horror'
+  | 'music'
+  | 'musical'
+  | 'mystery'
+  | 'news'
+  | 'reality-TV'
+  | 'romance'
+  | 'sci-fi'
+  | 'sport'
+  | 'talk-show'
+  | 'thriller'
+  | 'war'
+  | 'western';

@@ -1,4 +1,5 @@
 import { PATH_GENRES } from '@constants';
+import { genreTypes } from '@interface';
 import { selectApp, setLoading, updateGenre } from '@store';
 import { FlexCenter, StyledGenres } from '@styles';
 import { fetcher } from '@utils';
@@ -47,7 +48,7 @@ export const Genre = () => {
       <h4>Genres</h4>
       <div className="genre-list scroll-bar">
         {genre.length > 0 &&
-          genre.map((item: any, index: any) => (
+          genre.map((item: Record<genreTypes, number>, index: any) => (
             <Link href={`${PATH_GENRES}${Object.keys(item)}`} key={index}>
               <a>
                 <div
