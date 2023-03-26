@@ -1,27 +1,26 @@
 import { ComponentGoogleAds, ComponentRandom, Listing } from '@components';
 import { IMovies, ISeoInfo } from '@interface';
 import { FlexCenter } from '@styles';
-import { API_URL, BANNER_SLOT, CLIENT_KEY } from '@utils';
+import { BANNER_SLOT, CLIENT_KEY, fetcher } from '@utils';
 import MetaTags from 'components/MetaTags';
 import type { NextPage } from 'next';
-import { BeatLoader } from 'react-spinners';
 interface IProps {
   data: IMovies;
   error?: string;
 }
 const Home: NextPage<IProps> = ({ data, error }) => {
-  if (error) {
-    window && window.location.reload();
-    return (
-      <FlexCenter>
-        <BeatLoader color={'#D12729'} />
-      </FlexCenter>
-    );
-  }
   const metaData: ISeoInfo = {
     title: `Soulkingdom - watch films online`,
     description: `Soulkingdom - watch films online`
   };
+
+  if (error) {
+    return (
+      <FlexCenter>
+        <p>{error}</p>
+      </FlexCenter>
+    );
+  }
 
   return (
     <>
@@ -42,21 +41,17 @@ const Home: NextPage<IProps> = ({ data, error }) => {
     </>
   );
 };
-export async function getServerSideProps() {
+export async function getStaticProps() {
   let error = '';
-  let data = [];
+  let data = {};
   try {
-    const res = await fetch(`${API_URL}/home`, {
-      headers: {
-        Accept: 'application/json, text/plain, */*',
-        'User-Agent': '*'
-      }
-    });
-    data = await res.json();
+    const res = await fetcher('/home');
+    console.log(res);
+    data = res;
   } catch (e: any) {
     error = e.toString();
   }
-
   return { props: { data, error } };
 }
+
 export default Home;

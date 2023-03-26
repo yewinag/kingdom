@@ -12,7 +12,7 @@ import { ThemeProvider, useTheme } from 'next-themes';
 import { GoogleAdSense } from 'nextjs-google-adsense';
 import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
-import { BeatLoader } from 'react-spinners';
+// import { BeatLoader } from 'react-spinners';
 
 const progress = new ProgressBar({
   size: 2,
@@ -34,16 +34,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
 
   if (!mounted) {
-    return (
-      <PageLoading>
-        <BeatLoader color="#D12729" />
-      </PageLoading>
-    );
+    return <PageLoading />;
   }
   return (
     <>
       <Head>
-        {/* meta and title will in _app.js by nextjs */}
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

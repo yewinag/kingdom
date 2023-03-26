@@ -12,7 +12,11 @@ export const clientFetcher = async (path: string) => {
 
 export const fetcher = async (path: string) => {
   const res = await fetch(`${API_URL}${path}`, {
-    headers: { Authorization: TOKEN || '' }
+    headers: {
+      Authorization: TOKEN || '',
+      Accept: 'application/json, text/plain, */*',
+      'User-Agent': '*'
+    }
   });
   if (res.status !== 200) {
     throw new Error(`An error occurred while fetching the data.`);
