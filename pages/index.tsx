@@ -14,8 +14,6 @@ const Home: NextPage<IProps> = ({ data, error }) => {
     description: `Soulkingdom - watch films online`
   };
 
-  console.info(data);
-  console.info(error);
   if (error) {
     return (
       <FlexCenter>
