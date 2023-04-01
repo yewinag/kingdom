@@ -92,8 +92,6 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          {/* google ads */}
-          {/* <ComponentGoogleAds /> */}
           <SectionLayout>
             <SectionTitle>
               <Link href={`${PATH_GENRES}${keywords.MOVIES}`}>

@@ -1,4 +1,4 @@
-import { CLIENT_KEY, gtag } from '@utils';
+import * as gtag from '@utils';
 import Document, {
   DocumentContext,
   Head,
@@ -8,7 +8,6 @@ import Document, {
 } from 'next/document';
 import Script from 'next/script';
 import { ServerStyleSheet } from 'styled-components';
-
 export default class AppDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
@@ -65,13 +64,8 @@ export default class AppDocument extends Document {
             }}
           />
           <Script
+            strategy="afterInteractive"
             src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-          />
-          <Script
-            async
-            data-ad-client={CLIENT_KEY}
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-            crossOrigin="anonymous"
           />
         </Head>
         <body>

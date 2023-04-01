@@ -30,6 +30,6 @@
       "@api": ["./API"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "utils/gtag.js"],
   "exclude": ["node_modules"]
 }

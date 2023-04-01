@@ -16,8 +16,6 @@ export const HOW_TO_DOWNLOAD = '/how_to_download';
 export const DMCA_POLICY = '/dmca_policy';
 export const ABOUT = '/about';
 
-export const adsClientId = 'ca-app-pub-3334163759744736';
-export const adsSlot = '1188312524';
 export const defaultImage = '/soul-kingdom-placeholder-1.png';
 export const defaultImageSmall = '/soul-kingdom-placeholder-2.png';
 export const defaultImageCast = '/soul-kingdom-placeholder-cast.png';

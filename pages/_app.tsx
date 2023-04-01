@@ -5,14 +5,14 @@ import { AppLayout, StyledThemeProvider } from '@components';
 import { store } from '@store';
 import { GlobalStyles, PageLoading, Responsive } from '@styles';
 import { CLIENT_KEY } from '@utils';
+import * as gtag from '@utils';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { Router } from 'next/router';
+import { Router, useRouter } from 'next/router';
+import Script from 'next/script';
 import { ThemeProvider, useTheme } from 'next-themes';
-import { GoogleAdSense } from 'nextjs-google-adsense';
 import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
-// import { BeatLoader } from 'react-spinners';
 
 const progress = new ProgressBar({
   size: 2,
@@ -26,16 +26,28 @@ Router.events.on('routeChangeComplete', progress.finish);
 Router.events.on('routeChangeError', progress.finish);
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const { theme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
   }, []);
+  // when route changes, track ga event
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   if (!mounted) {
     return <PageLoading />;
   }
+
   return (
     <>
       <Head>
@@ -57,8 +69,17 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <title>SoulKingdom - watching films online</title>
         <meta name="theme-color" content="#F44336" />
-        <GoogleAdSense publisherId={CLIENT_KEY} />
       </Head>
+      <Script
+        id="Adsense-id"
+        async
+        onError={e => {
+          return new Error('script failed' + e);
+        }}
+        strategy="afterInteractive"
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${CLIENT_KEY}`}
+        crossOrigin="anonymous"
+      />
       <Provider store={store}>
         <ThemeProvider defaultTheme={theme || 'dark'}>
           <StyledThemeProvider>
