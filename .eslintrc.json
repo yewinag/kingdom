@@ -36,7 +36,7 @@
   ],
   "ignorePatterns": ["/public/*"],
   "rules": {
-    "no-console": "error",
+    "no-console": "warn",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "simple-import-sort/imports": "warn",
