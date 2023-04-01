@@ -22,7 +22,7 @@ import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
 
-export const Header = () => {
+const Header = () => {
   const { theme, setTheme } = useTheme();
   const [show, setShow] = useToggle();
   const [menu, toggle] = useToggle();
@@ -204,3 +204,4 @@ export const Header = () => {
     </>
   );
 };
+export default Header;

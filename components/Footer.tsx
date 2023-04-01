@@ -1,6 +1,6 @@
 import { FooterLayout } from '@styles';
 
-export const Footer = () => {
+const Footer = () => {
   return (
     <FooterLayout className="container">
       <article>
@@ -17,3 +17,4 @@ export const Footer = () => {
     </FooterLayout>
   );
 };
+export default Footer;
