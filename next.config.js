@@ -12,7 +12,8 @@ const settings = {
     includePaths: [path.join(__dirname, 'styles')]
   },
   images: {
-    domains: ['stg-images.soulkingdom.net']
+    domains: ['images.soulkingdom.net']
+    // domains: ['stg-images.soulkingdom.net']
   },
   i18n: {
     locales: ['en'],
