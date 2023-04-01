@@ -13,8 +13,9 @@ const Home: NextPage<IProps> = ({ data, error }) => {
     title: `Soulkingdom - watch films online`,
     description: `Soulkingdom - watch films online`
   };
-  console.log(data);
-  console.log(error);
+
+  console.info(data);
+  console.info(error);
   if (error) {
     return (
       <FlexCenter>
@@ -48,7 +49,6 @@ export async function getStaticProps() {
   try {
     const res = await fetcher('/home');
     data = res;
-    console.log(data);
   } catch (e: any) {
     error = e.toString();
   }
