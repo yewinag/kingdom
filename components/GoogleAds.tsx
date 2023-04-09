@@ -1,4 +1,4 @@
-// import { ResponsiveAdUnit } from 'nextjs-google-adsense';
+import Script from 'next/script';
 import styled from 'styled-components';
 interface IProps {
   client: string;
@@ -19,7 +19,9 @@ export const ComponentGoogleAds = ({ client, slot, currentPath }: IProps) => {
         >
           {' '}
         </ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        <Script id="load-ads">
+          (adsbygoogle = window.adsbygoogle || []).push({})
+        </Script>
       </div>
     </StyledAds>
   );

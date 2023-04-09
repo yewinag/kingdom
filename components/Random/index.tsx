@@ -41,7 +41,7 @@ export const ComponentRandom = (props: IProps) => {
       {mounted && (
         <AliceCarousel
           responsive={responsive}
-          autoPlay={false}
+          autoPlay={true}
           activeIndex={0}
           animationDuration={1000}
           mouseTracking
