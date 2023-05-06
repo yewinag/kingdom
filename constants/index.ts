@@ -108,3 +108,5 @@ export const enumShowType = {
   TV_SHOW: 'tv_show',
   MOVIE: 'movie'
 } as const;
+
+export const ads_url = 'https://soulkingdom.net';

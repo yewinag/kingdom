@@ -3,6 +3,7 @@ import { genreTypes } from '@interface';
 import { selectApp, setLoading, updateGenre } from '@store';
 import { FlexCenter, StyledGenres } from '@styles';
 import { fetcher } from '@utils';
+import { ComponentSidebarAds, ComponentVideoAds } from 'components/GoogleAds';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
@@ -65,6 +66,14 @@ export const Genre = () => {
             </Link>
           ))}
       </div>
+      <ComponentSidebarAds
+        img_url="/banner.gif"
+        url={'https://soulkingdom.net'}
+      />
+      <ComponentVideoAds
+        img_url="/animation.gif.mp4"
+        url={'https://soulkingdom.net'}
+      />
     </StyledGenres>
   );
 };

@@ -1,7 +1,7 @@
-import { ComponentGoogleAds, ComponentRandom, Listing } from '@components';
+import { ComponentAds, ComponentRandom, Listing } from '@components';
 import { IMovies, ISeoInfo } from '@interface';
 import { FlexCenter } from '@styles';
-import { BANNER_SLOT, CLIENT_KEY, fetcher } from '@utils';
+import { fetcher } from '@utils';
 import MetaTags from 'components/MetaTags';
 import type { NextPage } from 'next';
 interface IProps {
@@ -25,11 +25,7 @@ const Home: NextPage<IProps> = ({ data, error }) => {
   return (
     <>
       <MetaTags metaData={metaData} />
-      <ComponentGoogleAds
-        currentPath="home"
-        client={CLIENT_KEY}
-        slot={BANNER_SLOT}
-      />
+      <ComponentAds img_url="/banner.gif" url={'www.soulkingdom.net'} />
       <ComponentRandom carousels={data?.carousels} />
       <Listing
         animes={data?.anime}

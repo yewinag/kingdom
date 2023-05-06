@@ -1,40 +1,68 @@
-import Script from 'next/script';
+import Image from 'next/image';
 import styled from 'styled-components';
 interface IProps {
-  client: string;
-  slot: string;
-  currentPath: string;
+  url?: string;
+  img_url?: string;
 }
-export const ComponentGoogleAds = ({ client, slot, currentPath }: IProps) => {
+export const ComponentAds = ({ url, img_url }: IProps) => {
   return (
     <StyledAds>
-      <div key={currentPath} className="ads-layout">
-        <ins
-          className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-client={client}
-          data-ad-slot={slot}
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        >
-          {' '}
-        </ins>
-        <Script id="load-ads">
-          (adsbygoogle = window.adsbygoogle || []).push({})
-        </Script>
-      </div>
+      <a href={url} target="_blank" rel="noreferrer">
+        <Image src={img_url || ''} alt={img_url} layout="fill" />
+      </a>
     </StyledAds>
+  );
+};
+export const ComponentVideoAds = ({ url, img_url }: IProps) => {
+  return (
+    <StyledVideo>
+      <a href={url} target="_blank" rel="noreferrer">
+        <video loop autoPlay muted>
+          <source src={img_url || ''} type="video/mp4" />
+        </video>
+      </a>
+    </StyledVideo>
+  );
+};
+export const ComponentSidebarAds = ({ url, img_url }: IProps) => {
+  return (
+    <StyledSidebarAds>
+      <a href={url} target="_blank" rel="noreferrer">
+        <Image src={img_url || ''} alt={img_url} layout="fill" />
+      </a>
+    </StyledSidebarAds>
   );
 };
 
 const StyledAds = styled.div`
   width: 100%;
-  min-height: 120px;
+  height: 100px;
+  position: relative;
+  padding: 8px 4px;
   background: transparent;
-  .ads-layout {
+  img {
     margin: auto;
-    min-height: 100px;
-    overflow: hidden;
-    text-align: left;
+  }
+  @media (max-width: ${p => p.theme.breakPoints.s_tablet}) {
+    height: 70px;
+  }
+`;
+
+const StyledVideo = styled.div`
+  video {
+    width: 100%;
+    min-height: 200px;
+  }
+
+  background: transparent;
+`;
+const StyledSidebarAds = styled.div`
+  width: 100%;
+  height: 260px;
+  padding: 8px 4px;
+  background: transparent;
+  position: relative;
+  img {
+    margin: auto;
   }
 `;

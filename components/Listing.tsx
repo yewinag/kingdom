@@ -1,4 +1,4 @@
-import { keywords, PATH_GENRES } from '@constants';
+import { ads_url, keywords, PATH_GENRES } from '@constants';
 import {
   ArticleRow,
   ContentLayout,
@@ -11,6 +11,7 @@ import Link from 'next/link';
 
 import { IMovie, IMovies } from '../interface';
 import { ComponentCard } from './common';
+import { ComponentAds, ComponentVideoAds } from './GoogleAds';
 // import { ComponentGoogleAds } from './GoogleAds';
 import { Sidebar } from './Sidebar';
 import { ComponentPlaceholder } from './Skeleton';
@@ -48,8 +49,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          {/* google ads */}
-          {/* <ComponentGoogleAds /> */}
+          <ComponentVideoAds img_url="/animation.gif.mp4" url={ads_url} />
           <SectionLayout>
             <SectionTitle>
               <Link href={`${PATH_GENRES}${keywords.ANIME}`}>
@@ -69,8 +69,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          {/* google ads */}
-          {/* <ComponentGoogleAds /> */}
+          <ComponentAds img_url="/banner.gif" url={ads_url} />
           <SectionLayout>
             {tv_shows && tv_shows?.length > 0 && (
               <SectionTitle>
@@ -92,6 +91,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
+          <ComponentVideoAds img_url="/ads_video.mp4" url={ads_url} />
           <SectionLayout>
             <SectionTitle>
               <Link href={`${PATH_GENRES}${keywords.MOVIES}`}>
@@ -111,6 +111,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
+          <ComponentVideoAds img_url="/shan_game.mp4" url={ads_url} />
         </section>
         <Sidebar />
       </section>
