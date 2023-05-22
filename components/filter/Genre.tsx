@@ -66,14 +66,14 @@ export const Genre = () => {
             </Link>
           ))}
       </div>
-      <ComponentSidebarAds
+      {/* <ComponentSidebarAds
         img_url="/banner.gif"
         url={'https://soulkingdom.net'}
       />
       <ComponentVideoAds
         img_url="/animation.gif.mp4"
         url={'https://soulkingdom.net'}
-      />
+      /> */}
     </StyledGenres>
   );
 };
