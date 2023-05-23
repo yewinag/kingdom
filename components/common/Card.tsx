@@ -25,6 +25,7 @@ export const ComponentCard = (props: Iprops) => {
               alt={item.name}
               layout="fill"
               className="next-image"
+              placeholder="blur"
             />
             <span className="player">
               <IconPlay />
