@@ -78,6 +78,8 @@ const TVShowDetail: NextPage = () => {
                     width={160}
                     height={237}
                     loading={'lazy'}
+                    placeholder="blur"
+                    blurDataURL="/soul-kingdom-placeholder-cast.png"
                   />
                 </div>
                 <div className="info">
@@ -100,6 +102,8 @@ const TVShowDetail: NextPage = () => {
                   width={500}
                   height={288}
                   loading={'lazy'}
+                  placeholder="blur"
+                  blurDataURL="/soul-kingdom-placeholder-cast.png"
                 />
               </div>
               <div className="download">

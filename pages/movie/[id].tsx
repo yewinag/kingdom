@@ -67,7 +67,9 @@ const Detail: NextPage = () => {
                     alt={data?.name}
                     width={160}
                     height={237}
+                    blurDataURL="/soul-kingdom-placeholder-cast.png"
                     loading={'lazy'}
+                    placeholder="blur"
                   />
                 </div>
                 <div className="info">
@@ -91,7 +93,9 @@ const Detail: NextPage = () => {
                   alt={data?.name}
                   width={500}
                   height={288}
+                  blurDataURL="/soul-kingdom-placeholder-cast.png"
                   loading={'lazy'}
+                  placeholder="blur"
                 />
               </div>
               <div className="download">
