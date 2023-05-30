@@ -1,5 +1,10 @@
-import { ComponentNotFound, DownloadIcon, Sidebar } from '@components';
-import { defaultImage, defaultImageCast } from '@constants';
+import {
+  ComponentNotFound,
+  ComponentVideoAds,
+  DownloadIcon,
+  Sidebar
+} from '@components';
+import { ads_url, defaultImage, defaultImageCast } from '@constants';
 import { IMovieDetail, ISeoInfo } from '@interface';
 import {
   DetailStyles,
@@ -85,6 +90,7 @@ const Detail: NextPage = () => {
                   <p className="small">{`IMDB - ${data?.rating}`}</p>
                 </div>
               </div>
+              <ComponentVideoAds img_url="/shan9-vip.mp4" url={ads_url} />
               <div className="description">
                 <SeactionHeading>Complete Cast</SeactionHeading>
                 <p>{data?.overview}</p>
@@ -98,11 +104,10 @@ const Detail: NextPage = () => {
                   placeholder="blur"
                 />
               </div>
+              <ComponentVideoAds img_url="/taung-paw-thar.mp4" url={ads_url} />
               <div className="download">
-                {/* <SeactionHeading>Download Links</SeactionHeading> */}
                 <header>
                   <h4>Download Links</h4>
-                  {/* <h4>Quality</h4> */}
                 </header>
                 <article>
                   <Link href={res?.drive_url || '/'}>
@@ -124,6 +129,7 @@ const Detail: NextPage = () => {
                   telLink={TELEGRAM_LINK || '/'}
                 />
               </div>
+              <ComponentVideoAds img_url="/shan9-vip.mp4" url={ads_url} />
             </section>
             <Sidebar />
           </section>

@@ -51,7 +51,7 @@ const StyledAds = styled.div`
 const StyledVideo = styled.div`
   video {
     width: 100%;
-    min-height: 200px;
+    min-height: auto;
   }
 
   background: transparent;
