@@ -36,15 +36,16 @@ export const ComponentSidebarAds = ({ url, img_url }: IProps) => {
 
 const StyledAds = styled.div`
   width: 100%;
-  height: 100px;
+  height: 90px;
   position: relative;
   padding: 8px 4px;
   background: transparent;
+  margin-top: 6px;
   img {
     margin: auto;
   }
   @media (max-width: ${p => p.theme.breakPoints.s_tablet}) {
-    height: 70px;
+    height: 60px;
   }
 `;
 
