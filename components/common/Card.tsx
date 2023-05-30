@@ -20,7 +20,7 @@ export const ComponentCard = (props: Iprops) => {
         <a>
           <div className="image">
             <Image
-              blurDataURL="/poster.png"
+              blurDataURL="/soul-kingdom-placeholder.svg"
               src={item.cover_path || defaultImage}
               alt={item.name}
               layout="fill"
