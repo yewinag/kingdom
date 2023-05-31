@@ -13,7 +13,6 @@ export const PATH_GENRES = '/genres/';
 export const PATH_MOVIE = '/movie/';
 export const PATH_TVSHOWS = '/tv_shows/';
 export const HOW_TO_DOWNLOAD = '/how_to_download';
-export const DMCA_POLICY = '/dmca_policy';
 export const ABOUT = '/about';
 export const DISCLAIMER = '/disclaimer';
 
