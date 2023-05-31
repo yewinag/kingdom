@@ -2,9 +2,9 @@
 
 const path = require('path');
 
-const withPWA = require('next-pwa')({
-  dest: 'public'
-});
+// const withPWA = require('next-pwa')({
+//   dest: 'public'
+// });
 
 const settings = {
   reactStrictMode: true,
@@ -34,4 +34,4 @@ const settingsProd = {
   }
 };
 module.exports =
-  process.env.NODE_ENV === 'development' ? settings : withPWA(settingsProd);
+  process.env.NODE_ENV === 'development' ? settings : settingsProd;
