@@ -33,15 +33,29 @@ const TVShowDetail: NextPage = () => {
     query: { id }
   } = useRouter();
   const [seasons, setSeasons] = useState<ISeasonEpisode[]>([]);
+  const [movie, setMovie] = useState<IMovieDetail>();
   const { data, error } = useSWR<IMovieDetail, Error>(
     `/tv-shows/${id || 0}`,
     fetcher
   );
 
   useEffect(() => {
+    fetchMovieAgain();
+  }, [error]);
+
+  const fetchMovieAgain = async () => {
+    try {
+      const res = await fetcher(`/tv-shows/${id || 0}`);
+      setMovie(res);
+    } catch (err: any) {
+      throw new Error(err);
+    }
+  };
+  const used = data || movie;
+  useEffect(() => {
     const generateEpisodes = () => {
       const formatEpisode: ISeasonEpisode[] = [];
-      data?.seasons?.map(async season => {
+      used?.seasons?.map(async season => {
         const episode = await generateEpisodesByNumber(season?.total_episodes);
         formatEpisode.push({
           id: season.id,
@@ -50,10 +64,10 @@ const TVShowDetail: NextPage = () => {
       });
       setSeasons(formatEpisode);
     };
-    if (data) {
+    if (used) {
       generateEpisodes();
     }
-  }, [data]);
+  }, [used]);
 
   if (error) {
     return (
@@ -67,13 +81,12 @@ const TVShowDetail: NextPage = () => {
   }
 
   const metaData: ISeoInfo = {
-    title: `${data?.name} films - watch ${data?.name}  on soulkingdom `,
-    description: `${data?.overview} complete cast of ${data?.name} `
+    title: `${used?.name} films - watch ${used?.name}  on soulkingdom `,
+    description: `${used?.overview} complete cast of ${used?.name} `
   };
-
   return (
     <MainContent>
-      {data === undefined ? (
+      {used === undefined ? (
         <FlexCenter>
           <BeatLoader color={light.primary_500} />
         </FlexCenter>
@@ -85,8 +98,8 @@ const TVShowDetail: NextPage = () => {
               <div className="detail">
                 <div className="image">
                   <Image
-                    src={data?.cover_path}
-                    alt={data?.name}
+                    src={used?.cover_path}
+                    alt={used?.name}
                     width={160}
                     height={237}
                     loading={'lazy'}
@@ -95,23 +108,23 @@ const TVShowDetail: NextPage = () => {
                   />
                 </div>
                 <div className="info">
-                  <SeactionHeading>{`${data?.name} ( ${data?.mm_name} )`}</SeactionHeading>
-                  <p className="small">{data?.released_date}</p>
+                  <SeactionHeading>{`${used?.name} ( ${used?.mm_name} )`}</SeactionHeading>
+                  <p className="small">{used?.released_date}</p>
                   <div className="type">
-                    {data?.genres.map((item, index) => (
+                    {used?.genres.map((item, index) => (
                       <span key={index}>{item.name}</span>
                     ))}
                   </div>
-                  <p className="small">{`IMDB - ${data?.rating}`}</p>
+                  <p className="small">{`IMDB - ${used?.rating}`}</p>
                 </div>
               </div>
               <ComponentVideoAds img_url="/shan9-vip.mp4" url={ads_url} />
               <div className="description">
                 <SeactionHeading>Complete Cast</SeactionHeading>
-                <p>{data?.overview}</p>
+                <p>{used?.overview}</p>
                 <Image
-                  src={data?.backdrop_path || defaultImageCast}
-                  alt={data?.name}
+                  src={used?.backdrop_path || defaultImageCast}
+                  alt={used?.name}
                   width={500}
                   height={288}
                   loading={'lazy'}
