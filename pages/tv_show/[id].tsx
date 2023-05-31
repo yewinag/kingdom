@@ -164,7 +164,6 @@ const TVShowDetail: NextPage = () => {
                 />
               </div>
               <ComponentAds img_url="/online-game.jpeg" url={ads_url} />
-              {/* <ComponentVideoAds img_url="/shan9-vip.mp4" url={ads_url} /> */}
             </section>
             <Sidebar />
           </section>
