@@ -27,6 +27,7 @@ export function Listing(props: IProps) {
 
   return (
     <ContentLayout>
+      <ComponentAds img_url="/banner.gif" url={ads_url} />
       <StyledHeading>Content Recently Added</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">
@@ -69,7 +70,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          <ComponentVideoAds img_url="/animation.gif.mp4" url={ads_url} />
+          <ComponentVideoAds img_url="/sein-lucky.mp4" url={ads_url} />
           <SectionLayout>
             {tv_shows && tv_shows?.length > 0 && (
               <SectionTitle>

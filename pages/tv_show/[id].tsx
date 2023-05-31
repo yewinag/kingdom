@@ -1,4 +1,5 @@
 import {
+  ComponentAds,
   ComponentNotFound,
   ComponentVideoAds,
   DownloadBtn,
@@ -132,7 +133,7 @@ const TVShowDetail: NextPage = () => {
                   blurDataURL="/soul-kingdom-placeholder-cast.png"
                 />
               </div>
-              <ComponentVideoAds img_url="/taung-paw-thar.mp4" url={ads_url} />
+              <ComponentVideoAds img_url="/shan_game.mp4" url={ads_url} />
               <div className="download">
                 <header>
                   <h4>Download Links</h4>
@@ -162,7 +163,8 @@ const TVShowDetail: NextPage = () => {
                   telLink={TELEGRAM_LINK || '/'}
                 />
               </div>
-              <ComponentVideoAds img_url="/shan9-vip.mp4" url={ads_url} />
+              <ComponentAds img_url="/online-game.jpeg" url={ads_url} />
+              {/* <ComponentVideoAds img_url="/shan9-vip.mp4" url={ads_url} /> */}
             </section>
             <Sidebar />
           </section>

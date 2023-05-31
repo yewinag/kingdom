@@ -1,4 +1,5 @@
 import { ComponentAds, ComponentRandom, Listing } from '@components';
+import { ads_url } from '@constants';
 import { IMovies, ISeoInfo } from '@interface';
 import { FlexCenter } from '@styles';
 import { fetcher } from '@utils';
@@ -25,7 +26,7 @@ const Home: NextPage<IProps> = ({ data, error }) => {
   return (
     <>
       <MetaTags metaData={metaData} />
-      <ComponentAds img_url="/banner.gif" url={'www.soulkingdom.net'} />
+      <ComponentAds img_url="/mdl-game.gif" url={ads_url} />
       <ComponentRandom carousels={data?.carousels} />
       <Listing
         animes={data?.anime}
