@@ -4,12 +4,12 @@ import ProgressBar from '@badrap/bar-of-progress';
 import { AppLayout, StyledThemeProvider } from '@components';
 import { store } from '@store';
 import { GlobalStyles, PageLoading, Responsive } from '@styles';
-import { CLIENT_KEY } from '@utils';
+// import { CLIENT_KEY } from '@utils';
 import * as gtag from '@utils';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router, useRouter } from 'next/router';
-import Script from 'next/script';
+// import Script from 'next/script';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
@@ -58,7 +58,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=2"
         />
-
         <meta
           name="description"
           content="SoulKingdom.com is the best Korea Drama website that provides you with complete movies, Kdrama Episodes, and Kdrama OSTs in HD quality through the Internet."
@@ -70,7 +69,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>SoulKingdom - watching films online</title>
         <meta name="theme-color" content="#F44336" />
       </Head>
-      <Script
+      {/* <Script
         id="Adsense-id"
         async
         onError={e => {
@@ -79,7 +78,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         strategy="afterInteractive"
         src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${CLIENT_KEY}`}
         crossOrigin="anonymous"
-      />
+      /> */}
       <Provider store={store}>
         <ThemeProvider defaultTheme={theme || 'dark'}>
           <StyledThemeProvider>
