@@ -8,6 +8,7 @@ import {
 import {
   ABOUT,
   DARK,
+  DISCLAIMER,
   DMCA_POLICY,
   HOW_TO_DOWNLOAD,
   keywords,
@@ -123,6 +124,13 @@ const Header = () => {
                   How to download
                 </li>
                 <li
+                  onClick={() => goToRoute(DISCLAIMER)}
+                  onKeyDown={() => goToRoute(DISCLAIMER)}
+                  role={'menuitem'}
+                >
+                  Disclaimer
+                </li>
+                <li
                   onClick={() => goToRoute(DMCA_POLICY)}
                   onKeyDown={() => goToRoute(DMCA_POLICY)}
                   role={'menuitem'}
@@ -162,6 +170,9 @@ const Header = () => {
                 </li> */}
                 <li>
                   <Link href={'/how_to_download'}>How to download</Link>
+                </li>
+                <li>
+                  <Link href={'/disclaimer'}>Disclaimer</Link>
                 </li>
                 <li>
                   <Link href={'/dmca_policy'}>DMCA</Link>
