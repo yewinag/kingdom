@@ -59,9 +59,8 @@ const TVShowDetail: NextPage = () => {
     return (
       <>
         <div>
-          {JSON.stringify(error)}
-          {JSON.stringify(data)}
-          <ComponentNotFound />;
+          {JSON.stringify(error?.message)}
+          <ComponentNotFound />
         </div>
       </>
     );
