@@ -66,6 +66,10 @@ const TVShowDetail: NextPage = () => {
 
   return (
     <MainContent>
+      <div>
+        {JSON.stringify(error)}
+        {JSON.stringify(data)}
+      </div>
       {data === undefined ? (
         <FlexCenter>
           <BeatLoader color={light.primary_500} />
