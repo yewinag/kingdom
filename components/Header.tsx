@@ -9,7 +9,6 @@ import {
   ABOUT,
   DARK,
   DISCLAIMER,
-  DMCA_POLICY,
   HOW_TO_DOWNLOAD,
   keywords,
   LIGHT,
@@ -131,13 +130,6 @@ const Header = () => {
                   Disclaimer
                 </li>
                 <li
-                  onClick={() => goToRoute(DMCA_POLICY)}
-                  onKeyDown={() => goToRoute(DMCA_POLICY)}
-                  role={'menuitem'}
-                >
-                  DMCA
-                </li>
-                <li
                   onClick={() => goToRoute(ABOUT)}
                   onKeyDown={() => goToRoute(ABOUT)}
                   role={'menuitem'}
@@ -163,19 +155,11 @@ const Header = () => {
                 <li>
                   <Link href={'/'}>Home</Link>
                 </li>
-                {/* <li>
-                  <Link href={`${PATH_GENRES}${keywords.TV_SHOWS}`}>
-                    TV Shows
-                  </Link>
-                </li> */}
                 <li>
                   <Link href={'/how_to_download'}>How to download</Link>
                 </li>
                 <li>
                   <Link href={'/disclaimer'}>Disclaimer</Link>
-                </li>
-                <li>
-                  <Link href={'/dmca_policy'}>DMCA</Link>
                 </li>
                 <li>
                   <Link href={'/about'}>About</Link>
