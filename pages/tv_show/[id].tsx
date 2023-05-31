@@ -56,7 +56,15 @@ const TVShowDetail: NextPage = () => {
   }, [data]);
 
   if (error) {
-    return <ComponentNotFound />;
+    return (
+      <>
+        <div>
+          {JSON.stringify(error)}
+          {JSON.stringify(data)}
+          <ComponentNotFound />;
+        </div>
+      </>
+    );
   }
 
   const metaData: ISeoInfo = {
@@ -66,10 +74,6 @@ const TVShowDetail: NextPage = () => {
 
   return (
     <MainContent>
-      <div>
-        {JSON.stringify(error)}
-        {JSON.stringify(data)}
-      </div>
       {data === undefined ? (
         <FlexCenter>
           <BeatLoader color={light.primary_500} />
