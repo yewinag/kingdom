@@ -59,7 +59,7 @@ const StyledVideo = styled.div`
 `;
 const StyledSidebarAds = styled.div`
   width: 100%;
-  height: 260px;
+  height: 500px;
   padding: 8px 4px;
   background: transparent;
   position: relative;

@@ -22,7 +22,7 @@ export const ComponentCard = (props: Iprops) => {
             <Image
               blurDataURL="/soul-kingdom-placeholder.svg"
               src={item.cover_path || defaultImage}
-              alt={item.name}
+              alt={item.mm_name}
               layout="fill"
               className="next-image"
               placeholder="blur"
@@ -37,7 +37,7 @@ export const ComponentCard = (props: Iprops) => {
         </a>
       </Link>
       <div className="info">
-        <p className="title">{item.name}</p>
+        <p className="title">{item.mm_name}</p>
         <p className="desc">{year}</p>
       </div>
     </StyledCard>

@@ -1,9 +1,13 @@
-import { PATH_GENRES } from '@constants';
+import { PATH_GENRES, ads_url } from '@constants';
 import { genreTypes } from '@interface';
 import { selectApp, setLoading, updateGenre } from '@store';
 import { FlexCenter, StyledGenres } from '@styles';
 import { fetcher } from '@utils';
-import { ComponentSidebarAds, ComponentVideoAds } from 'components/GoogleAds';
+import {
+  ComponentAds,
+  ComponentSidebarAds,
+  ComponentVideoAds
+} from 'components/GoogleAds';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
@@ -66,6 +70,7 @@ export const Genre = () => {
             </Link>
           ))}
       </div>
+      <ComponentSidebarAds img_url="/jdbyg-sidebar.gif" url={ads_url} />
       {/* <ComponentSidebarAds
         img_url="/banner.gif"
         url={'https://soulkingdom.net'}
