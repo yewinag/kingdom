@@ -1,10 +1,11 @@
 import {
+  ComponentAds,
   ComponentNotFound,
   // ComponentVideoAds,
   DownloadIcon,
   Sidebar
 } from '@components';
-import { defaultImage, defaultImageCast } from '@constants';
+import { ads_url, defaultImage, defaultImageCast } from '@constants';
 import { IMovieDetail, ISeoInfo } from '@interface';
 import {
   DetailStyles,
@@ -69,7 +70,7 @@ const Detail: NextPage = () => {
                 <div className="image">
                   <Image
                     src={data?.cover_path || defaultImage}
-                    alt={data?.name}
+                    alt={data?.mm_name}
                     width={160}
                     height={237}
                     blurDataURL="/soul-kingdom-placeholder-cast.png"
@@ -78,9 +79,7 @@ const Detail: NextPage = () => {
                   />
                 </div>
                 <div className="info">
-                  <SeactionHeading>
-                    {`${data?.name} ( ${data?.mm_name} )`}
-                  </SeactionHeading>
+                  <SeactionHeading>{`${data?.mm_name}`}</SeactionHeading>
                   <p className="small">{data?.released_date}</p>
                   <div className="type">
                     {data?.genres.map((item, index) => (
@@ -90,7 +89,7 @@ const Detail: NextPage = () => {
                   <p className="small">{`IMDB - ${data?.rating}`}</p>
                 </div>
               </div>
-              {/* <ComponentVideoAds img_url="/shan9-vip.mp4" url={ads_url} /> */}
+              <ComponentAds img_url="/ads-detail-banner.jpg" url={ads_url} />
               <div className="description">
                 <SeactionHeading>Complete Cast</SeactionHeading>
                 <p>{data?.overview}</p>

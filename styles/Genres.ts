@@ -8,6 +8,7 @@ export const StyledGenres = styled.div`
   .genre-list {
     max-height: 400px;
     overflow-y: scroll;
+    margin-bottom: 30px;
   }
   .genre-item {
     display: flex;

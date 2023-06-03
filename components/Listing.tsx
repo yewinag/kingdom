@@ -112,7 +112,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          <ComponentVideoAds img_url="/shan_game.mp4" url={ads_url} />
+          <ComponentVideoAds img_url="/ads-footer.mp4" url={ads_url} />
         </section>
         <Sidebar />
       </section>
