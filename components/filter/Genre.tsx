@@ -1,12 +1,12 @@
-import { PATH_GENRES, ads_url } from '@constants';
+import { ads_url, PATH_GENRES } from '@constants';
 import { genreTypes } from '@interface';
 import { selectApp, setLoading, updateGenre } from '@store';
 import { FlexCenter, StyledGenres } from '@styles';
 import { fetcher } from '@utils';
 import {
-  ComponentAds,
-  ComponentSidebarAds,
-  ComponentVideoAds
+  // ComponentAds,
+  ComponentSidebarAds
+  // ComponentVideoAds
 } from 'components/GoogleAds';
 import Link from 'next/link';
 import { useRouter } from 'next/router';

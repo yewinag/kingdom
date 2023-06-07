@@ -11,6 +11,8 @@ interface Iprops {
   id?: number | string;
   episode?: number | string;
   disable?: boolean;
+  in_number?: number;
+  name?: string;
 }
 export const Button = (props: Iprops) => {
   const { title, icon, className, alt, children, onClick, disable } = props;
@@ -28,13 +30,15 @@ export const Button = (props: Iprops) => {
 };
 
 export const DownloadBtn = (props: Iprops) => {
-  const { id, episode } = props;
+  const { id, in_number } = props;
   const [loading, setLoading] = useState(false);
 
   const handleDownload = async () => {
     try {
       setLoading(true);
-      const res = await fetcher(`/seasons/${id}/episodes/${episode}/drive-url`);
+      const res = await fetcher(
+        `/seasons/${id}/episodes/${in_number}/drive-url`
+      );
       await window.open(res?.drive_url, '_blank');
       setLoading(false);
     } catch (error) {
