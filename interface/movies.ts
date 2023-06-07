@@ -53,10 +53,16 @@ export interface IMovieDetail {
   trailer_embedded_url: string;
 }
 export interface ISeason {
+  episodes: IEpisode[];
   id: number;
   in_number: number;
-  total_episodes: number;
   ost: any[];
+  total_episodes: number;
+}
+export interface IEpisode {
+  id: number;
+  in_number: number;
+  name: string;
 }
 export interface IDownloadLink {
   download: string;
