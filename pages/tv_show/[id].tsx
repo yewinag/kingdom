@@ -34,15 +34,15 @@ const TVShowDetail: NextPage = () => {
     fetcher
   );
 
-  if (error) {
+  if (id === undefined) {
     return (
-      <>
-        <div>
-          {JSON.stringify(error?.message)}
-          <ComponentNotFound />
-        </div>
-      </>
+      <FlexCenter>
+        <BeatLoader color={light.primary_500} />
+      </FlexCenter>
     );
+  }
+  if (error) {
+    return <ComponentNotFound />;
   }
 
   const metaData: ISeoInfo = {
@@ -112,17 +112,21 @@ const TVShowDetail: NextPage = () => {
                         <section className="wrap-season" key={index}>
                           <h4>{`Season - ${index + 1}`}</h4>
                           <article className="download-grid">
-                            {season?.episodes.map((episode, index) => (
-                              <DownloadBtn
-                                alt="download button"
-                                id={season.id}
-                                in_number={episode?.in_number}
-                                key={index}
-                                name={episode?.name}
-                              >
-                                <p>{`${episode?.name}`}</p>
-                              </DownloadBtn>
-                            ))}
+                            {season?.episodes ? (
+                              <>
+                                {season?.episodes.map((episode, index) => (
+                                  <DownloadBtn
+                                    alt="download button"
+                                    id={season.id}
+                                    in_number={episode?.in_number}
+                                    key={index}
+                                    name={episode?.name}
+                                  >
+                                    <p>{`${episode?.name}`}</p>
+                                  </DownloadBtn>
+                                ))}
+                              </>
+                            ) : null}
                           </article>
                         </section>
                       )}
