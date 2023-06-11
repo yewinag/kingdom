@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const SectionLayout = styled.section`
-  margin-top: ${p => p.theme.space['16']};
-  margin-bottom: ${p => p.theme.space['16']};
+  margin-top: ${p => p.theme.space['4']};
+  margin-bottom: ${p => p.theme.space['4']};
 `;
 
 export const ArticleRow = styled.section`

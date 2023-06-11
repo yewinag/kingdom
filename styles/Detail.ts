@@ -14,7 +14,7 @@ export const DetailStyles = styled.div`
   .content-body {
     display: flex;
     flex-direction: column;
-    row-gap: ${p => p.theme.space['16']};
+    row-gap: ${p => p.theme.space['8']};
     .detail {
       padding: ${p => p.theme.space['16']};
       background: ${p => p.theme.secondary_500};

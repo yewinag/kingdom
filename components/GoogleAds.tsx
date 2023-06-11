@@ -40,7 +40,6 @@ const StyledAds = styled.div`
   position: relative;
   padding: 8px 4px;
   background: transparent;
-  margin-top: 6px;
   img {
     margin: auto;
   }
