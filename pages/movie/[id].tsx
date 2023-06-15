@@ -103,6 +103,7 @@ const Detail: NextPage = () => {
                   placeholder="blur"
                 />
               </div>
+              <ComponentAds img_url="/ads-innwa.gif" url={ads_url} />
               {/* <ComponentVideoAds img_url="/taung-paw-thar.mp4" url={ads_url} /> */}
               <div className="download">
                 <header>

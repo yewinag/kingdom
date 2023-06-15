@@ -97,6 +97,7 @@ const TVShowDetail: NextPage = () => {
                   blurDataURL="/soul-kingdom-placeholder-cast.png"
                 />
               </div>
+              <ComponentAds img_url="/ads-innwa.gif" url={ads_url} />
               {/* <ComponentVideoAds img_url="/shan_game.mp4" url={ads_url} /> */}
               <div className="download">
                 <header>

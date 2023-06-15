@@ -70,6 +70,7 @@ export const ContentLayout = styled.section`
     padding: 0 20px;
     border-right: solid 1px ${p => p.theme.border};
     min-height: 82vh;
+    margin: ${p => p.theme.space['20']} 0;
   }
   @media (max-width: ${p => p.theme.breakPoints.tablet}) {
     width: 100%;
