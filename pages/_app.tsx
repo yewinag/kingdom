@@ -66,19 +66,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="keywords"
           content="soulkingdom korea drama series, complete movies, full HD quality movies"
         />
-        <title>SoulKingdom - watching films online</title>
+        <title>SoulKingdom</title>
         <meta name="theme-color" content="#F44336" />
       </Head>
-      {/* <Script
-        id="Adsense-id"
-        async
-        onError={e => {
-          return new Error('script failed' + e);
-        }}
-        strategy="afterInteractive"
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${CLIENT_KEY}`}
-        crossOrigin="anonymous"
-      /> */}
       <Provider store={store}>
         <ThemeProvider defaultTheme={theme || 'dark'}>
           <StyledThemeProvider>

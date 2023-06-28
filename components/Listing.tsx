@@ -31,6 +31,7 @@ export function Listing(props: IProps) {
       <StyledHeading>Content Recently Added</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">
+          <ComponentAds img_url="/skin-care-ads.jpeg" url={ads_url} />
           <SectionLayout>
             <SectionTitle>
               <Link href={`${PATH_GENRES}${keywords.LATEST}`}>

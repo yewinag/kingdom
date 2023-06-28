@@ -11,8 +11,8 @@ interface IProps {
 }
 const Home: NextPage<IProps> = ({ data, error }) => {
   const metaData: ISeoInfo = {
-    title: `Soulkingdom - watch films online`,
-    description: `Soulkingdom - watch films online`
+    title: `Soulkingdom`,
+    description: `Soulkingdom`
   };
 
   if (error) {
