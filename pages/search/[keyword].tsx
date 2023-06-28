@@ -13,6 +13,7 @@ import {
   StyledHeading
 } from '@styles';
 import { fetcher } from '@utils';
+import Footer from 'components/Footer';
 import MetaTags from 'components/MetaTags';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -51,25 +52,28 @@ function Search() {
     description: `Soulkingdom - search results films by the keyword of ${keyword}, there are total search results ${data.total}`
   };
   return (
-    <ContentLayout>
-      <MetaTags metaData={metaData} />
-      <StyledHeading>{`Results : ${data.total} Movies`}</StyledHeading>
-      <section className="listing-layout">
-        <section className="content-body">
-          <SectionLayout>
-            <ComponentSearch data={data.data} />
-            {data?.total_page > 1 && (
-              <ComponentPagination
-                totalPage={data.total_page}
-                changePage={page => setPage(page)}
-                current={page}
-              />
-            )}
-          </SectionLayout>
+    <>
+      <ContentLayout>
+        <MetaTags metaData={metaData} />
+        <StyledHeading>{`Results : ${data.total} Movies`}</StyledHeading>
+        <section className="listing-layout">
+          <section className="content-body">
+            <SectionLayout>
+              <ComponentSearch data={data.data} />
+              {data?.total_page > 1 && (
+                <ComponentPagination
+                  totalPage={data.total_page}
+                  changePage={page => setPage(page)}
+                  current={page}
+                />
+              )}
+            </SectionLayout>
+          </section>
+          <Sidebar />
         </section>
-        <Sidebar />
-      </section>
-    </ContentLayout>
+      </ContentLayout>
+      <Footer />
+    </>
   );
 }
 export default Search;

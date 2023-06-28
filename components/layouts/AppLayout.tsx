@@ -14,7 +14,7 @@ export const AppLayout = (props: Iprops) => {
     <>
       <Header />
       <MainContent className="container">{props.children}</MainContent>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

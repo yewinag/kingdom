@@ -129,7 +129,7 @@ const Detail: NextPage = () => {
                   telLink={TELEGRAM_LINK || '/'}
                 />
               </div>
-              {/* <ComponentVideoAds img_url="/shan9-vip.mp4" url={ads_url} /> */}
+              <ComponentAds img_url="/skin-care-ads.jpeg" url={ads_url} />
             </section>
             <Sidebar />
           </section>

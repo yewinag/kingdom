@@ -3,6 +3,7 @@ import { ads_url } from '@constants';
 import { IMovies, ISeoInfo } from '@interface';
 import { FlexCenter } from '@styles';
 import { fetcher } from '@utils';
+import Footer from 'components/Footer';
 import MetaTags from 'components/MetaTags';
 import type { NextPage } from 'next';
 interface IProps {
@@ -35,6 +36,7 @@ const Home: NextPage<IProps> = ({ data, error }) => {
         movies={data?.movies}
         data={data}
       />
+      <Footer />
     </>
   );
 };

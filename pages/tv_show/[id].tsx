@@ -140,7 +140,7 @@ const TVShowDetail: NextPage = () => {
                   telLink={TELEGRAM_LINK || '/'}
                 />
               </div>
-              {/* <ComponentAds img_url="/online-game.jpeg" url={ads_url} /> */}
+              <ComponentAds img_url="/skin-care-ads.jpeg" url={ads_url} />
             </section>
             <Sidebar />
           </section>
