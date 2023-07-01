@@ -3,9 +3,9 @@ import dynamic from 'next/dynamic';
 
 import Header from '../Header';
 
-const Footer = dynamic(() => import('../Footer'), {
-  loading: () => <p>loading...</p>
-});
+// const Footer = dynamic(() => import('../Footer'), {
+//   loading: () => <p>loading...</p>
+// });
 interface Iprops {
   children: React.ReactNode | JSX.Element;
 }

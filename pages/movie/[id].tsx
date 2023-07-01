@@ -20,8 +20,9 @@ import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { BeatLoader } from 'react-spinners';
-import useSWR from 'swr';
+// import useSWR from 'swr';
 interface IResLinks {
   drive_url: string;
 }
@@ -29,24 +30,44 @@ const Detail: NextPage = () => {
   const {
     query: { id }
   } = useRouter();
+  const [data, setData] = useState<IMovieDetail>();
+  const [link, setLink] = useState<IResLinks>();
+  const [loading, setLoading] = useState<boolean>(false);
+  useEffect(() => {
+    fetchDetail();
+  }, [id]);
 
-  const { data, error } = useSWR<IMovieDetail, Error>(
-    `/movies/${id || 0}`,
-    fetcher
-  );
-  const { data: res } = useSWR<IResLinks | undefined, Error>(
-    [`/shows/${id || 0}/download-links`],
-    fetcher
-  );
+  const fetchDetail = async () => {
+    try {
+      setLoading(true);
+      const res = await fetcher(`/movies/${id || 0}`);
+      const link = await fetcher(`/movies/${id || 0}`);
+      setData(res);
+      setLink(link);
+      setLoading(false);
+    } catch (err: any) {
+      setLoading(false);
+      return new Error(err);
+    }
+  };
 
-  if (id === undefined) {
+  // const { data, error } = useSWR<IMovieDetail, Error>(
+  //   `/movies/${id || 0}`,
+  //   fetcher
+  // );
+  // const { data: res } = useSWR<IResLinks | undefined, Error>(
+  //   [`/shows/${id || 0}/download-links`],
+  //   fetcher
+  // );
+
+  if (loading) {
     return (
       <FlexCenter>
         <BeatLoader color={light.primary_500} />
       </FlexCenter>
     );
   }
-  if (error) {
+  if (data === undefined && !loading) {
     return <ComponentNotFound />;
   }
 
@@ -104,20 +125,18 @@ const Detail: NextPage = () => {
                 />
               </div>
               <ComponentAds img_url="/ads-innwa.gif" url={ads_url} />
-              {/* <ComponentVideoAds img_url="/taung-paw-thar.mp4" url={ads_url} /> */}
               <div className="download">
                 <header>
                   <h4>Download Links</h4>
                 </header>
                 <article>
-                  <Link href={res?.drive_url || '/'}>
+                  <Link href={link?.drive_url || '/'}>
                     <a target="_blank">
                       <div className="link-title">
                         <p className="download-icon">
                           <DownloadIcon />
                           Option 1
                         </p>
-                        {/* <p>---</p> */}
                       </div>
                     </a>
                   </Link>
