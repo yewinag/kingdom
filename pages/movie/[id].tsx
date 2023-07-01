@@ -41,7 +41,7 @@ const Detail: NextPage = () => {
     try {
       setLoading(true);
       const res = await fetcher(`/movies/${id || 0}`);
-      const link = await fetcher(`/movies/${id || 0}`);
+      const link = await fetcher(`/shows/${id || 0}/download-links`);
       setData(res);
       setLink(link);
       setLoading(false);
@@ -78,6 +78,7 @@ const Detail: NextPage = () => {
 
   return (
     <MainContent>
+      {JSON.stringify(data)}
       {data === undefined ? (
         <FlexCenter>
           <BeatLoader color={light.primary_500} />
