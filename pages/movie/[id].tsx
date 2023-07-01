@@ -26,6 +26,14 @@ import { BeatLoader } from 'react-spinners';
 interface IResLinks {
   drive_url: string;
 }
+type product = {
+  id: number;
+  title: string;
+  price: string;
+  category: string;
+  description: string;
+  image: string;
+};
 const Detail: NextPage = () => {
   const {
     query: { id }
@@ -33,6 +41,7 @@ const Detail: NextPage = () => {
   const [data, setData] = useState<IMovieDetail>();
   const [link, setLink] = useState<IResLinks>();
   const [loading, setLoading] = useState<boolean>(false);
+  const [product, setProduct] = useState<product>();
   useEffect(() => {
     fetchDetail();
   }, [id]);
@@ -40,10 +49,14 @@ const Detail: NextPage = () => {
   const fetchDetail = async () => {
     try {
       setLoading(true);
-      const res = await fetcher(`/movies/${id || 0}`);
-      const link = await fetcher(`/shows/${id || 0}/download-links`);
-      setData(res);
-      setLink(link);
+      // const res = await fetcher(`/movies/${id || 0}`);
+      // const link = await fetcher(`/shows/${id || 0}/download-links`);
+      // setData(res);
+      // setLink(link);
+      const res = await fetch(`https://fakestoreapi.com/products/${7}`).then(
+        res => res.json()
+      );
+      setProduct(res);
       setLoading(false);
     } catch (err: any) {
       setLoading(false);
@@ -67,9 +80,9 @@ const Detail: NextPage = () => {
       </FlexCenter>
     );
   }
-  if (data === undefined && !loading) {
-    return <ComponentNotFound />;
-  }
+  // if (data === undefined && !loading) {
+  //   return <ComponentNotFound />;
+  // }
 
   const metaData: ISeoInfo = {
     title: `${data?.name} - watching ${data?.name} on Soulkingdom`,
@@ -79,7 +92,8 @@ const Detail: NextPage = () => {
   return (
     <MainContent>
       {JSON.stringify(data)}
-      {data === undefined ? (
+      <p>{product?.title}</p>
+      {/* {data === undefined ? (
         <FlexCenter>
           <BeatLoader color={light.primary_500} />
         </FlexCenter>
@@ -154,7 +168,7 @@ const Detail: NextPage = () => {
             <Sidebar />
           </section>
         </DetailStyles>
-      )}
+      )} */}
     </MainContent>
   );
 };
