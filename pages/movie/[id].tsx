@@ -41,9 +41,9 @@ const Detail: NextPage = () => {
     try {
       setLoading(true);
       const res = await fetcher(`/movies/${id || 0}`);
-      const link = await fetcher(`/shows/${id || 0}/download-links`);
+      // const link = await fetcher(`/shows/${id || 0}/download-links`);
       setData(res);
-      setLink(link);
+      // setLink(link);
       setLoading(false);
     } catch (err: any) {
       setLoading(false);
