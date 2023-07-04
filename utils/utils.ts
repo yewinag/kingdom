@@ -16,7 +16,8 @@ export const fetcher = async (path: string) => {
       Authorization: TOKEN || '',
       Accept: 'application/json, text/plain, */*',
       'User-Agent': '*',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Headers': 'origin, content-type, accept'
     }
   });
   if (res.status !== 200) {
