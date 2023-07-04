@@ -19,7 +19,8 @@ export const fetcher = async (path: string) => {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Headers': 'origin, content-type, accept',
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': 'true'
+      'Access-Control-Allow-Credentials': 'true',
+      'Origin':'https://soulkingdom.net'
     }
   });
   if (res.status !== 200) {
