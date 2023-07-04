@@ -20,7 +20,7 @@ export const fetcher = async (path: string) => {
       'Access-Control-Allow-Headers': 'origin, content-type, accept',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Credentials': 'true',
-      'Origin':'https://soulkingdom.net'
+      'Origin':'https://api.soulkingdom.net'
     }
   });
   if (res.status !== 200) {
