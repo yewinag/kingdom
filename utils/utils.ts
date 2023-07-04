@@ -14,6 +14,7 @@ export const fetcher = async (path: string) => {
   const res = await fetch(`${API_URL}${path}`, {
     headers: {
       Accept: 'application/json, text/plain, */*',
+      'User-Agent': '*',
       'Content-Type': 'application/json',
       'Access-Control-Allow-Headers': 'accept'
     }
