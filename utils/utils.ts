@@ -13,8 +13,8 @@ export const clientFetcher = async (path: string) => {
 export const fetcher = async (path: string) => {
   const res = await fetch(`${API_URL}${path}`, {
     headers: {
-      Accept: 'application/json, text/plain, */*',
-      'User-Agent': '*'
+      Accept: 'application/json, text/plain, */*'
+      // 'User-Agent': '*'
     }
   });
   if (res.status !== 200) {
