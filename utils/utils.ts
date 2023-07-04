@@ -13,14 +13,13 @@ export const clientFetcher = async (path: string) => {
 export const fetcher = async (path: string) => {
   const res = await fetch(`${API_URL}${path}`, {
     headers: {
-      Authorization: TOKEN || '',
       Accept: 'application/json, text/plain, */*',
-      'User-Agent': '*',
+      // 'User-Agent': '*',
       'Content-Type': 'application/json',
       'Access-Control-Allow-Headers': 'origin, content-type, accept',
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Credentials': 'true',
-      'Origin':'https://api.soulkingdom.net'
+      'Origin':'https://soulkingdom.net'
     }
   });
   if (res.status !== 200) {
