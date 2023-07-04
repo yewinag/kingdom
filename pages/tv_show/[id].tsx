@@ -97,8 +97,8 @@ const TVShowDetail: NextPage = () => {
                   blurDataURL="/soul-kingdom-placeholder-cast.png"
                 />
               </div>
-              <ComponentAds img_url="/ads-innwa.gif" url={ads_url} />
-              {/* <ComponentVideoAds img_url="/shan_game.mp4" url={ads_url} /> */}
+
+              <ComponentAds img_url="/skin-care-ads.jpeg" url={ads_url} />
               <div className="download">
                 <header>
                   <h4>Download Links</h4>
@@ -140,7 +140,7 @@ const TVShowDetail: NextPage = () => {
                   telLink={TELEGRAM_LINK || '/'}
                 />
               </div>
-              <ComponentAds img_url="/skin-care-ads.jpeg" url={ads_url} />
+              <ComponentAds img_url="/ads-innwa.gif" url={ads_url} />
             </section>
             <Sidebar />
           </section>

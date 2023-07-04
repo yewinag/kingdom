@@ -124,7 +124,8 @@ const Detail: NextPage = () => {
                   placeholder="blur"
                 />
               </div>
-              <ComponentAds img_url="/ads-innwa.gif" url={ads_url} />
+              <ComponentAds img_url="/skin-care-ads.jpeg" url={ads_url} />
+
               <div className="download">
                 <header>
                   <h4>Download Links</h4>
@@ -148,7 +149,7 @@ const Detail: NextPage = () => {
                   telLink={TELEGRAM_LINK || '/'}
                 />
               </div>
-              <ComponentAds img_url="/skin-care-ads.jpeg" url={ads_url} />
+              <ComponentAds img_url="/ads-innwa.gif" url={ads_url} />
             </section>
             <Sidebar />
           </section>
