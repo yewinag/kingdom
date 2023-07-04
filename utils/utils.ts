@@ -15,7 +15,8 @@ export const fetcher = async (path: string) => {
     headers: {
       Authorization: TOKEN || '',
       Accept: 'application/json, text/plain, */*',
-      'User-Agent': '*'
+      'User-Agent': '*',
+      'Content-Type': 'application/json'
     }
   });
   if (res.status !== 200) {
