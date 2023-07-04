@@ -14,12 +14,8 @@ export const fetcher = async (path: string) => {
   const res = await fetch(`${API_URL}${path}`, {
     headers: {
       Accept: 'application/json, text/plain, */*',
-      // 'User-Agent': '*',
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Headers': 'origin, content-type, accept',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials': 'true',
-      'Origin':'https://soulkingdom.net'
+      'Access-Control-Allow-Headers': 'accept'
     }
   });
   if (res.status !== 200) {
