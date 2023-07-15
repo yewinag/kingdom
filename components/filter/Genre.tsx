@@ -20,26 +20,26 @@ export const Genre = () => {
     query: { search }
   } = useRouter();
   const { genre, loading } = useSelector(selectApp);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   if (genre.length === 0) {
-  //     fetchGenre();
-  //   }
-  // });
+  useEffect(() => {
+    if (genre.length === 0) {
+      fetchGenre();
+    }
+  });
 
-  // const fetchGenre = async () => {
-  //   try {
-  //     dispatch(setLoading(true));
-  //     const res = await fetcher(`/show-total`);
-  //     await dispatch(updateGenre(res));
-  //     dispatch(setLoading(false));
-  //   } catch (err) {
-  //     dispatch(setLoading(false));
-  //   } finally {
-  //     dispatch(setLoading(false));
-  //   }
-  // };
+  const fetchGenre = async () => {
+    try {
+      dispatch(setLoading(true));
+      const res = await fetcher(`/show-total`);
+      await dispatch(updateGenre(res));
+      dispatch(setLoading(false));
+    } catch (err) {
+      dispatch(setLoading(false));
+    } finally {
+      dispatch(setLoading(false));
+    }
+  };
   if (loading) {
     return (
       <FlexCenter>
