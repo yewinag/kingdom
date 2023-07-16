@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import {
   ComponentAds,
   // ComponentAds,
@@ -20,29 +21,24 @@ import MetaTags from 'components/MetaTags';
 import { Social } from 'components/Social';
 import type { NextPage } from 'next';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import { BeatLoader } from 'react-spinners';
-import useSWR from 'swr';
 
-const TVShowDetail: NextPage = () => {
-  const {
-    query: { id }
-  } = useRouter();
+interface IProps {
+  data: IMovieDetail;
+  error?: string;
+}
 
-  const { data, error } = useSWR<IMovieDetail, Error>(
-    `/tv-shows/${id || 0}`,
-    fetcher
-  );
+const TVShowDetail: NextPage<IProps> = ({data, error}) => {
+  if (!data) {
+    return <ComponentNotFound />;
+  }
 
-  if (id === undefined) {
+  if (error) {
     return (
       <FlexCenter>
-        <BeatLoader color={light.primary_500} />
+        <p>{error}</p>
       </FlexCenter>
-    );
-  }
-  if (error) {
-    return <ComponentNotFound />;
+    )
   }
 
   const metaData: ISeoInfo = {
@@ -77,7 +73,7 @@ const TVShowDetail: NextPage = () => {
                   <p className="small">{data?.released_date}</p>
                   <div className="type">
                     {data?.genres.map((item, index) => (
-                      <span key={index}>{item.name}</span>
+                      <span key={item.id}>{item.name}</span>
                     ))}
                   </div>
                   <p className="small">{`IMDB - ${data?.rating}`}</p>
@@ -106,7 +102,7 @@ const TVShowDetail: NextPage = () => {
                 {data?.seasons &&
                   data?.seasons.length > 0 &&
                   data?.seasons.map((season, index) => (
-                    <>
+                    <Fragment key={season.id}>
                       {season?.episodes?.length === 0 ? (
                         <></>
                       ) : (
@@ -120,7 +116,7 @@ const TVShowDetail: NextPage = () => {
                                     alt="download button"
                                     id={season.id}
                                     in_number={episode?.in_number}
-                                    key={index}
+                                    key={episode.id}
                                     name={episode?.name}
                                   >
                                     <p>{`${episode?.name}`}</p>
@@ -131,12 +127,12 @@ const TVShowDetail: NextPage = () => {
                           </article>
                         </section>
                       )}
-                    </>
+                    </Fragment>
                   ))}
               </div>
               <div className="share">
                 <Social
-                  fbLink={`${HOST_PATH}/tv_show/${id}` || '/'}
+                  fbLink={`${HOST_PATH}/tv_show/${data.id}` || '/'}
                   telLink={TELEGRAM_LINK || '/'}
                 />
               </div>
@@ -149,5 +145,19 @@ const TVShowDetail: NextPage = () => {
     </MainContent>
   );
 };
+
+export async function getServerSideProps(context: any) {
+  const {
+    params: { id }
+  } = context;
+  let error = '';
+  let data = {};
+  try {
+    data = await fetcher(`/tv-shows/${id || 0}`);
+  } catch (e: any) {
+    error = e.toString();
+  }
+  return { props: { data, error } };
+}
 
 export default TVShowDetail;
