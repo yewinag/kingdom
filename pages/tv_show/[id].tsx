@@ -1,4 +1,3 @@
-import { Fragment } from 'react';
 import {
   ComponentAds,
   // ComponentAds,
@@ -21,6 +20,7 @@ import MetaTags from 'components/MetaTags';
 import { Social } from 'components/Social';
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import { Fragment } from 'react';
 import { BeatLoader } from 'react-spinners';
 
 interface IProps {
@@ -28,7 +28,7 @@ interface IProps {
   error?: string;
 }
 
-const TVShowDetail: NextPage<IProps> = ({data, error}) => {
+const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
   if (!data) {
     return <ComponentNotFound />;
   }
@@ -38,7 +38,7 @@ const TVShowDetail: NextPage<IProps> = ({data, error}) => {
       <FlexCenter>
         <p>{error}</p>
       </FlexCenter>
-    )
+    );
   }
 
   const metaData: ISeoInfo = {
