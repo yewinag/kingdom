@@ -26,30 +26,42 @@ import { BeatLoader } from 'react-spinners';
 interface IResLinks {
   drive_url: string;
 }
-const Detail: NextPage = () => {
+const Detail: NextPage = (props) => {
   const {
     query: { id }
   } = useRouter();
+  
   const [data, setData] = useState<IMovieDetail>();
+  const [error, setError] = useState<string>('');
   const [link, setLink] = useState<IResLinks>();
   const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
-    fetchDetail();
-  }, [id]);
+    // fetchDetail(props);
+    setToLocalState(props);
+  }, []);
 
-  const fetchDetail = async () => {
-    try {
-      setLoading(true);
-      const res = await fetcher(`/movies/${id || 0}`);
-      // const link = await fetcher(`/shows/${id || 0}/download-links`);
-      setData(res);
-      // setLink(link);
-      setLoading(false);
-    } catch (err: any) {
-      setLoading(false);
-      return new Error(err);
+  const setToLocalState = async (props: any) => {
+    setLoading(true);
+    setData(props.data);
+    setLoading(false);
+    if(props.error !== '') {
+      setError(props.error)  
     }
-  };
+  }
+
+  // const fetchDetail = async () => {
+  //   try {
+  //     setLoading(true);
+  //     const res = await fetcher(`/movies/${id || 0}`);
+  //     // const link = await fetcher(`/shows/${id || 0}/download-links`);
+  //     setData(res);
+  //     // setLink(link);
+  //     setLoading(false);
+  //   } catch (err: any) {
+  //     setLoading(false);
+  //     return new Error(err);
+  //   }
+  // };
 
   // const { data, error } = useSWR<IMovieDetail, Error>(
   //   `/movies/${id || 0}`,
@@ -67,9 +79,9 @@ const Detail: NextPage = () => {
       </FlexCenter>
     );
   }
-  if (data === undefined && !loading) {
-    return <ComponentNotFound />;
-  }
+  // if (data === undefined && !loading) {
+  //   return <ComponentNotFound />;
+  // }
 
   const metaData: ISeoInfo = {
     title: `${data?.name} - watching ${data?.name} on Soulkingdom`,
@@ -78,10 +90,8 @@ const Detail: NextPage = () => {
 
   return (
     <MainContent>
-      {data === undefined ? (
-        <FlexCenter>
-          <BeatLoader color={light.primary_500} />
-        </FlexCenter>
+      { error !== '' ? (
+        <ComponentNotFound />
       ) : (
         <DetailStyles>
           <MetaTags metaData={metaData} />
@@ -158,5 +168,18 @@ const Detail: NextPage = () => {
     </MainContent>
   );
 };
+
+export async function getServerSideProps(context: any) {
+  const { params } = context;
+  let error = '';
+  let data = {};
+  try {
+    const res = await fetcher(`/movies/${params.id}`)
+    data = res;
+  } catch (e: any) {
+    error = e.toString();
+  }
+  return { props: { data, error } };
+}
 
 export default Detail;
