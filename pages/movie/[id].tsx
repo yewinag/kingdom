@@ -66,7 +66,7 @@ const Detail: NextPage<IProps> = ({ data, error, link }) => {
                 <SeactionHeading>{`${data?.mm_name}`}</SeactionHeading>
                 <p className="small">{data?.released_date}</p>
                 <div className="type">
-                  {data?.genres.map((item, index) => (
+                  {data?.genres?.map((item, index) => (
                     <span key={index}>{item.name}</span>
                   ))}
                 </div>
@@ -129,10 +129,12 @@ export async function getServerSideProps(context: any) {
   let data = {};
   let link: IResLinks = { drive_url: '' };
   try {
-    const res = await fetcher(`/movies/${id || 0}`);
-    const resLink = await fetcher(`/shows/${id || 0}/download-links`);
-    data = res;
-    link = resLink;
+    const [movie, reslink] = await Promise.all([
+      fetcher(`/movies/${id || 0}`),
+      fetcher(`/shows/${id || 0}/download-links`)
+    ]);
+    data = movie;
+    link = reslink;
   } catch (e: any) {
     error = e.toString();
   }
