@@ -40,11 +40,14 @@ const Home: NextPage<IProps> = ({ data, error }) => {
     </>
   );
 };
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let error = '';
   let data = {};
   try {
     const res = await fetcher('/home');
+    if (typeof res === undefined) {
+      return (error = 'nothing I can see');
+    }
     data = res;
   } catch (e: any) {
     error = e.toString();

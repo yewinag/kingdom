@@ -23,10 +23,10 @@ export const Genre = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (genre.length === 0) {
+    if (genre && genre.length === 0) {
       fetchGenre();
     }
-  });
+  }, ['fetch genres']);
 
   const fetchGenre = async () => {
     try {
@@ -43,7 +43,7 @@ export const Genre = () => {
   if (loading) {
     return (
       <FlexCenter>
-        <BeatLoader color={'#D12729'} />;
+        <BeatLoader color={'#D12729'} />
       </FlexCenter>
     );
   }
