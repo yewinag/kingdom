@@ -4,21 +4,14 @@ import {
   ComponentSearch,
   Sidebar
 } from '@components';
-import { initPage } from '@constants';
 import { IMovie, ISeoInfo } from '@interface';
-import {
-  ContentLayout,
-  FlexCenter,
-  SectionLayout,
-  StyledHeading
-} from '@styles';
+import { ContentLayout, SectionLayout, StyledHeading } from '@styles';
 import { fetcher } from '@utils';
 import Footer from 'components/Footer';
 import MetaTags from 'components/MetaTags';
+import { GetServerSidePropsContext, NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
-import BeatLoader from 'react-spinners/BeatLoader';
-import useSWR from 'swr';
+
 interface IResMovie {
   data: IMovie[];
   limit: number;
@@ -26,31 +19,29 @@ interface IResMovie {
   total: number;
   total_page: number;
 }
+interface IProps {
+  data: IResMovie;
+  error?: string;
+  keyword: string;
+}
+const Search: NextPage<IProps> = ({ data, error, keyword }) => {
+  const router = useRouter();
 
-function Search() {
-  const {
-    query: { keyword }
-  } = useRouter();
-
-  const [page, setPage] = useState<number>(initPage);
-  const { data, error } = useSWR<IResMovie, Error>(
-    `/search?search=${keyword}&current=${page + 1}`,
-    fetcher
-  );
   if (error) {
     return <ComponentNotFound />;
-  }
-  if (!data) {
-    return (
-      <FlexCenter>
-        <BeatLoader color={'#D12729'} />
-      </FlexCenter>
-    );
   }
   const metaData: ISeoInfo = {
     title: `Soulkingdom - search films by the keyword of ${keyword}`,
     description: `Soulkingdom - search results films by the keyword of ${keyword}, there are total search results ${data.total}`
   };
+
+  const handlePage = (page: number) => {
+    router.push({
+      pathname: router.pathname,
+      query: { keyword, page: page + 1 }
+    });
+  };
+
   return (
     <>
       <ContentLayout>
@@ -62,9 +53,9 @@ function Search() {
               <ComponentSearch data={data.data} />
               {data?.total_page > 1 && (
                 <ComponentPagination
-                  totalPage={data.total_page}
-                  changePage={page => setPage(page)}
-                  current={page}
+                  totalPage={data?.total_page}
+                  changePage={handlePage}
+                  current={data?.page - 1}
                 />
               )}
             </SectionLayout>
@@ -75,5 +66,19 @@ function Search() {
       <Footer />
     </>
   );
+};
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  const {
+    query: { keyword, page }
+  } = ctx;
+  let error = '';
+  let data = {};
+  try {
+    const res = await fetcher(`/search?search=${keyword}&current=${page}`);
+    data = res;
+  } catch (e: any) {
+    error = e.toString();
+  }
+  return { props: { data, error, keyword } };
 }
 export default Search;

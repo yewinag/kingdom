@@ -42,8 +42,8 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
   }
 
   const metaData: ISeoInfo = {
-    title: `${data?.name} films - watch ${data?.name}  on soulkingdom `,
-    description: `${data?.overview} complete cast of ${data?.name} `
+    title: `${data?.mm_name} films - watch ${data?.mm_name}  on soulkingdom `,
+    description: `${data?.overview} complete cast of ${data?.mm_name} `
   };
   return (
     <MainContent>
@@ -72,7 +72,7 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
                   <SeactionHeading>{`${data?.mm_name}`}</SeactionHeading>
                   <p className="small">{data?.released_date}</p>
                   <div className="type">
-                    {data?.genres.map((item, index) => (
+                    {data?.genres.map(item => (
                       <span key={item.id}>{item.name}</span>
                     ))}
                   </div>
@@ -111,7 +111,7 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
                           <article className="download-grid">
                             {season?.episodes ? (
                               <>
-                                {season?.episodes.map((episode, index) => (
+                                {season?.episodes.map(episode => (
                                   <DownloadBtn
                                     alt="download button"
                                     id={season.id}

@@ -2,7 +2,7 @@ import { ads_url, PATH_GENRES } from '@constants';
 import { genreTypes } from '@interface';
 import { selectApp, setLoading, updateGenre } from '@store';
 import { FlexCenter, StyledGenres } from '@styles';
-import { fetcher } from '@utils';
+import { clientFetcher, DEFAULT_PAGE, fetcher } from '@utils';
 import {
   // ComponentAds,
   ComponentSidebarAds
@@ -16,22 +16,21 @@ import { useSelector } from 'react-redux';
 import { BeatLoader } from 'react-spinners';
 
 export const Genre = () => {
-  const {
-    query: { search }
-  } = useRouter();
+  const { query } = useRouter();
   const { genre, loading } = useSelector(selectApp);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (genre && genre.length === 0) {
-      fetchGenre();
-    }
-  }, ['fetch genres']);
+    fetchGenre();
+  }, []);
 
   const fetchGenre = async () => {
+    if (genre && genre.length !== 0) return;
+
     try {
       dispatch(setLoading(true));
-      const res = await fetcher(`/show-total`);
+      const res = await clientFetcher(`/show-total`);
+      console.log(res);
       await dispatch(updateGenre(res));
       dispatch(setLoading(false));
     } catch (err) {
@@ -54,11 +53,14 @@ export const Genre = () => {
       <div className="genre-list scroll-bar">
         {genre.length > 0 &&
           genre.map((item: Record<genreTypes, number>, index: any) => (
-            <Link href={`${PATH_GENRES}${Object.keys(item)}`} key={index}>
+            <Link
+              href={`${PATH_GENRES}${Object.keys(item)}/${DEFAULT_PAGE}`}
+              key={index}
+            >
               <a>
                 <div
                   className={
-                    Object.keys(item)[0] === search
+                    Object.keys(item)[0] === query?.genre
                       ? 'genre-item active'
                       : 'genre-item'
                   }

@@ -7,6 +7,7 @@ import {
   SectionTitle,
   StyledHeading
 } from '@styles';
+import { DEFAULT_PAGE } from '@utils';
 import Link from 'next/link';
 
 import { IMovie, IMovies } from '../interface';
@@ -33,11 +34,11 @@ export function Listing(props: IProps) {
         <section className="content-body">
           <SectionLayout>
             <SectionTitle>
-              <Link href={`${PATH_GENRES}${keywords.LATEST}`}>
+              <Link href={`${PATH_GENRES}${keywords.LATEST}/${DEFAULT_PAGE}`}>
                 <SeactionHeading>Latest</SeactionHeading>
               </Link>
               <Link
-                href={`${PATH_GENRES}${keywords.LATEST}`}
+                href={`${PATH_GENRES}${keywords.LATEST}/${DEFAULT_PAGE}`}
               >{`See More >>`}</Link>
             </SectionTitle>
             <ArticleRow>
@@ -53,11 +54,11 @@ export function Listing(props: IProps) {
           <ComponentVideoAds img_url="/ads_video.mp4" url={ads_url} />
           <SectionLayout>
             <SectionTitle>
-              <Link href={`${PATH_GENRES}${keywords.ANIME}`}>
+              <Link href={`${PATH_GENRES}${keywords.ANIME}/${DEFAULT_PAGE}`}>
                 <SeactionHeading>Animes </SeactionHeading>
               </Link>
               <Link
-                href={`${PATH_GENRES}${keywords.ANIME}`}
+                href={`${PATH_GENRES}${keywords.ANIME}/${DEFAULT_PAGE}`}
               >{`See More >>`}</Link>
             </SectionTitle>
             <ArticleRow>
@@ -74,11 +75,13 @@ export function Listing(props: IProps) {
           <SectionLayout>
             {tv_shows && tv_shows?.length > 0 && (
               <SectionTitle>
-                <Link href={`${PATH_GENRES}${keywords.TV_SHOWS}`}>
+                <Link
+                  href={`${PATH_GENRES}${keywords.TV_SHOWS}/${DEFAULT_PAGE}`}
+                >
                   <SeactionHeading>TV Shows </SeactionHeading>
                 </Link>
                 <Link
-                  href={`${PATH_GENRES}${keywords.TV_SHOWS}`}
+                  href={`${PATH_GENRES}${keywords.TV_SHOWS}/${DEFAULT_PAGE}`}
                 >{`See More >>`}</Link>
               </SectionTitle>
             )}
@@ -95,11 +98,11 @@ export function Listing(props: IProps) {
           <ComponentVideoAds img_url="/shan9-vip.mp4" url={ads_url} />
           <SectionLayout>
             <SectionTitle>
-              <Link href={`${PATH_GENRES}${keywords.MOVIES}`}>
+              <Link href={`${PATH_GENRES}${keywords.MOVIES}/${DEFAULT_PAGE}`}>
                 <SeactionHeading>Movies</SeactionHeading>
               </Link>
               <Link
-                href={`${PATH_GENRES}${keywords.MOVIES}`}
+                href={`${PATH_GENRES}${keywords.MOVIES}/${DEFAULT_PAGE}`}
               >{`See More >>`}</Link>
             </SectionTitle>
             <ArticleRow>
