@@ -8,10 +8,10 @@ import * as gtag from '@utils';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Router, useRouter } from 'next/router';
+import Script from 'next/script';
 import { ThemeProvider, useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { Provider } from 'react-redux';
-import Script from 'next/script';
 
 const progress = new ProgressBar({
   size: 2,
@@ -35,13 +35,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   // when route changes, track ga event
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      gtag.pageview(url)
-    }
-    router.events.on('routeChangeComplete', handleRouteChange)
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [router.events])
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   if (!mounted) {
     return <PageLoading />;
@@ -66,7 +66,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="soulkingdom korea drama series, complete movies, full HD quality movies"
         />
         <title>SoulKingdom</title>
-        <meta name="theme-color" content="#F44336" />      
+        <meta name="theme-color" content="#F44336" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -77,9 +77,9 @@ function MyApp({ Component, pageProps }: AppProps) {
               gtag('config', 'G-9PD01DNGQ6', {
                 page_path: window.location.pathname,
               });
-            `,
+            `
           }}
-        />      
+        />
       </Head>
       <Script
         strategy="afterInteractive"

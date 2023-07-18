@@ -50,7 +50,7 @@ export default class AppDocument extends Document {
             type="image/png"
             sizes="32x32"
           />
-          <link rel="apple-touch-icon" href="/icons/apple-icon.png"></link>                    
+          <link rel="apple-touch-icon" href="/icons/apple-icon.png"></link>
         </Head>
         <body>
           <Main />
