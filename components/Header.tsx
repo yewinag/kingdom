@@ -16,12 +16,12 @@ import {
 } from '@constants';
 import { useToggle } from '@hooks';
 import { HeaderLayout, SearchInputLayout } from '@styles';
+import { DEFAULT_PAGE } from '@utils';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
-import { DEFAULT_PAGE } from '@utils';
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -50,7 +50,7 @@ const Header = () => {
     }
   };
   const goToRoute = (url: string) => {
-    router.push(url);
+    router.push(`${PATH_GENRES}/${url}/${DEFAULT_PAGE}`);
     toggle.setToggle(false);
   };
   return (
@@ -81,57 +81,29 @@ const Header = () => {
                   Home
                 </li>
                 <li
-                  onClick={() =>
-                    goToRoute(
-                      `${PATH_GENRES}${keywords.TV_SHOWS}/${DEFAULT_PAGE}`
-                    )
-                  }
-                  onKeyDown={() =>
-                    goToRoute(
-                      `${PATH_GENRES}${keywords.TV_SHOWS}/${DEFAULT_PAGE}`
-                    )
-                  }
+                  onClick={() => goToRoute(`${keywords.TV_SHOWS}`)}
+                  onKeyDown={() => goToRoute(`${keywords.TV_SHOWS}`)}
                   role={'menuitem'}
                 >
                   TV Shows
                 </li>
                 <li
-                  onClick={() =>
-                    goToRoute(
-                      `${PATH_GENRES}${keywords.LATEST}/${DEFAULT_PAGE}`
-                    )
-                  }
-                  onKeyDown={() =>
-                    goToRoute(
-                      `${PATH_GENRES}${keywords.LATEST}/${DEFAULT_PAGE}`
-                    )
-                  }
+                  onClick={() => goToRoute(`${keywords.LATEST}`)}
+                  onKeyDown={() => goToRoute(`${keywords.LATEST}`)}
                   role={'menuitem'}
                 >
                   Latest
                 </li>
                 <li
-                  onClick={() =>
-                    goToRoute(`${PATH_GENRES}${keywords.ANIME}/${DEFAULT_PAGE}`)
-                  }
-                  onKeyDown={() =>
-                    goToRoute(`${PATH_GENRES}${keywords.ANIME}/${DEFAULT_PAGE}`)
-                  }
+                  onClick={() => goToRoute(`${keywords.ANIME}`)}
+                  onKeyDown={() => goToRoute(`${keywords.ANIME}`)}
                   role={'menuitem'}
                 >
                   Animes
                 </li>
                 <li
-                  onClick={() =>
-                    goToRoute(
-                      `${PATH_GENRES}${keywords.MOVIES}/${DEFAULT_PAGE}`
-                    )
-                  }
-                  onKeyDown={() =>
-                    goToRoute(
-                      `${PATH_GENRES}${keywords.MOVIES}/${DEFAULT_PAGE}`
-                    )
-                  }
+                  onClick={() => goToRoute(`${keywords.MOVIES}`)}
+                  onKeyDown={() => goToRoute(`${keywords.MOVIES}`)}
                   role={'menuitem'}
                 >
                   Movies

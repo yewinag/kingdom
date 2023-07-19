@@ -1,4 +1,3 @@
-import * as gtag from '@utils';
 import Document, {
   DocumentContext,
   Head,
@@ -6,7 +5,6 @@ import Document, {
   Main,
   NextScript
 } from 'next/document';
-import Script from 'next/script';
 import { ServerStyleSheet } from 'styled-components';
 export default class AppDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {

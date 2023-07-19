@@ -2,7 +2,7 @@ import { ads_url, PATH_GENRES } from '@constants';
 import { genreTypes } from '@interface';
 import { selectApp, setLoading, updateGenre } from '@store';
 import { FlexCenter, StyledGenres } from '@styles';
-import { clientFetcher, DEFAULT_PAGE, fetcher } from '@utils';
+import { clientFetcher, DEFAULT_PAGE } from '@utils';
 import {
   // ComponentAds,
   ComponentSidebarAds
@@ -30,7 +30,6 @@ export const Genre = () => {
     try {
       dispatch(setLoading(true));
       const res = await clientFetcher(`/show-total`);
-      console.log(res);
       await dispatch(updateGenre(res));
       dispatch(setLoading(false));
     } catch (err) {
