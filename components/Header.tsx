@@ -21,6 +21,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import { useEffect, useRef } from 'react';
+import { DEFAULT_PAGE } from '@utils';
 
 const Header = () => {
   const { theme, setTheme } = useTheme();
@@ -81,35 +82,55 @@ const Header = () => {
                 </li>
                 <li
                   onClick={() =>
-                    goToRoute(`${PATH_GENRES}${keywords.TV_SHOWS}`)
+                    goToRoute(
+                      `${PATH_GENRES}${keywords.TV_SHOWS}/${DEFAULT_PAGE}`
+                    )
                   }
                   onKeyDown={() =>
-                    goToRoute(`${PATH_GENRES}${keywords.TV_SHOWS}`)
+                    goToRoute(
+                      `${PATH_GENRES}${keywords.TV_SHOWS}/${DEFAULT_PAGE}`
+                    )
                   }
                   role={'menuitem'}
                 >
                   TV Shows
                 </li>
                 <li
-                  onClick={() => goToRoute(`${PATH_GENRES}${keywords.LATEST}`)}
+                  onClick={() =>
+                    goToRoute(
+                      `${PATH_GENRES}${keywords.LATEST}/${DEFAULT_PAGE}`
+                    )
+                  }
                   onKeyDown={() =>
-                    goToRoute(`${PATH_GENRES}${keywords.LATEST}`)
+                    goToRoute(
+                      `${PATH_GENRES}${keywords.LATEST}/${DEFAULT_PAGE}`
+                    )
                   }
                   role={'menuitem'}
                 >
                   Latest
                 </li>
                 <li
-                  onClick={() => goToRoute(`${PATH_GENRES}${keywords.ANIME}`)}
-                  onKeyDown={() => goToRoute(`${PATH_GENRES}${keywords.ANIME}`)}
+                  onClick={() =>
+                    goToRoute(`${PATH_GENRES}${keywords.ANIME}/${DEFAULT_PAGE}`)
+                  }
+                  onKeyDown={() =>
+                    goToRoute(`${PATH_GENRES}${keywords.ANIME}/${DEFAULT_PAGE}`)
+                  }
                   role={'menuitem'}
                 >
                   Animes
                 </li>
                 <li
-                  onClick={() => goToRoute(`${PATH_GENRES}${keywords.MOVIES}`)}
+                  onClick={() =>
+                    goToRoute(
+                      `${PATH_GENRES}${keywords.MOVIES}/${DEFAULT_PAGE}`
+                    )
+                  }
                   onKeyDown={() =>
-                    goToRoute(`${PATH_GENRES}${keywords.MOVIES}`)
+                    goToRoute(
+                      `${PATH_GENRES}${keywords.MOVIES}/${DEFAULT_PAGE}`
+                    )
                   }
                   role={'menuitem'}
                 >
