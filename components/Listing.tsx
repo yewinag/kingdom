@@ -28,7 +28,7 @@ export function Listing(props: IProps) {
 
   return (
     <ContentLayout>
-      <ComponentAds img_url="/soulk.gif" url={ads_url} />
+      {/* <ComponentAds img_url="/soulk.gif" url={ads_url} /> */}
       <StyledHeading>Content Recently Added</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">
