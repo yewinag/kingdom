@@ -73,7 +73,8 @@ const Detail: NextPage<IProps> = ({ data, error, link }) => {
                 <p className="small">{`IMDB - ${data?.rating}`}</p>
               </div>
             </div>
-            <ComponentAds img_url="/ads-detail-banner.jpg" url={ads_url} />
+            {/* <ComponentAds img_url="/ads-detail-banner.jpg" url={ads_url} /> */}
+            <ComponentAds img_url="/soulk.gif" url={ads_url} />
             <div className="description">
               <SeactionHeading>Complete Cast</SeactionHeading>
               <p>{data?.overview}</p>
@@ -112,7 +113,7 @@ const Detail: NextPage<IProps> = ({ data, error, link }) => {
                 telLink={TELEGRAM_LINK || '/'}
               />
             </div>
-            <ComponentAds img_url="/ads-innwa.gif" url={ads_url} />
+            <ComponentAds img_url="/jdbkk2.webp" url={ads_url} />
           </section>
           <Sidebar />
         </section>

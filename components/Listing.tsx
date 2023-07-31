@@ -28,7 +28,7 @@ export function Listing(props: IProps) {
 
   return (
     <ContentLayout>
-      <ComponentAds img_url="/banner.gif" url={ads_url} />
+      <ComponentAds img_url="/soulk.gif" url={ads_url} />
       <StyledHeading>Content Recently Added</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">
@@ -51,7 +51,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          <ComponentVideoAds img_url="/ads_video.mp4" url={ads_url} />
+          {/* <ComponentVideoAds img_url="/ads_video.mp4" url={ads_url} /> */}
           <SectionLayout>
             <SectionTitle>
               <Link href={`${PATH_GENRES}${keywords.ANIME}/${DEFAULT_PAGE}`}>
@@ -95,7 +95,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          <ComponentVideoAds img_url="/shan9-vip.mp4" url={ads_url} />
+          <ComponentAds img_url="/jdbkk.webp" url={ads_url} />
           <SectionLayout>
             <SectionTitle>
               <Link href={`${PATH_GENRES}${keywords.MOVIES}/${DEFAULT_PAGE}`}>
@@ -115,7 +115,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          <ComponentVideoAds img_url="/ads-footer.mp4" url={ads_url} />
+          {/* <ComponentVideoAds img_url="/ads-footer.mp4" url={ads_url} /> */}
         </section>
         <Sidebar />
       </section>
