@@ -71,7 +71,7 @@ export const Genre = () => {
             </Link>
           ))}
       </div>
-      <ComponentSidebarAds img_url="/jdbyg-sidebar.gif" url={ads_url} />
+      <ComponentSidebarAds img_url="/sk--2.gif" url={ads_url} />
       {/* <ComponentSidebarAds
         img_url="/banner.gif"
         url={'https://soulkingdom.net'}
