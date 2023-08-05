@@ -51,7 +51,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          {/* <ComponentVideoAds img_url="/ads_video.mp4" url={ads_url} /> */}
+          <ComponentVideoAds img_url="/8888.gif.mp4" url={ads_url} />
           <SectionLayout>
             <SectionTitle>
               <Link href={`${PATH_GENRES}${keywords.ANIME}/${DEFAULT_PAGE}`}>
