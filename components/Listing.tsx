@@ -29,6 +29,7 @@ export function Listing(props: IProps) {
   return (
     <ContentLayout>
       {/* <ComponentAds img_url="/soulk.gif" url={ads_url} /> */}
+      <ComponentVideoAds img_url="/lion77banner.mp4" url={ads_url} />
       <StyledHeading>Content Recently Added</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">
