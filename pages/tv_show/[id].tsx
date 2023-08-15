@@ -2,6 +2,7 @@ import {
   ComponentAds,
   // ComponentAds,
   ComponentNotFound,
+  ComponentVideoAds,
   // ComponentVideoAds,
   // ComponentVideoAds,
   DownloadBtn,
@@ -56,6 +57,7 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
           <MetaTags metaData={metaData} />
           <section className="listing-layout">
             <section className="content-body">
+              <ComponentVideoAds img_url="/final.gif.mp4" url={ads_url} />
               <div className="detail">
                 <div className="image">
                   <Image
