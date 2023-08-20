@@ -2,7 +2,6 @@ import {
   ComponentAds,
   ComponentNotFound,
   ComponentVideoAds,
-  // ComponentVideoAds,
   DownloadIcon,
   Sidebar
 } from '@components';
@@ -51,7 +50,8 @@ const Detail: NextPage<IProps> = ({ data, error, link }) => {
         <MetaTags metaData={metaData} />
         <section className="listing-layout">
           <section className="content-body">
-            <ComponentVideoAds img_url="/final.gif.mp4" url={ads_url} />
+            {/* <ComponentVideoAds img_url="/final.gif.mp4" url={ads_url} /> */}
+            <ComponentAds img_url="/final.gif" url={ads_url} />
             <div className="detail">
               <div className="image">
                 <Image

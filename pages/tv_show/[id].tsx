@@ -57,7 +57,7 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
           <MetaTags metaData={metaData} />
           <section className="listing-layout">
             <section className="content-body">
-              <ComponentVideoAds img_url="/final.gif.mp4" url={ads_url} />
+              <ComponentAds img_url="/final.gif" url={ads_url} />
               <div className="detail">
                 <div className="image">
                   <Image
