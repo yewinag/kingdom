@@ -50,11 +50,11 @@ const Header = () => {
     }
   };
   const goToStatic = (url: string) => {
-    router.push(url)
+    router.push(url);
     toggle.setToggle(false);
   };
-  const goToRoute = (url: string) => {    
-    router.push(`${PATH_GENRES}/${url}/${DEFAULT_PAGE}`);    
+  const goToRoute = (url: string) => {
+    router.push(`${PATH_GENRES}/${url}/${DEFAULT_PAGE}`);
     toggle.setToggle(false);
   };
   return (
