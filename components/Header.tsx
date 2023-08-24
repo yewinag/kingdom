@@ -49,13 +49,12 @@ const Header = () => {
       setTheme(LIGHT);
     }
   };
-  const isStaticRoute = (url: string) => url === HOW_TO_DOWNLOAD || url === DISCLAIMER || url === ABOUT;
-  const goToRoute = (url: string) => {
-    if (isStaticRoute(url)) {
-      router.push(url);
-    } else {      
-      router.push(`${PATH_GENRES}/${url}/${DEFAULT_PAGE}`);
-    }
+  const goToStatic = (url: string) => {
+    router.push(url)
+    toggle.setToggle(false);
+  };
+  const goToRoute = (url: string) => {    
+    router.push(`${PATH_GENRES}/${url}/${DEFAULT_PAGE}`);    
     toggle.setToggle(false);
   };
   return (
@@ -114,22 +113,22 @@ const Header = () => {
                   Movies
                 </li>
                 <li
-                  onClick={() => goToRoute(HOW_TO_DOWNLOAD)}
-                  onKeyDown={() => goToRoute(HOW_TO_DOWNLOAD)}
+                  onClick={() => goToStatic(HOW_TO_DOWNLOAD)}
+                  onKeyDown={() => goToStatic(HOW_TO_DOWNLOAD)}
                   role={'menuitem'}
                 >
                   How to download
                 </li>
                 <li
-                  onClick={() => goToRoute(DISCLAIMER)}
-                  onKeyDown={() => goToRoute(DISCLAIMER)}
+                  onClick={() => goToStatic(DISCLAIMER)}
+                  onKeyDown={() => goToStatic(DISCLAIMER)}
                   role={'menuitem'}
                 >
                   Disclaimer
                 </li>
                 <li
-                  onClick={() => goToRoute(ABOUT)}
-                  onKeyDown={() => goToRoute(ABOUT)}
+                  onClick={() => goToStatic(ABOUT)}
+                  onKeyDown={() => goToStatic(ABOUT)}
                   role={'menuitem'}
                 >
                   About
