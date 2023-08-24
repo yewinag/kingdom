@@ -49,8 +49,13 @@ const Header = () => {
       setTheme(LIGHT);
     }
   };
+  const isStaticRoute = (url: string) => url === HOW_TO_DOWNLOAD || url === DISCLAIMER || url === ABOUT;
   const goToRoute = (url: string) => {
-    router.push(`${PATH_GENRES}/${url}/${DEFAULT_PAGE}`);
+    if (isStaticRoute(url)) {
+      router.push(url);
+    } else {      
+      router.push(`${PATH_GENRES}/${url}/${DEFAULT_PAGE}`);
+    }
     toggle.setToggle(false);
   };
   return (
