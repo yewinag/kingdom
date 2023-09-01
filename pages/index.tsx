@@ -1,4 +1,4 @@
-import { ComponentAds, ComponentRandom, Listing } from '@components';
+import { ComponentAds, Listing } from '@components';
 import { ads_url } from '@constants';
 import { IMovies, ISeoInfo } from '@interface';
 import { FlexCenter } from '@styles';
@@ -33,7 +33,7 @@ const Home: NextPage<IProps> = ({ data, error }) => {
       <div style={{ height: '10px' }} />
       <ComponentAds img_url="/starbetmm.jpg" url={ads_url} />
       <div style={{ height: '10px' }} />
-{/*       <ComponentRandom carousels={data?.carousels} /> */}
+     {/* <ComponentRandom carousels={data?.carousels} /> */}
       <Listing
         animes={data?.anime}
         latest={data?.latest}
