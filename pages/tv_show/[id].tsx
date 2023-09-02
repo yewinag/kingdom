@@ -2,7 +2,7 @@ import {
   ComponentAds,
   // ComponentAds,
   ComponentNotFound,
-  ComponentVideoAds,
+  // ComponentVideoAds,
   // ComponentVideoAds,
   // ComponentVideoAds,
   DownloadBtn,
@@ -79,12 +79,29 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
                     ))}
                   </div>
                   <p className="small">{`IMDB - ${data?.rating}`}</p>
+                  {data.casts.length > 0 && (
+                    <div>
+                      <p>{`Cast`}</p>
+                      <div
+                        className="casts"
+                        style={{ display: 'flex', flexWrap: 'wrap' }}
+                      >
+                        {data.casts.map((cast, index) => (
+                          <p key={index} className="small">
+                            {cast.name}
+                            {index + 1 !== data.casts.length && <span>,</span>}
+                            &nbsp;
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
               {/* <ComponentAds img_url="/ads-detail-banner.jpg" url={ads_url} /> */}
               <ComponentAds img_url="/soulk.gif" url={ads_url} />
               <div className="description">
-                <SeactionHeading>Complete Cast</SeactionHeading>
+                <SeactionHeading>Review</SeactionHeading>
                 <p>{data?.overview}</p>
                 <Image
                   src={data?.backdrop_path || defaultImageCast}
