@@ -98,7 +98,6 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
                   )}
                 </div>
               </div>
-              {/* <ComponentAds img_url="/ads-detail-banner.jpg" url={ads_url} /> */}
               <ComponentAds img_url="/soulk.gif" url={ads_url} />
               <div className="description">
                 <SeactionHeading>Review</SeactionHeading>

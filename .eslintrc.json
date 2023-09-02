@@ -59,7 +59,8 @@
     "jest-dom/prefer-required": "error",
     "jest-dom/prefer-to-have-attribute": "error",
     "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-var-requires": "off"
+    "@typescript-eslint/no-var-requires": "off",
+    "sonarjs/cognitive-complexity": "warn"
   },
   "overrides": [
     {
