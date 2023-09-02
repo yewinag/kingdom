@@ -31,9 +31,9 @@ const Home: NextPage<IProps> = ({ data, error }) => {
       {/* <ComponentAds img_url="/mdl-game.gif" url={ads_url} /> */}
       <ComponentAds img_url="/soulk.gif" url={ads_url} />
       <div style={{ height: '10px' }} />
-      <ComponentAds img_url="/starbetmm.jpg" url={ads_url} />
+      <ComponentAds img_url="/1000-120.gif" url={ads_url} />
       <div style={{ height: '10px' }} />
-{/*       <ComponentRandom carousels={data?.carousels} /> */}
+      <ComponentRandom carousels={data?.carousels} />
       <Listing
         animes={data?.anime}
         latest={data?.latest}
