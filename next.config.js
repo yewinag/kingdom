@@ -13,7 +13,7 @@ const settings = {
   },
   images: {
     // domains: ['images.soulkingdom.net']
-    domains: ['stg-images.soulkingdom.net']
+    domains: ['images.soulkingdom.net']
   },
   i18n: {
     locales: ['en'],

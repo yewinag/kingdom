@@ -72,7 +72,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          <ComponentVideoAds img_url="/sein-lucky.mp4" url={ads_url} />
+          <ComponentVideoAds img_url="/ads-sept.MP4" url={ads_url} />
           <SectionLayout>
             {tv_shows && tv_shows?.length > 0 && (
               <SectionTitle>
