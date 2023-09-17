@@ -128,6 +128,24 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
                         <section className="wrap-season" key={index}>
                           <h4>{`Season - ${index + 1}`}</h4>
                           <article className="download-grid">
+                            {season?.ost ? (
+                              <>
+                                {season?.ost.map(episode => (
+                                  <DownloadBtn
+                                    alt="download button"
+                                    id={season.id}
+                                    in_number={episode?.in_number}
+                                    key={episode.id}
+                                    name={episode?.name}
+                                  >
+                                    <p>{`${episode?.name}`}</p>
+                                  </DownloadBtn>
+                                ))}
+                              </>
+                            ) : null}
+                          </article>
+                          <br />
+                          <article className="download-grid">
                             {season?.episodes ? (
                               <>
                                 {season?.episodes.map(episode => (
