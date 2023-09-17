@@ -19,6 +19,12 @@ run the development server:
 - yarn dev
 ```
 
+## Deploy on Fly.io
+
+```
+fly deploy
+```
+
 ## Deploy on Vercel
 
 deploy on vercel
