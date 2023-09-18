@@ -10,26 +10,29 @@ import {
 import { DEFAULT_PAGE } from '@utils';
 import Link from 'next/link';
 
-import { IMovie, IMovies } from '../interface';
+import { IAds, IMovie, IMovies } from '../interface';
 import { ComponentCard } from './common';
 import { ComponentAds, ComponentVideoAds } from './GoogleAds';
 // import { ComponentGoogleAds } from './GoogleAds';
 import { Sidebar } from './Sidebar';
 import { ComponentPlaceholder } from './Skeleton';
+import { enumAds } from 'interface/enum';
 interface IProps {
   animes: IMovie[] | undefined;
   latest: IMovie[] | undefined;
   tv_shows: IMovie[] | undefined;
   movies: IMovie[] | undefined;
   data: IMovies;
+  ads?: IAds[]
 }
 export function Listing(props: IProps) {
-  const { animes, latest, tv_shows, movies } = props;
-
+  const { animes, latest, tv_shows, movies, ads } = props;
+  const firstBanner = ads?.find((ads) => ads.name === enumAds.BANNER);
+  
   return (
     <ContentLayout>
-      {/* <ComponentAds img_url="/soulk.gif" url={ads_url} /> */}
-      <ComponentVideoAds img_url="/lion77banner.mp4" url={ads_url} />
+      {/* <ComponentAds img_url={firstBanner?.image||"/soulk.gif"} url={ads_url} /> */}
+      <ComponentVideoAds img_url={firstBanner?.image || "/lion77banner.mp4"} url={ads_url} />
       <StyledHeading>Content Recently Added</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">

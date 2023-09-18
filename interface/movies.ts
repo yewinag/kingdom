@@ -83,6 +83,12 @@ export interface ISeasonEpisode {
   id: number;
   episodes: number[];
 }
+
+export interface IAds{
+  id: number;
+  name: string;
+  image: string;
+}
 // genre types of movies
 export type genreTypes =
   | 'action'
