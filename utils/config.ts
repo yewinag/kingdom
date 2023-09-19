@@ -1,4 +1,5 @@
-export const API_URL = process.env.NEXT_PUBLIC_API;
+// export const API_URL = process.env.NEXT_PUBLIC_API;
+export const API_URL = 'https://api.soulkingdom.net/api/v1';
 export const HOST_PATH = process.env.NEXT_PUBLIC_PATH;
 export const TOKEN = process.env.NEXT_PUBLIC_TOKEN;
 export const TELEGRAM_LINK = process.env.NEXT_PUBLIC_TELGRAM;
