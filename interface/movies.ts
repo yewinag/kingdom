@@ -84,7 +84,7 @@ export interface ISeasonEpisode {
   episodes: number[];
 }
 
-export interface IAds{
+export interface IAds {
   id: number;
   name: string;
   image: string;

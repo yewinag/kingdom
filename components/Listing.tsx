@@ -8,31 +8,36 @@ import {
   StyledHeading
 } from '@styles';
 import { DEFAULT_PAGE } from '@utils';
+import { enumAds } from 'interface/enum';
 import Link from 'next/link';
 
 import { IAds, IMovie, IMovies } from '../interface';
 import { ComponentCard } from './common';
-import { ComponentAds, ComponentVideoAds } from './GoogleAds';
+import { ComponentAds } from './GoogleAds';
 // import { ComponentGoogleAds } from './GoogleAds';
 import { Sidebar } from './Sidebar';
 import { ComponentPlaceholder } from './Skeleton';
-import { enumAds } from 'interface/enum';
 interface IProps {
   animes: IMovie[] | undefined;
   latest: IMovie[] | undefined;
   tv_shows: IMovie[] | undefined;
   movies: IMovie[] | undefined;
   data: IMovies;
-  ads?: IAds[]
+  ads?: IAds[];
 }
 export function Listing(props: IProps) {
   const { animes, latest, tv_shows, movies, ads } = props;
-  const firstBanner = ads?.find((ads) => ads.name === enumAds.BANNER);
-  
+  const third = ads?.find(ads => ads.name === enumAds.WEB_HOME_THIRD_BANNER);
+  const forth = ads?.find(ads => ads.name === enumAds.WEB_HOME_FORTH_BANNER);
+  const fifth = ads?.find(ads => ads.name === enumAds.WEB_HOME_FIFTH_BANNER);
+  const sixth = ads?.find(ads => ads.name === enumAds.WEB_HOME_SIXTH_BANNER);
+
   return (
     <ContentLayout>
-      {/* <ComponentAds img_url={firstBanner?.image||"/soulk.gif"} url={ads_url} /> */}
-      <ComponentVideoAds img_url={firstBanner?.image || "/lion77banner.mp4"} url={ads_url} />
+      <ComponentAds
+        img_url={third?.image || '/lion77banner.mp4'}
+        url={ads_url}
+      />
       <StyledHeading>Content Recently Added</StyledHeading>
       <section className="listing-layout">
         <section className="content-body">
@@ -55,7 +60,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          <ComponentVideoAds img_url="/8888.gif.mp4" url={ads_url} />
+          <ComponentAds img_url={forth?.image} url={ads_url} />
           <SectionLayout>
             <SectionTitle>
               <Link href={`${PATH_GENRES}${keywords.ANIME}/${DEFAULT_PAGE}`}>
@@ -75,7 +80,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          <ComponentVideoAds img_url="/ads-sept.MP4" url={ads_url} />
+          <ComponentAds img_url={fifth?.image} url={ads_url} />
           <SectionLayout>
             {tv_shows && tv_shows?.length > 0 && (
               <SectionTitle>
@@ -99,7 +104,7 @@ export function Listing(props: IProps) {
               )}
             </ArticleRow>
           </SectionLayout>
-          <ComponentAds img_url="/jdbkk.webp" url={ads_url} />
+          <ComponentAds img_url={sixth?.image} url={ads_url} />
           <SectionLayout>
             <SectionTitle>
               <Link href={`${PATH_GENRES}${keywords.MOVIES}/${DEFAULT_PAGE}`}>
@@ -121,7 +126,7 @@ export function Listing(props: IProps) {
           </SectionLayout>
           {/* <ComponentVideoAds img_url="/ads-footer.mp4" url={ads_url} /> */}
         </section>
-        <Sidebar />
+        <Sidebar ads={ads} />
       </section>
     </ContentLayout>
   );

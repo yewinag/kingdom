@@ -10,7 +10,7 @@ import type { NextPage } from 'next';
 interface IProps {
   data: IMovies;
   error?: string;
-  ads?: IAds[]
+  ads?: IAds[];
 }
 const Home: NextPage<IProps> = ({ data, ads, error }) => {
   const metaData: ISeoInfo = {
@@ -25,16 +25,21 @@ const Home: NextPage<IProps> = ({ data, ads, error }) => {
       </FlexCenter>
     );
   }
-  const firstAds = ads?.find((ads) => ads.name === enumAds.HOEMFIRSTBANNER);
-  const secondAds = ads?.find((ads) => ads.name === enumAds.HOMESECONDBANNER);
-
+  const firstAds = ads?.find(ads => ads.name === enumAds.WEB_HOME_FIRST_BANNER);
+  const secondAds = ads?.find(
+    ads => ads.name === enumAds.WEB_HOME_SECOND_BANNER
+  );
+  
   return (
     <>
       <MetaTags metaData={metaData} />
-      <div style={{ height: '10px' }} />      
-      <ComponentAds img_url={firstAds?.image||"/soulk.gif"} url={ads_url} />
       <div style={{ height: '10px' }} />
-      <ComponentAds img_url={secondAds?.image ||"/1000-120.gif"} url={ads_url} />
+      <ComponentAds img_url={firstAds?.image || '/soulk.gif'} url={ads_url} />
+      <div style={{ height: '10px' }} />
+      <ComponentAds
+        img_url={secondAds?.image || '/1000-120.gif'}
+        url={ads_url}
+      />
       <div style={{ height: '10px' }} />
       <ComponentRandom carousels={data?.carousels} />
       <Listing
@@ -55,10 +60,10 @@ export async function getServerSideProps() {
   let ads = {};
   try {
     const res = await fetcher('/home');
-    const adsRes = await fetcher('/ads');    
+    const adsRes = await fetcher('/ads');
     if (typeof res === undefined) {
       return (error = 'nothing I can see');
-    }        
+    }
     data = res;
     ads = adsRes;
   } catch (e: any) {
