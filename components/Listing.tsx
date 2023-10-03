@@ -31,6 +31,7 @@ export function Listing(props: IProps) {
   const forth = ads?.find(ads => ads.name === enumAds.WEB_HOME_FORTH_BANNER);
   const fifth = ads?.find(ads => ads.name === enumAds.WEB_HOME_FIFTH_BANNER);
   const sixth = ads?.find(ads => ads.name === enumAds.WEB_HOME_SIXTH_BANNER);
+  const side = ads?.find(ads => ads.name === enumAds.WEB_HOME_SIDE_BANNER);
 
   return (
     <ContentLayout>
@@ -126,7 +127,7 @@ export function Listing(props: IProps) {
           </SectionLayout>
           {/* <ComponentVideoAds img_url="/ads-footer.mp4" url={ads_url} /> */}
         </section>
-        <Sidebar ads={ads} />
+        <Sidebar adsUrl={side?.image} />
       </section>
     </ContentLayout>
   );

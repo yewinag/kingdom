@@ -49,6 +49,7 @@ const Detail: NextPage<IProps> = ({ data, error, link, ads }) => {
   const two = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_SECOND_BANNER);
   const three = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_THIRD_BANNER);
   const four = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_FORTH_ANNER);
+  const side = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_SIDE_BANNER);
 
   return (
     <MainContent>
@@ -137,7 +138,7 @@ const Detail: NextPage<IProps> = ({ data, error, link, ads }) => {
             </div>
             <ComponentAds img_url={four?.image} url={ads_url} />
           </section>
-          <Sidebar ads={ads} />
+          <Sidebar adsUrl={side?.image} />
         </section>
       </DetailStyles>
     </MainContent>

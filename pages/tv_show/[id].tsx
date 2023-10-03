@@ -44,6 +44,7 @@ const TVShowDetail: NextPage<IProps> = ({ data, error, ads }) => {
   const two = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_SECOND_BANNER);
   const three = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_THIRD_BANNER);
   const four = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_FORTH_ANNER);
+  const side = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_SIDE_BANNER);
 
   const metaData: ISeoInfo = {
     title: `${data?.mm_name} films - watch ${data?.mm_name}  on soulkingdom `,
@@ -177,7 +178,7 @@ const TVShowDetail: NextPage<IProps> = ({ data, error, ads }) => {
               </div>
               <ComponentAds img_url={four?.image} url={ads_url} />
             </section>
-            <Sidebar ads={ads} />
+            <Sidebar adsUrl={side?.image} />
           </section>
         </DetailStyles>
       )}

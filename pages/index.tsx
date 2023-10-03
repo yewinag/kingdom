@@ -29,7 +29,7 @@ const Home: NextPage<IProps> = ({ data, ads, error }) => {
   const secondAds = ads?.find(
     ads => ads.name === enumAds.WEB_HOME_SECOND_BANNER
   );
-  
+
   return (
     <>
       <MetaTags metaData={metaData} />

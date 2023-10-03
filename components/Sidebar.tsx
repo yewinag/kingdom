@@ -5,13 +5,13 @@ import { HOST_PATH, TELEGRAM_LINK } from '@utils';
 import { Genre } from './filter';
 import { Social } from './Social';
 interface IProps {
-  ads?: IAds[];
+  adsUrl?: string;
 }
-export const Sidebar = ({ ads }: IProps) => {
+export const Sidebar = ({ adsUrl }: IProps) => {
   return (
     <StyledSidebar>
       <Social fbLink={HOST_PATH || '/'} telLink={TELEGRAM_LINK || '/'} />
-      <Genre ads={ads} />
+      <Genre adsUrl={adsUrl} />
     </StyledSidebar>
   );
 };

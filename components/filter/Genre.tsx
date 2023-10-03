@@ -16,9 +16,9 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { BeatLoader } from 'react-spinners';
 interface IProps {
-  ads?: IAds[];
+  adsUrl?: string;
 }
-export const Genre = ({ ads }: IProps) => {
+export const Genre = ({ adsUrl }: IProps) => {
   const { query } = useRouter();
   const { genre, loading } = useSelector(selectApp);
   const dispatch = useDispatch();
@@ -26,8 +26,6 @@ export const Genre = ({ ads }: IProps) => {
   useEffect(() => {
     fetchGenre();
   }, []);
-
-  const sideAds = ads?.find(ads => ads.name === enumAds.WEB_HOME_SIDE_BANNER);
 
   const fetchGenre = async () => {
     if (genre && genre.length !== 0) return;
@@ -76,7 +74,7 @@ export const Genre = ({ ads }: IProps) => {
             </Link>
           ))}
       </div>
-      <ComponentSidebarAds img_url={sideAds?.image} url={ads_url} />
+      <ComponentSidebarAds img_url={adsUrl} url={ads_url} />
       {/* <ComponentSidebarAds
         img_url="/banner.gif"
         url={'https://soulkingdom.net'}
