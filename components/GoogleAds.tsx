@@ -6,6 +6,9 @@ interface IProps {
   img_url?: string;
 }
 export const ComponentAds = ({ url, img_url }: IProps) => {
+  if (!img_url) {
+    return null;
+  }
   if (checkUrlVideo(img_url || '')) {
     return (
       <StyledVideo>
