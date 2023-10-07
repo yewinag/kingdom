@@ -1,15 +1,11 @@
 import {
   ComponentAds,
-  // ComponentAds,
   ComponentNotFound,
-  // ComponentVideoAds,
-  // ComponentVideoAds,
-  // ComponentVideoAds,
   DownloadBtn,
   Sidebar
 } from '@components';
 import { ads_url, defaultImageCast } from '@constants';
-import { IMovieDetail, ISeoInfo } from '@interface';
+import { IAds, IMovieDetail, ISeoInfo } from '@interface';
 import {
   DetailStyles,
   FlexCenter,
@@ -19,6 +15,7 @@ import {
 import { fetcher, HOST_PATH, light, TELEGRAM_LINK } from '@utils';
 import MetaTags from 'components/MetaTags';
 import { Social } from 'components/Social';
+import { enumAds } from 'interface/enum';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import { Fragment } from 'react';
@@ -27,9 +24,10 @@ import { BeatLoader } from 'react-spinners';
 interface IProps {
   data: IMovieDetail;
   error?: string;
+  ads?: IAds[];
 }
 
-const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
+const TVShowDetail: NextPage<IProps> = ({ data, error, ads }) => {
   if (!data) {
     return <ComponentNotFound />;
   }
@@ -41,6 +39,12 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
       </FlexCenter>
     );
   }
+
+  const one = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_FIRST_BANNER);
+  const two = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_SECOND_BANNER);
+  const three = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_THIRD_BANNER);
+  const four = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_FORTH_ANNER);
+  const side = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_SIDE_BANNER);
 
   const metaData: ISeoInfo = {
     title: `${data?.mm_name} films - watch ${data?.mm_name}  on soulkingdom `,
@@ -57,7 +61,7 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
           <MetaTags metaData={metaData} />
           <section className="listing-layout">
             <section className="content-body">
-              <ComponentAds img_url="/final.gif" url={ads_url} />
+              <ComponentAds img_url={one?.image} url={ads_url} />
               <div className="detail">
                 <div className="image">
                   <Image
@@ -98,7 +102,7 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
                   )}
                 </div>
               </div>
-              <ComponentAds img_url="/soulk.gif" url={ads_url} />
+              <ComponentAds img_url={two?.image} url={ads_url} />
               <div className="description">
                 <SeactionHeading>Review</SeactionHeading>
                 <p>{data?.overview}</p>
@@ -112,8 +116,7 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
                   blurDataURL="/soul-kingdom-placeholder-cast.png"
                 />
               </div>
-
-              <ComponentAds img_url="/skin-care-ads.jpeg" url={ads_url} />
+              <ComponentAds img_url={three?.image} url={ads_url} />
               <div className="download">
                 <header>
                   <h4>Download Links</h4>
@@ -173,9 +176,9 @@ const TVShowDetail: NextPage<IProps> = ({ data, error }) => {
                   telLink={TELEGRAM_LINK || '/'}
                 />
               </div>
-              <ComponentAds img_url="/jdbkk2.webp" url={ads_url} />
+              <ComponentAds img_url={four?.image} url={ads_url} />
             </section>
-            <Sidebar />
+            <Sidebar adsUrl={side?.image} />
           </section>
         </DetailStyles>
       )}
@@ -189,12 +192,18 @@ export async function getServerSideProps(context: any) {
   } = context;
   let error = '';
   let data = {};
+  let ads = {};
   try {
-    data = await fetcher(`/tv-shows/${id || 0}`);
+    const [movie, resAds] = await Promise.all([
+      fetcher(`/tv-shows/${id || 0}`),
+      fetcher('/ads')
+    ]);
+    data = movie;
+    ads = resAds;
   } catch (e: any) {
     error = e.toString();
   }
-  return { props: { data, error } };
+  return { props: { data, error, ads } };
 }
 
 export default TVShowDetail;

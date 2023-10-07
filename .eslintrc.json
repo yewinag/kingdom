@@ -61,7 +61,8 @@
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-var-requires": "off",
     "sonarjs/cognitive-complexity": "warn",
-    "sonarjs/no-identical-functions":"warn"
+    "sonarjs/no-identical-functions":"warn",
+    "typescript-enum/no-enum":"warn"
   },
   "overrides": [
     {

@@ -5,7 +5,7 @@ import {
   Sidebar
 } from '@components';
 import { ads_url, defaultImage, defaultImageCast } from '@constants';
-import { IMovieDetail, ISeoInfo } from '@interface';
+import { IAds, IMovieDetail, ISeoInfo } from '@interface';
 import {
   DetailStyles,
   FlexCenter,
@@ -15,6 +15,7 @@ import {
 import { fetcher, HOST_PATH, TELEGRAM_LINK } from '@utils';
 import MetaTags from 'components/MetaTags';
 import { Social } from 'components/Social';
+import { enumAds } from 'interface/enum';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,8 +26,9 @@ interface IProps {
   data: IMovieDetail;
   error?: string;
   link?: IResLinks;
+  ads?: IAds[];
 }
-const Detail: NextPage<IProps> = ({ data, error, link }) => {
+const Detail: NextPage<IProps> = ({ data, error, link, ads }) => {
   if (!data) {
     return <ComponentNotFound />;
   }
@@ -43,14 +45,19 @@ const Detail: NextPage<IProps> = ({ data, error, link }) => {
     description: `Soulkingdom - watching overview ${data?.overview} of film ${data?.mm_name}`
   };
 
+  const one = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_FIRST_BANNER);
+  const two = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_SECOND_BANNER);
+  const three = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_THIRD_BANNER);
+  const four = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_FORTH_ANNER);
+  const side = ads?.find(ads => ads.name === enumAds.WEB_DETAIL_SIDE_BANNER);
+
   return (
     <MainContent>
       <DetailStyles>
         <MetaTags metaData={metaData} />
         <section className="listing-layout">
           <section className="content-body">
-            {/* <ComponentVideoAds img_url="/final.gif.mp4" url={ads_url} /> */}
-            <ComponentAds img_url="/final.gif" url={ads_url} />
+            <ComponentAds img_url={one?.image} url={ads_url} />
             <div className="detail">
               <div className="image">
                 <Image
@@ -91,8 +98,7 @@ const Detail: NextPage<IProps> = ({ data, error, link }) => {
                 )}
               </div>
             </div>
-            {/* <ComponentAds img_url="/ads-detail-banner.jpg" url={ads_url} /> */}
-            <ComponentAds img_url="/soulk.gif" url={ads_url} />
+            <ComponentAds img_url={two?.image} url={ads_url} />
             <div className="description">
               <SeactionHeading>Review</SeactionHeading>
               <p>{data?.overview}</p>
@@ -106,8 +112,7 @@ const Detail: NextPage<IProps> = ({ data, error, link }) => {
                 placeholder="blur"
               />
             </div>
-            <ComponentAds img_url="/skin-care-ads.jpeg" url={ads_url} />
-
+            <ComponentAds img_url={three?.image} url={ads_url} />
             <div className="download">
               <header>
                 <h4>Download Links</h4>
@@ -131,9 +136,9 @@ const Detail: NextPage<IProps> = ({ data, error, link }) => {
                 telLink={TELEGRAM_LINK || '/'}
               />
             </div>
-            <ComponentAds img_url="/jdbkk2.webp" url={ads_url} />
+            <ComponentAds img_url={four?.image} url={ads_url} />
           </section>
-          <Sidebar />
+          <Sidebar adsUrl={side?.image} />
         </section>
       </DetailStyles>
     </MainContent>
@@ -146,18 +151,21 @@ export async function getServerSideProps(context: any) {
   } = context;
   let error = '';
   let data = {};
+  let ads = {};
   let link: IResLinks = { drive_url: '' };
   try {
-    const [movie, reslink] = await Promise.all([
+    const [movie, reslink, resAds] = await Promise.all([
       fetcher(`/movies/${id || 0}`),
-      fetcher(`/shows/${id || 0}/download-links`)
+      fetcher(`/shows/${id || 0}/download-links`),
+      fetcher('/ads')
     ]);
     data = movie;
     link = reslink;
+    ads = resAds;
   } catch (e: any) {
     error = e.toString();
   }
-  return { props: { data, error, link } };
+  return { props: { data, error, link, ads } };
 }
 
 export default Detail;

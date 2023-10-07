@@ -1,3 +1,4 @@
+import { checkUrlVideo } from '@utils';
 import Image from 'next/image';
 import styled from 'styled-components';
 interface IProps {
@@ -5,13 +6,28 @@ interface IProps {
   img_url?: string;
 }
 export const ComponentAds = ({ url, img_url }: IProps) => {
-  return (
-    <StyledAds>
-      <a href={url} target="_blank" rel="noreferrer">
-        <Image src={img_url || ''} alt={img_url} layout="fill" />
-      </a>
-    </StyledAds>
-  );
+  if (!img_url) {
+    return null;
+  }
+  if (checkUrlVideo(img_url || '')) {
+    return (
+      <StyledVideo>
+        <a href={url} target="_blank" rel="noreferrer">
+          <video loop autoPlay muted>
+            <source src={img_url || ''} type="video/mp4" />
+          </video>
+        </a>
+      </StyledVideo>
+    );
+  } else {
+    return (
+      <StyledAds>
+        <a href={url} target="_blank" rel="noreferrer">
+          <Image src={img_url || ''} alt={img_url} layout="fill" />
+        </a>
+      </StyledAds>
+    );
+  }
 };
 export const ComponentVideoAds = ({ url, img_url }: IProps) => {
   return (
@@ -53,7 +69,7 @@ const StyledVideo = styled.div`
     width: 100%;
     min-height: auto;
   }
-
+  max-height: 140px;
   background: transparent;
 `;
 const StyledSidebarAds = styled.div`
